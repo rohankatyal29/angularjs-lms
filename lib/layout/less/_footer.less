@@ -1,0 +1,32 @@
+.footer {
+	text-align: center;
+	color: #888;
+	font-weight: 500;
+	background: #fff;
+	height: @footer-height;
+	line-height: @footer-height;
+	.container-fluid & {
+		margin: 0 -@grid-gutter-width/2;
+	}
+	[class*="bottom-footer"] & {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		margin: 0;
+	}
+	[class*="bottom-footer"] & {
+		box-shadow: 0 -3px 5px -3px fade(@black, 15%);
+		z-index: 101;
+	}
+	display: block;
+}
+body {
+	.ls-bottom-footer & {
+		padding-bottom: @footer-height + @grid-gutter-width/2;
+	}
+	.bottom-footer & {
+		padding-bottom: @footer-height;
+	}
+}

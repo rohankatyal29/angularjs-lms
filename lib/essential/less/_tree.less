@@ -1,0 +1,118 @@
+ul.fancytree-container {
+	border: none;
+	padding: 0;
+	li {
+		padding: 0 0 3px;
+		 &.fancytree-lastsib {
+			 padding: 0;
+		 }
+		ul {
+			padding-top: 3px;
+		}
+	}
+}
+.fancytree-icon {
+	color: @grey-500;
+	.fancytree-folder & {
+		color: @primary-color;
+	}
+}
+.fancytree-expander {
+	color: @grey-500;
+}
+
+// Inactive tree:
+span.fancytree-node.fancytree-selected { // selected nodes inside inactive tree
+	background-color: lighten(@grey-100, 2%);
+	border-color: lighten(@grey-100, 2%);
+	span.fancytree-title {
+		background-color: transparent;
+	}
+}
+span.fancytree-node.fancytree-active { // active nodes inside inactive tree
+	background-color: lighten(@primary-color, 42%);
+	.fancytree-icon, .fancytree-expander {
+		color: @grey-700;
+	}
+}
+// Active tree:
+.fancytree-container.fancytree-treefocus {
+	span.fancytree-node:hover {
+		background-color: @grey-100;
+		.fancytree-icon, .fancytree-expander {
+			color: @grey-700;
+		}
+		&.fancytree-folder {
+			.fancytree-icon {
+				color: @primary-color;
+			}
+		}
+	}
+	span.fancytree-node.fancytree-focused {
+		border-color: @primary-color;
+	}
+	span.fancytree-node.fancytree-selected {
+		background-color: @grey-100;
+		border-color: @grey-100;
+		span.fancytree-title {
+			background-color: transparent;
+		}
+		.fancytree-icon, .fancytree-expander {
+			color: @grey-700;
+		}
+		&:hover {
+			background-color: darken(@grey-100, 2%);
+		}
+	}
+	span.fancytree-node.fancytree-active {
+		background-color: @primary-color;
+		border-color: @primary-color;
+		.fancytree-title, .fancytree-icon, .fancytree-expander, .fancytree-checkbox {
+			color: @white;
+		}
+		&:hover {
+			background-color: darken(@primary-color, 2%);
+			&.fancytree-folder {
+				.fancytree-icon {
+					color: @white;
+				}
+			}
+		}
+	}
+}
+
+// SIDEBAR DARK SKIN
+.sidebar-skin-dark {
+	ul.fancytree-container {
+		background-color: transparent;
+	}
+
+	span.fancytree-title {
+		color: @grey-100;
+	}
+
+	// Inactive tree:
+	span.fancytree-node.fancytree-active { // active nodes inside inactive tree
+		background-color: fade(@primary-color, 30%);
+		.fancytree-icon, .fancytree-expander {
+			color: @grey-100;
+		}
+	}
+
+	// Active tree:
+	.fancytree-container.fancytree-treefocus {
+		span.fancytree-node:hover {
+			background-color: @grey-900;
+		}
+		span.fancytree-node.fancytree-active {
+			&:hover {
+				background-color: darken(@primary-color, 2%);
+			}
+		}
+	}
+}
+.sidebar {
+	span.fancytree-node {
+		border-radius: 0;
+	}
+}

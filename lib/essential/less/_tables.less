@@ -1,0 +1,42 @@
+.table {
+	.progress {
+		margin-top: 2px;
+		margin-bottom: 0;
+		.progress-bar {
+			transition: all 1s ease-in-out;
+		}
+
+	}
+	&.v-middle {
+		tbody > tr > td {
+			vertical-align: middle;
+		}
+	}
+	&.table-borderless {
+		>tbody>tr>td,
+		>tbody>tr>th,
+		>tfoot>tr>td,
+		>tfoot>tr>th,
+		>thead>tr>td,
+		>thead>tr>th {
+			border: none;
+		}
+	}
+	td {
+		&.w50 {
+			width: 50px;
+		}
+		&.w100 {
+			width: 100px;
+		}
+		&.w150 {
+			width: 150px;
+		}
+	}
+	&.table-headerless {
+		>tbody>tr:first-child>td,
+		>tbody>tr:first-child>th {
+			border: none;
+		}
+	}
+}

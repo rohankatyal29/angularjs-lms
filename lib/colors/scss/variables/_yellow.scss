@@ -1,0 +1,34 @@
+$yellow-50: #FFFDE7;
+$yellow-100: #FFF9C4;
+$yellow-200: #FFF59D;
+$yellow-300: #FFF176;
+$yellow-400: #FFEE58;
+$yellow-500: #FFEB3B; // main
+$yellow-600: #FDD835;
+$yellow-700: #FBC02D;
+$yellow-800: #F9A825;
+$yellow-900: #F57F17;
+
+$yellow-A100: #FFFF8D;
+$yellow-A200: #FFFF00;
+$yellow-A400: #FFEA00;
+$yellow-A700: #FFD600;
+
+$yellow-map: (
+    yellow-50: $yellow-50,
+    yellow-100: $yellow-100,
+    yellow-200: $yellow-200,
+    yellow-300: $yellow-300,
+    yellow-400: $yellow-400,
+    yellow-500: $yellow-500,
+    yellow-600: $yellow-600,
+    yellow-700: $yellow-700,
+    yellow-800: $yellow-800,
+    yellow-900: $yellow-900,
+    yellow-A100: $yellow-A100,
+    yellow-A200: $yellow-A200,
+    yellow-A400: $yellow-A400,
+    yellow-A700: $yellow-A700
+);
+
+$colors-map: map-merge($colors-map, $yellow-map);

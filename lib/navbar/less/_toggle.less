@@ -1,0 +1,58 @@
+.toggle {
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	.navbar & {
+		height: @navbar-height;
+		padding: 0 @navbar-padding-vertical;
+		line-height: @navbar-height;
+		display: inline-block;
+		font-size: 20px;
+		&.pull-right {
+			margin-right: @navbar-padding-horizontal/2;
+		}
+	}
+	.navbar-nav > li > & {
+		display: block;
+	}
+
+	.navbar-size-small & {
+		height: @navbar-small-height;
+		padding: 0 @navbar-small-padding-vertical;
+		line-height: @navbar-small-height;
+	}
+
+	.navbar-size-large & {
+		@media (min-width: @navbar-large-breakpoint) {
+			height: @navbar-large-height;
+			padding: 0 @navbar-large-padding-vertical;
+			line-height: @navbar-large-height;
+		}
+	}
+
+	.navbar-default & {
+		color: @navbar-default-link-color;
+		&.active {
+			background: darken(@primary-color, 4%);
+			color: #fff;
+		}
+	}
+
+	.navbar-primary & {
+		background: darken(@primary-color, 4%);
+		color: #fff;
+		&.active {
+			color: @primary-color;
+			background: @white;
+		}
+	}
+
+	@media (min-width: @screen-sm) {
+		.navbar-header & {
+			border-right: 1px solid transparent;
+		}
+	}
+
+}

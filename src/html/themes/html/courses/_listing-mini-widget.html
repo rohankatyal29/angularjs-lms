@@ -1,0 +1,31 @@
+<div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+    <div class="panel-body">
+        <div class="media media-clearfix-xs">
+            <div class="media-left">
+                <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                    <span class="img icon-block s90 {{ coverBg or 'bg-default' }}"></span>
+                    <span class="overlay overlay-full padding-none icon-block s90 {{ coverBg or 'bg-default' }}">
+                        <span class="v-center">
+                            <i class="fa {{ coverIcon }}"></i>
+                        </span>
+                    </span>
+                    <a {% if angular %}ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %}href="{{ itemUrl or 'website-course.html' }}"{% endif %} class="overlay overlay-full overlay-hover overlay-bg-white">
+                        <span class="v-center">
+                            <span class="btn btn-circle {{ coverBtn }} btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading margin-v-5-3"><a {% if angular %}ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %}href="{{ itemUrl or 'website-course.html' }}"{% endif %}>{{ itemTitle }}</a></h4>
+                <p class="small margin-none">
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

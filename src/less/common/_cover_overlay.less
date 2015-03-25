@@ -1,0 +1,34 @@
+.cover.overlay {
+	&.home {
+		.page-section {
+			padding: 16px;
+			@media (min-width: @screen-sm) {
+				padding: 30px 40px 0;
+				p:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+			max-width: 700px;
+			display: inline-block;
+		}
+		.btn {
+			@media (min-width: @screen-sm) {
+				position: relative;
+				box-shadow: 0 2px 5px 0 fade(@black, 50%);
+				bottom: -32px;
+				padding: 18px 24px;
+				font-size: 19px;
+			}
+		}
+	}
+	&.pricing {
+		display: table;
+		margin: 0;
+		height: 100%;
+		min-height: 900px;
+		width: 100%;
+		background: url('../images/photodune-6745579-modern-creative-man-relaxing-on-workspace-m.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}

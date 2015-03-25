@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="st-layout ls-top-navbar ls-bottom-footer show-sidebar sidebar-l2" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Learning</title>
+    <!-- Compressed Vendor BUNDLE
+    Includes vendor (3rd party) styling such as the customized Bootstrap and other 3rd party libraries used for the current theme/module -->
+    <link href="css/vendor.css" rel="stylesheet">
+    <!-- Compressed Theme BUNDLE
+Note: The bundle includes all the custom styling required for the current theme, however
+it was tweaked for the current theme/module and does NOT include ALL of the standalone modules;
+The bundle was generated using modern frontend development tools that are provided with the package
+To learn more about the development process, please refer to the documentation. -->
+    <link href="css/theme-bundle.css" rel="stylesheet">
+    <!-- Compressed Theme CORE
+This variant is to be used when loading the separate styling modules -->
+    <!-- <link href="css/theme.core.css" rel="stylesheet"> -->
+    <!-- Standalone Modules
+    As a convenience, we provide the entire UI framework broke down in separate modules
+    Some of the standalone modules may have not been used with the current theme/module
+    but ALL modules are 100% compatible -->
+    <!-- <link href="css/module-essentials.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-material.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-layout.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-sidebar.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-sidebar-skins.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-navbar.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-messages.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-carousel-slick.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-charts.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-maps.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-alerts.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-background.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-buttons.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-text.css" rel="stylesheet" /> -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body class="docs">
+    <!-- Wrapper required for sidebar transitions -->
+    <div class="st-container">
+        <!-- Top Navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="#sidebar-menu" data-effect="st-effect-1" data-toggle="sidebar-menu" class="toggle pull-left visible-xs"><i class="fa fa-bars"></i></a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand hidden-xs" href="index.html">Documentation</a>
+                </div>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="index.html">Overview</a></li>
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="grunt.html">Grunt</a></li>
+                                <li><a href="swig.html">Swig</a></li>
+                                <li><a href="assets.html">Assets</a></li>
+                                <li><a href="reference.html">Reference</a></li>
+                                <li class="active"><a href="vagrant.html">Vagrant</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- //Top Navbar -->
+        <div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-dark sidebar-visible-desktop" id="sidebar-menu">
+            <div id="menu">
+                <ul class="nav sidebar-menu sm-active-item-bg">
+                    <li class="active"><a href="#intro">1. Vagrant</a></li>
+                    <li><a href="#config">2. Configuration</a></li>
+                    <li><a href="#usage">3. Basic usage</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- content push wrapper -->
+        <div class="st-pusher" id="content">
+            <!-- this is the wrapper for the content -->
+            <div class="st-content">
+                <!-- extra div for emulating position:fixed of the menu -->
+                <div class="st-content-inner">
+                    <div class="container-fluid">
+                        <div class="s-container">
+                            <h1>Vagrant</h1>
+                        </div>
+                        <div class="panel panel-default" id="intro">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">What is Vagrant and why should you use it</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>Simple put: Vagrant is Development environments made easy.</p>
+                                <p>Download and install Vagrant within minutes on Mac OS X, Windows, or a popular distribution of Linux. No complicated setup process, just a simple to use OS-standard installer. The only requirement besides Vagrant is VirtualBox, and it is just as simple to install.</p>
+                                <p class="margin-none">
+                                    Go to <a target="_blank" href="https://www.vagrantup.com/downloads.html">Vagrant Downloads page</a> and
+                                    <a target="_blank" href="https://www.virtualbox.org/wiki/Downloads">VirtualBox Downloads page</a>
+                                </p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="panel panel-default" id="config">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Configuration</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p class="margin-none">Open <code>lib/vagrant/tk.yaml</code> in any text editor and provide the full path to the package root directory within the <code>synced_folder.from</code> config key and optionally personalise the memory and the CPUs for the virtual machine.</p>
+                            </div>
+                            <div class="panel-body-lrb">
+                                <div class="highlight">
+                                    <pre><code class="hljs ruby">---
+<span class="hljs-symbol">ip:</span> <span class="hljs-string">"192.168.10.10"</span> <span class="hljs-comment"># no need to change the IP address, unless it's already in use on your network;</span>
+<span class="hljs-symbol">memory:</span> <span class="hljs-number">4096</span>        <span class="hljs-comment"># optionally change the memory;</span>
+<span class="hljs-symbol">cpus:</span> <span class="hljs-number">4</span>             <span class="hljs-comment"># optionally change the CPUs;</span>
+<span class="hljs-symbol">synced_folder:</span>
+    <span class="hljs-symbol">from:</span> /full/path/to/project/root    <span class="hljs-comment"># this MUST reflect YOUR path to the package root;</span>
+    <span class="hljs-symbol">to:</span> /home/vagrant/tk                <span class="hljs-comment"># you can ignore this;</span>
+    <span class="hljs-symbol">type:</span> nfs                           <span class="hljs-comment"># nfs (good performance 2 way sync);</span>
+                                        <span class="hljs-comment"># vboxsf (2 way sync, known issues with large number of files);</span>
+                                        <span class="hljs-comment"># rsync (good performance; 1 way sync; syncing is not automatic - must use vagrant rsync-auto);</span>
+                                        <span class="hljs-comment"># https://docs.vagrantup.com/v2/synced-folders/basic_usage.html</span>
+<span class="hljs-comment"># you won't be able to ssh into the box without the next two files;</span>
+<span class="hljs-symbol">authorize:</span> /<span class="hljs-constant">Users</span>/<span class="hljs-constant">YourUsername</span>/.ssh/id_rsa.pub
+<span class="hljs-symbol">keys:</span>
+- <span class="hljs-regexp">/Users/</span><span class="hljs-constant">UserUsername</span>/.ssh/id_rsa</code></pre>
+                                </div>
+                            </div>
+                            <div class="panel-heading">
+                                <h3 class="panel-title">SSH Keys</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p><a href="https://confluence.atlassian.com/pages/viewpage.action?pageId=270827678" target="_blank">Set up SSH on Mac OSX/Linux</a> - steps 1 to 5 for Mac OSX/Linux and <a href="https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Mercurial" target="_blank">Set up SSH on Windows</a> - steps 1 to 3 for Windows.</p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="panel panel-default" id="usage">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">What's next?</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>Next, from a
+                                    <em>Terminal</em>, within the root folder of the package, run:</p>
+                                <p><code>vagrant up</code></p>
+                                <p>Sit and watch as in just a few moments you'll have a fully running virtual machine in VirtualBox running Ubuntu Server 14.04 LTS with the latest front-end development tools pre-installed. You can SSH into this machine with <code>vagrant ssh</code>, and when you're done playing around, you can remove all traces of it with <code>vagrant destroy</code>.</p>
+                                <p>
+                                    <strong>Now imagine every complex project you've ever worked on being this easy to set up.</strong>
+                                </p>
+                                <p class="margin-none">With Vagrant, <code>vagrant up</code> is all you need to work on any project, to install every dependency that project needs, and to set up any networking and synced folders so you can continue working from the comfort of your own machine.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /st-content-inner -->
+            </div>
+            <!-- /st-content -->
+        </div>
+        <!-- /st-pusher -->
+        <!-- Footer -->
+        <footer class="footer">
+            <strong>Learning</strong> v1.0.0 &copy; Copyright 2015
+        </footer>
+        <!-- // Footer -->
+    </div>
+    <!-- /st-container -->
+    <!-- Inline Script for colors and config objects; used by various external scripts; -->
+    <script>
+    var colors = {
+        "danger-color": "#e74c3c",
+        "success-color": "#81b53e",
+        "warning-color": "#f0ad4e",
+        "inverse-color": "#2c3e50",
+        "info-color": "#2d7cb5",
+        "default-color": "#6e7882",
+        "default-light-color": "#cfd9db",
+        "purple-color": "#9D8AC7",
+        "mustard-color": "#d4d171",
+        "lightred-color": "#e15258",
+        "body-bg": "#f6f6f6"
+    };
+    var config = {
+        theme: "docs",
+        skins: {
+            "default": {
+                "primary-color": "#42a5f5"
+            }
+        }
+    };
+    </script>
+    <!-- Separate Vendor Script Bundles -->
+    <script src="js/vendor-core.js"></script>
+    <script src="js/vendor-countdown.js"></script>
+    <script src="js/vendor-tables.js"></script>
+    <script src="js/vendor-forms.js"></script>
+    <script src="js/vendor-carousel-slick.js"></script>
+    <script src="js/vendor-player.js"></script>
+    <script src="js/vendor-charts-flot.js"></script>
+    <script src="js/vendor-nestable.js"></script>
+    <!-- <script src="js/vendor-angular.js"></script> -->
+    <!-- Compressed Vendor Scripts Bundle
+    Includes all of the 3rd party JavaScript libraries above.
+    The bundle was generated using modern frontend development tools that are provided with the package
+    To learn more about the development process, please refer to the documentation.
+    Do not use it simultaneously with the separate bundles above. -->
+    <!-- <script src="js/vendor-bundle-all.js"></script> -->
+    <!-- Compressed App Scripts Bundle
+    Includes Custom Application JavaScript used for the current theme/module;
+    Do not use it simultaneously with the standalone modules below. -->
+    <script src="js/module-bundle-main.js"></script>
+    <!-- Standalone Modules
+    As a convenience, we provide the entire UI framework broke down in separate modules
+    Some of the standalone modules may have not been used with the current theme/module
+    but ALL the modules are 100% compatible -->
+    <!-- <script src="js/module-essentials.js"></script> -->
+    <!-- <script src="js/module-material.js"></script> -->
+    <!-- <script src="js/module-layout.js"></script> -->
+    <!-- <script src="js/module-sidebar.js"></script> -->
+    <!-- <script src="js/module-carousel-slick.js"></script> -->
+    <!-- <script src="js/module-player.js"></script> -->
+    <!-- <script src="js/module-messages.js"></script> -->
+    <!-- <script src="js/module-maps-google.js"></script> -->
+    <!-- <script src="js/module-charts-flot.js"></script> -->
+    <!-- [docs] Core Theme Script:
+        Includes the custom JavaScript for this theme/module;
+        The file has to be loaded in addition to the UI modules above;
+        module-bundle-main.js already includes theme-core.js so this should be loaded
+        ONLY when using the standalone modules; -->
+    <!-- <script src="js/theme-core.js"></script> -->
+</body>
+</html>

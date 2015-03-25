@@ -1,0 +1,44 @@
+<div class="panel panel-default paper-shadow" data-z="0.5">
+    <div class="panel-heading">
+        <h4 class="text-headline margin-none">Courses</h4>
+        <p class="text-subhead text-light">Your recent courses</p>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item media v-middle">
+            <div class="media-body">
+                <a {% if angular %}ui-sref="{{ slug or 'app' }}-student.take-course"{% else %}href="{{ slug or 'app' }}-take-course.html"{% endif %} class="text-subhead list-group-link">Basics of HTML</a>
+            </div>
+            <div class="media-right">
+                <div class="progress progress-mini width-100 margin-none">
+                    <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:45%;">
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item media v-middle">
+            <div class="media-body">
+                <a {% if angular %}ui-sref="{{ slug or 'app' }}-student.take-course"{% else %}href="{{ slug or 'app' }}-take-course.html"{% endif %} class="text-subhead list-group-link">Angular in Steps</a>
+            </div>
+            <div class="media-right">
+                <div class="progress progress-mini width-100 margin-none">
+                    <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item media v-middle">
+            <div class="media-body">
+                <a {% if angular %}ui-sref="{{ slug or 'app' }}-student.take-course"{% else %}href="{{ slug or 'app' }}-take-course.html"{% endif %} class="text-subhead list-group-link">Bootstrap Foundations</a>
+            </div>
+            <div class="media-right">
+                <div class="progress progress-mini width-100 margin-none">
+                    <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%;">
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="panel-footer text-right">
+        <a {% if angular %}ui-sref="{{ slug or 'app' }}-student.courses"{% else %}href="{{ slug or 'app' }}-student-courses.html"{% endif %} class="btn btn-white paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="#"> View all</a>
+    </div>
+</div>

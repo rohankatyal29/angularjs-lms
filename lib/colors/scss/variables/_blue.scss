@@ -1,0 +1,34 @@
+$blue-50: #E3F2FD;
+$blue-100: #BBDEFB;
+$blue-200: #90CAF9;
+$blue-300: #64B5F6;
+$blue-400: #42A5F5;
+$blue-500: #2196F3; // main
+$blue-600: #1E88E5;
+$blue-700: #1976D2;
+$blue-800: #1565C0;
+$blue-900: #0D47A1;
+
+$blue-A100: #82B1FF;
+$blue-A200: #448AFF;
+$blue-A400: #2979FF;
+$blue-A700: #2962FF;
+
+$blue-map: (
+    blue-50: $blue-50,
+    blue-100: $blue-100,
+    blue-200: $blue-200,
+    blue-300: $blue-300,
+    blue-400: $blue-400,
+    blue-500: $blue-500,
+    blue-600: $blue-600,
+    blue-700: $blue-700,
+    blue-800: $blue-800,
+    blue-900: $blue-900,
+    blue-A100: $blue-A100,
+    blue-A200: $blue-A200,
+    blue-A400: $blue-A400,
+    blue-A700: $blue-A700
+);
+
+$colors-map: map-merge($colors-map, $blue-map);

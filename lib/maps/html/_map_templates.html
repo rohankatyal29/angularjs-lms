@@ -1,0 +1,87 @@
+<script id="map-infobox-profile" type="text/x-handlebars-template">
+    <div class="text-center">
+        <p><img src="{% raw %}{{ image }}{% endraw %}" alt="" class="img-circle"/></p>
+        <h4><a href="{% raw %}{{ details_url }}{% endraw %}" class="text-grey-700">{% raw %}{{ name }}{% endraw %}</a></h4>
+        <a href="mailto:{% raw %}{{ email }}{% endraw %}">{% raw %}{{ email }}{% endraw %}</a><br/>
+        <p class="text-muted"><i class="fa fa-user fa-fw"></i>Agent <i class="fa fa-home fa-fw"></i>{% raw %}{{ no_properties }}{% endraw %} Properties</p>
+    </div>
+</script>
+
+<script id="map-infobox-icon" type="text/x-handlebars-template">
+    <div>
+        <div class="text-center">
+            <div class="h1 text-grey-300">
+                <i class="{% raw %}{{ inner_icon }}{% endraw %}"></i>
+            </div>
+            <p><a href="#" class="h4 text-primary">{% raw %}{{ name }}{% endraw %}</a></p>
+            <p>{% raw %}{{ description }}{% endraw %}</p>
+        </div>
+    </div>
+</script>
+
+<script id="map-infobox-simple" type="text/x-handlebars-template">
+    <div>
+        <div class="text-center">
+            <h1>{% raw %}{{ title }}{% endraw %}</h1>
+            <p>{% raw %}{{ description }}{% endraw %}</p>
+        </div>
+    </div>
+</script>
+
+<script id="tpl-edit" type="text/x-handlebars-template">
+    <div>
+        <div class="form-group">
+            <label for="state">State:</label>
+            <input id="state" disabled class="form-control" type="text" value="{% raw %}{{ state }}{% endraw %}" />
+        </div>
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <input id="country" disabled class="form-control" type="text" value="{% raw %}{{ country }}{% endraw %}" />
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input id="address" disabled class="form-control" type="text" value="{% raw %}{{ address }}{% endraw %}" />
+        </div>
+        <div class="form-group">
+            <button type="button" id="map-delete-marker" data-id="{% raw %}{{ id }}{% endraw %}" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></button>
+        </div>
+    </div>
+</script>
+
+<script id="map-pagination" type="text/x-handlebars-template">
+    <div id="pagination" class="btn-group btn-group-lg">
+        <a href="#" class="col-xs-2 back-btn btn btn-inverse">&lsaquo;</a>
+        <a class="col-xs-8 display btn btn-inverse"></a>
+        <a href="#" class="col-xs-2 fwd-btn btn btn-inverse">&rsaquo;</a>
+    </div>
+</script>
+
+<script id="map-filters-template" type="text/x-handlebars-template">
+    <div id="radios" class="map-overlay-sidebar overflow-hidden absolute top bottom{% if rtl %} right{% else %} left{% endif %}">
+        <div data-scrollable>
+            <h4>Filters</h4>
+            {% raw %}{{#each tags}}{% endraw %}
+            <div class="checkbox checkbox-primary">
+                <input type="checkbox" checked id="map-filter-{% raw %}{{ @index }}{% endraw %}" value="{% raw %}{{ this }}{% endraw %}"/>
+                <label for="map-filter-{% raw %}{{ @index }}{% endraw %}">{% raw %}{{ this }}{% endraw %}</label>
+            </div>
+            {% raw %}{{/each}}{% endraw %}
+            <hr/>
+            <p>Enable marker filters by adding the HTML5 attribute <code>data-filters="true"</code>. Customize the Handlebars template directly from HTML and specify the template id with <code>data-filters-template="#map-filters-template"</code>. Check the source of this page to see the Handlebars template.</p>
+        </div>
+    </div>
+</script>
+
+<script id="map-style-switch" type="text/x-handlebars-template">
+    <div data-scrollable>
+        <h4>Map Themes</h4>
+        <label for="map-style-switch-select">Select Theme:</label>
+        <select id="map-style-switch-select" class="selectpicker">
+            {% raw %}{{#each styles}}{% endraw %}
+            <option value="{% raw %}{{ @key }}{% endraw %}">{% raw %}{{ @key }}{% endraw %}</option>
+            {% raw %}{{/each}}{% endraw %}
+        </select>
+        <hr/>
+        <p>Easily switch the map theme by simply adding the HTML5 attribute <code>data-style="theme-name"</code> directly on the map container.</p>
+    </div>
+</script>

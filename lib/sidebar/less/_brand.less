@@ -1,0 +1,39 @@
+.sidebar-brand {
+	height: @navbar-height;
+	line-height: @navbar-height;
+	padding: 0 10px;
+	font-weight: 500;
+	font-size: 18px;
+	display: block;
+	&, &:hover {
+		text-decoration: none;
+	}
+	a {
+		color:#fff;
+		text-decoration: none;
+	}
+}
+
+.navbar-brand {
+	@media (min-width: @screen-sm) {
+		.sidebar-l2 & {
+			width: @sidebar-width-2;
+		}
+		.sidebar-l3 & {
+			width: @sidebar-width-3;
+		}
+	}
+
+	// ONLY SMALL to MEDIUM
+	@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+		.sidebar-l1-sm & {
+			width: auto;
+		}
+		.sidebar-l2-sm & {
+			width: @sidebar-width-2;
+		}
+		.sidebar-l3-sm & {
+			width: @sidebar-width-3;
+		}
+	}
+}

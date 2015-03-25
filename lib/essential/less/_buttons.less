@@ -1,0 +1,146 @@
+.buttons-spacing-vertical {
+	.btn + .btn { margin: 3px 2px; }
+}
+
+.btn {
+	font-weight: @btn-font-weight;
+}
+
+// New Buttons
+.btn-white {
+	.button-variant(@btn-white-color, #fff, @btn-white-border);
+    &.active, &:active, &:focus, &:hover, .open>.dropdown-toggle.btn-white {
+        background: @btn-white-hover-bg;
+        border-color: @btn-white-border;
+    }
+}
+
+// Inverse
+.btn-inverse {
+	.button-variant(@btn-inverse-color; @btn-inverse-bg; @btn-inverse-border);
+}
+
+.stroke-hover(@color) {
+	background: @color;
+	border-color: @color;
+	color: #ffffff;
+	i {
+		color: #ffffff !important;
+	}
+}
+
+// Stroke
+.btn-stroke {
+	background: none;
+	&.btn-default {
+        color: @btn-stroke-default-color;
+		&:hover {
+			background: @btn-default-bg;
+            color: @btn-stroke-default-color-hover;
+		}
+	}
+    &.btn-primary {
+        color: @btn-stroke-primary-color;
+        &:hover {
+            background: @btn-primary-bg;
+            color: @btn-stroke-primary-color-hover;
+        }
+    }
+    &.btn-success {
+        color: @btn-stroke-success-color;
+        &:hover {
+            background: @btn-success-bg;
+            color: @btn-stroke-success-color-hover;
+        }
+    }
+    &.btn-info {
+        color: @btn-stroke-info-color;
+        &:hover {
+            background: @btn-info-bg;
+            color: @btn-stroke-info-color-hover;
+        }
+    }
+    &.btn-danger {
+        color: @btn-stroke-danger-color;
+        &:hover {
+            background: @btn-danger-bg;
+            color: @btn-stroke-danger-color-hover;
+        }
+    }
+    &.btn-inverse {
+        color: @btn-stroke-inverse-color;
+        &:hover {
+            background: @btn-inverse-bg;
+            color: @btn-stroke-inverse-color-hover;
+        }
+    }
+    &.btn-warning {
+        color: @btn-stroke-warning-color;
+        &:hover {
+            background: @btn-warning-bg;
+            color: @btn-stroke-warning-color-hover;
+        }
+    }
+}
+
+.btn-circle {
+	border-radius: 50%;
+	&.btn {
+		padding: 0;
+		width: 34px;
+		height: 34px;
+		line-height: 34px;
+	}
+	&.btn-lg {
+		width: 45px;
+		height: 45px;
+		line-height: 45px;
+	}
+	&.btn-sm {
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+	}
+	&.btn-xs {
+		width: 22px;
+		height: 22px;
+		line-height: 22px;
+	}
+	> [class*="play"] {
+		margin-left: 4px;
+	}
+}
+
+.btn-icon-stacked {
+	text-align: left;
+	padding: 10px 10px 10px 45px;
+	position: relative;
+	i {
+		display: block;
+		position: absolute;
+		left: 12px;
+		top: 18px;
+	}
+}
+
+// Bootstrap Select
+.bootstrap-select {
+	.btn-white {
+		color: #797979;
+	}
+}
+
+.btn-group-footer {
+    border-top: 1px solid @grey-200;
+    .btn {
+        color: @text-muted;
+        border: none;
+        border-right: 1px solid @grey-200;
+        &:last-of-type {
+            border-right: none;
+        }
+        &:hover {
+            color:@primary-color;
+        }
+    }
+}

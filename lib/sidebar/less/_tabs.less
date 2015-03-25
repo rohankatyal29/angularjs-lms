@@ -1,0 +1,49 @@
+// SIDEBARS WITH TABS
+.tabbable {
+	.sidebar & {
+		margin-bottom: 0;
+		&.tabs-icons .nav-tabs > li > a i {
+			font-size: 14px;
+		}
+	}
+}
+.nav-tabs {
+	.sidebar & {
+		border-bottom: 1px solid @nav-tabs-border-color;
+		> li {
+			margin-bottom: 0 !important;
+			> a {
+				border-radius: 0;
+				margin: 0;
+				&, &:focus, &:hover {
+					border-bottom: none;
+					border-top: none;
+				}
+			}
+			&:first-of-type {
+				> a {
+					border-left: none;
+				}
+			}
+		}
+	}
+}
+.tab-content {
+	.sidebar & {
+		padding: 0;
+		background-color: transparent;
+	}
+}
+// MULTIPLE LEVELS OF SPLIT-VERTICAL WITH TABS INSIDE SIDEBARS
+.split-vertical-cell {
+	.sidebar & {
+		> .tab-content,
+		> .tab-content > .tab-pane {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+	}
+}

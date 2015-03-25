@@ -1,0 +1,34 @@
+$indigo-50: #E8EAF6;
+$indigo-100: #C5CAE9;
+$indigo-200: #9FA8DA;
+$indigo-300: #7986CB;
+$indigo-400: #5C6BC0;
+$indigo-500: #3F51B5; // main
+$indigo-600: #3949AB;
+$indigo-700: #303F9F;
+$indigo-800: #283593;
+$indigo-900: #1A237E;
+
+$indigo-A100: #8C9EFF;
+$indigo-A200: #536DFE;
+$indigo-A400: #3D5AFE;
+$indigo-A700: #304FFE;
+
+$indigo-map: (
+    indigo-50: $indigo-50,
+    indigo-100: $indigo-100,
+    indigo-200: $indigo-200,
+    indigo-300: $indigo-300,
+    indigo-400: $indigo-400,
+    indigo-500: $indigo-500,
+    indigo-600: $indigo-600,
+    indigo-700: $indigo-700,
+    indigo-800: $indigo-800,
+    indigo-900: $indigo-900,
+    indigo-A100: $indigo-A100,
+    indigo-A200: $indigo-A200,
+    indigo-A400: $indigo-A400,
+    indigo-A700: $indigo-A700
+);
+
+$colors-map: map-merge($colors-map, $indigo-map);

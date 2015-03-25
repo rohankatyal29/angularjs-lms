@@ -1,0 +1,236 @@
+// GENERAL
+
+.tabbable {
+	margin-bottom: @line-height-computed;
+	border-radius: @border-radius-base;
+
+	// HORIZONTAL SCROLL
+	> .nav-tabs {
+		overflow-x: auto;
+		overflow-y: hidden;
+		white-space:nowrap;
+		> li {
+			float: none;
+			display:inline-block;
+		}
+	}
+}
+
+.tab-content {
+	padding: @grid-gutter-width/2;
+	background: #fff;
+	border-bottom-left-radius: @border-radius-base;
+	border-bottom-right-radius: @border-radius-base;
+	h1, h2, h3, h4, h5, h6 {
+		&.tab-content-heading {
+			margin: 0 0 10px;
+		}
+	}
+}
+
+// DEFAULT STYLE
+
+.nav-tabs {
+    font-weight: 500;
+	border-bottom: none;
+    > li {
+		> a {
+			color: lighten(@default-color, 20%);
+			&:hover {
+				background: transparent;
+				border-color: transparent;
+			}
+		}
+		&.active > a, &.active a:focus, &.active a:hover {
+			color: @primary-color;
+		}
+		&:first-of-type {
+			> a, > a:hover {
+				border-left-color: transparent;
+			}
+		}
+    }
+	[class*="tabs-highlight"] & {
+		border-bottom: 1px solid @nav-tabs-border-color;
+		> li.active:after {
+			display: block;
+			position: absolute;
+			background-color: @primary-color;
+			content: " ";
+			left: 0;
+			right: 0;
+			height: 2px;
+		}
+	}
+	.tabs-highlight-top & {
+		> li.active:after {
+			top: 0;
+		}
+	}
+	.tabs-highlight-bottom & {
+		> li.active:after {
+			bottom: 0;
+		}
+	}
+}
+
+// PRIMARY STYLE
+
+.tabs-primary {
+	> .nav-tabs {
+		> li.active {
+			> a, > a:focus, > a:hover {
+				background-color: @primary-color;
+				color: #fff;
+				border-right-color: @primary-color;
+			}
+		}
+	}
+}
+
+// VERTICAL TABS
+
+.tabs-vertical-style() {
+	> .nav-tabs {
+		border-bottom: none;
+		> li {
+			display: block;
+			float: none;
+			&.active {
+				margin-bottom: 0;
+				border-top: 1px solid @panel-default-border;
+				border-bottom: 1px solid @panel-default-border;
+				&:first-of-type {
+					border-top: none;
+				}
+				&:last-of-type {
+					border-bottom: none;
+				}
+				a {
+					margin: 0;
+					border: none;
+				}
+			}
+		}
+	}
+}
+.tabs-vertical-left() {
+	> .nav-tabs {
+		float: left;
+	}
+	.tab-content {
+		border-top-right-radius: @border-radius-base;
+	}
+}
+.tabs-vertical-right() {
+	> .nav-tabs {
+		float: right;
+	}
+	.tab-content {
+		border-top-left-radius: @border-radius-base;
+	}
+}
+
+.tabs-vertical {
+
+	> .tab-content {
+		position: relative;
+		overflow: hidden;
+	}
+	&:after {
+		clear: both;
+		display: block;
+		content: "";
+	}
+
+	// ANY SCREEN SIZE
+	// EXCEPT MOBILE
+	@media (min-width: @screen-sm) {
+		&.tabs-left, &.tabs-right {
+			.tabs-vertical-style();
+		}
+		&.tabs-left {
+			.tabs-vertical-left();
+		}
+		&.tabs-right {
+			.tabs-vertical-right();
+		}
+	}
+
+	// MEDIUM DESKTOP SCREENS
+	&.tabs-left-md, &.tabs-right-md {
+		@media (min-width: @screen-md) and (max-width: @screen-md-max) {
+			.tabs-vertical-style();
+		}
+	}
+	&.tabs-left-md {
+		@media (min-width: @screen-md) and (max-width: @screen-md-max) {
+			.tabs-vertical-left();
+		}
+	}
+	&.tabs-right-md {
+		@media (min-width: @screen-md) and (max-width: @screen-md-max) {
+			.tabs-vertical-right();
+		}
+	}
+
+	// LARGE DESKTOP SCREENS
+	&.tabs-left-lg, &.tabs-right-lg {
+		@media (min-width: @screen-lg) {
+			.tabs-vertical-style();
+		}
+	}
+	&.tabs-left-lg {
+		@media (min-width: @screen-lg) {
+			.tabs-vertical-left();
+		}
+	}
+	&.tabs-right-lg {
+		@media (min-width: @screen-lg) {
+			.tabs-vertical-right();
+		}
+	}
+}
+
+// ICONS ONLY
+
+.tabs-icons > .nav-tabs {
+    > li {
+        margin-left:0;
+		a {
+			i {
+				font-size: 18px;
+			}
+		}
+    }
+}
+
+// ICONS + TEXT ON MULTIPLE LINES
+
+.tabs-blocks .nav-tabs {
+    > li > a {
+        height: 60px;
+        line-height: 18px;
+		text-align: center;
+		padding: (@nav-link-padding);
+    }
+    a i {
+        display: block;
+        font-size: 18px;
+        padding: 0;
+    }
+}
+
+// POSITIONING
+
+.tabs-center-h {
+	> .nav-tabs {
+		text-align: center;
+		padding-left: @grid-gutter-width/2;
+		padding-right: @grid-gutter-width/2;
+		> li {
+			float: none;
+			display: inline-block;
+		}
+	}
+}

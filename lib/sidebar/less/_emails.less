@@ -1,0 +1,38 @@
+.sidebar {
+	.emails {
+		padding-left: 0;
+		.sidebar-block {
+			padding: @sidebar-horizontal-spacing;
+			> a {
+				display: block;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+			.media {
+				margin-bottom: 0;
+				.text-h5 {
+					margin: 5px 0 0;
+					color: @primary-color;
+				}
+			}
+			.email-subject {
+				display: block;
+				margin-top: 5px;
+				margin-bottom: 2px;
+				font-weight: 600;
+				font-size: 14px;
+			}
+		}
+	}
+	.sidebar-skin-white& {
+		.emails {
+			.email-subject {
+				color: @sidebar-white-text;
+			}
+			.email-body {
+				color: @sidebar-white-text;
+			}
+		}
+	}
+}

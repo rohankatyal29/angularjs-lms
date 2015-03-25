@@ -1,0 +1,25 @@
+<div class="media media-grid media-paper-shadow margin-top-none s-container">
+	<div class="media-left">
+		<div class="icon-block half img-circle {% if iconBg !== false %}{{iconBg}}{% endif %}">
+			<i class="fa fa-file-text text-white"></i>
+		</div>
+	</div>
+	<div class="media-body">
+        <div class="panel panel-default paper-shadow" data-z="0.5">
+            <div class="panel-body">
+                <div class="pull-right">
+                    <a{% if angular %} ui-sref="website-blog.post"{% else %} href="website-blog-post.html"{% endif %} class="btn btn-white btn-flat"><i class="fa fa-comments fa-fw"></i> {{ random(1,17) }}</a>
+                </div>
+                <h4 class="text-title media-heading">
+                    <a{% if angular %} ui-sref="website-blog.post"{% else %} href="website-blog-post.html"{% endif %} class="link-text-color">{{ title }}</a>
+                </h4>
+                <p class="text-light text-caption">
+                    posted by
+                    <a href="#"><img src="images/people/110/{{photo}}.jpg" alt="person" class="img-circle width-20" /> {{ name }}</a> &nbsp;
+                    | <i class="fa fa-clock-o fa-fw"></i> {{ time }}
+                </p>
+                <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam atque deserunt, dicta eius, fuga id illo ipsa ipsam minus neque non sunt, vitae. Animi aperiam beatae blanditiis dicta dolore eaque, ex excepturi explicabo laudantium nobis nulla praesentium quia voluptatem.</p>
+            </div>
+        </div>
+	</div>
+</div>

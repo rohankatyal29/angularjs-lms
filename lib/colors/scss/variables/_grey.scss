@@ -1,0 +1,25 @@
+$grey-50: #FAFAFA;
+$grey-100: #F5F5F5;
+$grey-200: #EEEEEE;
+$grey-300: #E0E0E0;
+$grey-400: #BDBDBD;
+$grey-500: #9E9E9E; // main
+$grey-600: #757575;
+$grey-700: #616161;
+$grey-800: #424242;
+$grey-900: #212121;
+
+$grey-map: (
+    grey-50: $grey-50,
+    grey-100: $grey-100,
+    grey-200: $grey-200,
+    grey-300: $grey-300,
+    grey-400: $grey-400,
+    grey-500: $grey-500,
+    grey-600: $grey-600,
+    grey-700: $grey-700,
+    grey-800: $grey-800,
+    grey-900: $grey-900
+);
+
+$colors-map: map-merge($colors-map, $grey-map);

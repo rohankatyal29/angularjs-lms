@@ -1,0 +1,18 @@
+@mixin alert-class-from-color-a($classColor, $classIndex) {
+	$class: ".alert-#{$classColor}-#{$classIndex}";
+	$color-name: #{$classColor}-#{$classIndex};
+	$color: map-get($colors-map, $color-name);
+	#{$class} {
+		@include alert-variant($color, $color, $white);
+		&.alert-stroke {
+			@include alert-variant(rgba($color, 0.15), rgba($color, 0.4), $color);
+		}
+	}
+}
+
+@mixin alert-class-from-color($classColor, $classIndex) {
+	@if $classIndex <= 900 {
+		@include alert-class-from-color-a($classColor, $classIndex);
+		@include alert-class-from-color($classColor, $classIndex + 100);
+	}
+}

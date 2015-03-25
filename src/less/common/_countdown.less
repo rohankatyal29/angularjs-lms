@@ -1,0 +1,24 @@
+.countdown-row {
+	display: block;
+	padding: 0;
+}
+.countdown-section {
+	padding: @grid-gutter-2 0;
+	.sidebar & {
+		padding: 0;
+	}
+}
+.is-countdown {
+	border-radius: @border-radius-base;
+	border-color: @panel-default-border;
+	background-color: @panel-bg;
+	.sidebar & {
+		background-color: transparent;
+		border: none;
+	}
+}
+.is-countdown:after {
+	content: "";
+	clear: both;
+	display: block;
+}

@@ -1,0 +1,77 @@
+.wizard-1 {
+	fieldset {
+		background: @panel-bg;
+		padding: @panel-body-padding;
+		border-radius: @panel-border-radius;
+		box-shadow: 0 1px 1px fade(@black, 5%);
+		border: 1px solid @panel-default-border;
+		margin: 0 16px @line-height-computed;
+	}
+	.wiz-progress {
+		margin: 0 auto @line-height-computed;
+		overflow: hidden;
+		counter-reset: step;
+		list-style: none;
+		padding: 0;
+		text-align: center;
+		display: table;
+		li {
+			text-transform: uppercase;
+			font-size: @font-size-small;
+			position: relative;
+			display: table-cell;
+			padding: 0 20px;
+			&:before {
+				content: counter(step);
+				counter-increment: step;
+				width: @font-size-base + 10px;
+				line-height: @font-size-base + 10px;
+				display: block;
+				font-size: @font-size-base;
+				background: @white;
+				border-radius: @border-radius-base;
+				margin: 0 auto 10px auto;
+				position: relative;
+				z-index: 3;
+				transition-delay: .4s;
+			}
+			&:after {
+				content: ' ';
+				width: 100%;
+				height: 2px;
+				background: @white;
+				position: absolute;
+				display: block;
+				left: -50%;
+				top: 10px;
+			}
+			&:before, &:after {
+				transition: all .5s ease-in-out;
+			}
+			&.active {
+				&:after {
+					z-index: 2;
+					width: 150%;
+				}
+				&:before, &:after {
+					background: @primary-color;
+					color: @white;
+				}
+			}
+			&:first-child:after {
+				width: 50%;
+				left: 50%;
+			}
+			&:last-child:after {
+				width: 100%;
+				left: -50%;
+			}
+			&.complete {
+				&:before, &:after {
+					background: @primary-color;
+					color: @white;
+				}
+			}
+		}
+	}
+}

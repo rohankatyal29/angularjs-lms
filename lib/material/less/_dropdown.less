@@ -1,0 +1,44 @@
+.btn.dropdown-toggle,
+.bootstrap-select {
+	border: none;
+	border-bottom: 1px solid @input-border;
+	height: 48px;
+	line-height: 48px;
+	padding-top: 0;
+	padding-bottom: 0;
+	font-size: 1.23rem;
+	color: @input-color;
+	background-color: transparent;
+	font-weight: normal;
+}
+
+@media (min-width: @screen-sm) {
+	.dropdown-menu {
+		margin: 0;
+		&:before,
+		&:after {
+			border-radius: inherit;
+			pointer-events: none;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			content: "";
+			display: block;
+			z-index: -1;
+			box-shadow: none;
+			transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+			transition-delay: 0.65s;
+		}
+	}
+
+	.open .dropdown-menu {
+		&:before {
+			box-shadow: none;
+		}
+		&:after {
+			box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+		}
+	}
+}

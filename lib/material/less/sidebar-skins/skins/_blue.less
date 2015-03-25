@@ -1,0 +1,299 @@
+.sidebar.sidebar-skin-material-blue {
+    background: @sidebar-material-blue-background;
+
+	&.left {
+		border-right: 1px solid @sidebar-material-blue-menu-border;
+	}
+	&.right {
+		border-left: 1px solid @sidebar-material-blue-menu-border;
+	}
+
+	// simple links
+	.sidebar-link {
+		color: @sidebar-material-blue-item-link;
+	}
+
+    // ../_block.less
+    .sidebar-block {
+        border-color: lighten(@sidebar-material-blue-background, 4%);
+    }
+
+    // text
+    .sidebar-text, p {
+        color: @sidebar-material-blue-text;
+    }
+
+    // headings
+    .sidebar-heading {
+        &, & > a {
+            color: @white;
+        }
+    }
+
+    // _brand.less
+    .sidebar-brand {
+        background-color: @sidebar-material-blue-brand-background;
+        color: @sidebar-material-blue-brand-color;
+        &:hover {
+            text-decoration: none;
+            color: @sidebar-material-blue-brand-color-hover;
+        }
+    }
+
+    // Buttons
+    .btn-default {
+        .button-variant(#fff, @sidebar-material-blue-item-link-active-background, @sidebar-material-blue-item-link-active-background);
+    }
+
+    // Forms
+    .form-control, .form-control-default {
+        background: darken(@sidebar-material-blue-background, 4%);
+        border-color: darken(@sidebar-material-blue-background, 4%);
+        color: @sidebar-material-blue-text;
+    }
+
+    // ../_list_group.less
+    .list-group-menu {
+        .list-group-item {
+            background: darken(@sidebar-material-blue-background, 4%);
+            border-color: @sidebar-material-blue-background;
+            .badge {
+                background: none;
+                color: #a9a9a9;
+            }
+            a {
+                color: @sidebar-material-blue-item-link;
+                &:hover {
+                    color: @sidebar-material-blue-item-hover-color;
+                }
+            }
+            &.active {
+                a {
+                    color: @sidebar-material-blue-item-link-active;
+                }
+            }
+        }
+        &.primary {
+            .list-group-item {
+                background: @blue-500;
+                border-color: @blue-500;
+                a {
+                    color: #fff;
+                }
+                .badge {
+                    color: #fff;
+                }
+                &.active {
+                    background: darken(@primary-color, 8%);
+                }
+            }
+        }
+    }
+
+    // menus
+    .sidebar-menu {
+        border-color: @sidebar-material-blue-menu-border;
+
+        a:not([class]), a[class=""], a.collapsed {
+            color: @sidebar-material-blue-item-link;
+        }
+
+        i {
+            color: @sidebar-material-blue-item-icon-color;
+        }
+
+        li li i {
+            color: @sidebar-material-blue-sub-item-icon-color
+        }
+        li li.active > a > i {
+            color: @sidebar-material-blue-sub-item-active-icon-color;
+        }
+
+        // First level items
+        > li {
+            border-color: @sidebar-material-blue-menu-border;
+            a:hover {
+                color: @sidebar-material-blue-item-hover-color;
+            }
+            &.open > a, > a:hover, > a:focus {
+                &,
+                .nav > & {
+                    background: @sidebar-material-blue-item-hover-background;
+                }
+            }
+        }
+
+        li {
+            &.hasSubmenu {
+                > a:before {
+                    color: darken(@sidebar-material-blue-background, 8%);
+                }
+            }
+            &.active {
+                > a {
+                    color: @sidebar-material-blue-item-link-active;
+                    i {
+                        color: @sidebar-material-blue-item-link-icon-active;
+                    }
+                }
+            }
+        }
+    }
+
+    // active item background
+    .sidebar-menu.sm-active-item-bg li.active > a {
+        background: @sidebar-material-blue-item-link-active-background;
+        color: @sidebar-material-blue-item-link-active-on-background;
+        i {
+            color: @sidebar-material-blue-item-link-active-on-background;
+        }
+        &:before {
+            color: @sidebar-material-blue-item-link-active-on-background;
+        }
+    }
+
+    // block icons
+    .sidebar-menu.sm-icons-block li {
+        > a i {
+            background: darken(@sidebar-material-blue-background, 4%);
+            font-size: 80%;
+        }
+        &.active > a i {
+            background: darken(@sidebar-material-blue-item-link-active-background, 8%);
+            color: @sidebar-material-blue-item-link-active-on-background;
+        }
+    }
+
+    // First submenu level
+    .sidebar-menu li.open > ul {
+        background: @sidebar-material-blue-sub-item-background;
+        border-color: @sidebar-material-blue-sub-item-border;
+    }
+
+    // Second submenu level
+    .sidebar-menu li ul li.open {
+        > a {
+            background: @sidebar-material-blue-sub-item-second-link-open;
+        }
+        > ul {
+            background: @sidebar-material-blue-sub-item-second-background;
+            border-color: @sidebar-material-blue-sub-item-second-border;
+        }
+    }
+
+    // Third submenu level
+    .sidebar-menu li ul li ul li.open {
+        background: darken(@sidebar-material-blue-background, 5%);
+    }
+
+    // ../_category.less
+    .category {
+        color: @sidebar-material-blue-menu-category;
+    }
+
+    hr {
+        border-color: @sidebar-material-blue-menu-border;
+    }
+
+    // _feed.less
+    .sidebar-feed li {
+        color: @sidebar-material-blue-news-item-color;
+        background: @sidebar-material-blue-news-item-background;
+
+        &:hover {
+            background: @sidebar-material-blue-news-item-hover;
+            .media-object {
+                i {
+                    color: @sidebar-material-blue-news-item-icon-color-hover;
+                }
+            }
+        }
+        .media-body {
+            a {
+                color: @sidebar-material-blue-news-item-link;
+            }
+        }
+    }
+
+    // Forms
+    .checkbox label {
+        color: @sidebar-material-blue-item-link;
+    }
+
+    // Slider
+    .slider {
+        color: @sidebar-material-blue-item-link;
+        .tooltip-inner {
+            background: lighten(@sidebar-material-blue-background, 5%);
+        }
+        .tooltip-arrow {
+            border-top-color: lighten(@sidebar-material-blue-background, 5%);
+        }
+        .slider-track {
+            border: 1px solid darken(@sidebar-material-blue-background, 5%);
+            background: darken(@sidebar-material-blue-background, 5%);
+        }
+        .slider-handle {
+            color: @blue-500;
+        }
+    }
+
+    // Datepicker
+    .datepicker {
+        table {
+            thead tr {
+                background: desaturate(@blue-500, 13%) !important;
+                th.datepicker-switch, th.next, th.prev {
+                    &:hover {
+                        background: desaturate(@blue-500, 13%);
+                    }
+                }
+            }
+            tr td {
+                &.day, .month, .year {
+                    color: @sidebar-material-blue-item-link;
+                    &.old {
+                        color: lighten(@sidebar-material-blue-background, 10%);
+                    }
+                    &.active {
+                        background: desaturate(@blue-500, 13%) !important;
+                        color: @white;
+                    }
+                    &:hover {
+                        background: darken(@sidebar-material-blue-background, 10%);
+                    }
+                }
+            }
+        }
+    }
+
+    .progress {
+        background-color: darken(@sidebar-material-blue-background, 5%);
+    }
+
+    .badge {
+        background: darken(@sidebar-material-blue-background, 7%);
+    }
+
+    .nav-tabs {
+        border-color: lighten(@sidebar-material-blue-background, 4%);
+        > li.active > a {
+            &, &:focus, &:hover {
+                border-color: lighten(@sidebar-material-blue-background, 4%);
+                background-color: darken(@sidebar-material-blue-background, 4%);
+            }
+        }
+    }
+
+    .list-about {
+        li {
+            color: @sidebar-material-blue-item-link;
+            a {
+                color: @sidebar-material-blue-item-link;
+                &:hover {
+                    color: @white;
+                }
+            }
+        }
+    }
+}

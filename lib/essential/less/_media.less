@@ -1,0 +1,114 @@
+.media-clearfix() {
+    > .pull-left, > .pull-right,
+    > .media-left, > .media-right {
+        float: none !important;
+        margin-bottom: @grid-gutter-width/2;
+        margin-left: 0;
+        margin-right: 0;
+        display: block;
+        height: auto !important;
+        padding: 0 !important;
+    }
+    > [class*="media"] .media-object {
+        width: 100% !important;
+        height: auto !important;
+    }
+    > .media-body {
+        width: auto;
+        display: block;
+    }
+    > .media-left, > .pull-left {
+        text-align: center;
+    }
+    > .media-right {
+        margin-bottom: 0;
+        margin-top: @grid-gutter-width/2;
+    }
+}
+
+.media-heading {
+    margin-bottom: 10px;
+    > a {
+        color: @text-color;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.media-right,
+.media > .pull-right {
+    padding-left: @ui-media-padding;
+}
+
+.media-left,
+.media > .pull-left {
+    padding-right: @ui-media-padding;
+}
+
+.media-grid {
+    > .pull-left {
+        margin-right: @grid-gutter-width / 2;
+    }
+    > .pull-right {
+        margin-left: @grid-gutter-width / 2;
+    }
+    > .media-left {
+        padding-right: @grid-gutter-width / 2;
+    }
+    > .media-right {
+        padding-left: @grid-gutter-width / 2;
+    }
+}
+
+@media (max-width: @screen-xs) {
+    .media-clearfix-xs-min {
+        .media-clearfix();
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .media-clearfix-xs {
+        .media-clearfix();
+    }
+}
+
+@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+    .media-clearfix-sm {
+        .media-clearfix();
+    }
+}
+
+.media.v-middle {
+    .media-left, .media-right, .media-body {
+        vertical-align: middle;
+    }
+    .media-body > *:first-child {
+        margin-top: 0;
+    }
+}
+.media.list-group-item {
+    margin-top: 0;
+}
+
+.media-padding {
+    &.media-left {
+        padding-left: @ui-media-padding;
+    }
+    &.media-right {
+        padding-right: @ui-media-padding;
+    }
+}
+
+.media-body > *:last-child {
+    margin-bottom: 0;
+}
+
+.media.media-overflow-visible {
+    overflow: visible;
+    > .media-body,
+	> .media-left,
+	> .media-right {
+        overflow: visible;
+    }
+}

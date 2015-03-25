@@ -1,0 +1,18 @@
+<div class="parallax bg-white page-section">
+    <div class="container parallax-layer" data-opacity="true">
+        <div class="media v-middle">
+            <div class="media-body">
+                <h1 class="text-display-2 margin-none">Library</h1>
+                <p class="text-light lead">Browse through thousands of lessons.</p>
+            </div>
+            <div class="media-right">
+                <div class="width-100 text-right">
+                    <div class="btn-group">
+                        <a {% if angular %}ng-class="{ 'btn-grey-900': $state.is('website-courses.grid'), 'btn-white': !$state.is('website-courses.grid') }"{% endif %} class="btn {% if !angular && page.slug == 'website-directory-grid' %}btn-grey-900{% else %}btn-white{% endif %}" {% if angular %}ui-sref="website-courses.grid"{% else %}href="website-directory-grid.html"{% endif %}><i class="fa fa-th"></i></a>
+                        <a {% if angular %}ng-class="{ 'btn-grey-900': $state.is('website-courses.list'), 'btn-white': !$state.is('website-courses.list') }"{% endif %} class="btn {% if !angular && page.slug == 'website-directory-list' %}btn-grey-900{% else %}btn-white{% endif %}" {% if angular %}ui-sref="website-courses.list"{% else %}href="website-directory-list.html"{% endif %}><i class="fa fa-list"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

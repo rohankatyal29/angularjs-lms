@@ -1,0 +1,88 @@
+{% extends "lib/docs/html/_layout.html" %}
+
+{% block sidebar %}
+<div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-dark sidebar-visible-desktop" id="sidebar-menu">
+    <div id="menu">
+        <ul class="nav sidebar-menu sm-active-item-bg">
+            <li class="active"><a href="#intro">1. Vagrant</a></li>
+            <li><a href="#config">2. Configuration</a></li>
+            <li><a href="#usage">3. Basic usage</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="s-container">
+    <h1>Vagrant</h1>
+</div>
+
+<div class="panel panel-default" id="intro">
+    <div class="panel-heading">
+        <h3 class="panel-title">What is Vagrant and why should you use it</h3>
+    </div>
+    <div class="panel-body">
+        <p>Simple put: Vagrant is Development environments made easy.</p>
+        <p>Download and install Vagrant within minutes on Mac OS X, Windows, or a popular distribution of Linux. No complicated setup process, just a simple to use OS-standard installer. The only requirement besides Vagrant is VirtualBox, and it is just as simple to install.</p>
+        <p class="margin-none">
+            Go to <a target="_blank" href="https://www.vagrantup.com/downloads.html">Vagrant Downloads page</a> and
+            <a target="_blank" href="https://www.virtualbox.org/wiki/Downloads">VirtualBox Downloads page</a>
+        </p>
+    </div>
+</div>
+<hr/>
+
+<div class="panel panel-default" id="config">
+    <div class="panel-heading">
+        <h3 class="panel-title">Configuration</h3>
+    </div>
+    <div class="panel-body">
+        <p class="margin-none">Open <code>lib/vagrant/tk.yaml</code> in any text editor and provide the full path to the package root directory within the <code>synced_folder.from</code> config key and optionally personalise the memory and the CPUs for the virtual machine.</p>
+    </div>
+    <div class="panel-body-lrb">
+        <div class="highlight">
+<pre>{% highlight 'ruby' %}
+---
+ip: "192.168.10.10" # no need to change the IP address, unless it's already in use on your network;
+memory: 4096        # optionally change the memory;
+cpus: 4             # optionally change the CPUs;
+
+synced_folder:
+    from: /full/path/to/project/root    # this MUST reflect YOUR path to the package root;
+    to: /home/vagrant/tk                # you can ignore this;
+    type: nfs                           # nfs (good performance 2 way sync);
+                                        # vboxsf (2 way sync, known issues with large number of files);
+                                        # rsync (good performance; 1 way sync; syncing is not automatic - must use vagrant rsync-auto);
+                                        # https://docs.vagrantup.com/v2/synced-folders/basic_usage.html
+
+# you won't be able to ssh into the box without the next two files;
+authorize: /Users/YourUsername/.ssh/id_rsa.pub
+keys:
+- /Users/UserUsername/.ssh/id_rsa
+{% endhighlight %}</pre>
+        </div>
+    </div>
+    <div class="panel-heading">
+        <h3 class="panel-title">SSH Keys</h3>
+    </div>
+    <div class="panel-body">
+        <p><a href="https://confluence.atlassian.com/pages/viewpage.action?pageId=270827678" target="_blank">Set up SSH on Mac OSX/Linux</a> - steps 1 to 5 for Mac OSX/Linux and <a href="https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Mercurial" target="_blank">Set up SSH on Windows</a> - steps 1 to 3 for Windows.</p>
+    </div>
+</div>
+<hr/>
+
+<div class="panel panel-default" id="usage">
+    <div class="panel-heading">
+        <h3 class="panel-title">What's next?</h3>
+    </div>
+    <div class="panel-body">
+        <p>Next, from a <em>Terminal</em>, within the root folder of the package, run:</p>
+        <p><code>vagrant up</code></p>
+        <p>Sit and watch as in just a few moments you'll have a fully running virtual machine in VirtualBox running Ubuntu Server 14.04 LTS with the latest front-end development tools pre-installed. You can SSH into this machine with <code>vagrant ssh</code>, and when you're done playing around, you can remove all traces of it with <code>vagrant destroy</code>.</p>
+        <p><strong>Now imagine every complex project you've ever worked on being this easy to set up.</strong></p>
+        <p class="margin-none">With Vagrant, <code>vagrant up</code> is all you need to work on any project, to install every dependency that project needs, and to set up any networking and synced folders so you can continue working from the comfort of your own machine.</p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "src/html/themes/html/layouts/_app-instructor.html" %}
+
+{% block content %}
+	<div class="page-section third">
+        {% include "src/html/themes/html/account/_tabs.html" { tab: "profile", account: "instructor" } %}
+    </div>
+{% endblock %}

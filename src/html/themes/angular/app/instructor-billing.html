@@ -1,0 +1,7 @@
+{% extends "src/html/themes/angular/app/_layout-instructor.html" %}
+
+{% block content %}
+	<div class="page-section third">
+        {% include "src/html/themes/html/account/_tabs.html" { tab: "billing", account: "instructor" } %}
+    </div>
+{% endblock %}

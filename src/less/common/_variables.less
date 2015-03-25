@@ -1,0 +1,66 @@
+// Load Bootstrap variables
+@import "@{common-path-root}bower_components/bootstrap/less/variables";
+
+// Color Variables
+@import "@{common-path-lib}colors/less/variables/variables";
+
+// Essentials Variables
+@import "@{common-path-lib}essential/less/variables/variables";
+
+// Material Variables
+@import "@{common-path-lib}material/less/_variables";
+
+// Layout Variables
+@import "@{common-path-lib}layout/less/_variables";
+
+// Navbar Variables
+@import "@{common-path-lib}navbar/less/variables/variables";
+
+// Sidebar Variables
+@import "@{common-path-lib}sidebar/less/_variables";
+
+// Sidebar Skins Variables
+@import "@{common-path-lib}sidebar-skins/variables/sidebar";
+
+// Media Variables
+@import "@{common-path-lib}media/less/carousel/_variables";
+@import "@{common-path-lib}media-player/less/_variables";
+
+// Icons
+@import "@{common-path-root}bower_components/font-awesome/less/variables";
+
+// Skin Variables
+@import "@{common-path-lib}skin-social/variables/variables";
+
+// CUSTOMIZATIONS
+
+@grid-gutter-width: 40px;
+@panel-body-padding: @grid-gutter-2;
+@panel-footer-bg: lighten(#efefef,5%);
+@panel-inner-border: #efefef;
+
+@primary-color: @blue-400;
+@headings-color: @text-color;
+
+@sidebar-dark-background: #212121;
+@sidebar-brand-color: @text-color;
+
+// NAVBAR SIZE
+@navbar-horizontal-spacing: 10px;
+@navbar-large-height: 64px;
+@navbar-large-padding-vertical: ((@navbar-large-height - @line-height-computed) / 2);
+@navbar-large-breakpoint: @screen-md;
+
+@navbar-large-font-size: 1.30rem;
+@navbar-large-font-weight: 400;
+@navbar-large-horizontal-spacing: 15px;
+
+// NAVBAR SKIN
+@navbar-default-link-hover-bg: @navbar-default-bg;
+@navbar-default-link-active-bg: @navbar-default-bg;
+@navbar-default-link-active-color: darken(@primary-color, 8%);
+
+// OTHER
+
+@success-color: @green-500;
+@media-padding: @panel-body-padding;

@@ -1,0 +1,86 @@
+{% include "src/html/themes/html/courses/_app-directory-head.html" %}
+
+<div class="row" data-toggle="isotope">
+
+    <div class="item col-xs-12 col-sm-6 col-lg-4">
+        {% include "src/html/themes/html/courses/_listing-grid-widget.html" {
+        coverBg: "bg-default",
+        coverIcon: "fa-github",
+        coverBtn: "btn-white",
+        itemTitle: "Github Webhooks for Beginners",
+        itemLabel: "bg-gray-dark",
+        itemButton: false,
+        itemMeta: false,
+        itemTags: false,
+        itemUrl: itemUrl,
+        lessons: false } %}
+    </div>
+    <div class="item col-xs-12 col-sm-6 col-lg-4">
+        {% include "src/html/themes/html/courses/_listing-grid-widget.html" {
+        coverBg: "bg-primary",
+        coverIcon: "fa-css3",
+        coverBtn: "btn-primary",
+        itemTitle: "CSS with LESS Processing",
+        itemLabel: "label-primary",
+        itemButton: false,
+        itemMeta: false,
+        itemTags: false,
+        itemUrl: itemUrl,
+        lessons: false } %}
+    </div>
+    <div class="item col-xs-12 col-sm-6 col-lg-4">
+        {% include "src/html/themes/html/courses/_listing-grid-widget.html" {
+        coverBg: "bg-lightred",
+        coverIcon: "fa-windows",
+        coverBtn: "btn-red-500",
+        itemTitle: "Vagrant Portable Environments",
+        itemLabel: "bg-lightred",
+        itemButton: false,
+        itemMeta: false,
+        itemTags: false,
+        itemUrl: itemUrl,
+        lessons: false } %}
+    </div>
+    <div class="item col-xs-12 col-sm-6 col-lg-4">
+        {% include "src/html/themes/html/courses/_listing-grid-widget.html" {
+        coverBg: "bg-brown",
+        coverIcon: "fa-wordpress",
+        coverBtn: "btn-orange-500",
+        itemTitle: "WordPress Theme Development",
+        itemLabel: "bg-brown",
+        itemButton: false,
+        itemMeta: false,
+        itemTags: false,
+        itemUrl: itemUrl,
+        lessons: false } %}
+    </div>
+    <div class="item col-xs-12 col-sm-6 col-lg-4">
+        {% include "src/html/themes/html/courses/_listing-grid-widget.html" {
+        coverBg: "bg-purple",
+        coverIcon: "fa-jsfiddle",
+        coverBtn: "btn-purple-500",
+        itemTitle: "Browserify: Writing Modular JavaScript",
+        itemLabel: "bg-purple",
+        itemMeta: false,
+        itemTags: false,
+        itemButton: false,
+        itemUrl: itemUrl,
+        lessons: false } %}
+    </div>
+    <div class="item col-xs-12 col-sm-6 col-lg-4">
+        {% include "src/html/themes/html/courses/_listing-grid-widget.html" {
+        coverBg: "bg-pink-400 text-white",
+        coverIcon: "fa-cc-visa",
+        coverBtn: "btn-pink-500",
+        itemTitle: "Super Easy Online Payments with Stripe",
+        itemLabel: "bg-pink-400",
+        itemMeta: false,
+        itemTags: false,
+        itemButton: false,
+        itemUrl: itemUrl,
+        lessons: false } %}
+    </div>
+
+</div>
+
+{% include "src/html/themes/html/_pagination.html" %}

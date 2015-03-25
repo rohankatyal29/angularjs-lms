@@ -1,0 +1,24 @@
+{
+	"release": {
+		"options": {
+			"stream": true
+		},
+		"tasks": [
+			{ "grunt": true, "args": [ "build:dm", "--theme", "html" ] },
+			{ "grunt": true, "args": [ "build:dm", "--theme", "angular" ] },
+			{ "grunt": true, "args": [ "build:choose", "--theme", "choose" ] },
+			{ "grunt": true, "args": [ "build:d", "--theme", "docs" ] }
+		]
+	},
+	"dev": {
+		"options": {
+			"stream": true
+		},
+		"tasks": [
+			{ "grunt": true, "args": [ "--min", false, "build:d", "--theme", "html" ] },
+			{ "grunt": true, "args": [ "--min", false, "build:d", "--theme", "angular" ] },
+			{ "grunt": true, "args": [ "--min", false, "build:choose", "--theme", "choose" ] },
+			{ "grunt": true, "args": [ "--min", false, "build:d", "--theme", "docs" ] }
+		]
+	}
+}

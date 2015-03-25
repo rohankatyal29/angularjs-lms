@@ -1,0 +1,43 @@
+<div class="cover profile">
+    <div class="wrapper">
+        <div class="image">
+            <img src="images/profile-cover.jpg" alt="people"/>
+        </div>
+        <ul class="friends">
+            <li><a href="#"><img src="images/people/110/guy-6.jpg" alt="people" class="img-responsive"></a></li>
+            <li><a href="#"><img src="images/people/110/woman-3.jpg" alt="people" class="img-responsive"></a></li>
+            <li><a href="#"><img src="images/people/110/guy-2.jpg" alt="people" class="img-responsive"></a></li>
+            <li><a href="#"><img src="images/people/110/guy-9.jpg" alt="people" class="img-responsive"></a></li>
+            <li><a href="#"><img src="images/people/110/woman-9.jpg" alt="people" class="img-responsive"></a></li>
+            <li><a href="#"><img src="images/people/110/guy-4.jpg" alt="people" class="img-responsive"></a></li>
+            <li><a href="#"><img src="images/people/110/guy-1.jpg" alt="people" class="img-responsive"></a></li>
+            <li><a href="#"><img src="images/people/110/woman-4.jpg" alt="people" class="img-responsive"></a></li>
+            <li><a href="#" class="group"><i class="fa fa-group"></i></a></li>
+        </ul>
+    </div>
+    <div class="cover-info">
+        <div class="avatar">
+            <img src="images/people/110/guy-5.jpg" alt="people"/>
+        </div>
+        <div class="name"><a href="#">Bill Demian</a></div>
+        <ul class="cover-nav">
+            {% if config.theme == 'social-1' || config.theme == 'social-1-rtl' %}
+            <li{% if (page.slug == 'index') %} class="active"{% endif %}><a href="index.html"><i class="fa fa-fw icon-ship-wheel"></i> Timeline</a></li>
+            <li{% if (page.slug == 'profile') %} class="active"{% endif %}><a href="profile.html"><i class="fa fa-fw icon-user-1"></i> About</a></li>
+            <li{% if (page.slug == 'users') %} class="active"{% endif %}><a href="users.html"><i class="fa fa-fw fa-users"></i> Friends</a></li>
+            {% endif %}
+
+            {% if config.theme == 'social-2' || config.theme == 'social-2-rtl' %}
+            <li{% if (page.slug == 'index') %} class="active"{% endif %}><a href="index.html"><i class="fa fa-fw icon-ship-wheel"></i> Timeline</a></li>
+            <li{% if (page.slug == 'user-public-profile') %} class="active"{% endif %}><a href="user-public-profile.html"><i class="fa fa-fw icon-user-1"></i> About</a></li>
+            <li{% if (page.slug == 'user-public-users') %} class="active"{% endif %}><a href="user-public-users.html"><i class="fa fa-fw fa-users"></i> Friends</a></li>
+            {% endif %}
+
+            {% if config.theme == 'social-3' || config.theme == 'social-3-rtl' %}
+            <li{% if (page.slug == 'user-public-timeline') %} class="active"{% endif %}><a href="user-public-timeline.html"><i class="fa fa-fw icon-ship-wheel"></i> Timeline</a></li>
+            <li{% if (page.slug == 'user-public-profile') %} class="active"{% endif %}><a href="user-public-profile.html"><i class="fa fa-fw icon-user-1"></i> About</a></li>
+            <li{% if (page.slug == 'user-public-users') %} class="active"{% endif %}><a href="user-public-users.html"><i class="fa fa-fw fa-users"></i> Friends</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</div>

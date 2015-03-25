@@ -1,0 +1,49 @@
+<div class="sidebar{% if sidebarOptions %} {{sidebarOptions}}{% endif %}" id="sidebar-menu" data-type="collapse">
+    <div data-scrollable>
+
+        {% if !sidebarOptions|contains('sidebar-mini-reveal') %}
+        <div class="sidebar-block">
+            <div class="profile">
+                <a href="#">
+                    <img src="images/people/110/guy-6.jpg" alt="people" class="img-circle width-80"/>
+                </a>
+                <h4 class="text-display-1 margin-none">Student Name</h4>
+            </div>
+        </div>
+        {% endif %}
+
+        <ul class="sidebar-menu{% if sidebarOptions|contains('sidebar-mini-reveal') %} sm-icons-right{% endif %}">
+            <li{% if page.slug == 'app-student-dashboard' %} class="active"{% endif %}><a href="app-student-dashboard.html"><i class="fa fa-bar-chart-o"></i><span>Dashboard</span></a></li>
+            <li class="hasSubmenu{% if page.slug|contains('app-course-forum') or page.slug|contains('app-directory') or page.slug == 'app-student-courses' or page.slug == 'app-student-course' or page.slug == 'app-take-course' or page.slug == 'app-take-quiz' %} active open{% endif %}">
+                <a href="#course-menu"><i class="fa fa-mortar-board"></i><span>Courses</span></a>
+                <ul id="course-menu"{% if page.slug|contains('app-course-forum') or page.slug|contains('app-directory') or page.slug == 'app-student-courses' or page.slug == 'app-student-course' or page.slug == 'app-take-course' or page.slug == 'app-take-quiz' %} class="in"{% endif %}>
+                    <li{% if (page.slug == 'app-directory-grid') %} class="active"{% endif %}><a href="app-directory-grid.html"><span>Courses Grid</span></a></li>
+                    <li{% if (page.slug == 'app-directory-list') %} class="active"{% endif %}><a href="app-directory-list.html"><span>Courses List</span></a></li>
+                    <li{% if (page.slug == 'app-student-course') %} class="active"{% endif %}><a href="app-student-course.html"><span>Course Page</span></a></li>
+                    <li{% if (page.slug == 'app-student-courses') %} class="active"{% endif %}><a href="app-student-courses.html"><span>My Courses</span></a></li>
+                    <li{% if (page.slug == 'app-take-course') %} class="active"{% endif %}><a href="app-take-course.html"><span>Take Course</span></a></li>
+                    <li{% if (page.slug == 'app-course-forums') %} class="active"{% endif %}><a href="app-course-forums.html"><span>Course Forums</span></a></li>
+                    <li{% if (page.slug == 'app-course-forum-thread') %} class="active"{% endif %}><a href="app-course-forum-thread.html"><span>Course Forum Thread</span></a></li>
+                    <li{% if (page.slug == 'app-take-quiz') %} class="active"{% endif %}><a href="app-take-quiz.html"><span>Take Quiz</span></a></li>
+                </ul>
+            </li>
+            <li class="hasSubmenu{% if page.slug|contains('app-forum') %} active open{% endif %}">
+                <a href="#forum-menu"><i class="fa fa-file-text-o"></i><span>Forum</span></a>
+                <ul id="forum-menu"{% if page.slug|contains('app-forum') %} class="in"{% endif %}>
+                    <li{% if page.slug == 'app-forum' %} class="active"{% endif %}><a href="app-forum.html"><span>Forum Home</span></a></li>
+                    <li{% if page.slug == 'app-forum-category' %} class="active"{% endif %}><a href="app-forum-category.html"><span>Forum Category</span></a></li>
+                    <li{% if page.slug == 'app-forum-thread' %} class="active"{% endif %}><a href="app-forum-thread.html"><span>Forum Thread</span></a></li>
+                </ul>
+            </li>
+            <li class="hasSubmenu{% if page.slug == 'app-student-profile' or page.slug == 'app-student-billing' %} active open{% endif %}">
+                <a href="#account-menu"><i class="fa fa-user"></i><span>Account</span></a>
+                <ul id="account-menu"{% if page.slug == 'app-student-profile' or page.slug == 'app-student-billing' %} class="in"{% endif %}>
+                    <li {% if (page.slug == 'app-student-profile') %} class="active"{% endif %}><a href="app-student-profile.html"><span>Edit Profile</span></a></li>
+                    <li {% if (page.slug == 'app-student-billing') %} class="active"{% endif %}><a href="app-student-billing.html"><span>Edit Billing</span></a></li>
+                </ul>
+            </li>
+            <li{% if (page.slug == 'app-student-messages') %} class="active"{% endif %}><a href="app-student-messages.html"><i class="fa fa-comments"></i><span>Messages</span></a></li>
+            <li><a href="login.html"><i class="fa fa-sign-out"></i><span>Logout</span></a></li>
+        </ul>
+    </div>
+</div>

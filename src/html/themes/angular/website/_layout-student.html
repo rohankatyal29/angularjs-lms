@@ -1,0 +1,29 @@
+{% include "src/html/themes/angular/website/_navbar.html" %}
+
+{% include "src/html/themes/html/student/_website-profile-cover.html" %}
+
+<div class="container">
+
+    <div class="page-section">
+        <div class="row">
+
+            <div class="col-md-9">
+
+                {% block content %}{% endblock %}
+
+                <br/>
+                <br/>
+
+            </div>
+            <div class="col-md-3">
+
+                {% include "src/html/themes/html/student/_website-profile-sidebar.html" %}
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% include "lib/layout/html/_footer_copyright.html" %}

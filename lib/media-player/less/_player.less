@@ -1,0 +1,422 @@
+.footer .player {
+	.button {
+		height: @footer-height;
+		line-height: @footer-height;
+		width: @footer-height;
+		font-size: 25px;
+	}
+	.details, .timing {
+		line-height: @footer-height;
+		font-size: 16px;
+	}
+	.title, .duration, .current-time {
+		line-height: @footer-height;
+	}
+	.gui {
+		height: @footer-height;
+	}
+	.volume-bar {
+		top: -5px;
+	}
+}
+
+.player-size-1 {
+	.button {
+		height: @player-size-1;
+		line-height: @player-size-1;
+		width: @player-size-1;
+		font-size: 25px;
+	}
+	.details, .timing {
+		line-height: @player-size-1;
+		font-size: 16px;
+	}
+	.title, .duration, .current-time {
+		line-height: @player-size-1;
+	}
+	.gui {
+		height: @player-size-1;
+	}
+	.volume-bar {
+		top: -5px;
+	}
+}
+
+.player-size-3 {
+	.button {
+		height: @player-size-3;
+		line-height: @player-size-3;
+		width: @player-size-3;
+		font-size: 20px;
+	}
+	.details, .timing {
+		line-height: @player-size-3;
+		font-size: 12px;
+	}
+	.title, .duration, .current-time {
+		line-height: @player-size-3;
+	}
+	.gui {
+		height: @player-size-3;
+	}
+	.volume-bar {
+		top: -5px;
+	}
+}
+
+.player-size-2 {
+	.button {
+		height: @player-size-2;
+		line-height: @player-size-2;
+		width: @player-size-2;
+	}
+	.details, .timing {
+		line-height: @player-size-2;
+	}
+	.title, .duration, .current-time {
+		line-height: @player-size-2;
+	}
+	.gui {
+		height: @player-size-2;
+	}
+	.volume-bar {
+		top: -2px;
+	}
+}
+
+.player {
+	color: @white;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: @line-height-computed;
+	width: 100%;
+	z-index: 2;
+	.guy-wrapper {
+		display: table;
+	}
+	.gui {
+		position: relative;
+		display: table-row;
+		width: 100%;
+	}
+	.control {
+		position: relative;
+		height: 100%;
+		display: table-cell;
+		line-height: 0;
+		background-color: @black;
+	}
+	.button {
+		display: block;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		cursor: pointer;
+		color: inherit;
+		background: 0 0;
+		border: none;
+		&:before {
+			display: inline-block;
+			speak: none;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+	}
+	.control.volume {
+		padding: 0 5px;
+	}
+	.volume-bar {
+		position: relative;
+		overflow: hidden;
+		background-color: @black;
+		width: 50px;
+		height: 5px;
+		cursor: pointer;
+	}
+	.volume-bar-value {
+		background-color: @white;
+		width: 0px;
+		height: 5px;
+	}
+	.bar {
+		display: table-cell;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: @black;
+	}
+	.bar-single {
+		display: block;
+		.bar {
+			display: block;
+		}
+	}
+	.seek-bar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		min-width: 100%;
+		height: 100%;
+		cursor: pointer;
+		&.seek-bar-display {
+			min-width: 0;
+			background-color: #232323;
+		}
+	}
+	.play-bar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 100%;
+		background-color: fade(@primary-color, 80%);
+	}
+	.details, .timing {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		padding: 0 12px;
+	}
+	.timing {
+		text-align: right;
+	}
+	.no-solution {
+		position: absolute;
+		top: 0;
+		left: 64px;
+		height: 64px;
+		right: 0;
+		padding: 8px 0;
+		line-height: 24px;
+		text-align: center;
+		display: none;
+		color: #000;
+		background-color: @warning-color;
+	}
+
+	.play:before {
+		font-family: "picto-foundry-multimedia";
+
+		// icon-play-fill
+		content: "\f12f";
+	}
+	.mute:before {
+		font-family: "picto-foundry-multimedia";
+
+		// icon-volume-off
+		content: "\f150";
+	}
+	.volume-max:before {
+		font-family: "picto-foundry-multimedia";
+
+		// icon-volume-1
+		content: "\f14b";
+	}
+}
+
+.player.video {
+	.full-screen:before {
+		font-family: "picto-foundry-arrows";
+
+		// icon-expand
+		content: "\f11b";
+	}
+}
+
+.state-playing .play:before {
+	// icon-pause-fill
+	content: "\f129";
+}
+
+.state-full-screen .full-screen:before {
+	// icon-collapse
+	content: "\f118";
+}
+
+.video-responsive {
+	min-width: 320px;
+	max-width: 1280px;
+	width: 100%;
+	height: auto
+}
+
+.video-360p {
+	width: 640px;
+	height: 360px
+}
+
+.video-270p {
+	width: 480px;
+	height: 270px
+}
+
+.video-full {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10000;
+	position: fixed !important;
+	position: relative;
+	/* Rules for IE6 (full-screen) */
+	overflow: hidden;
+}
+
+/* The z-index rule is defined in this manner to enable Popcorn plugins that add overlays to video area. EG. Subtitles. */
+.video-full div div {
+	z-index: 1000;
+}
+
+.video-full .gui {
+	position: fixed !important;
+	position: static;
+	/* Rules for IE6 (full-screen) */
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10001;
+	/* 1 layer above the others. */
+}
+
+.player.video .jplayer {
+	background-color: #000
+}
+
+.panel .player:last-of-type {
+	margin-bottom: 0;
+}
+
+.toggles-control {
+	right: 0;
+}
+
+.player.state-looped .repeat {
+	background-color: darken(@primary-color, 10%);
+}
+
+.player.playlist {
+	.next:before {
+		font-family: "picto-foundry-multimedia";
+
+		// icon-fast-forward
+		content: "\f10e";
+	}
+	.previous:before {
+		font-family: "picto-foundry-multimedia";
+
+		// icon-rewind
+		content: "\f134";
+	}
+	.shuffle:before {
+		font-family: "picto-foundry-arrows";
+
+		// icon-horizontal-switch
+		content: "\f11d";
+	}
+	.repeat:before {
+		font-family: "picto-foundry-arrows";
+
+		// icon-refresh-music
+		content: "\f12c";
+	}
+	.jp-playlist {
+		ul {
+			padding: 0;
+			list-style: none;
+			margin: 0;
+			li {
+				position: relative;
+				.jp-playlist-item {
+					display: block;
+					padding: 10px 15px;
+					background-color: @list-group-bg;
+					color: @list-group-link-color;
+				}
+				.jp-free-media {
+					position: absolute;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					display: block;
+					border-left: 1px solid @list-group-border;
+					a {
+						display: inline-block;
+						vertical-align: middle;
+						padding: 2px 10px;
+						background-color: @primary-color;
+						color: @white;
+						border-radius: @border-radius-base;
+						font-size: 12px;
+						font-weight: 600;
+					}
+				}
+				margin-bottom: -1px;
+				border: 1px solid @list-group-border;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				&.jp-playlist-current,
+				&.jp-playlist-current:hover,
+				&.jp-playlist-current:focus {
+					z-index: 2;
+					a {
+						color: @primary-color;
+					}
+				}
+				.panel & > {
+					border-left: none;
+					border-right: none;
+				}
+			}
+		}
+	}
+}
+
+.player-overlay {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0;
+	z-index: 4;
+	&.bottom {
+		bottom: 0;
+	}
+	&.top {
+		bottom: 0;
+	}
+}
+
+.player-control-primary {
+	.control {
+		background-color: @primary-color;
+		color: @white;
+	}
+}
+.player-control-overlay {
+	.control {
+		background-color: fade(@black, 40%);
+	}
+	.bar {
+		background-color: fade(@black, 40%);
+	}
+	.seek-bar.seek-bar-display {
+		background-color: fade(@black, 5%);
+	}
+}
+.player-white {
+	color: @text-color;
+	.bar {
+		background-color: #fff;
+	}
+	.seek-bar.seek-bar-display {
+		background-color: #fff;
+	}
+}

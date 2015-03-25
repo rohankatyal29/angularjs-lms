@@ -1,0 +1,309 @@
+{
+	"markers": [
+		{
+			"latitude": 57.698920689483,
+			"longitude": 11.983367179871,
+			"title": "Hotel Lorensberg AB",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"template": "map-infobox-simple",
+			"icon": "building-02",
+			"open": true,
+			"options": {
+				"bound": true,
+				"tags": ["Building"]
+			}
+		},
+		{
+			"latitude": 57.697372706019,
+			"longitude": 11.987851833343,
+			"title": "Svenska Massan",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"template": "map-infobox-simple",
+			"icon": "building-03",
+			"options": {
+				"bound": true,
+				"tags": ["Building"]
+			}
+		},
+		{
+			"latitude": 57.698656963659,
+			"longitude": 11.977981304198,
+			"title": "Park Lane Restaurang AB",
+			"description": "Frana Supila 12, Ploce, 20000 Dubrovnik",
+			"template": "map-infobox-simple",
+			"icon": "house-01",
+			"options": {
+				"bound": true,
+				"tags": ["House"]
+			}
+		},
+		{
+			"latitude": 57.69673056015,
+			"longitude": 11.983023857146,
+			"title": "Park Lane Restaurang AB",
+			"description": "Frana Supila 12, Ploce, 20000 Dubrovnik",
+			"template": "map-infobox-simple",
+			"icon": "house-02",
+			"options": {
+				"bound": true,
+				"tags": ["House"]
+			}
+		},
+		{
+			"latitude": 57.697349772451,
+			"longitude": 11.989074920684,
+			"title": "Park Lane Restaurang AB",
+			"description": "Frana Supila 12, Ploce, 20000 Dubrovnik",
+			"template": "map-infobox-simple",
+			"icon": "house-03",
+			"options": {
+				"bound": true,
+				"tags": ["House"]
+			}
+		},
+		{
+			"latitude": 57.700204892242,
+			"longitude": 11.990469669371,
+			"title": "Park Lane Restaurang AB",
+			"description": "Frana Supila 12, Ploce, 20000 Dubrovnik",
+			"template": "map-infobox-simple",
+			"icon": "house-04",
+			"options": {
+				"bound": true,
+				"tags": ["House"]
+			}
+		},
+		{
+			"latitude": 57.69959719483354,
+			"longitude": 11.977466320067151,
+			"title": "The bar's name",
+			"description": "Location of the bar",
+			"template": "map-infobox-simple",
+			"icon": "bar-01",
+			"options": {
+				"bound": true,
+				"tags": ["Bar"]
+			}
+		},
+		{
+			"latitude": 57.70146611847418,
+			"longitude": 11.974462245970471,
+			"title": "x",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"template": "map-infobox-simple",
+			"icon": "building-04",
+			"options": {
+				"bound": true,
+				"tags": ["Building"]
+			}
+		},
+		{
+			"latitude": 57.70281902142628,
+			"longitude": 11.977380489378675,
+			"title": "x",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"template": "map-infobox-simple",
+			"icon": "building-05",
+			"options": {
+				"bound": true,
+				"tags": ["Building"]
+			}
+		},
+		{
+			"latitude": 57.70446995317312,
+			"longitude": 11.975620960264905,
+			"title": "The bar's name",
+			"description": "Location of the bar",
+			"template": "map-infobox-simple",
+			"icon": "bar-01",
+			"options": {
+				"bound": true,
+				"tags": ["Bar"]
+			}
+		},
+		{
+			"latitude": 57.705375640703814,
+			"longitude": 11.980298732786878,
+			"title": "x",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"template": "map-infobox-simple",
+			"icon": "event-01",
+			"options": {
+				"bound": true,
+				"tags": ["Event"]
+			}
+		},
+		{
+			"latitude": 57.70518074783138,
+			"longitude": 11.982079719572766,
+			"title": "The bar's name",
+			"description": "Location of the bar",
+			"template": "map-infobox-simple",
+			"icon": "bar-02",
+			"options": {
+				"bound": true,
+				"tags": ["Bar"]
+			}
+		},
+		{
+			"latitude": 57.70352984848765,
+			"longitude": 11.989010547667249,
+			"title": "x",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"template": "map-infobox-simple",
+			"icon": "event-03",
+			"options": {
+				"bound": true,
+				"tags": ["Event"]
+			}
+		},
+		{
+			"latitude": 57.70138585991454,
+			"longitude": 11.979762290955023,
+			"title": "x",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"template": "map-infobox-simple",
+			"icon": "building-06",
+			"options": {
+				"bound": true,
+				"tags": ["Building"]
+			}
+		},
+		{
+			"latitude": 57.70232602027083,
+			"longitude": 11.983603214293225,
+			"title": "x",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"template": "map-infobox-simple",
+			"icon": "building-07",
+			"options": {
+				"bound": true,
+				"tags": ["Building"]
+			}
+		},
+		{
+			"latitude": 57.702199902618226,
+			"longitude": 11.994074558287366,
+			"title": "Park Lane Restaurang AB",
+			"description": "Frana Supila 12, Ploce, 20000 Dubrovnik",
+			"template": "map-infobox-simple",
+			"icon": "house-05",
+			"options": {
+				"bound": true,
+				"tags": ["House"]
+			}
+		},
+		{
+			"latitude": 57.705799815682866,
+			"longitude": 11.98746559527467,
+			"title": "Hello Taxi",
+			"description": "01 129392",
+			"inner_icon": "md md-local-taxi",
+			"template": "map-infobox-icon",
+			"icon": "taxi-01",
+			"options": {
+				"bound": true,
+				"tags": ["Taxi"]
+			}
+		},
+		{
+			"latitude": 57.70223429836832,
+			"longitude": 11.989375328064398,
+			"title": "Another Taxi",
+			"description": "01 129392",
+			"inner_icon": "md md-local-taxi",
+			"template": "map-infobox-icon",
+			"icon": "taxi-02",
+			"options": {
+				"bound": true,
+				"tags": ["Taxi"]
+			}
+		},
+		{
+			"latitude": 57.70672839761708,
+			"longitude": 11.983324264555677,
+			"title": "x",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"template": "map-infobox-simple",
+			"icon": "restaurant-09",
+			"options": {
+				"bound": true,
+				"tags": ["Restaurant"]
+			}
+		},
+		{
+			"latitude": 57.7038393978472,
+			"longitude": 11.974033092528089,
+			"title": "x",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"template": "map-infobox-simple",
+			"icon": "restaurant-10",
+			"options": {
+				"bound": true,
+				"tags": ["Restaurant"]
+			}
+		},
+		{
+			"latitude": 57.69678789506724,
+			"longitude": 11.974655365019544,
+			"title": "Park Lane Restaurang AB",
+			"description": "Frana Supila 12, Ploce, 20000 Dubrovnik",
+			"template": "map-infobox-simple",
+			"icon": "house-06",
+			"options": {
+				"bound": true,
+				"tags": ["House"]
+			}
+		},
+		{
+			"latitude": 57.700594730493904,
+			"longitude": 11.972402309447034,
+			"title": "Park Lane Restaurang AB",
+			"description": "Frana Supila 12, Ploce, 20000 Dubrovnik",
+			"template": "map-infobox-simple",
+			"icon": "house-07",
+			"options": {
+				"bound": true,
+				"tags": ["House"]
+			}
+		},
+		{
+			"latitude": 57.69794604095816,
+			"longitude": 11.972380851774915,
+			"title": "Park Lane Restaurang AB",
+			"description": "Frana Supila 12, Ploce, 20000 Dubrovnik",
+			"template": "map-infobox-simple",
+			"icon": "house-08",
+			"options": {
+				"bound": true,
+				"tags": ["House"]
+			}
+		},
+		{
+			"latitude": 57.69819830544907,
+			"longitude": 11.979826664000257,
+			"title": "Adrian Demian",
+			"image": "images\/people\/50\/guy-6.jpg",
+			"email": "contact@mosaicpro.biz",
+			"number": "24",
+			"template": "map-infobox-profile",
+			"icon": "user-03",
+			"options": {
+				"bound": true,
+				"tags": ["User"]
+			}
+		},
+		{
+			"latitude": 57.69544623422918,
+			"longitude": 11.977852558165296,
+			"title": "Park Lane Restaurang AB",
+			"description": "Frana Supila 12, Ploce, 20000 Dubrovnik",
+			"template": "map-infobox-simple",
+			"icon": "house-10",
+			"options": {
+				"bound": true,
+				"tags": ["House"]
+			}
+		}
+	]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "kbwood_countdown",
+  "main": "jquery.countdown.js",
+  "ignore": [
+    "*.gif",
+    "*.html",
+    "*.json",
+    "*.md",
+    "*.png",
+    "jquery.countdown-*.js",
+    "jquery.*.min.js"
+  ],
+  "homepage": "https://github.com/kbwood/countdown",
+  "_release": "18cff3e2eb",
+  "_resolution": {
+    "type": "commit",
+    "commit": "18cff3e2eb9a8dfb26c9b33d7f233c4ca431dafb"
+  },
+  "_source": "git://github.com/kbwood/countdown.git",
+  "_target": "18cff3e2eb9a8dfb26c9b33d7f233c4ca431dafb",
+  "_originalSource": "kbwood_countdown"
+}

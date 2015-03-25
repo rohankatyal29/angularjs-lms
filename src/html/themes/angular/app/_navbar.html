@@ -1,0 +1,81 @@
+<!-- Fixed navbar -->
+<div class="navbar navbar-size-large navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#sidebar-menu" data-toggle="sidebar-menu" class="toggle pull-left visible-xs"><i class="fa fa-ellipsis-v"></i></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand {{ navbarBrand or 'navbar-brand-primary' }} navbar-brand-logo navbar-nav-padding-left">
+                <a class="svg" ui-sref="app-student.dashboard">{% include "src/html/themes/html/_logo.html" %}</a>
+            </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav navbar-nav">
+                <li class="dropdown" ng-class="{ 'active': $state.includes('app-forum') }">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forum <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="app-forum.home">Forum Home</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-forum.category">Forum Category</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-forum.thread">Forum Thread</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" ng-class="{ 'active': $state.includes('app-courses') }">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="app-courses.grid">Courses Grid</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-courses.list">Courses List</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-courses.course">Course Details</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" ng-class="{ 'active': $state.includes('app-student') }">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="app-student.dashboard">Dashboard</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-student.courses">My Courses</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-student.take-course">Take Course</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-student.course-forums">Course Forums</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-student.take-quiz">Take Quiz</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-student.private-profile">Edit Profile</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-student.billing">Edit Billing</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-student.messages">Messages</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" ng-class="{ 'active': $state.includes('app-instructor') }">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Instructor <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="app-instructor.dashboard">Dashboard</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-instructor.courses">My Courses</a></li>
+                        <li ng-class="{ 'active': $state.is('app-instructor.edit-course') || $state.is('app-instructor.edit-course-meta') || $state.is('app-instructor.edit-course-lessons') }"><a ui-sref="app-instructor.edit-course">Edit Course</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-instructor.earnings">Earnings</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-instructor.statement">Statement</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-instructor.private-profile">Edit Profile</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-instructor.billing">Edit Billing</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-instructor.messages">Messages</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-nav-bordered navbar-right">
+                {% include "lib/navbar/html/_notifications.html" %}
+                <!-- User -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle user" data-toggle="dropdown">
+                        <img src="images/people/110/guy-5.jpg" alt="Bill" class="img-circle" width="40"/>
+                        Bill <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ui-sref-active="active"><a ui-sref="app-student.private-profile">Account</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-student.billing">Billing</a></li>
+                        <li><a ui-sref="login">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+
+    </div>
+</div>

@@ -1,0 +1,34 @@
+$cyan-50: #E0F7FA;
+$cyan-100: #B2EBF2;
+$cyan-200: #80DEEA;
+$cyan-300: #4DD0E1;
+$cyan-400: #26C6DA;
+$cyan-500: #00BCD4; // main
+$cyan-600: #00ACC1;
+$cyan-700: #0097A7;
+$cyan-800: #00838F;
+$cyan-900: #006064;
+
+$cyan-A100: #84FFFF;
+$cyan-A200: #18FFFF;
+$cyan-A400: #00E5FF;
+$cyan-A700: #00B8D4;
+
+$cyan-map: (
+    cyan-50: $cyan-50,
+    cyan-100: $cyan-100,
+    cyan-200: $cyan-200,
+    cyan-300: $cyan-300,
+    cyan-400: $cyan-400,
+    cyan-500: $cyan-500,
+    cyan-600: $cyan-600,
+    cyan-700: $cyan-700,
+    cyan-800: $cyan-800,
+    cyan-900: $cyan-900,
+    cyan-A100: $cyan-A100,
+    cyan-A200: $cyan-A200,
+    cyan-A400: $cyan-A400,
+    cyan-A700: $cyan-A700
+);
+
+$colors-map: map-merge($colors-map, $cyan-map);

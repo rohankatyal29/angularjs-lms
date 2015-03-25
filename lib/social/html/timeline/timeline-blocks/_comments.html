@@ -1,0 +1,48 @@
+<ul class="comments">
+	<li class="media">
+		<div class="media-left">
+			<a href=""><img src="images/people/50/guy-5.jpg" class="media-object"></a>
+		</div>
+		<div class="media-body">
+			{% include "lib/social/html/timeline/timeline-blocks/comment-options.html" %}
+			<a href="" class="comment-author pull-left{% if rtl %} flip{% endif %}">Bill D.</a>
+			<span>Hi Mary, Nice Party</span>
+			<div class="comment-date">21st September</div>
+		</div>
+	</li>
+	<li class="media">
+		<div class="media-left">
+			<a href=""><img src="images/people/50/woman-5.jpg" class="media-object"></a>
+		</div>
+		<div class="media-body">
+			{% include "lib/social/html/timeline/timeline-blocks/comment-options.html" %}
+			<a href="" class="comment-author pull-left{% if rtl %} flip{% endif %}">Mary</a>
+			<span>Thanks Bill</span>
+			<div class="comment-date">2 days</div>
+		</div>
+	</li>
+	<li class="media">
+		<div class="media-left">
+			<a href=""><img src="images/people/50/guy-5.jpg" class="media-object"></a>
+		</div>
+		<div class="media-body">
+			{% include "lib/social/html/timeline/timeline-blocks/comment-options.html" %}
+			<a href="" class="comment-author pull-left{% if rtl %} flip{% endif %}">Bill D.</a>
+			<span>What time did it finish?</span>
+			<div class="comment-date">14 min</div>
+		</div>
+	</li>
+	<li class="comment-form">
+		<div class="input-group">
+			{% if rtl %}
+			<input type="text" class="form-control"/>
+			{% endif %}
+                <span class="input-group-btn">
+                   <a href="" class="btn btn-default"><i class="fa fa-photo"></i></a>
+                </span>
+			{% if !rtl %}
+			<input type="text" class="form-control"/>
+			{% endif %}
+		</div>
+	</li>
+</ul>

@@ -1,0 +1,190 @@
+// _buttons.less
+.btn-group-footer {
+    .btn {
+        border-left: 1px solid @grey-200;
+        border-right: none;
+        &:last-of-type {
+            border-left: none;
+            border-right: none;
+        }
+    }
+}
+
+.btn-icon-stacked {
+    text-align: right;
+    padding: 10px 45px 10px 10px;
+    i {
+        right: 12px;
+        left: auto;
+    }
+}
+
+// _forms.less
+.form-horizontal {
+    .control-label {
+        text-align: left;
+    }
+}
+
+.form-control-default {
+    &.required:after {
+        left: @padding-base-horizontal;
+        right: auto;
+
+    }
+}
+
+// _panels.less
+
+.panel-collapse-trigger {
+    &.panel-heading {
+        &:after {
+            left: 15px;
+            right: auto;
+        }
+    }
+}
+
+// PLUGINS
+// Touch Spin
+.bootstrap-touchspin .input-group-btn-vertical {
+    .bootstrap-touchspin-up{
+        border-top-left-radius: 4px;
+        border-top-right-radius: 0;
+    }
+    .bootstrap-touchspin-down {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 0;
+    }
+}
+
+// Color Picker
+.minicolors-theme-bootstrap {
+    .minicolors-input {
+        padding-right: 44px;
+        padding-left: auto;
+    }
+    .minicolors-swatch {
+        right: 3px;
+        left: auto;
+    }
+}
+
+.minicolors-position-left .minicolors-panel {
+    left: auto;
+    right: 0;
+}
+
+// checkbox & radio
+.checkbox {
+    padding-right: 20px;
+    padding-left: auto;
+    label {
+        padding-right: 5px;
+        padding-left: auto;
+        &::before {
+            right: 0;
+            left: auto;
+            margin-right: -20px;
+            margin-left: auto;
+        }
+        &::after {
+            right: 0;
+            left: auto;
+            margin-right: -20px;
+            margin-left: auto;
+            padding-right: 3px;
+            padding-left: auto;
+        }
+    }
+}
+
+.radio {
+    padding-right: 20px;
+    padding-left: auto;
+
+    label {
+        padding-right: 5px;
+        padding-left: auto;
+
+        &::before {
+            right: 0;
+            left: auto;
+            margin-right: -20px;
+            margin-left: auto;
+        }
+
+        &::after {
+            right: 3px;
+            left: auto;
+            margin-right: -20px;
+            margin-left: auto;
+        }
+    }
+}
+
+// _nestable.less
+.nestable-list .nestable-list {
+    padding-right: 30px;
+    padding-left: auto;
+
+}
+
+.nestable-item > button {
+    float: right;
+    margin-left: @padding-base-horizontal/2;
+    margin-right: auto;
+}
+
+.nestable-item-handle {
+    padding: 0 (@padding-base-horizontal/2) + 35px 0 0;
+    .nestable-handle {
+        right: 0;
+        left: auto;
+        top: 0;
+        margin-left: @padding-base-horizontal/2;
+        margin-right: auto;
+    }
+}
+
+// _datatable.less
+.dataTables_wrapper {
+    .dataTables_length {
+        margin-right: 10px;
+        margin-left: auto;
+    }
+    .dataTables_filter {
+        float: left;
+        margin-left: 10px;
+        margin-right: auto;
+        input {
+            margin-right: 10px;
+            margin-left: auto;
+        }
+    }
+    .dataTables_paginate {
+        float: left;
+        .pagination {
+            margin: 0 0 15px 10px;
+        }
+    }
+    .dataTables_info {
+        margin-right: 10px;
+        margin-left: auto;
+    }
+}
+
+.dropdown-menu.datepicker-orient-left.datepicker-dropdown {
+    right: auto;
+}
+
+.wizard-1 .wiz-progress li {
+    &:first-child:after {
+        width: 100%;
+        left: -50%;
+    }
+    &:last-child:after {
+        width: 50%;
+        left: 50%;
+    }
+}

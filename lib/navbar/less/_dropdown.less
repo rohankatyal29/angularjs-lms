@@ -1,0 +1,42 @@
+// Position all dropdown icons to right
+.nav > li.dropdown.user ul.dropdown-menu i {
+	float:right;
+	width: 20px;
+	line-height: 20px;
+	margin:0;
+	text-align: center;
+}
+
+.nav > li.dropdown.flags ul.dropdown-menu img {
+	max-width: 50px;
+}
+
+.dropdown-menu.min-width-none {
+	min-width: 0;
+}
+
+.nav > li .dropdown-header {
+	font-weight: bold;
+	padding: 8px 14px;
+	color: @navbar-default-dropdown-header-color;
+	border-top: 1px solid @navbar-default-border;
+}
+
+@media (max-width: @screen-xs-max) {
+	.open .dropdown-menu .dropdown-header {
+		padding: 8px 14px;
+	}
+}
+
+// Trigger Dropdown on Hover
+.navbar-dropdown-hover {
+	@media (min-width: @screen-sm-min) {
+		.navbar-nav > li:hover .dropdown-menu {
+			display: block;
+		}
+	}
+}
+
+.navbar-nav {
+	.dropdown-default-style();
+}

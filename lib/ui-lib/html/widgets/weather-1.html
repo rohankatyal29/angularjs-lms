@@ -1,0 +1,25 @@
+<div class="weather-svg">
+	<div class="list">
+		<div class="list-item">
+			<div class="text-h6">Today</div>
+			{% include "lib/icons/weather/svg/cloudDrizzleSunFill.html" %}
+		</div>
+		<div class="list-item">
+			<div class="text-h6">Tomorrow</div>
+			{% include "lib/icons/weather/svg/sun.html" %}
+		</div>
+		<div class="list-item">
+			<div class="text-h6">Saturday</div>
+			{% include "lib/icons/weather/svg/cloudRainFill.html" %}
+		</div>
+	</div>
+    <hr class="margin-none"/>
+	<div class="today text-center">
+		{% include "lib/icons/weather/svg/cloudDrizzleSunFill.html" %}
+		<div class="clearfix"></div>
+		<div class="details">
+			Today
+			<strong class="pull-right{% if rtl %} flip {% endif %}"> 10&deg; C </strong>
+		</div>
+	</div>
+</div>

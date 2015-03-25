@@ -1,0 +1,34 @@
+$lime-50: #F9FBE7;
+$lime-100: #F0F4C3;
+$lime-200: #E6EE9C;
+$lime-300: #DCE775;
+$lime-400: #D4E157;
+$lime-500: #CDDC39; // main
+$lime-600: #C0CA33;
+$lime-700: #AFB42B;
+$lime-800: #9E9D24;
+$lime-900: #827717;
+
+$lime-A100: #F4FF81;
+$lime-A200: #EEFF41;
+$lime-A400: #C6FF00;
+$lime-A700: #AEEA00;
+
+$lime-map: (
+    lime-50: $lime-50,
+    lime-100: $lime-100,
+    lime-200: $lime-200,
+    lime-300: $lime-300,
+    lime-400: $lime-400,
+    lime-500: $lime-500,
+    lime-600: $lime-600,
+    lime-700: $lime-700,
+    lime-800: $lime-800,
+    lime-900: $lime-900,
+    lime-A100: $lime-A100,
+    lime-A200: $lime-A200,
+    lime-A400: $lime-A400,
+    lime-A700: $lime-A700
+);
+
+$colors-map: map-merge($colors-map, $lime-map);

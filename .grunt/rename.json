@@ -1,0 +1,12 @@
+[
+	{
+		"name": "choose",
+		"files": [
+			{
+				"src": "$THEME_DIR/index.html",
+				"dest": "$DIST_DIR/index.html"
+			}
+		],
+		"themes": ["choose"]
+	}
+]

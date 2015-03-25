@@ -1,0 +1,47 @@
+.ripple {
+	user-select: none;
+	position: relative;
+	overflow: hidden;
+	.ink {
+		display: block;
+		position: absolute;
+		border-radius: 100%;
+		transform: scale(0);
+	}
+	.ink.animate {
+		animation: rippleAnimation 0.65s linear;
+	}
+}
+.ripple .ink,
+.ripple-light .ink {
+	background: radial-gradient(@ripple-gradient-white);
+}
+.ripple-light-fade .ink {
+	background: radial-gradient(@ripple-gradient-white-fade);
+}
+.ripple-dark .ink {
+	background: radial-gradient(@ripple-gradient-dark);
+}
+.ripple-dark-fade .ink {
+	background: radial-gradient(@ripple-gradient-dark-fade);
+}
+.ripple-primary .ink {
+	background: radial-gradient(@ripple-gradient-primary);
+}
+
+@keyframes rippleAnimation {
+	/* scale the element to 250% to safely cover the entire link and fade it out */
+	100% {
+		opacity: 0;
+		transform: scale(2.5);
+	}
+}
+
+.list-group-menu > .list-group-item:not(.active) > .ripple {
+	&:extend(.ripple-primary all);
+}
+
+.dropdown-menu > li > .ripple,
+.navbar-nav > li > .ripple {
+	&:extend(.ripple-primary all);
+}

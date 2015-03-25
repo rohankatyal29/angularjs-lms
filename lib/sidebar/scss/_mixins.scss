@@ -1,0 +1,92 @@
+$sidebar-width-map: (
+	1: $sidebar-width-1,
+	2: $sidebar-width-2,
+	3: $sidebar-width-3
+);
+
+@mixin make-sidebar-offset-sum($direction, $prepend, $append, $index1: 1, $index2: 1, $index3: 0) {
+
+	// Sidebar Offset Sum Single (2 digit)
+	@if $index1 <= 3 and $index2 <= 3 and $index3 == 0 {
+		$size1: map-get($sidebar-width-map, $index1);
+		$size2: map-get($sidebar-width-map, $index2);
+		&.#{$prepend}-#{$index1}#{$index2}#{$append} {
+			#{$direction}: ($size1 + $size2);
+		}
+		@include make-sidebar-offset-sum($direction, $prepend, $append, ($index1 + 1), ($index2 + 1));
+	}
+
+	// Sidebar Offset Sum Single (3 digit)
+	@if $index1 <= 3 and $index2 <= 3 and $index3 > 0 and $index3 <= 3 {
+		$size1: map-get($sidebar-width-map, $index1);
+		$size2: map-get($sidebar-width-map, $index2);
+		$size3: map-get($sidebar-width-map, $index3);
+		&.#{$prepend}-#{$index1}#{$index2}#{$index3}#{$append} {
+			#{$direction}: ($size1 + $size2 + $size3);
+		}
+		@include make-sidebar-offset-sum($direction, $prepend, $append, ($index1 + 1), ($index2 + 1), ($index3 + 1));
+	}
+}
+
+// Sidebar Offset Sum Loop
+@mixin loop-sidebar-offset-sum($direction, $prepend, $append: "", $index: 1) {
+	@if $index <= 3 {
+		// 11; 12; 13; etc;
+		@include make-sidebar-offset-sum($direction, $prepend, $append, 1, $index);
+		// 22; 23; 24; etc;
+		@include make-sidebar-offset-sum($direction, $prepend, $append, ($index + 1), 1);
+		// 112; 113; 114; etc;
+		@include make-sidebar-offset-sum($direction, $prepend, $append, 1, 1, ($index + 1));
+		// 121; 131; 141; etc;
+		@include make-sidebar-offset-sum($direction, $prepend, $append, 1, ($index + 1), 1);
+		// 212; 313; 414; etc;
+		@include make-sidebar-offset-sum($direction, $prepend, $append, ($index + 1), 1, ($index + 1));
+		// next iteration
+		@include loop-sidebar-offset-sum($direction, $prepend, $append, ($index + 1));
+	}
+}
+
+@mixin sidebar-size-pc($index: $sidebar-width-pc-min, $screen: "") {
+	@if $index <= 100 {
+		.sidebar-size#{$screen}-#{$index}pc {
+			width: round(percentage($index / 100));
+		}
+		@include sidebar-size-pc($index + 1, $screen);
+	}
+}
+
+@mixin sidebar-layout-pc($property, $direction, $index: $sidebar-width-pc-min, $screen: "") {
+	@if $index <= 100 {
+		.show-sidebar.#{sidebar}-#{$direction}-#{$index}pc#{$screen} & {
+			#{$property}: round(percentage($index / 100));
+		}
+		@include sidebar-layout-pc($property, $direction, $index + 1, $screen);
+	}
+}
+
+@mixin sidebar-size-px($index: 1, $screen: "") {
+	@if $index <= 3 {
+		.sidebar-size#{$screen}-#{$index} {
+			width: map-get($sidebar-width-map, $index);
+		}
+		@include sidebar-size-px($index + 1, $screen);
+	}
+}
+
+@mixin sidebar-layout-px($property, $direction, $screen: "", $index: 1) {
+	@if $index <= 3 {
+		.show-sidebar.#{sidebar}-#{$direction}#{$index}#{$screen} & {
+			#{$property}: map-get($sidebar-width-map, $index);
+		}
+		@include sidebar-layout-px($property, $direction, $screen, $index + 1);
+	}
+}
+
+@mixin sidebar-offset($property, $screen: "", $index: 1) {
+	@if $index <= 3 {
+		&.sidebar-offset#{$screen}-#{$index} {
+			#{$property}: map-get($sidebar-width-map, $index);
+		}
+		@include sidebar-offset($property, $screen, $index + 1);
+	}
+}

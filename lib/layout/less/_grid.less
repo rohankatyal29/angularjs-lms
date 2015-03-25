@@ -1,0 +1,16 @@
+.row {
+	margin: 0 -@grid-gutter-width/4;
+	&.gridalicious {
+		margin: 0 (-@grid-gutter-width/2);
+	}
+	[class*="col-"] {
+		&.control-label {
+			padding-top: 6px;
+		}
+		padding: 0 @grid-gutter-width/4;
+	}
+}
+.form-horizontal .form-group {
+	margin-left: -@grid-gutter-width/4;
+	margin-right: -@grid-gutter-width/4;
+}

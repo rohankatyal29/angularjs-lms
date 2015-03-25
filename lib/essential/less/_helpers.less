@@ -1,0 +1,191 @@
+.border-bottom {
+	border-bottom: 1px solid @panel-default-border;
+}
+
+.margin-none {
+	margin: 0 !important;
+}
+
+.margin-top-none {
+	margin-top: 0 !important;
+}
+
+.margin-bottom-none {
+	margin-bottom: 0 !important;
+}
+
+.padding-none {
+	padding: 0 !important;
+}
+
+.padding-top-none {
+	padding-top: 0 !important;
+}
+
+.padding-bottom-none {
+	padding-bottom: 0 !important;
+}
+.padding-lrb-none {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.relative {
+	position: relative !important;
+}
+
+.h-center {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.v-cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+.table-row {
+	display: table-row;
+}
+.table-cell {
+	display: table-cell;
+}
+.height-100pc {
+	height: 100%;
+}
+.v-middle {
+	vertical-align: middle !important;
+}
+.v-top {
+	vertical-align: top !important;
+}
+.display-table {
+	display: table;
+}
+.block {
+	display: block;
+}
+
+.text-left {
+	text-align: left !important;
+}
+
+.absolute {
+	position: absolute;
+
+	&.top {
+		top: 0;
+	}
+	&.bottom {
+		bottom: 0;
+	}
+	&.left {
+		left: 0;
+	}
+	&.right {
+		right: 0;
+	}
+
+	.panel-body > & {
+		&.bottom {
+			bottom: @panel-body-padding;
+		}
+		&.left {
+			left: @panel-body-padding;
+		}
+		&.right {
+			right: @panel-body-padding;
+		}
+	}
+
+	.list-group-item > & {
+		&.bottom {
+			bottom: 10px;
+		}
+		&.left {
+			left: 15px;
+		}
+		&.right {
+			right: 15px;
+		}
+	}
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.display-inline-block,
+.inline-block {
+	display: inline-block;
+}
+
+.boxed {
+	border: 1px solid #efefef;
+	padding: @grid-gutter-width / 3;
+}
+
+.display-none {
+	display: none;
+}
+
+.bg-body {
+	background-color: @body-bg;
+}
+
+.bg-primary {
+	background: @primary-color;
+	color: #fff;
+}
+
+.bg-white {
+	background: @white;
+}
+
+.bg-default {
+	background: #f6f6f6;
+	color: #808080;
+}
+
+.bg-purple {
+	background: @purple-color;
+	color: #fff;
+}
+
+.bg-brown {
+	background: #c3a961;
+	color: #fff;
+}
+
+.bg-danger {
+	background: @danger-color;
+	color: #fff;
+}
+
+.bg-lightred {
+	background: @lightred-color;
+	color: #fff;
+}
+
+.bg-gray-dark {
+	background: #555;
+	color: #fff;
+}
+
+.bg-transparent {
+	background: transparent !important;
+}
+.link-text-color {
+	color: @text-color;
+}
+.link-white {
+	color: @white;
+	&:hover {
+		color: darken(@white, 10%);
+	}
+}
+.text-underline {
+	text-decoration: underline;
+}
+.strong {
+	font-weight: bold;
+}

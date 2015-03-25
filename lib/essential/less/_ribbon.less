@@ -1,0 +1,287 @@
+// Ribbons
+// -------------------------
+
+.ribbon-wrapper {
+	&:extend(.relative, .overflow-hidden);
+}
+
+// Bookmark Ribbons
+// -------------------------
+
+.ribbon-mark-variant(@shadow-color, @ribbon-bg, @ribbon-text-color) {
+	&:before {
+		background: linear-gradient(160deg, @shadow-color 50%, transparent 50%);
+	}
+	&:after {
+		background: linear-gradient(-160deg, @ribbon-bg 50%, transparent 50%);
+	}
+	.text {
+		color: @ribbon-text-color;
+	}
+}
+
+.ribbon-mark {
+	position: relative;
+	z-index: 5;
+
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	padding: 5px 10px;
+
+	.panel-body & {
+		&:not(.absolute) {
+			margin-top: -@panel-body-padding;
+		}
+	}
+
+	&:before {
+		content: ' ';
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+	&:after {
+		content: ' ';
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.text {
+		position: relative;
+		z-index: 3;
+		display: block;
+		margin-bottom: 55px;
+	}
+
+	&.absolute {
+		top: 0;
+		&.right {
+			right:10px;
+		}
+		&.left {
+			left:10px;
+		}
+	}
+
+	&.ribbon-default {
+		.ribbon-mark-variant(fade(@black, 20%), @white, @text-color);
+	}
+	&.ribbon-primary {
+		.ribbon-mark-variant(darken(@primary-color, 4%), @primary-color, @white);
+	}
+	&.ribbon-danger {
+		.ribbon-mark-variant(darken(@danger-color, 4%), @danger-color, @white);
+	}
+}
+
+// Heading Ribbons
+// -------------------------
+
+.ribbon-heading-variant(@ribbon-bg, @shadow-color, @ribbon-text) {
+
+	background-color: @ribbon-bg;
+	color: @ribbon-text;
+
+	&.bottom-left:before,
+	&.bottom-right:before,
+	&.bottom-left-right:before,
+	&.bottom-left-right:after {
+		border-top-color: @shadow-color;
+	}
+	&.top-left:before,
+	&.top-right:before,
+	&.top-left-right:before,
+	&.top-left-right:after {
+		border-bottom-color: @shadow-color;
+	}
+}
+
+.ribbon-heading {
+	position: relative;
+	padding: @padding-base-vertical @padding-base-horizontal;
+	text-align: center;
+	margin-left: -@padding-base-horizontal;
+	margin-right: -@padding-base-horizontal;
+
+	&:before, &:after {
+		content: ' ';
+		display: block;
+		position: absolute;
+		height: 0;
+		width: 0;
+	}
+	&.bottom-left:before {
+		top: 100%;
+		left: 0;
+		border-top: @padding-base-horizontal solid transparent;
+		border-left: @padding-base-horizontal solid transparent;
+	}
+	&.bottom-right:before {
+		top: 100%;
+		right: 0;
+		border-top: @padding-base-horizontal solid transparent;
+		border-right: @padding-base-horizontal solid transparent;
+	}
+	&.top-left:before {
+		bottom: 100%;
+		left: 0;
+		border-bottom: @padding-base-horizontal solid transparent;
+		border-left: @padding-base-horizontal solid transparent;
+	}
+	&.top-right:before {
+		bottom: 100%;
+		right: 0;
+		border-bottom: @padding-base-horizontal solid transparent;
+		border-right: @padding-base-horizontal solid transparent;
+	}
+	&.top-left-right {
+		&:before {
+			bottom: 100%;
+			left: 0;
+			border-bottom: @padding-base-horizontal solid transparent;
+			border-left: @padding-base-horizontal solid transparent;
+		}
+		&:after {
+			bottom: 100%;
+			right: 0;
+			border-bottom: @padding-base-horizontal solid transparent;
+			border-right: @padding-base-horizontal solid transparent;
+		}
+	}
+	&.bottom-left-right {
+		&:before {
+			top: 100%;
+			left: 0;
+			border-top: @padding-base-horizontal solid transparent;
+			border-left: @padding-base-horizontal solid transparent;
+		}
+		&:after {
+			top: 100%;
+			right: 0;
+			border-top: @padding-base-horizontal solid transparent;
+			border-right: @padding-base-horizontal solid transparent;
+		}
+	}
+	
+	&.inline {
+		display: inline-block;
+	}
+
+	&[class*="bottom"] {
+		margin-bottom: (@line-height-computed / 2) + @padding-base-horizontal;
+	}
+	&[class*="top"] {
+		margin-top: (@line-height-computed / 2) + @padding-base-horizontal;
+	}
+
+	&h1, &h2, &.text-h1, &.text-h2, &.h1, &.h2 {
+		padding: @padding-large-vertical @padding-large-horizontal;
+		margin-left: -@padding-large-horizontal;
+		margin-right: -@padding-large-horizontal;
+		&.bottom-left:before {
+			border-width: @padding-large-horizontal 0 0 @padding-large-horizontal;
+		}
+		&.bottom-right:before {
+			border-width: @padding-large-horizontal @padding-large-horizontal 0 0;
+		}
+		&.top-left:before {
+			border-width: 0 0 @padding-large-horizontal @padding-large-horizontal;
+		}
+		&.top-right:before {
+			border-width: 0 @padding-large-horizontal @padding-large-horizontal 0;
+		}
+		&.top-left-right {
+			&:before {
+				border-width: 0 0 @padding-large-horizontal @padding-large-horizontal;
+			}
+			&:after {
+				border-width: 0 @padding-large-horizontal @padding-large-horizontal 0;
+			}
+		}
+		&.bottom-left-right {
+			&:before {
+				border-width: @padding-large-horizontal 0 0 @padding-large-horizontal;
+			}
+			&:after {
+				border-width: @padding-large-horizontal @padding-large-horizontal 0 0;
+			}
+		}
+
+		&[class*="bottom"] {
+			margin-bottom: (@line-height-computed / 2) + @padding-large-horizontal;
+		}
+		&[class*="top"] {
+			margin-top: (@line-height-computed / 2) + @padding-large-horizontal;
+		}
+	}
+
+	.panel-body & {
+		margin-left: -(@panel-body-padding + @padding-base-horizontal);
+		margin-right: -(@panel-body-padding + @padding-base-horizontal);
+		&h1, &h2, &.text-h1, &.text-h2, &.h1, &.h2 {
+			margin-left: -(@panel-body-padding + @padding-large-horizontal);
+			margin-right: -(@panel-body-padding + @padding-large-horizontal);
+		}
+	}
+
+	&.ribbon-default {
+		.ribbon-heading-variant(darken(@body-bg, 2%), darken(@body-bg, 6%), @text-color);
+	}
+	&.ribbon-primary {
+		.ribbon-heading-variant(@primary-color, darken(@primary-color, 4%), @white);
+	}
+
+	&.absolute {
+		z-index: 5;
+	}
+	&.right {
+		right: 0;
+	}
+	&.left {
+		left: 0;
+	}
+}
+
+// Corner Ribbons
+// -------------------------
+
+.ribbon-corner-wrapper {
+	min-height: 135px;
+}
+.ribbon-corner {
+	background-color: @primary-color;
+	overflow: hidden;
+	white-space: nowrap;
+	top: 35px;
+	box-shadow: 0 3px 0 darken(@primary-color, 4%);
+	position: absolute;
+	z-index: 5;
+
+	a {
+		color: @white;
+		display: block;
+		font: bold 81.25% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		width: 250px;
+		padding: 10px 0;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	&.left {
+		left: -70px;
+		transform: rotate(-45deg);
+	}
+	&.right {
+		right: -70px;
+		transform: rotate(45deg);
+	}
+}

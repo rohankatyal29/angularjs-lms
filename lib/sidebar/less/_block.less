@@ -1,0 +1,37 @@
+.sidebar {
+	.sidebar-block {
+		padding: 0 @sidebar-horizontal-spacing @sidebar-horizontal-spacing;
+		&.equal-padding {
+			padding-top: @sidebar-horizontal-spacing;
+		}
+		&.sidebar-block-full {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		border-bottom: 1px solid transparent;
+		.category {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		> *:last-child {
+			margin-bottom: 0;
+		}
+		.activity-feed ul {
+			list-style: none;
+			padding-left:0;
+		}
+		&.tabbable {
+			border: none;
+			padding: 0;
+		}
+	}
+	.media {
+		margin-bottom: @sidebar-horizontal-spacing;
+		> .pull-left {
+			margin-right: @sidebar-horizontal-spacing;
+		}
+		> .pull-right {
+			margin-left: @sidebar-horizontal-spacing;
+		}
+	}
+}

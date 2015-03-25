@@ -1,0 +1,48 @@
+{% if itemWrapper !== false %}
+<div class="panel panel-default paper-shadow" data-z="0.5">
+    <div class="panel-body">
+{% endif %}
+        <div class="media media-clearfix-xs">
+            <div class="media-left text-center">
+                <div class="cover width-150 width-100pc-xs overlay cover-image-full hover margin-v-0-10">
+                    <span class="img icon-block height-130 {{ coverBg or 'bg-default' }}"></span>
+                    <span class="overlay overlay-full padding-none icon-block {{ coverBg or 'bg-default' }}">
+                        <span class="v-center">
+                            <i class="fa {{ coverIcon }}"></i>
+                        </span>
+                    </span>
+                    <a {% if angular %}ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %}href="{{ itemUrl or 'website-course.html' }}"{% endif %} class="overlay overlay-full overlay-hover overlay-bg-white">
+                        <span class="v-center">
+                            <span class="btn btn-circle {{ coverBtn }} btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="media-body">
+                <h4 class="text-headline margin-v-5-0"><a {% if angular %}ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %}href="{{ itemUrl or 'website-course.html' }}"{% endif %}>{{ itemTitle }}</a></h4>
+                <p class="small">
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda aut debitis, ducimus, ea eaque earum eius enim eos explicabo facilis harum impedit natus nemo, nobis obcaecati omnis perspiciatis praesentium quaerat quas quod reprehenderit sapiente temporibus vel voluptatem voluptates voluptatibus?</p>
+                {% if itemInstructor !== false %}
+				<hr class="margin-v-8" />
+                <div class="media v-middle">
+                    <div class="media-left">
+                        <img src="images/people/50/guy-{{ random(1,9) }}.jpg" alt="People" class="img-circle width-40"/>
+                    </div>
+                    <div class="media-body">
+                        <h4><a href="">Adrian Demian</a><br/></h4>
+                        Instructor
+                    </div>
+                </div>
+				{% endif %}
+            </div>
+        </div>
+{% if itemWrapper !== false %}
+    </div>
+</div>
+{% endif %}

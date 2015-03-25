@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="st-layout ls-top-navbar ls-bottom-footer show-sidebar sidebar-l2" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Learning</title>
+    <!-- Compressed Vendor BUNDLE
+    Includes vendor (3rd party) styling such as the customized Bootstrap and other 3rd party libraries used for the current theme/module -->
+    <link href="css/vendor.css" rel="stylesheet">
+    <!-- Compressed Theme BUNDLE
+Note: The bundle includes all the custom styling required for the current theme, however
+it was tweaked for the current theme/module and does NOT include ALL of the standalone modules;
+The bundle was generated using modern frontend development tools that are provided with the package
+To learn more about the development process, please refer to the documentation. -->
+    <link href="css/theme-bundle.css" rel="stylesheet">
+    <!-- Compressed Theme CORE
+This variant is to be used when loading the separate styling modules -->
+    <!-- <link href="css/theme.core.css" rel="stylesheet"> -->
+    <!-- Standalone Modules
+    As a convenience, we provide the entire UI framework broke down in separate modules
+    Some of the standalone modules may have not been used with the current theme/module
+    but ALL modules are 100% compatible -->
+    <!-- <link href="css/module-essentials.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-material.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-layout.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-sidebar.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-sidebar-skins.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-navbar.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-messages.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-carousel-slick.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-charts.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-maps.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-alerts.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-background.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-buttons.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-text.css" rel="stylesheet" /> -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body class="docs">
+    <!-- Wrapper required for sidebar transitions -->
+    <div class="st-container">
+        <!-- Top Navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="#sidebar-menu" data-effect="st-effect-1" data-toggle="sidebar-menu" class="toggle pull-left visible-xs"><i class="fa fa-bars"></i></a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand hidden-xs" href="index.html">Documentation</a>
+                </div>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="index.html">Overview</a></li>
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="grunt.html">Grunt</a></li>
+                                <li class="active"><a href="swig.html">Swig</a></li>
+                                <li><a href="assets.html">Assets</a></li>
+                                <li><a href="reference.html">Reference</a></li>
+                                <li><a href="vagrant.html">Vagrant</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- //Top Navbar -->
+        <div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-dark sidebar-visible-desktop" id="sidebar-menu">
+            <div id="menu">
+                <ul class="nav sidebar-menu sm-active-item-bg">
+                    <li class="active"><a href="#intro">1. Templating</a></li>
+                    <li><a href="#usage">2. Basic usage</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- content push wrapper -->
+        <div class="st-pusher" id="content">
+            <!-- this is the wrapper for the content -->
+            <div class="st-content">
+                <!-- extra div for emulating position:fixed of the menu -->
+                <div class="st-content-inner">
+                    <div class="container-fluid">
+                        <div class="s-container">
+                            <h1 class="text-display-1">Template Engine</h1>
+                        </div>
+                        <div class="panel panel-default" id="intro">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">What is a template engine and why should you care?</h3>
+                            </div>
+                            <div class="panel-body">
+                                In a general way, a template engine is a web publishing tool that uses a template processor to combine web pages to form finished web pages. In practice, we can work with templates in various formats, apply any kind of filters and transformations to those templates and process the templates in valid HTML output. By using a template engine, we are still building static HTML pages, but in a productive, organised and efficient way.
+                            </div>
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Swig</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>Meet <a href="https://github.com/paularmstrong/swig" target="_blank">Swig</a>, one of the best template engines for node.js. Swig allows you to create pages, layouts, extend layouts from pages, include reusable partials in your templates, create macros (think of these as reusable snippets of functionality) and a lot more.</p>
+                                <h4>Features</h4>
+                                <ol>
+                                    <li>It's blazing fast.</li>
+                                    <li>Object-Oriented template inheritance.</li>
+                                    <li>Apply filters and transformations to output in your templates.</li>
+                                    <li>Automatically escapes all output for safe HTML rendering.</li>
+                                    <li>Lots of iteration and conditionals supported.</li>
+                                    <li>Robust without the bloat.</li>
+                                    <li>Extendable and customizable.</li>
+                                    <li><a href="http://paularmstrong.github.io/swig/" target="_blank">Great documentation</a>.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <h2 id="usage">Basic Usage</h2>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h4>Layouts
+                                    <small>layout.html</small>
+                                </h4>
+                            </div>
+                            <div class="panel-body-lrb">
+                                <div class="highlight">
+                                    <pre><code class="hljs django"><span class="xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">http-equiv</span>=<span class="hljs-value">"X-UA-Compatible"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"IE=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span></span><span class="hljs-variable">{{ site.name }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Styling --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/default.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Declare a template block in which you can inject
+         content from a page that is extending this layout --&gt;</span>
+    </span><span class="hljs-template_tag">{% <span class="hljs-keyword">block</span> content %}</span><span class="xml"></span><span class="hljs-template_tag">{% <span class="hljs-keyword">endblock</span> %}</span><span class="xml">
+    <span class="hljs-comment">&lt;!-- Vendor Scripts Bundle --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/vendor.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- App Scripts Bundle --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/docs.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></span></code></pre>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <h4>Pages
+                                    <small>index.html</small>
+                                </h4>
+                            </div>
+                            <div class="panel-body-lrb">
+                                <div class="highlight">
+                                    <pre><code class="hljs nimrod">&lt;!-- <span class="hljs-type">Simple</span> page example <span class="hljs-keyword">of</span> a <span class="hljs-keyword">template</span> that inherits the layout.html <span class="hljs-keyword">template</span> example above --&gt;
+{% extends 'layout.html' %}
+{% <span class="hljs-keyword">block</span> content %}
+    &lt;p&gt;<span class="hljs-type">This</span> <span class="hljs-keyword">is</span> just an awesome page.&lt;/p&gt;
+{% endblock %}
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <h4>Partials</h4>
+                            </div>
+                            <div class="panel-body-lrb">
+                                <div class="highlight">
+                                    <pre><code class="hljs django"><span class="xml"><span class="hljs-comment">&lt;!-- partial.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>I like </span><span class="hljs-variable">{{ food }}</span><span class="xml"> and </span><span class="hljs-variable">{{ drink }}</span><span class="xml">.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- page.html --&gt;</span>
+</span><span class="hljs-template_tag">{% <span class="hljs-keyword">extends</span> 'layout.html' %}</span><span class="xml">
+</span><span class="hljs-template_tag">{% <span class="hljs-keyword">block</span> content %}</span><span class="xml">
+    </span><span class="hljs-template_tag">{% set my_obj = { food: 'tacos', drink: 'horchata' } %}</span><span class="xml">
+    </span><span class="hljs-template_tag">{% <span class="hljs-keyword">include</span> "./partial.html" <span class="hljs-keyword">with</span> my_obj %}</span><span class="xml">
+    // =&gt; I like tacos and horchata.
+</span><span class="hljs-template_tag">{% <span class="hljs-keyword">endblock</span> %}</span><span class="xml">
+</span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /st-content-inner -->
+            </div>
+            <!-- /st-content -->
+        </div>
+        <!-- /st-pusher -->
+        <!-- Footer -->
+        <footer class="footer">
+            <strong>Learning</strong> v1.0.0 &copy; Copyright 2015
+        </footer>
+        <!-- // Footer -->
+    </div>
+    <!-- /st-container -->
+    <!-- Inline Script for colors and config objects; used by various external scripts; -->
+    <script>
+    var colors = {
+        "danger-color": "#e74c3c",
+        "success-color": "#81b53e",
+        "warning-color": "#f0ad4e",
+        "inverse-color": "#2c3e50",
+        "info-color": "#2d7cb5",
+        "default-color": "#6e7882",
+        "default-light-color": "#cfd9db",
+        "purple-color": "#9D8AC7",
+        "mustard-color": "#d4d171",
+        "lightred-color": "#e15258",
+        "body-bg": "#f6f6f6"
+    };
+    var config = {
+        theme: "docs",
+        skins: {
+            "default": {
+                "primary-color": "#42a5f5"
+            }
+        }
+    };
+    </script>
+    <!-- Separate Vendor Script Bundles -->
+    <script src="js/vendor-core.js"></script>
+    <script src="js/vendor-countdown.js"></script>
+    <script src="js/vendor-tables.js"></script>
+    <script src="js/vendor-forms.js"></script>
+    <script src="js/vendor-carousel-slick.js"></script>
+    <script src="js/vendor-player.js"></script>
+    <script src="js/vendor-charts-flot.js"></script>
+    <script src="js/vendor-nestable.js"></script>
+    <!-- <script src="js/vendor-angular.js"></script> -->
+    <!-- Compressed Vendor Scripts Bundle
+    Includes all of the 3rd party JavaScript libraries above.
+    The bundle was generated using modern frontend development tools that are provided with the package
+    To learn more about the development process, please refer to the documentation.
+    Do not use it simultaneously with the separate bundles above. -->
+    <!-- <script src="js/vendor-bundle-all.js"></script> -->
+    <!-- Compressed App Scripts Bundle
+    Includes Custom Application JavaScript used for the current theme/module;
+    Do not use it simultaneously with the standalone modules below. -->
+    <script src="js/module-bundle-main.js"></script>
+    <!-- Standalone Modules
+    As a convenience, we provide the entire UI framework broke down in separate modules
+    Some of the standalone modules may have not been used with the current theme/module
+    but ALL the modules are 100% compatible -->
+    <!-- <script src="js/module-essentials.js"></script> -->
+    <!-- <script src="js/module-material.js"></script> -->
+    <!-- <script src="js/module-layout.js"></script> -->
+    <!-- <script src="js/module-sidebar.js"></script> -->
+    <!-- <script src="js/module-carousel-slick.js"></script> -->
+    <!-- <script src="js/module-player.js"></script> -->
+    <!-- <script src="js/module-messages.js"></script> -->
+    <!-- <script src="js/module-maps-google.js"></script> -->
+    <!-- <script src="js/module-charts-flot.js"></script> -->
+    <!-- [docs] Core Theme Script:
+        Includes the custom JavaScript for this theme/module;
+        The file has to be loaded in addition to the UI modules above;
+        module-bundle-main.js already includes theme-core.js so this should be loaded
+        ONLY when using the standalone modules; -->
+    <!-- <script src="js/theme-core.js"></script> -->
+</body>
+</html>

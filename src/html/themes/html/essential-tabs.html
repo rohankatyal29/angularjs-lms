@@ -1,0 +1,9 @@
+{% set bodyClass = '' %}
+{% extends "src/html/themes/html/layouts/_public.html" %}
+
+{% block content %}
+    {% set tpl = "lib/essential/html/" + page.basename %}
+    <div class="container">
+        {% include tpl %}
+    </div>
+{% endblock %}

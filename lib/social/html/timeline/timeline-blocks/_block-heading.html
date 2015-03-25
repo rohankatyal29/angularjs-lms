@@ -1,0 +1,16 @@
+<div class="media">
+	<div class="media-left">
+		<a href=""><img src="images/people/50/{{ gender }}-{{ image }}.jpg" class="media-object"></a>
+	</div>
+	<div class="media-body">
+		<a href="#" class="pull-right text-muted{% if rtl %} flip{% endif %}"><i class="icon-reply-all-fill fa fa-2x "></i></a>
+		{% if gender == "guy" %}
+		<a href="">Jonathan</a>
+		{% endif %}
+		{% if gender == "woman" %}
+		<a href="">Michelle</a>
+		{% endif %}
+
+		<span>on 15th January, 2014</span>
+	</div>
+</div>

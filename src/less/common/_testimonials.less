@@ -1,0 +1,31 @@
+.testimonial {
+	position: relative;
+	z-index: 1;
+	margin-bottom: @grid-gutter-width/2;
+	.media {
+		padding-left: @grid-gutter-2;
+		margin: 0;
+	}
+	.panel {
+		position: relative;
+		&:before, &:after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 0;
+			height: 0;
+			left: 10px;
+			z-index: -1;
+			bottom: -37px;
+			border-width: 25px;
+			border-style: solid;
+			border-color: transparent;
+			border-top-color: @panel-default-border;
+		}
+		&:after {
+			border-top-color: #fff;
+			bottom: -35px;
+			z-index: 2;
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+  "name": "jquery.nicescroll",
+  "homepage": "https://github.com/inuyaksa/jquery.nicescroll",
+  "_release": "be4f1a2bfe",
+  "_resolution": {
+    "type": "commit",
+    "commit": "be4f1a2bfe0795f31fb8d1f7812bed748062633e"
+  },
+  "_source": "git://github.com/inuyaksa/jquery.nicescroll.git",
+  "_target": "be4f1a2bfe0795f31fb8d1f7812bed748062633e",
+  "_originalSource": "jquery.nicescroll"
+}

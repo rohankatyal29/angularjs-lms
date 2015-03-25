@@ -1,0 +1,223 @@
+<div class="jumbotron bg-transparent text-center margin-none">
+    <h1>Layout KIT</h1>
+    <p>Get full control of the layout of your pages and easily create layouts from the most simple - fluid or boxed layouts - to the most advanced layouts with up to 6 sidebars on the same page and specially crafted layouts for complex web apps.</p>
+</div>
+
+<div class="row" data-toggle="isotope">
+
+    <div class="item col-lg-4 col-md-6 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-body"><h4 class="panel-title">Basic Fluid Layout</h4></div>
+            <div class="panel-footer">Most simple and common fluid layouts to get started from.</div>
+            <ul class="list-group">
+                <li {% if angular %}ui-sref-active="active" {% endif %}class="list-group-item{% if page.slug == 'index' or page.slug == 'layout-fluid-1-sidebar' %} active{% endif %}">
+                    <div class="cover overlay hover cover-image-full">
+                        <img src="images/choose/1-sidebar-left.jpg" alt="Buttons"/>
+                        {% if angular %}
+                            <a ui-sref="layouts.fluid-1-sidebar" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% else %}
+                            <a href="{% if config.theme == 'layout' %}index.html{% else %}layout-fluid-1-sidebar.html{% endif %}" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% endif %}
+                            <span class="v-center">
+                                <span class="text-h1">1 Sidebar</span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li {% if angular %}ui-sref-active="active" {% endif %}class="list-group-item{% if page.slug == 'layout-fluid-no-sidebar' %} active{% endif %}">
+                    <div class="cover overlay hover cover-image-full">
+                        <img src="images/choose/no-sidebar.jpg" alt="Buttons"/>
+                        {% if angular %}
+                            <a ui-sref="layouts.fluid-no-sidebar" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% else %}
+                            <a href="layout-fluid-no-sidebar.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% endif %}
+                            <span class="v-center">
+                                <span class="text-h1">No Sidebar</span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="item col-lg-4 col-md-6 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-body"><h4 class="panel-title">Multiple Sidebars - Fluid Layout</h4></div>
+            <div class="panel-footer">More complex examples of fluid layouts with multiple sidebars on the same page, including application layouts.</div>
+            <ul class="list-group">
+                <li {% if angular %}ui-sref-active="active" {% endif %}class="list-group-item{% if page.slug == 'layout-fluid-2-sidebars' %} active{% endif %}">
+                    <div class="cover overlay hover cover-image-full">
+                        <img src="images/choose/2-sidebars.jpg" alt="Buttons"/>
+                        {% if angular %}
+                            <a ui-sref="layouts.fluid-2-sidebars" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% else %}
+                            <a href="layout-fluid-2-sidebars.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% endif %}
+                            <span class="v-center">
+                                <span class="text-h1">2 Sidebars</span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li {% if angular %}ui-sref-active="active" {% endif %}class="list-group-item{% if page.slug == 'layout-fluid-3-sidebars' %} active{% endif %}">
+                    <div class="cover overlay hover cover-image-full">
+                        <img src="images/choose/3-sidebars.jpg" alt="Buttons"/>
+                        {% if angular %}
+                            <a ui-sref="layouts.fluid-3-sidebars" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% else %}
+                            <a href="layout-fluid-3-sidebars.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% endif %}
+                            <span class="v-center">
+                                <span class="text-h1">3 Sidebars</span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li {% if angular %}ui-sref-active="active" {% endif %}class="list-group-item{% if page.slug == 'layout-app' %} active{% endif %}">
+                    <div class="cover overlay hover cover-image-full">
+                        <img src="images/choose/application-layout.jpg" alt="Buttons"/>
+                        {% if angular %}
+                            <a ui-sref="layouts.app" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% else %}
+                            <a href="layout-app.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% endif %}
+                            <span class="v-center">
+                                <span class="text-h2">Application Layout</span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="item col-lg-4 col-md-6 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-body"><h4 class="panel-title">Sidebar Sizes</h4></div>
+            <div class="panel-footer">There are 3 predefined sidebar sizes of 56px (mini menu with icons), a sidebar of 200px (the most common) and a larger 250px sidebar size.</div>
+            <ul class="list-group">
+                <li {% if angular %}ui-sref-active="active" {% endif %}class="list-group-item{% if page.slug == 'layout-sidebar-size-1' %} active{% endif %}">
+                    <div class="cover overlay hover cover-image-full">
+                        <img src="images/choose/sidebar-size-1.jpg" alt="Buttons"/>
+                        {% if angular %}
+                            <a ui-sref="layouts.sidebar-size-1" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% else %}
+                            <a href="layout-sidebar-size-1.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% endif %}
+                            <span class="v-center">
+                                <span class="text-h2">Sidebar Size 1 (56px)</span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li {% if angular %}ui-sref-active="active" {% endif %}class="list-group-item{% if page.slug == 'layout-sidebar-size-1-reveal' %} active{% endif %}">
+                    <div class="cover overlay hover cover-image-full">
+                        <img src="images/choose/sidebar-size-1-reveal.jpg" alt="Buttons"/>
+                        {% if angular %}
+                            <a ui-sref="layouts.sidebar-size-1-reveal" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% else %}
+                            <a href="layout-sidebar-size-1-reveal.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% endif %}
+                            <span class="v-center">
+                                <span class="text-h3">Sidebar Size 1 (56px) with Reveal</span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li {% if angular %}ui-sref-active="active" {% endif %}class="list-group-item{% if page.slug == 'layout-sidebar-size-2' %} active{% endif %}">
+                    <div class="cover overlay hover cover-image-full">
+                        <img src="images/choose/sidebar-size-2.jpg" alt="Buttons"/>
+                        {% if angular %}
+                            <a ui-sref="layouts.sidebar-size-2" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% else %}
+                            <a href="layout-sidebar-size-2.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% endif %}
+                            <span class="v-center">
+                                <span class="text-h2">Sidebar Size 2 (200px)</span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li {% if angular %}ui-sref-active="active" {% endif %}class="list-group-item{% if page.slug == 'layout-sidebar-size-3' %} active{% endif %}">
+                    <div class="cover overlay hover cover-image-full">
+                        <img src="images/choose/sidebar-size-3.jpg" alt="Buttons"/>
+                        {% if angular %}
+                            <a ui-sref="layouts.sidebar-size-3" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% else %}
+                            <a href="layout-sidebar-size-3.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% endif %}
+                            <span class="v-center">
+                                <span class="text-h2">Sidebar Size 3 (250px)</span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li {% if angular %}ui-sref-active="active" {% endif %}class="list-group-item{% if page.slug == 'layout-sidebar-size-percentage' %} active{% endif %}">
+                    <div class="cover overlay hover cover-image-full">
+                        <img src="images/choose/sidebar-percentage.jpg" alt="Buttons"/>
+                        {% if angular %}
+                            <a ui-sref="layouts.sidebar-size-percentage" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% else %}
+                            <a href="layout-sidebar-size-percentage.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                        {% endif %}
+                            <span class="v-center">
+                                <span class="text-h3">Percentage Sidebar Sizes (25% to 100%)</span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    {% if fixed !== false %}
+    <div class="item col-lg-4 col-md-6 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-body"><h4 class="panel-title">Fixed Layouts</h4></div>
+            <div class="panel-footer">Fixed or boxed layouts with centered content showcasing most of the sidebar options available with fluid layouts.</div>
+            <ul class="list-group">
+                <li class="list-group-item{% if page.slug == 'fixed-no-sidebar' %} active{% endif %}">
+                    <a href="fixed-no-sidebar.html">No Sidebar</a>
+                </li>
+                <li class="list-group-item{% if page.slug == 'fixed-sidebar-overlay-single-toggle' %} active{% endif %}">
+                    <a href="fixed-sidebar-overlay-single-toggle.html">Overlay Sidebars (Single Toggle Button)</a>
+                </li>
+                <li class="list-group-item{% if page.slug == 'fixed-sidebar-overlay-multiple-toggle' %} active{% endif %}">
+                    <a href="fixed-sidebar-overlay-multiple-toggle.html">Overlay Sidebars (Multiple Toggle Buttons)</a>
+                </li>
+                <li class="list-group-item{% if page.slug == 'fixed-2-inner-sidebars' %} active{% endif %}">
+                    <a href="fixed-2-inner-sidebars.html">2 Inner Sidebars</a>
+                </li>
+                <li class="list-group-item{% if page.slug == 'fixed-3-inner-sidebars' %} active{% endif %}">
+                    <a href="fixed-3-inner-sidebars.html">3 Inner Sidebars</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if footer !== false %}
+    <div class="item col-lg-4 col-md-6 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-body"><h4 class="panel-title">Footer Variations</h4></div>
+            <div class="panel-footer">Footer options ranging from the most simple footer with just a line of copyright notice, to sticky footers and more complex footer menus.</div>
+            <ul class="list-group">
+                <li {% if angular %}ui-sref-active="active" {% endif %}class="list-group-item{% if page.slug == 'layout-footer-simple' %} active{% endif %}">
+                    {% if angular %}
+                        <a ui-sref="layouts.footer-simple">
+                    {% else %}
+                        <a href="layout-footer-simple.html">
+                    {% endif %}
+                        Simple Footer
+                    </a>
+                </li>
+                <li class="list-group-item{% if page.slug == 'footer-menu' %} active{% endif %}">
+                    Footer Menu (coming soon)
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+</div>

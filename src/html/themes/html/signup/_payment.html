@@ -1,0 +1,56 @@
+<fieldset class="step relative paper-shadow form-horizontal" data-z="2">
+    <div class="page-section-heading">
+        <h2 class="text-h3 margin-v-0">Payment</h2>
+        <h3 class="text-h4 margin-v-10 text-grey-400">Your plan is <strong class="text-uppercase">learner</strong> for <strong>&dollar;19.99/mo</strong></h3>
+        <a {% if angular %}ui-sref="website-pages.pricing"{% else %}href="pricing.html"{% endif %}>See pricing</a>
+    </div>
+    <hr/>
+    <div class="form-group">
+        <label for="credit-card" class="col-xs-4 control-label">Credit Card</label>
+        <div class="col-xs-8">
+            <div class="form-control-material">
+                <input type="text" class="form-control" id="credit-card" placeholder="**** **** **** 2422">
+                <label for="credit-card">Credit Card</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="card-expiration" class="col-xs-4 control-label">Expiration:</label>
+        <div class="col-xs-8">
+            <select id="card-expiration" data-toggle="select2">
+                <option value="1" selected>January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+            <select data-toggle="select2">
+                <option value="2015" selected>2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cvv" class="col-xs-4 control-label">CVV</label>
+        <div class="col-xs-8">
+            <div class="form-control-material">
+                <input type="email" class="form-control" id="cvv" placeholder="123">
+                <label for="cvv">CVV</label>
+            </div>
+        </div>
+    </div>
+    <div class="text-right">
+        <button type="button" class="wiz-next btn btn-primary">Next</button>
+    </div>
+</fieldset>

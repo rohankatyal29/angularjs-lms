@@ -1,0 +1,49 @@
+<div class="panel panel-default weather-svg">
+    <div class="cover overlay cover-image-full">
+        <img src="images/place2-full.jpg" alt="cover">
+        <div class="overlay overlay-full overlay-bg-black">
+            <div class="v-top">
+                <div class="pull-right{% if rtl %} flip {% endif %}">
+                    <a href="#"><i class="fa fa-cog"></i></a>
+                </div>
+                <a href="#">Miami, Florida, US</a>
+                <p class="small">24&deg; C - Sunny</p>
+            </div>
+            <div class="v-center today">
+                {% include "lib/icons/weather/svg/sunFill.html" %}
+            </div>
+        </div>
+        <div class="overlay overlay-bg-black padding-none">
+            <div class="list">
+                <div class="list-item">
+                    <div class="text-h6">Mon</div>
+                    {% include "lib/icons/weather/svg/cloudDrizzleSunFill.html" %}
+                </div>
+                <div class="list-item">
+                    <div class="text-h6">Tue</div>
+                    {% include "lib/icons/weather/svg/sun.html" %}
+                </div>
+                <div class="list-item">
+                    <div class="text-h6">Wed</div>
+                    {% include "lib/icons/weather/svg/cloudRainFill.html" %}
+                </div>
+                <div class="list-item">
+                    <div class="text-h6">Thu</div>
+                    {% include "lib/icons/weather/svg/cloudDrizzleSunFill.html" %}
+                </div>
+                <div class="list-item">
+                    <div class="text-h6">Fri</div>
+                    {% include "lib/icons/weather/svg/sun.html" %}
+                </div>
+                <div class="list-item">
+                    <div class="text-h6">Sat</div>
+                    {% include "lib/icons/weather/svg/cloudRainFill.html" %}
+                </div>
+                <div class="list-item">
+                    <div class="text-h6">Sun</div>
+                    {% include "lib/icons/weather/svg/cloudRainFill.html" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

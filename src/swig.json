@@ -1,0 +1,56 @@
+{
+	"site": {
+		"name": "Learning",
+		"version": "1.0.0",
+		"description": "Learning Management System",
+		"author": "mosaicpro",
+		"email": "contact@mosaicpro.biz"
+	},
+	"js_modules": [
+		"module-essentials",
+		"module-material",
+		"module-layout",
+		"module-sidebar",
+		"module-carousel-slick",
+		"module-player",
+		"module-messages",
+		"module-maps-google",
+		"module-charts-flot"
+	],
+	"css_modules": [
+		"module-essentials",
+		"module-material",
+		"module-layout",
+		"module-sidebar",
+		"module-sidebar-skins",
+		"module-navbar",
+		"module-messages",
+		"module-carousel-slick",
+		"module-charts",
+		"module-maps",
+		"module-colors-alerts",
+		"module-colors-background",
+		"module-colors-buttons",
+		"module-colors-text"
+	],
+	"js_theme_core": [
+		"docs",
+		"html",
+        "choose",
+		"angular"
+	],
+	"js_vendor": [
+		"vendor-core",
+		"vendor-countdown",
+		"vendor-tables",
+		"vendor-forms",
+		"vendor-carousel-slick",
+		"vendor-player",
+		"vendor-charts-flot",
+		"vendor-nestable",
+		{
+			"name": "vendor-angular",
+			"themes": ["angular"]
+		}
+	]
+}

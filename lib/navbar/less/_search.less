@@ -1,0 +1,66 @@
+@media (min-width: @screen-sm) {
+	.navbar {
+		.search-1 {
+
+			float: left;
+
+			.input-group {
+				height: @navbar-height;
+			}
+
+			.input-group-addon {
+				height: @navbar-height;
+				line-height: @navbar-height;
+				padding-top: 0;
+				padding-bottom: 0;
+				background: none;
+				border: none;
+				border-radius: 0;
+				font-weight: 600;
+				font-size: 18px;
+			}
+
+			.form-control {
+				height: @navbar-height;
+				border: none;
+				background: none;
+				box-shadow: none;
+				border-radius: 0;
+			}
+		}
+
+		.navbar-size-small& {
+			.search-1 {
+				.input-group {
+					height: @navbar-small-height;
+				}
+				.input-group-addon {
+					height: @navbar-small-height;
+					line-height: @navbar-small-height;
+				}
+				.form-control {
+					height: @navbar-small-height;
+				}
+			}
+		}
+		.navbar-size-large& {
+			@media (min-width: @navbar-large-breakpoint) {
+				.search-1 {
+					.input-group {
+						height: @navbar-large-height;
+					}
+					.input-group-addon {
+						height: @navbar-large-height;
+						line-height: @navbar-large-height;
+					}
+					.form-control {
+						height: @navbar-large-height;
+					}
+				}
+			}
+		}
+	}
+}
+.navbar .search-2 .btn {
+	margin: 0;
+}

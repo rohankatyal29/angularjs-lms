@@ -1,0 +1,36 @@
+.sidebar .sidebar-feed {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	li {
+		font-size: @sidebar-news-item-size;
+		padding: 8px @sidebar-horizontal-spacing;
+
+		margin: 1px 0;
+
+		.news-item-success i {
+			font-size: @sidebar-news-item-status-size;
+			color: @success-color;
+		}
+		.news-item-danger i {
+			font-size: 6px;
+			color: @danger-color;
+		}
+		.media-body {
+			height: auto !important;
+			a {
+				padding: 0;
+				display: inline-block;
+				line-height: 10px;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+			.time {
+				font-size: 11px;
+				font-weight: normal;
+				display: block;
+			}
+		}
+	}
+}

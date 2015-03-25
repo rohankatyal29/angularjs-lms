@@ -1,0 +1,11 @@
+{% include "lib/layout/html/_header.html" { htmlClass: 'top-navbar-xlarge bottom-footer app-desktop app-mobile', bodyClass: 'survey' } %}
+
+{% include "src/html/themes/html/layouts/nav/_navbar_public.html" %}
+
+<div class="st-content-inner">
+    {% block content %}{% endblock %}
+</div>
+
+{% include "lib/layout/html/_footer_copyright.html" %}
+
+{% include "lib/layout/html/_footer_scripts.html" %}

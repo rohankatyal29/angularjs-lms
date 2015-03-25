@@ -1,0 +1,227 @@
+<div class="jumbotron text-center bg-transparent margin-none">
+	<h1>Modals</h1>
+	<p>Streamlined and flexible modals &amp; dialog prompts with the minimum required functionality and smart options.</p>
+</div>
+
+<div class="page-section">
+	<div class="row">
+		<div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+
+			<h4 class="page-section-heading">Animations &amp; Positioning</h4>
+
+			<div class="row">
+				<div class="col-md-6 col-xs-12">
+					<div class="panel panel-default text-center">
+						<img src="images/choose/modals-slide-down.jpg" class="width-100pc" alt="Slide down"/>
+						<div class="panel-body">
+							<!--<button data-toggle="modal" data-target="#modal-slide-down" class="btn btn-primary">Slide down</button>-->
+							<button data-toggle="tk-modal-demo"
+									data-modal-options="slide-down"
+									class="btn btn-primary">Slide down</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-xs-12">
+					<div class="panel panel-default text-center">
+						<img src="images/choose/modals-slide-up.jpg" class="width-100pc" alt="Slide up"/>
+						<div class="panel-body">
+							<!--<button data-toggle="modal" data-target="#modal-slide-up" class="btn btn-primary">Slide up</button>-->
+							<button data-toggle="tk-modal-demo"
+									data-modal-options="slide-up"
+									class="btn btn-primary">Slide up</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<h4 class="page-section-heading">Standard Bootstrap modals as sidebars</h4>
+
+			<div class="row">
+				<div class="col-md-6 col-xs-12">
+					<div class="panel panel-default text-center">
+						<img src="images/choose/modals-slide-left.jpg" class="width-100pc" alt="Slide left"/>
+						<div class="panel-body">
+							<!--<button data-toggle="modal" data-target="#modal-slide-left" class="btn btn-primary">Slide left</button>-->
+							<button data-toggle="tk-modal-demo"
+									data-modal-options="slide-left"
+									data-dialog-options="sidebar sidebar-size-3 sidebar-size-xs-1 sidebar-offset-0 left"
+									class="btn btn-primary">Slide left</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-xs-12">
+					<div class="panel panel-default text-center">
+						<img src="images/choose/modals-slide-right.jpg" class="width-100pc" alt="Slide right"/>
+						<div class="panel-body">
+							<!--<button data-toggle="modal" data-target="#modal-slide-right" class="btn btn-primary">Slide right</button>-->
+							<button data-toggle="tk-modal-demo"
+									data-modal-options="slide-right"
+									data-dialog-options="sidebar sidebar-size-3 sidebar-size-xs-1 sidebar-offset-0 right"
+									class="btn btn-primary">Slide right</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<h4 class="page-section-heading">Modal Overlay, White Backdrop &amp; Grow</h4>
+
+			<div class="panel panel-default text-center max-width-350 h-center">
+				<img src="images/choose/modals-full.jpg" class="width-100pc" alt="Slide right"/>
+				<div class="panel-body">
+					<!--<button data-toggle="modal" data-target="#modal-overlay-white" class="btn btn-primary">Overlay White</button>-->
+					<button data-toggle="tk-modal-demo"
+							data-modal-options="grow modal-overlay modal-backdrop-white"
+							class="btn btn-primary">Overlay White</button>
+				</div>
+			</div>
+
+			<h4 class="page-section-heading">Modal Sizes</h4>
+
+			<div class="panel panel-default text-center max-width-350 h-center">
+				<div class="panel-body">
+					<button data-toggle="tk-modal-demo"
+							data-modal-options="slide-down"
+							data-content-options="modal-sm h-center"
+							class="btn btn-primary">Small</button>
+					<button data-toggle="tk-modal-demo"
+							data-modal-options="slide-down"
+							data-content-options="modal-lg"
+							class="btn btn-primary">Large</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- The demos on this page are generated dynamically via Handlebars Templates.
+These are markup samples for the standard modals
+
+// Slide Up Modal
+<div class="modal slide-up fade" id="modal-slide-up">
+	<div class="modal-dialog">
+		<div class="v-cell">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam atque consequuntur dolore fugiat fugit hic in ipsam iure magnam maxime quaerat, quam qui repellat repellendus temporibus vel vitae voluptate!
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+// Slide Down Modal
+<div class="modal slide-down fade" id="modal-slide-down">
+	<div class="modal-dialog">
+		<div class="v-cell">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam atque consequuntur dolore fugiat fugit hic in ipsam iure magnam maxime quaerat, quam qui repellat repellendus temporibus vel vitae voluptate!
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+// Sidebar Modal Right
+<div class="modal slide-right fade" id="modal-slide-right">
+	<div class="modal-dialog sidebar sidebar-size-3 sidebar-size-xs-1 sidebar-offset-0 right">
+		<div class="v-cell">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam atque consequuntur dolore fugiat fugit hic in ipsam iure magnam maxime quaerat, quam qui repellat repellendus temporibus vel vitae voluptate!
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+// Sidebar Modal Left
+<div class="modal slide-left fade" id="modal-slide-left">
+	<div class="modal-dialog sidebar sidebar-size-3 sidebar-size-xs-1 sidebar-offset-0 left">
+		<div class="v-cell">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam atque consequuntur dolore fugiat fugit hic in ipsam iure magnam maxime quaerat, quam qui repellat repellendus temporibus vel vitae voluptate!
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+// Modal Overlay
+<div class="modal grow modal-overlay modal-backdrop-white fade" id="modal-overlay-white">
+	<div class="modal-dialog">
+		<div class="v-cell">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam atque consequuntur dolore fugiat fugit hic in ipsam iure magnam maxime quaerat, quam qui repellat repellendus temporibus vel vitae voluptate!
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+-->
+
+<!-- Create the modal dynamically via Handlebars -->
+<script id="tk-modal-demo" type="text/x-handlebars-template">
+	<div class="modal fade{% raw %}{{#if modalOptions}} {{ modalOptions }}{{/if}}{% endraw %}" id="{% raw %}{{ id }}{% endraw %}">
+		<div class="modal-dialog{% raw %}{{#if dialogOptions}} {{ dialogOptions }}{{/if}}{% endraw %}">
+			<div class="v-cell">
+				<div class="modal-content{% raw %}{{#if contentOptions}} {{ contentOptions }}{{/if}}{% endraw %}">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title">Modal title</h4>
+					</div>
+					<div class="modal-body">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam atque consequuntur dolore fugiat fugit hic in ipsam iure magnam maxime quaerat, quam qui repellat repellendus temporibus vel vitae voluptate!
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>

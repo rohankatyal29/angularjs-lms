@@ -1,0 +1,33 @@
+{% include "lib/layout/html/_header.html" { htmlClass: "hide-sidebar st-layout ls-top-navbar" } %}
+
+<!-- Wrapper required for sidebar transitions -->
+<div class="st-container">
+
+    {% include "src/html/themes/layout/fixed/_navbar_single_toggle.html" %}
+
+    <!-- Sidebar component with st-effect-1 (set on the toggle button within the navbar) -->
+    {% include "lib/layout/html/samples/_sidebar.html" { sidebarOptions: "left sidebar-size-2 sidebar-offset-0 sidebar-skin-dark sidebar-visible-mobile sidebar-visible-desktop" } %}
+
+    <!-- Sidebar component with st-effect-1 (set on the toggle button within the navbar) -->
+    {% include "lib/layout/html/samples/_sidebar.html" { sidebarOptions: "right sidebar-size-2 sidebar-offset-0 sidebar-skin-white sidebar-visible-desktop" } %}
+
+    <!-- content push wrapper -->
+    <div class="st-pusher" id="content">
+
+        <!-- this is the wrapper for the content -->
+        <div class="st-content">
+
+            <!-- extra div for emulating position:fixed of the menu -->
+            <div class="st-content-inner">
+
+                <div class="container">
+                    {% include "lib/layout/html/samples/_layouts.html" %}
+                </div>
+
+            </div><!-- /st-content-inner -->
+
+        </div><!-- /st-content -->
+
+    </div><!-- /st-pusher -->
+
+</div><!-- /st-container -->

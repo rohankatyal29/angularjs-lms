@@ -1,0 +1,65 @@
+<div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
+    <div class="panel-heading panel-collapse-trigger">
+        <h4 class="panel-title">Category</h4>
+    </div>
+    <div class="panel-body list-group">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="badge pull-right">120+</span>
+                <a class="list-group-link" href="index.html">Design</a>
+            </li>
+            <li class="list-group-item active">
+                <span class="badge pull-right">30+</span>
+                <a class="list-group-link" href="index.html">Programming</a>
+            </li>
+            <li class="list-group-item">
+                <span class="badge pull-right">40+</span>
+                <a class="list-group-link" href="index.html">WordPress</a>
+            </li>
+            <li class="list-group-item">
+                <span class="badge pull-right">60+</span>
+                <a class="list-group-link" href="index.html">Workflow</a>
+            </li>
+            <li class="list-group-item">
+                <span class="badge pull-right">15+</span>
+                <a class="list-group-link" href="index.html">HTML</a>
+            </li>
+            <li class="list-group-item">
+                <span class="badge pull-right">25+</span>
+                <a class="list-group-link" href="index.html">CSS</a>
+            </li>
+            <li class="list-group-item">
+                <span class="badge pull-right">35+</span>
+                <a class="list-group-link" href="index.html">iOS</a>
+            </li>
+            <li class="list-group-item">
+                <span class="badge pull-right">20+</span>
+                <a class="list-group-link" href="index.html">Free</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="panel panel-default" data-toggle="panel-collapse" data-open="false">
+    <div class="panel-heading panel-collapse-trigger">
+        <h4 class="panel-title">Price</h4>
+    </div>
+    <div class="panel-body">
+        <div class="form-group input-group margin-none">
+            <div class="row margin-none">
+                <div class="col-xs-6 padding-none">
+                    <input class="form-control" type="text" placeholder="Min .." />
+                </div>
+                <div class="col-xs-6 padding-none">
+                    <input class="form-control" type="text" placeholder="Max .." />
+                </div>
+            </div>
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4>Featured</h4>
+{% include "src/html/themes/html/courses/_carousel.html" { dataItems: 1, dataItemsLg: 1, dataItemsMd: 1, dataItemsSm: 1 } %}

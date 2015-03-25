@@ -1,0 +1,36 @@
+@mixin calendar-class-from-color-a($classColor, $classIndex) {
+	$class: ".calendar-#{$classColor}-#{$classIndex}";
+	$color-name: "#{$classColor}-#{$classIndex}";
+	$color: map-get($colors-map, $color-name);
+	.datepicker {
+		&#{$class} {
+			table {
+				thead tr {
+					background: $color !important;
+					th.datepicker-switch, th.next, th.prev {
+						&:hover {
+							background: darken($color, 10%);
+						}
+					}
+				}
+				tr td {
+					&.day, .month, .year {
+						&.active {
+							background-color: $color !important;
+						}
+						&:hover {
+							background: darken($color, 10%);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin calendar-class-from-color($classColor, $classIndex: 100) {
+	@if $classIndex <= 900 {
+		@include calendar-class-from-color-a($classColor, $classIndex);
+		@include calendar-class-from-color($classColor, $classIndex + 100);
+	}
+}

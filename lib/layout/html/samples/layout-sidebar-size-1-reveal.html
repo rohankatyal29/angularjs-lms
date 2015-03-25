@@ -1,0 +1,10 @@
+{% include "lib/layout/html/_header.html" { htmlClass: 'ls-top-navbar show-sidebar sidebar-l1 sidebar-r1' } %}
+{% include "src/html/themes/layout/fluid/_navbar.html" %}
+{% include "lib/layout/html/samples/_sidebar_menu.html" { sidebarOptions: "left sidebar-size-1 sidebar-mini-reveal sidebar-offset-0 sidebar-skin-dark sidebar-visible-desktop sidebar-visible-mobile", sidebarData: "id=sidebar-menu data-type=dropdown", sidebarMenu: "sm-icons-block sm-icons-right" } %}
+{% include "lib/layout/html/samples/_sidebar_menu.html" { sidebarOptions: "right sidebar-size-1 sidebar-mini-reveal sidebar-offset-0 sidebar-skin-white sidebar-visible-desktop sidebar-visible-mobile", sidebarData: "id=sidebar-menu data-type=dropdown", sidebarMenu: "sm-icons-block sm-active-item-bg" } %}
+
+<div id="content">
+    <div class="container-fluid">
+        {% include "lib/layout/html/samples/_layouts.html" %}
+    </div>
+</div>

@@ -1,0 +1,41 @@
+{
+	"markers": [
+		{
+			"latitude": 57.79724753642693,
+			"longitude": 12.050237522090129,
+			"state": "",
+			"country": "",
+			"address": "",
+			"template": "tpl-edit",
+			"icon": "gas-07"
+		},
+		{
+			"latitude": 57.79752197914331,
+			"longitude": 12.051305041278056,
+			"state": "",
+			"country": "",
+			"address": "",
+			"template": "tpl-edit",
+			"icon": "house-02",
+			"open": true
+		},
+		{
+			"latitude": 57.79778836004782,
+			"longitude": 12.052299951552868,
+			"state": "",
+			"country": "",
+			"address": "",
+			"template": "tpl-edit",
+			"icon": "bar-07"
+		},
+		{
+			"latitude": 57.7969135730701,
+			"longitude": 12.052112196921826,
+			"state": "",
+			"country": "",
+			"address": "",
+			"template": "tpl-edit",
+			"icon": "taxi-07"
+		}
+	]
+}

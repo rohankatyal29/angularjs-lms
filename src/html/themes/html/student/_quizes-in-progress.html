@@ -1,0 +1,56 @@
+<div class="panel panel-default paper-shadow" data-z="0.5">
+	<div class="panel-heading">
+		<h4 class="text-headline margin-none">Quizzes</h4>
+		<p class="text-subhead text-light">Your recent performance</p>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item media v-middle">
+			<div class="media-body">
+				<h4 class="text-subhead margin-none">
+					<a {% if angular %}ui-sref="{{ slug or 'app' }}-student.take-quiz"{% else %}href="{{ slug or 'app' }}-take-quiz.html"{% endif %} class="list-group-link">Title of quiz goes here?</a>
+				</h4>
+				<div class="caption">
+					<span class="text-light">Course:</span>
+					<a {% if angular %}ui-sref="{{ slug or 'app' }}-student.take-course"{% else %}href="{{ slug or 'app' }}-take-course.html"{% endif %}>Basics of HTML</a>
+				</div>
+			</div>
+			<div class="media-right text-center">
+				<div class="text-display-1">5.8</div>
+				<span class="caption text-light">Good</span>
+			</div>
+		</li>
+		<li class="list-group-item media v-middle">
+			<div class="media-body">
+				<h4 class="text-subhead margin-none">
+					<a {% if angular %}ui-sref="{{ slug or 'app' }}-student.take-quiz"{% else %}href="{{ slug or 'app' }}-take-quiz.html"{% endif %} class="list-group-link">Directives & Routing</a>
+				</h4>
+				<div class="caption">
+					<span class="text-light">Course:</span>
+					<a {% if angular %}ui-sref="{{ slug or 'app' }}-student.take-course"{% else %}href="{{ slug or 'app' }}-take-course.html"{% endif %}>Angular in Steps</a>
+				</div>
+			</div>
+			<div class="media-right text-center">
+				<div class="text-display-1 text-green-300">9.8</div>
+				<span class="caption text-light">Great</span>
+			</div>
+		</li>
+		<li class="list-group-item media v-middle">
+			<div class="media-body">
+				<h4 class="text-subhead margin-none">
+					<a {% if angular %}ui-sref="{{ slug or 'app' }}-student.take-quiz"{% else %}href="{{ slug or 'app' }}-take-quiz.html"{% endif %} class="list-group-link">Responsive & Retina</a>
+				</h4>
+				<div class="caption">
+					<span class="text-light">Course:</span>
+					<a {% if angular %}ui-sref="{{ slug or 'app' }}-student.take-course"{% else %}href="{{ slug or 'app' }}-take-course.html"{% endif %}>Bootstrap Foundations</a>
+				</div>
+			</div>
+			<div class="media-right text-center">
+				<div class="text-display-1 text-red-300">3.4</div>
+				<span class="caption text-light">Failed</span>
+			</div>
+		</li>
+	</ul>
+	<div class="panel-footer">
+		<a {% if angular %}ui-sref="{{ slug or 'app' }}-student.quizzes"{% else %}href="{{ slug or 'app' }}-student-quizzes.html"{% endif %} class="btn btn-primary paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="#"> Go to Results</a>
+	</div>
+</div>

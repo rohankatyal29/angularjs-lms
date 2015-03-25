@@ -1,0 +1,134 @@
+.messages-container {
+
+	// LEFT SIDE
+	.messages-list {
+		width: 250px;
+		.list-group-item {
+			padding: 0;
+			a {
+				color: @text-color;
+				display: block;
+				text-decoration: none;
+			}
+			&:hover {
+				background: lighten(#efefef, 4%);
+			}
+			&.active:hover {
+				background: @primary-color;
+			}
+			.media-body {
+				padding-right: 16px;
+				.user {
+					font-weight: 500;
+				}
+				.date {
+					float: right;
+					font-size: 12px;
+					font-weight: 500;
+					opacity: 0.4;
+				}
+				.message {
+					opacity: 0.8;
+				}
+			}
+
+			&.active .media-body {
+				color: #fff;
+				.text-light {
+					color: fade(@white, 30%);
+				}
+			}
+		}
+	}
+
+	.media-body {
+		height: 100%;
+		.media {
+			margin-bottom: 16px;
+		}
+	}
+}
+
+
+// IF MOBILE
+@media (max-width: @screen-xs) {
+	.messages-container {
+		.messages-list {
+			width: 100%;
+			height: 50px;
+			position: relative;
+			overflow: hidden;
+			margin-bottom: 20px;
+			// Kill Panel
+			.panel.panel-default {
+				position: relative;
+				overflow-x: auto;
+				background: none;
+				border: 0;
+				height: 50px;
+				ul {
+					height: 50px;
+				}
+			}
+			// User
+			.list-group-item {
+				width: 50px;
+				border: 0;
+				float: left;
+				.media-left {
+					padding: 0;
+				}
+				.media-body {
+					display: none;
+				}
+			}
+			// Active / Non Active
+			.list-group-item {
+				.media .media-left {
+					opacity: 0.6;
+					&:hover {
+						opacity: 1;
+					}
+				}
+				&.active {
+					opacity: 1;
+				}
+			}
+			display: block;
+		}
+	}
+}
+
+// IF SM to 1080
+@media (min-width: @screen-xs) and (max-width: @screen-sm) {
+	.messages-container {
+		.messages-list {
+			.list-group-item .media {
+				.media-left {
+					padding: 0;
+				}
+				.media-body {
+					display: none;
+				}
+			}
+			.list-group-item {
+				.media .media-left {
+					opacity: 0.6;
+					&:hover {
+						opacity: 1;
+					}
+				}
+				&.active {
+					.media .media-left {
+						opacity: 1;
+					}
+				}
+			}
+			width: auto;
+		}
+	}
+}
+
+.media-clearfix-xs-min > .media-body [class*="media"] .media-object {
+	width: 50px !important;
+}

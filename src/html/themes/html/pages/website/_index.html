@@ -1,0 +1,183 @@
+<div class="parallax cover overlay cover-image-full home">
+    <img class="parallax-layer" src="images/photodune-4161018-group-of-students-m.jpg" alt="Learning Cover" />
+    <div class="parallax-layer overlay overlay-full overlay-bg-white bg-transparent" data-speed="8" data-opacity="true">
+        <div class="v-center">
+            <div class="page-section overlay-bg-white-strong relative paper-shadow" data-z="1">
+                <h1 class="text-display-2 margin-v-0-15 display-inline-block">Courses for Web &amp; Mobile</h1>
+                <p class="text-subhead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consectetur consequatur distinctio earum ipsam.</p>
+                <a class="btn btn-green-500 btn-lg paper-shadow" data-hover-z="2" data-animated data-toggle="modal" href="#modal-overlay-signup">Sign Up - Only &dollar;19.00/mo</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="page-section-heading">
+        <h2 class="text-display-1">Features</h2>
+        <p class="lead text-muted">Learn about all of the features we offer.</p>
+    </div>
+    <div class="row" data-toggle="gridalicious">
+
+        <div class="media">
+            <div class="media-left padding-none">
+                <div class="bg-green-300 text-white">
+                    <div class="panel-body">
+                        <i class="fa fa-film fa-2x fa-fw"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="media-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-headline">Watch Courses Offline</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut culpa fugiat iusto, molestias nemo nostrum quia rerum temporibus voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="media">
+            <div class="media-left padding-none">
+                <div class="bg-purple-300 text-white">
+                    <div class="panel-body">
+                        <i class="fa fa-life-bouy fa-2x fa-fw"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="media-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-headline">Premium Support</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut culpa fugiat iusto, molestias nemo nostrum quia rerum temporibus voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="media">
+            <div class="media-left padding-none">
+                <div class="bg-orange-400 text-white">
+                    <div class="panel-body">
+                        <i class="fa fa-user fa-2x fa-fw"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="media-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-headline">Learn from Top Tutors</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut culpa fugiat iusto, molestias nemo nostrum quia rerum temporibus voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="media">
+            <div class="media-left padding-none">
+                <div class="bg-cyan-400 text-white">
+                    <div class="panel-body">
+                        <i class="fa fa-code fa-2x fa-fw"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="media-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-headline">Lesson Source Files</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut culpa fugiat iusto, molestias nemo nostrum quia rerum temporibus voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="media">
+            <div class="media-left padding-none">
+                <div class="bg-pink-400 text-white">
+                    <div class="panel-body">
+                        <i class="fa fa-print fa-2x fa-fw"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="media-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-headline">Printed Diploma</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut culpa fugiat iusto, molestias nemo nostrum quia rerum temporibus voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="media">
+            <div class="media-left padding-none">
+                <div class="bg-red-400 text-white">
+                    <div class="panel-body">
+                        <i class="fa fa-tasks fa-2x fa-fw"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="media-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-headline">New Lessons Every Day</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut culpa fugiat iusto, molestias nemo nostrum quia rerum temporibus voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<br/>
+
+<div class="page-section bg-white">
+    <div class="container">
+
+        <div class="text-center">
+            <h3 class="text-display-1">Featured Courses</h3>
+            <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <br/>
+
+        {% include "src/html/themes/html/courses/_carousel.html" { dataItems: 4, dataItemsLg: 3, dataItemsMd: 2, dataItemsSm: 1 } %}
+
+        <div class="text-center">
+            <br/>
+            <a class="btn btn-lg btn-primary" {% if angular %}ui-sref="website-courses.grid"{% else %}href="website-directory-grid.html"{% endif %}>Browse Courses</a>
+        </div>
+
+    </div>
+</div>
+
+<div class="parallax cover overlay height-300 margin-none">
+    <img class="parallax-layer" data-auto-offset="true" data-auto-size="false" src="images/photodune-6745579-modern-creative-man-relaxing-on-workspace-m.jpg" alt="Learning Cover" />
+    <div class="parallax-layer overlay overlay-full overlay-bg-white bg-transparent" data-opacity="true" data-speed="8">
+        <div class="v-center">
+            <div class="page-section">
+                <h1 class="text-display-2 overlay-bg-white margin-v-0-15 inline-block">Feedback</h1><br/>
+                <p class="lead text-overlay overlay-bg-white-strong inline-block">How others use E-learning to improve their skills</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="page-section">
+        <div class="row">
+            <div class="col-md-4">
+                {% include "src/html/themes/html/testimonial/_item-2.html" %}
+            </div>
+            <div class="col-md-4">
+                {% include "src/html/themes/html/testimonial/_item-2.html" %}
+            </div>
+            <div class="col-md-4">
+                {% include "src/html/themes/html/testimonial/_item-2.html" %}
+            </div>
+        </div>
+    </div>
+    <br/>
+
+</div>
+
+{% include "src/html/themes/html/signup/_modal.html" %}

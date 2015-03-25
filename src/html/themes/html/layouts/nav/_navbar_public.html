@@ -1,0 +1,100 @@
+<!-- Fixed navbar -->
+<div class="navbar {{ navbarSkin or 'navbar-default' }} navbar-fixed-top navbar-size-large navbar-size-xlarge paper-shadow" data-z="0" data-animated role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand navbar-brand-logo">
+                <a class="svg" href="index.html">{% include "src/html/themes/html/_logo.html" %}</a>
+            </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav navbar-nav navbar-nav-margin-left">
+                <li class="dropdown{% if page.slug == 'website-contact' or page.slug|contains('website-blog') or page.slug|contains('website-forum') or page.slug == 'index' or page.slug == 'pricing' or page.slug == 'tutors' or page.slug == 'survey' %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li{% if page.slug == 'index' %} class="active"{% endif %}><a href="index.html">Home page</a></li>
+                        <li{% if page.slug == 'pricing' %} class="active"{% endif %}><a href="pricing.html">Pricing</a></li>
+                        <li{% if page.slug == 'tutors' %} class="active"{% endif %}><a href="tutors.html">Tutors</a></li>
+                        <li{% if page.slug == 'survey' %} class="active"{% endif %}><a href="survey.html">Survey</a></li>
+                        <li{% if page.slug == 'website-forum' %} class="active"{% endif %}><a href="website-forum.html">Forum Home</a></li>
+                        <li{% if page.slug == 'website-forum-category' %} class="active"{% endif %}><a href="website-forum-category.html">Forum Category</a></li>
+                        <li{% if page.slug == 'website-forum-thread' %} class="active"{% endif %}><a href="website-forum-thread.html">Forum Thread</a></li>
+                        <li{% if page.slug == 'website-blog' %} class="active"{% endif %}><a href="website-blog.html">Blog Listing</a></li>
+                        <li{% if page.slug == 'website-blog-post' %} class="active"{% endif %}><a href="website-blog-post.html">Blog Post</a></li>
+                        <li{% if page.slug == 'website-contact' %} class="active"{% endif %}><a href="website-contact.html">Contact</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown{% if page.slug|contains('directory') or page.slug == 'website-course' %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li{% if (page.slug == 'website-directory-grid') %} class="active"{% endif %}><a href="website-directory-grid.html">Grid Directory</a></li>
+                        <li{% if (page.slug == 'website-directory-list') %} class="active"{% endif %}><a href="website-directory-list.html">List Directory</a></li>
+                        <li{% if (page.slug == 'website-course') %} class="active"{% endif %}><a href="website-course.html">Single Course</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown{% if page.slug|contains('website-take') or page.slug|contains('website-student') or page.slug|contains('website-course-forum') %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li{% if page.slug == 'website-student-dashboard' %} class="active"{% endif %}><a href="website-student-dashboard.html">Dashboard</a></li>
+                        <li{% if page.slug == 'website-student-courses' %} class="active"{% endif %}><a href="website-student-courses.html">My Courses</a></li>
+                        <li{% if page.slug == 'website-take-course' %} class="active"{% endif %}><a href="website-take-course.html">Take Course</a></li>
+                        <li{% if page.slug|contains('website-course-forum') %} class="active"{% endif %}><a href="website-course-forums.html">Course Forums</a></li>
+                        <li{% if page.slug == 'website-take-quiz' %} class="active"{% endif %}><a href="website-take-quiz.html">Take Quiz</a></li>
+                        <li{% if page.slug == 'website-student-messages' %} class="active"{% endif %}><a href="website-student-messages.html">Messages</a></li>
+                        <li{% if page.slug == 'website-student-profile' or page.slug == 'website-student-billing' %} class="active"{% endif %}><a href="website-student-profile.html">Private Profile</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown{% if page.slug|contains('website-instructor') %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Instructor <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li{% if page.slug == 'website-instructor-dashboard' %} class="active"{% endif %}><a href="website-instructor-dashboard.html">Dashboard</a></li>
+                        <li{% if page.slug == 'website-instructor-courses' %} class="active"{% endif %}><a href="website-instructor-courses.html">My Courses</a></li>
+                        <li{% if page.slug|contains('website-instructor-course-edit') %} class="active"{% endif %}><a href="website-instructor-course-edit-course.html">Edit Course</a></li>
+                        <li{% if page.slug == 'website-instructor-earnings' %} class="active"{% endif %}><a href="website-instructor-earnings.html">Earnings</a></li>
+                        <li{% if page.slug == 'website-instructor-statement' %} class="active"{% endif %}><a href="website-instructor-statement.html">Statement</a></li>
+                        <li{% if page.slug == 'website-instructor-messages' %} class="active"{% endif %}><a href="website-instructor-messages.html">Messages</a></li>
+                        <li{% if page.slug == 'website-instructor-profile' or page.slug == 'website-instructor-billing' %} class="active"{% endif %}><a href="website-instructor-profile.html">Private Profile</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown{% if page.slug|contains('essential') %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li{% if (page.slug == 'essential-buttons') %} class="active"{% endif %}><a href="essential-buttons.html">Buttons</a></li>
+                        <li{% if (page.slug == 'essential-icons') %} class="active"{% endif %}><a href="essential-icons.html">Icons</a></li>
+                        <li{% if (page.slug == 'essential-progress') %} class="active"{% endif %}><a href="essential-progress.html">Progress</a></li>
+                        <li{% if (page.slug == 'essential-grid') %} class="active"{% endif %}><a href="essential-grid.html">Grid</a></li>
+                        <li{% if (page.slug == 'essential-forms') %} class="active"{% endif %}><a href="essential-forms.html">Forms</a></li>
+                        <li{% if (page.slug == 'essential-tables') %} class="active"{% endif %}><a href="essential-tables.html">Tables</a></li>
+                        <li{% if (page.slug == 'essential-tabs') %} class="active"{% endif %}><a href="essential-tabs.html">Tabs</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav navbar-nav-bordered navbar-nav-margin-right">
+                    <!-- user -->
+                    <li class="dropdown user{% if page.slug|contains('website-student-') %} active{% endif %}">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/people/110/guy-6.jpg" alt="" class="img-circle"/> Bill<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li{% if page.slug == 'website-student-dashboard' %} class="active"{% endif %}><a href="website-student-dashboard.html"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li>
+                            <li{% if page.slug == 'website-student-courses' %} class="active"{% endif %}><a href="website-student-courses.html"><i class="fa fa-mortar-board"></i> My Courses</a></li>
+                            <li{% if page.slug == 'website-student-profile' %} class="active"{% endif %}><a href="website-student-profile.html"><i class="fa fa-user"></i> Profile</a></li>
+                            <li><a href="login.html"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <!-- // END user -->
+                </ul>
+                <a href="login.html" class="navbar-btn btn btn-primary">Log In</a>
+            </div>
+        </div><!-- /.navbar-collapse -->
+
+    </div>
+</div>

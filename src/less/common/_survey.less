@@ -1,0 +1,47 @@
+body.survey {
+	position: relative;
+	background: url('../images/photodune-6745585-modern-creative-workspace-m.jpg') top left no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+
+	.lock-container {
+		margin: auto;
+		width: 500px;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		position: absolute;
+		height: 100%;
+		display: table;
+
+		@media (max-width: @screen-xs) {
+			width: auto;
+		}
+
+		.panel {
+			background: fadeout(#fff, 10%);
+			box-shadow: 0 1px 5px #999;
+			position: relative;
+			.panel-heading {
+				padding: 20px;
+				background: linear-gradient(to bottom, #fff, fadeout(#fff, 100%));
+				border: none;
+			}
+			.panel-body {
+				padding: 20px;
+			}
+			.panel-footer {
+				padding: 20px;
+				background: linear-gradient(to top, #fff, fadeout(#fff, 100%));
+				border: none;
+				.small {
+					position: absolute;
+					bottom: 20px;
+					left: 20px;
+				}
+			}
+		}
+	}
+
+}

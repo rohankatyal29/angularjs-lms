@@ -1,0 +1,61 @@
+.curriculum {
+	.collapse-status {
+		display: none;
+		border: 1px solid @panel-default-border;
+		background: #fff;
+		border-radius: 0 0 5px 5px;
+		position: absolute;
+		top: -1px;
+		right: 20px;
+		padding: 5px 10px;
+		font-size: 12px;
+	}
+	.collapse-open {
+		display: block;
+	}
+	&.open .collapse-open {
+		display: none;
+	}
+	&.open .collapse-close {
+		display: block;
+	}
+
+	> .panel-heading {
+		cursor: pointer;
+		position: relative;
+	}
+	.list-group {
+		color: @text-color-light;
+		.list-group-item {
+			cursor: pointer;
+			padding: 8px 16px;
+		}
+		.text-crt:not([class*="bg-"]) {
+			font-size: 1.15rem;
+			color: #a8a8a8;
+		}
+		.text-crt {
+			width: 25px;
+		}
+		.media-body > i {
+			margin-right: 10px;
+		}
+		.text-caption {
+			color: #a8a8a8;
+		}
+		.list-group-item:hover {
+			background: lighten(#fafafa, 1%);
+			border-color: darken(#fafafa, 2%);
+		}
+		.list-group-item.active {
+			background: #fafafa;
+			border-color: darken(#fafafa, 4%);
+			color: #303030;
+			font-weight: bold;
+			.text-caption {
+				font-weight: bold;
+				color: #303030;
+			}
+		}
+	}
+}

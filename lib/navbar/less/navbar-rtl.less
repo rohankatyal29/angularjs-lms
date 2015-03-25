@@ -1,0 +1,62 @@
+// _main.less
+@media (min-width: @grid-float-breakpoint) {
+    .navbar-right-m {
+        margin-right: -@navbar-padding-horizontal;
+    }
+}
+
+
+@media (min-width: @grid-float-breakpoint) {
+    .navbar-right.flip {
+        float: left !important;
+        margin-left: @navbar-padding-horizontal;
+    }
+
+    .navbar-nav.navbar-right.flip:last-of-type {
+        margin-left: -@navbar-padding-horizontal;
+    }
+}
+
+// _dropdown.less
+.nav > li.dropdown.user {
+    > a img {
+        margin-left:3px;
+        margin-right:0;
+    }
+    ul.dropdown-menu i {
+        float: left;
+    }
+}
+
+// _notifications.less
+.navbar-nav > li.notifications a.dropdown-toggle {
+    .badge {
+        &.floating {
+            @media (min-width: @screen-sm) {
+                left: 2px;
+                right: initial;
+            }
+        }
+    }
+}
+
+// skins/_default.less
+.navbar-default .navbar-nav.navbar-right:last-of-type {
+    @media (min-width: @grid-float-breakpoint) {
+        border-right: 1px solid @navbar-default-border;
+        border-left: none;
+    }
+}
+
+.navbar-default .navbar-nav > li {
+    @media (min-width: @screen-sm-min) {
+        border-left: 1px solid @navbar-default-border;
+        border-right: none;
+    }
+}
+
+// _toggle.less
+.navbar .toggle.pull-right {
+    margin-left: @navbar-padding-horizontal/2;
+    margin-right: initial;
+}

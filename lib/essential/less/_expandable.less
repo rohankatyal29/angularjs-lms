@@ -1,0 +1,79 @@
+@expandable-bg: @body-bg;
+
+.expandable {
+	position: relative;
+	.expandable-content {
+		height: 100px;
+		overflow: hidden;
+	}
+	&.expandable-trigger {
+		cursor: pointer;
+	}
+	.expandable-indicator {
+		content: " ";
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 40px;
+		bottom: 0;
+		background: fade(@expandable-bg, 0%);
+		background: linear-gradient(to bottom, fade(@expandable-bg, 0%) 0%, fade(@expandable-bg, 90%) 50%, fade(@expandable-bg, 90%) 50%, @expandable-bg 100%);
+		text-align: center;
+		line-height: 40px;
+		transition: transform 0.5s, background 0.3s;
+		i {
+			vertical-align: middle;
+			display: inline-block;
+			width: 28px;
+			height: 28px;
+			line-height: 28px;
+			border-radius: 50%;
+			background-color: @brand-primary;
+			color: @white;
+			box-shadow: 0 -3px 0 @white;
+			&:before {
+				font: normal normal normal 14px/1 FontAwesome;
+				font-size: inherit;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				content: "\f103";
+			}
+		}
+	}
+	.expandable-content-large {
+		height: 200px;
+	}
+	.expandable-content-medium {
+		height: 150px;
+	}
+	&.expandable-indicator-white {
+		.expandable-indicator {
+			background: fade(@white, 0%);
+			background: linear-gradient(to bottom, fade(@white, 0%) 0%, fade(@white, 90%) 50%, fade(@white, 90%) 50%, @white 100%);
+		}
+	}
+	&.expandable-open {
+		.expandable-content {
+			position: relative;
+			overflow: visible;
+			margin-bottom: 40px;
+			height: auto;
+		}
+		.expandable-indicator {
+			cursor: pointer;
+			background: none;
+			i {
+				box-shadow: 0 1px 0 @white;
+				&:before {
+					content: "\f102";
+				}
+			}
+			transform: translate3d(0, 40px, 0);
+		}
+		&.expandable-trigger {
+			cursor: auto;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+    {% if header !== false %}
+    <div class="panel-heading">
+        {% include "lib/social/html/timeline/timeline-blocks/_block-heading.html" { gender: "woman", image: "4" } %}
+    </div>
+    {% endif %}
+
+    {% include "lib/ui-lib/html/widgets/weather-1.html" %}
+
+    <div class="view-all-comments"><i class="fa fa-comments-o"></i> Be the first to comment</div>
+    <ul class="comments">
+        <li class="comment-form">
+            <div class="input-group">
+                {% if !rtl %}
+                <input type="text" class="form-control"/>
+                {% endif %}
+                <span class="input-group-btn">
+                   <a href="" class="btn btn-default"><i class="fa fa-photo"></i></a>
+                </span>
+                {% if rtl %}
+                <input type="text" class="form-control"/>
+                {% endif %}
+            </div>
+        </li>
+    </ul>
+</div>

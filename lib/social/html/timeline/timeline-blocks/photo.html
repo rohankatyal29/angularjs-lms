@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+    {% if header !== false %}
+    <div class="panel-heading">
+        {% include "lib/social/html/timeline/timeline-blocks/_block-heading.html" { gender: "guy", image: "6" } %}
+    </div>
+    {% endif %}
+    <img src="images/place1-full.jpg" class="img-responsive">
+    <ul class="comments">
+        <li clas="media">
+            <div class="media-left">
+                <a href=""><img src="images/people/50/woman-5.jpg" class="media-object"></a>
+            </div>
+            <div class="media-body">
+                {% include "lib/social/html/timeline/timeline-blocks/comment-options.html" %}
+                <a href="" class="comment-author">Mary</a>
+                <span>Wow</span>
+                <div class="comment-date">2 days</div>
+            </div>
+        </li>
+        <li class="comment-form">
+            <div class="input-group">
+                {% if !rtl %}
+                <input type="text" class="form-control"/>
+                {% endif %}
+                <span class="input-group-btn">
+                   <a href="" class="btn btn-default"><i class="fa fa-photo"></i></a>
+                </span>
+                {% if rtl %}
+                <input type="text" class="form-control"/>
+                {% endif %}
+            </div>
+        </li>
+    </ul>
+</div>

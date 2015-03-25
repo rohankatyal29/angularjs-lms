@@ -1,0 +1,126 @@
+{% extends "lib/docs/html/_layout.html" %}
+
+{% block sidebar %}
+    <div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-dark sidebar-visible-desktop" id="sidebar-menu">
+        <div id="menu">
+            <ul class="nav sidebar-menu sm-active-item-bg">
+                <li class="active"><a href="#intro">1. Templating</a></li>
+                <li><a href="#usage">2. Basic usage</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="s-container">
+        <h1 class="text-display-1">Template Engine</h1>
+    </div>
+
+    <div class="panel panel-default" id="intro">
+        <div class="panel-heading">
+            <h3 class="panel-title">What is a template engine and why should you care?</h3>
+        </div>
+        <div class="panel-body">
+            In a general way, a template engine is a web publishing tool that uses a template processor to combine web pages to form finished web pages.
+            In practice, we can work with templates in various formats, apply any kind of filters and transformations to those templates and process the templates in valid HTML output. By using a template engine, we are still building static HTML pages, but in a productive, organised and efficient way.
+        </div>
+        <div class="panel-heading">
+            <h3 class="panel-title">Swig</h3>
+        </div>
+        <div class="panel-body">
+            <p>Meet <a href="https://github.com/paularmstrong/swig" target="_blank">Swig</a>, one of the best template engines for node.js. Swig allows you to create pages, layouts, extend layouts from pages, include reusable partials in your templates, create macros (think of these as reusable snippets of functionality) and a lot more.</p>
+            <h4>Features</h4>
+            <ol>
+                <li>It's blazing fast.</li>
+                <li>Object-Oriented template inheritance.</li>
+                <li>Apply filters and transformations to output in your templates.</li>
+                <li>Automatically escapes all output for safe HTML rendering.</li>
+                <li>Lots of iteration and conditionals supported.</li>
+                <li>Robust without the bloat.</li>
+                <li>Extendable and customizable.</li>
+                <li><a href="http://paularmstrong.github.io/swig/" target="_blank">Great documentation</a>.</li>
+            </ol>
+        </div>
+    </div>
+
+    <h2 id="usage">Basic Usage</h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4>Layouts <small>layout.html</small></h4>
+        </div>
+        <div class="panel-body-lrb">
+            <div class="highlight">
+<pre>{% highlight %}{% raw %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.name }}</title>
+
+    <!-- Styling -->
+    <link href="css/default.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Declare a template block in which you can inject
+         content from a page that is extending this layout -->
+
+    {% block content %}{% endblock %}
+
+    <!-- Vendor Scripts Bundle -->
+    <script src="js/vendor.min.js"></script>
+
+    <!-- App Scripts Bundle -->
+    <script src="js/docs.min.js"></script>
+
+</body>
+</html>
+{% endraw %}{% endhighlight %}</pre>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <h4>Pages <small>index.html</small></h4>
+        </div>
+        <div class="panel-body-lrb">
+            <div class="highlight">
+<pre>{% highlight %}{% raw %}
+<!-- Simple page example of a template that inherits the layout.html template example above -->
+
+{% extends 'layout.html' %}
+
+{% block content %}
+    <p>This is just an awesome page.</p>
+{% endblock %}
+{% endraw %}{% endhighlight %}</pre>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <h4>Partials</h4>
+        </div>
+        <div class="panel-body-lrb">
+            <div class="highlight">
+<pre>{% highlight %}{% raw %}
+<!-- partial.html -->
+<p>I like {{ food }} and {{ drink }}.</p>
+
+<!-- page.html -->
+
+{% extends 'layout.html' %}
+
+{% block content %}
+    {% set my_obj = { food: 'tacos', drink: 'horchata' } %}
+    {% include "./partial.html" with my_obj %}
+    // => I like tacos and horchata.
+{% endblock %}
+{% endraw %}{% endhighlight %}</pre>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

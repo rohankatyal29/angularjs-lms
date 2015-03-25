@@ -1,0 +1,22 @@
+{
+    "docs": {
+        "default": {
+			"primary-color": "#42a5f5"
+        }
+    },
+    "choose": {
+        "default": {
+			"primary-color": "#42a5f5"
+        }
+    },
+    "html": {
+        "default": {
+            "primary-color": "#42a5f5"
+        }
+    },
+	"angular": {
+		"default": {
+			"primary-color": "#42a5f5"
+		}
+	}
+}

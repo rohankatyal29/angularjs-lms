@@ -1,0 +1,45 @@
+// Sizing
+.size(@property: height, @index: 20, @size: "", @increment: 10) when (@index =< 600) {
+	@max: ~"@{index}px";
+	@class: ~".@{property}-@{index}@{size}";
+	&@{class} {
+		@{property}: @max !important;
+	}
+	.size(@property, @index + @increment, @size);
+}
+.size-auto(@property, @size: "") {
+	@class: ~".@{property}-auto@{size}";
+	&@{class} {
+		@{property}: auto !important;
+	}
+}
+.size-100pc(@property, @size: "") {
+	@class: ~".@{property}-100pc@{size}";
+	&@{class} {
+		@{property}: 100% !important;
+	}
+}
+
+// Spacing
+.spacing-class(@prefix, @property, @index: 15) when (@index >= 0) {
+	@class: ~".@{prefix}-@{index}";
+	&@{class} {
+		@{property}-top: ~"@{index}px" !important;
+		@{property}-bottom: ~"@{index}px" !important;
+	}
+	.spacing-class(@prefix, @property, @index, 10);
+	.spacing-class(@prefix, @property, @index - 1);
+}
+
+.spacing-class(@prefix, @property, @size1: 15, @size2: 15) when (@size1 >= 0) and (@size2 >= 0) and not (@size1 = @size2) {
+	@class: ~".@{prefix}-@{size1}-@{size2}";
+	&@{class} {
+		@{property}-top: ~"@{size1}px" !important;
+		@{property}-bottom: ~"@{size2}px" !important;
+	}
+	.spacing-class(@prefix, @property, @size1, @size2 - 1);
+}
+
+.spacing-class(@prefix, @property, @size1: 15, @size2: 15) when (@size1 = @size2) {
+	.spacing-class(@prefix, @property, @size1, @size2 - 1);
+}

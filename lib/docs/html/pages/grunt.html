@@ -1,0 +1,331 @@
+{% extends "lib/docs/html/_layout.html" %}
+
+{% block sidebar %}
+    <div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-dark sidebar-visible-desktop" id="sidebar-menu">
+        <div id="menu">
+            <ul class="nav sidebar-menu sm-active-item-bg">
+                <li class="active"><a href="#intro">1. Grunt</a></li>
+                <li><a href="#structure">2. Structure</a></li>
+                <li><a href="#tasks">3. Tasks</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="s-container">
+        <h1>Grunt</h1>
+    </div>
+
+    <div class="panel panel-default" id="intro">
+        <div class="panel-heading">
+            <h3 class="panel-title">What is Grunt and why should you use it</h3>
+        </div>
+        <div class="panel-body">
+            Simply put, Grunt is a JavaScript task runner.
+            Why use it? In one word: automation. The less work you have to do when performing repetitive tasks like minification, compilation, unit testing, linting, etc, the easier your job becomes. After you've configured it through a Gruntfile, a task runner can do most of that mundane work for you—and your team—with basically zero effort. <strong>Note: The package already contains a configured Gruntfile and many tasks to automate your workflow.</strong>
+        </div>
+    </div>
+
+    <div class="panel panel-default" id="structure">
+        <div class="panel-heading">
+            <h3 class="panel-title">Grunt Structure</h3>
+        </div>
+        <div class="panel-body">
+            <p><code>Gruntfile.js</code>  - main grunt file, loads the available tasks</p>
+            <p><code>grunt/config.js</code> - main configuration file available to any task</p>
+            <p class="margin-none"><code>grunt/tasks</code> - stores the available grunt tasks</p>
+        </div>
+    </div>
+
+    <div class="panel panel-default" id="tasks">
+        <div class="panel-heading">
+            <h3 class="panel-title">Available Grunt Tasks</h3>
+        </div>
+        <div class="list-group">
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>autoprefixer</code> (Parse CSS and add vendor prefixes to CSS rules&nbsp;automatically)</li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>autoprefixer:core</code> (adds vendor prefixes to dist/theme/$current_theme/css/default.css)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>browserify</code> (Browserify looks at a single JavaScript file, and follows the require dependency tree, and bundles them into a new file.)</li>
+                <li>
+                    <ul class="ul1">
+                        <li>Builds the application scripts bundle for the current theme from dev/app/js/themes/$current_theme/main.js into dist/themes/$current_theme/js/scripts.js</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>browser-sync</code> (Time-saving synchronised browser testing with built-in http server, code sync and action sync across multiple devices)</li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>browserSyncInit:dist</code> (starts http server and opens dist/$current_theme/index.html)</li>
+                        <li><code>browserSyncInit:docs</code> (starts http server and opens docs/index.html)</li>
+                        <li><code>browserSyncReload</code> (trigger a page reload for changes on dev/app/html files)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>build</code> (Build the various parts of the application in one go)</li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>build:dist</code> (compiles jekyll to html, generates vendor scripts bundle, compiles less to css, concatenates files, adds css vendor prefixes, minifies the css and javascript and copies all the files to dist)</li>
+                        <li><code>build:dist_sass</code> (same as build:dist except it will compile sass to css instead of less)</li>
+                        <li><code>build:docs</code> (compiles only the docs to html)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>clean</code> (Clean files and folders)</li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>clean:dist</code> (cleans generated html files from dist)</li>
+                        <li><code>clean:docs</code> (cleans generated html files from docs)</li>
+                        <li><code>clean:devsite</code> (cleans generated html files from dev/_site)</li>
+                        <li><code>clean:sass</code> (cleans all files within dev/app/scss)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>concat</code> (Concatenate files)</li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>concat:vendor_css</code> (concatenates all vendor css files from the config into a bundle in dist/$current_theme/css/_vendor.bundle.css)</li>
+                        <li><code>concat:app_css_default_theme</code> (concatenates dist/$current_theme/css/_vendor.bundle.css with dist/$current_theme/css/default.css and overrides the later with the concatenated result)</li>
+                        <li><code>concat:concat_css_skins</code> (special task that concatenates all skins with&nbsp;dist/$current_theme/css/_vendor.bundle.css overriding the skin file)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>copy</code> (Copy files and folders)</li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>copy:fontawesome</code> (copy Font Awesome fonts from bower to dist/$current_theme/fonts)</li>
+                        <li><code>copy:pictoicons_font</code> (copy Picto Icons fonts from bower to dist/$current_theme/fonts)</li>
+                        <li><code>copy:glyphicons</code> (copy Glyphicons fonts from bower to dist/$current_theme/fonts)</li>
+                        <li><code>copy:images</code> (copy images from dev/app/images to dist/$current_theme/images)</li>
+                        <li><code>copy:dist</code> (copy jekyll generated html files from app/_site/pages/themes/$current_theme to dist/$current_theme)</li>
+                        <li><code>copy:sass</code> (copy converted sass from dev/tmp/converter-sass/app to dev/app)</li>
+                        <li><code>copy:demo</code> (copy html files from app/_site used for demo purposes to dist)</li>
+                        <li><code>copy:docs</code> (copy jekyll generated html files from app/_site/docs to docs)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>cssmin</code> (Compress CSS files)</li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>cssmin:minify</code> (compress all CSS files from dist/$current_theme/css and save them within the same location with .min.css extension)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>default</code> (the default task to run when running grunt without specifying a task)</li>
+                <li>
+                    <ul class="ul1">
+                        <li>by default it runs&nbsp;&ldquo;watch-less&rdquo; which will start http server and watch for changes in jekyll, javascript and less files;</li>
+                        <li>change to &ldquo;watch-sass&rdquo; to watch for sass files instead of less;</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>discover</code></li>
+                <li>
+                    <ul class="ul1">
+                        <li>special task for automatically generating a scripts vendor bundle from all the installed bower components</code> (using wiredep)</li>
+                        <li>creates dist/$current_theme/js/vendor.js and a minified version vendor.min.js</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>jekyll</code> (Compiles Jekyll templates to HTML)</li>
+                <li>
+                    <ul class="ul1">
+                        <li class="text-muted">Deprecated in favor of <code>swig</code> since 3.2.0</li>
+                        <li><code>jekyll:dist</code> (compiles all jekyll files to html)</li>
+                        <li><code>jekyll:watch</code> (same as above but used in context with file watchers)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>jshint</code> (Validate JavaScript files)</li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>jshint:all</code> (validate all js files in dev/app/js)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>less</code> (compile LESS to CSS)</li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>less:theme_default</code> (compiles any non-partial LESS file from dev/app/less/themes/$current_theme and saves the CSS to dist/$current_theme/css)</li>
+                        <li><code>less:skins</code> (compiles any LESS file from dev/app/less/skins/$current_theme/ and saves the CSS to dist/$current_theme/css)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>sass</code></li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>sass:theme_default</code> (compiles any non-partial SASS or SCSS file from dev/app/scss/themes/$current_theme and saves the CSS to dist/$current_theme/css)</li>
+                        <li><code>sass:skins</code> (compiles any SASS or SCSS file from dev/app/scss/skins/$current_theme/ and saves the CSS to dist/$current_theme/css)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>shell</code> (execute shell commands)</li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>shell:convert_less_to_sass</code> (convert the entire dev/app/less structure to SASS and saves the converted files to tmp/converter-sass/app)</li>
+                        <li><code>shell:vagrant_rsync</code> (not recommended unless you know what you&rsquo;re doing - used to obtain faster syncs when using vagrant with a rsync filesystem)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>swig</code> (Compiles Swig templates to HTML)</li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>swig:dist</code> (compiles swig templates for the current theme to html)</li>
+                        <li><code>swig:docs</code> (compiles swig templates for the documentation to html)</li>
+                        <li><code>swig:index</code> (compiles swig templates used for demo purposes to html)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>uglify</code> (Compress JavaScript files)</li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>uglify:app</code> (compress dist/$current_theme/js/scripts.js to scripts.min.js)</li>
+                        <li><code>uglify:vendor</code> (compress dist/$current_theme/js/vendor.js to vendor.min.js)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-group-item">
+            <ul class="list-unstyled">
+                <li><code>watch</code> (Run predefined tasks whenever watched file patterns are added, changed or deleted)</li>
+                <li>
+                    <ul class="ul1">
+                        <li><code>watch:less_theme_default</code> (watches LESS files for changes in dev/app/less/themes/$current_theme, dev/app/less/common, dev/app/less/vendor and dev/app/less and compiles to CSS,&nbsp;concatenates the CSS with the vendor CSS, minifies the CSS and injects the new CSS into the browser without a page reload)</li>
+                        <li><code>watch:less_skins</code> (watches LESS files for changes in app/less/skins/$current_theme and compiles to CSS, concatenates the CSS with the vendor CSS, minifies the CSS and injects the new CSS into the browser without a page reload)</li>
+                        <li><code>watch:sass_theme_default</code> (watch:less_theme_default equivalent for SASS)</li>
+                        <li><code>watch:sass_skins</code> (watch:less_skins equivalent for SASS)</li>
+                        <li><code>watch:js</code> (watches JS files for changes in dev/app/js, compiles a vendor scripts bundle, compiles the application scripts bundle, validates the JS and minifies the resulting JavaScript)</li>
+                        <li><code>watch:app</code> (watches html files for changes in dev/app/html and cleans dist, cleans docs, compiles jekyll to html, copies compiled dist, docs and demo files and reloads the browser)</li>
+                        <li><code>watch:docs</code> (similar to watch:app except it watches the dev/app/html/docs folder for changes)</li>
+                        <li><code>watch:vagrant_rsync</code> (This watcher can achieve much faster syncs than vagrant rsync-auto when using vagrant with rsync synced folders, by using shell:vagrant_rsync task, however it's not recommended unless you know what you're doing.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="panel-heading">
+            <h3 class="panel-title">Task options</h3>
+        </div>
+        <div class="panel-body">
+            <p>Most of the grunt tasks accept the following options:</p>
+            <p><code>--theme [theme_number]</code>: sets the current working theme (by default is <em>1</em>)</p>
+            <p><code>--dist [dist_folder_name]</code>: sets the dist folder name for placing static files resulted from the current task (by default it is <em>dist</em>)</p>
+            <p><strong>Example:</strong></p>
+            <p class="margin-none"><code>grunt build:dist --theme 2 --dist my_dist</code> will run the build:dist task for the theme 2 and save the static files within the my_dist folder.</p>
+        </div>
+        <div class="panel-heading">
+            <h3 class="panel-title">Common tasks</h3>
+        </div>
+        <div class="panel-body">
+            <p>All the grunt tasks will be executed from a <em>Terminal</em> within the <code>dev</code> directory.</p>
+            <ol>
+                <li>
+                    <strong>Building a theme:</strong><br/>
+                    <p><code>grunt build:dist --theme 1</code></p>
+                </li>
+                <li>
+                    <strong>Compiling LESS to CSS and minifying the CSS:</strong><br/>
+                    <p><code>grunt less:default_theme cssmin --theme 1</code></p>
+                </li>
+                <li>
+                    <strong>Compiling Sass to CSS and minifying the CSS:</strong><br/>
+                    <p><code>grunt sass:default_theme cssmin --theme 1</code></p>
+                </li>
+                <li>
+                    <strong>Compiling LESS to CSS for all the theme skins and minifying the CSS:</strong><br/>
+                    <p><code>grunt less:skins cssmin --theme 1</code></p>
+                </li>
+                <li>
+                    <strong>Compiling every available LESS file for the theme to CSS, including the skins and minifying the CSS:</strong><br/>
+                    <p><code>grunt less cssmin --theme 1</code></p>
+                </li>
+                <li>
+                    <strong>Starting the http server on theme 1 and watch for any changes:</strong><br/>
+                    <p><code>grunt --theme 1</code> will open your default browser to http://localhost:3000/dist/themes/1/index.html, watch for any file changes and consecutively trigger other tasks to compile CSS, Jekyll to HTML, etc, while reloading the page in the browser or even inject the new CSS when it's done processing.</p>
+                </li>
+                <li>
+                    <strong>Starting the http server on the docs and watch for any changes within docs and JavaScript files:</strong><br/>
+                    <p><code>grunt browserSyncInit:docs switchwatch:docs:js --theme 1</code> will open your default browser to http://localhost:3000/docs/index.html, watch for any file changes and consecutively trigger other tasks to compile Jekyll to HTML, concatenate and minify JavaScript and finally reload the page in the browser when it's done processing.</p>
+                </li>
+                <li>
+                    <strong>Validate application scripts for theme 1, bundle everything in one file and minify:</strong><br/>
+                    <p><code>grunt jshint browserify uglify:app --theme 1</code></p>
+                </li>
+                <li>
+                    <strong>Automatically create a vendor scripts bundle for theme 1 from all the installed bower components and minify the concatenated JavaScript:</strong><br/>
+                    <p class="strong"><code>grunt discover --theme 1</code></p>
+                    <p>The task will create <code>dist/themes/1/js/vendor.js</code> and the minified version <code>vendor.min.js</code> within the same folder.</p>
+                    <p><strong>Note</strong>: Because it's parsing bower components, scripts dependency order is maintained within the concatenated file automatically.</p>
+                    <p>You can exclude packages from being included in the bundle from <code>dev/grunt/config.js</code>:</p>
+                    <div class="highlight">
+<pre>{% highlight 'js' %}
+discover: {
+    exclude: [
+        'names',
+        'to_exclude',
+        'from_the_bundle'
+    ]
+}
+{% endhighlight %}</pre>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+{% endblock %}

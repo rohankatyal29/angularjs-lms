@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+    {% if header !== false %}
+    <div class="panel-heading">
+        {% include "lib/social/html/timeline/timeline-blocks/_block-heading.html" { gender: "woman", image: "3" } %}
+    </div>
+    {% endif %}
+    <div class="panel-body text-muted">
+        <i class="fa fa-map-marker"></i> Was in <a href="#">Brooklyn, New York</a>
+    </div>
+
+    <div class="relative height-300">
+        <div data-toggle="google-maps" class="maps-google-fs" data-center="40.776928,-73.910330" data-zoom="12" data-style="paper"></div>
+    </div>
+
+    {% include "lib/social/html/timeline/timeline-blocks/_view-all-comments.html"%}
+    {% include "lib/social/html/timeline/timeline-blocks/_comments.html"%}
+
+</div>

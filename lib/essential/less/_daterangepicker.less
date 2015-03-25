@@ -1,0 +1,65 @@
+// date range picker
+.daterangepicker_start_input,
+.daterangepicker_end_input {
+	float: none;
+	padding: 0 !important;
+}
+.daterangepicker .ranges .range_inputs>div { float: none; }
+
+.daterangepicker .ranges .input-mini {
+	border: 1px solid @input-border;
+	color: @input-color;
+	font-size: @font-size-base;
+	background: @input-bg;
+	height: auto;
+	line-height: @input-height-small;
+	padding: 0 @padding-base-horizontal;
+	width: 100%;
+	.box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+}
+
+.daterangepicker .ranges li {
+	font-size: @font-size-base;
+	background: @body-bg;
+	border: 1px solid @body-bg;
+	color: @text-color;
+	padding: 0 @padding-base-horizontal;
+	line-height: @input-height-small;
+}
+
+.daterangepicker .ranges li.active, .daterangepicker .ranges li:hover {
+	background: @brand-primary;
+	border: 1px solid @brand-primary;
+	color: #fff ;
+}
+
+.daterangepicker .btn {
+	font-size: @font-size-base;
+}
+
+.daterangepicker td.available:hover, .daterangepicker th.available:hover {
+	background: @body-bg;
+}
+
+.daterangepicker td.in-range {
+	background: @body-bg;
+}
+
+.daterangepicker td.in-range:hover {
+	background: darken(@body-bg, 5%);
+}
+
+.daterangepicker td.active, .daterangepicker td.active:hover {
+	background-color: @brand-primary;
+	border-color: @brand-primary;
+	color: #fff;
+}
+.daterangepicker.dropdown-menu {
+	padding: 0;
+}
+.daterangepicker [class*="fa-"]::before {
+	font-family: FontAwesome;
+}
+.daterangepicker:before, .daterangepicker:after {
+	display: none !important;
+}

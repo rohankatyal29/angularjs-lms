@@ -1,0 +1,33 @@
+.calendar-class-from-color(@classColor, @classIndex: 100) when (@classIndex =< 900) {
+	.calendar-class-from-color-a(@classColor, @classIndex);
+	.calendar-class-from-color(@classColor, @classIndex + 100);
+}
+
+.calendar-class-from-color-a(@classColor, @classIndex) {
+	@class: ~".calendar-@{classColor}-@{classIndex}";
+	@color: "@{classColor}-@{classIndex}";
+	.datepicker {
+		&@{class} {
+			table {
+				thead tr {
+					background: @@color !important;
+					th.datepicker-switch, th.next, th.prev {
+						&:hover {
+							background: darken(@@color, 10%);
+						}
+					}
+				}
+				tr td {
+					&.day, .month, .year {
+						&.active {
+							background-color: @@color !important;
+						}
+						&:hover {
+							background: darken(@@color, 10%);
+						}
+					}
+				}
+			}
+		}
+	}
+}

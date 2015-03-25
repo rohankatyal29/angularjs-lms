@@ -1,0 +1,43 @@
+// Datepicker
+.datepicker {
+
+	.datepicker-inline {
+		.sidebar-size-2 & {
+			width: @sidebar-width-2;
+		}
+		.sidebar-size-3 & {
+			width: @sidebar-width-3;
+		}
+	}
+
+	.sidebar & {
+
+		padding: 0;
+		text-align: center;
+
+		&.datepicker-inline {
+			overflow: scroll;
+		}
+
+		table {
+			thead tr {
+				background: @primary-color !important;
+				th {
+					color: #fff;
+					border-radius: 0;
+				}
+				th.datepicker-switch, th.next, th.prev {
+					&:hover {
+						color: #fff;
+						background: darken(@primary-color, 10%);
+					}
+				}
+			}
+			tr td {
+				&.day, .month, .year {
+					text-shadow: none;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+{% if !listing %}
+<div class="page-section">
+    <h1 class="text-display-1">Forum</h1>
+</div>
+{% endif %}
+
+<div class="row">
+    <div class="col-md-8 col-lg-9">
+        {% if listing == 'category' %}
+            {% include "src/html/themes/html/forum/_listing-category.html" { itemUrl: itemUrl } %}
+        {% else %}
+            {% include "src/html/themes/html/forum/_listing.html" { itemUrl: itemUrl } %}
+        {% endif %}
+    </div>
+    <div class="col-md-4 col-lg-3">
+
+        {% if listing %}<div class="page-section">{% endif %}
+
+            {% include "src/html/themes/html/forum/_sidebar.html" %}
+
+        {% if listing %}</div>{% endif %}
+
+    </div>
+</div>

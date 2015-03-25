@@ -1,0 +1,20 @@
+.btn-class-from-color(@classColor, @classIndex) when (@classIndex =< 900) {
+	.btn-class-from-color-a(@classColor, @classIndex);
+	.btn-class-from-color(@classColor, @classIndex + 100);
+}
+
+.btn-class-from-color-a(@classColor, @classIndex) {
+	@class: ~".btn-@{classColor}-@{classIndex}";
+	@color: "@{classColor}-@{classIndex}";
+	@{class} {
+		.button-variant(@white, @@color, @@color);
+		&.btn-stroke {
+			.button-variant(@@color, @white, @@color);
+			&.active, &:active, &:focus, &:hover, .open>.dropdown-toggle@{class}.btn-stroke {
+				background-color: @@color;
+				border-color: @@color;
+				color: @white;
+			}
+		}
+	}
+}

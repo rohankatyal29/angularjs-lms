@@ -1,0 +1,24 @@
+<div class="sidebar{% if sidebarOptions %} {{sidebarOptions}}{% endif %}" id="sidebar-menu" data-type="collapse">
+    <div data-scrollable>
+
+        {% if !sidebarOptions|contains('sidebar-mini-reveal') %}
+        <div class="sidebar-block">
+            <div class="profile">
+                <a href="#">
+                    <img src="images/people/110/guy-6.jpg" alt="people" class="img-circle width-80"/>
+                </a>
+                <h4 class="text-display-1 margin-none">Instructor Name</h4>
+            </div>
+        </div>
+        {% endif %}
+
+        <ul class="sidebar-menu{% if sidebarOptions|contains('sidebar-mini-reveal') %} sm-icons-right{% endif %}">
+            <li ui-sref-active="active"><a ui-sref="app-instructor.dashboard"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+            <li ui-sref-active="active"><a ui-sref="app-instructor.messages"><i class="fa fa-paper-plane"></i><span>Messages</span></a></li>
+			<li ui-sref-active="active"><a ui-sref="app-instructor.courses"><i class="fa fa-mortar-board"></i><span>My Courses</span></a></li>
+            <li ui-sref-active="active"><a ui-sref="app-instructor.earnings"><i class="fa fa-bar-chart-o"></i><span>Earnings</span></a></li>
+            <li ui-sref-active="active"><a ui-sref="app-instructor.statement"><i class="fa fa-dollar"></i><span>Statement</span></a></li>
+            <li><a ui-sref="login"><i class="fa fa-sign-out"></i><span>Logout</span></a></li>
+        </ul>
+    </div>
+</div>

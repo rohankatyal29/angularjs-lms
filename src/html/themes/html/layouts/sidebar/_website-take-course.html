@@ -1,0 +1,22 @@
+<div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
+    <div class="panel-heading panel-collapse-trigger">
+        <h4 class="panel-title">Resources</h4>
+    </div>
+    <div class="panel-body list-group">
+        <ul class="list-group list-group-menu">
+            <li class="list-group-item{% if (page.slug == 'website-take-course') %} active{% endif %}"{% if angular %} ui-sref-active="active"{% endif %}><a class="link-text-color"{% if angular %} ui-sref="website-student.take-course"{% else %} href="website-take-course.html"{% endif %}>Curriculum</a></li>
+            <li class="list-group-item{% if (page.slug|contains('website-course-forum')) %} active{% endif %}"{% if angular %} ui-sref-active="active"{% endif %}><a class="link-text-color"{% if angular %} ui-sref="website-student.course-forums"{% else %} href="website-course-forums.html"{% endif %}>Course Forums</a></li>
+            <li class="list-group-item{% if (page.slug == 'website-take-quiz') %} active{% endif %}"{% if angular %} ui-sref-active="active"{% endif %}><a class="link-text-color"{% if angular %} ui-sref="website-student.take-quiz"{% else %} href="website-take-quiz.html"{% endif %}>Take Quiz</a></li>
+            <li class="list-group-item{% if (page.slug == 'website-quiz-results') %} active{% endif %}"{% if angular %} ui-sref-active="active"{% endif %}><a class="link-text-color"{% if angular %} ui-sref="website-student.quiz-results"{% else %} href="website-quiz-results.html"{% endif %}>Quiz Results</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
+    <div class="panel-heading panel-collapse-trigger">
+        <h4 class="panel-title">Instructor</h4>
+    </div>
+    <div class="panel-body">
+        {% include "src/html/themes/html/course/_author-expandable.html" %}
+    </div>
+</div>

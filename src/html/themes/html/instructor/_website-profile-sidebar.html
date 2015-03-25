@@ -1,0 +1,19 @@
+<div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
+    <div class="panel-heading panel-collapse-trigger">
+        <h4 class="panel-title">My Account</h4>
+    </div>
+    <div class="panel-body list-group">
+        <ul class="list-group list-group-menu">
+            <li class="list-group-item{% if (page.slug == 'website-instructor-dashboard') %} active{% endif %}"{% if angular %} ui-sref-active="active"{% endif %}><a class="link-text-color" {% if angular %}ui-sref="website-instructor.dashboard"{% else %}href="website-instructor-dashboard.html"{% endif %}>Dashboard</a></li>
+            <li class="list-group-item{% if (page.slug == 'website-instructor-courses') %} active{% endif %}"{% if angular %} ui-sref-active="active"{% endif %}><a class="link-text-color" {% if angular %}ui-sref="website-instructor.courses"{% else %}href="website-instructor-courses.html"{% endif %}>My Courses</a></li>
+            <li class="list-group-item{% if (page.slug == 'website-instructor-messages') %} active{% endif %}"{% if angular %} ui-sref-active="active"{% endif %}><a class="link-text-color" {% if angular %}ui-sref="website-instructor.messages"{% else %}href="website-instructor-messages.html"{% endif %}>Messages</a></li>
+            <li class="list-group-item{% if (page.slug == 'website-instructor-earnings') %} active{% endif %}"{% if angular %} ui-sref-active="active"{% endif %}><a class="link-text-color" {% if angular %}ui-sref="website-instructor.earnings"{% else %}href="website-instructor-earnings.html"{% endif %}>Earnings</a></li>
+            <li class="list-group-item{% if (page.slug == 'website-instructor-statement') %} active{% endif %}"{% if angular %} ui-sref-active="active"{% endif %}><a class="link-text-color" {% if angular %}ui-sref="website-instructor.statement"{% else %}href="website-instructor-statement.html"{% endif %}>Statement</a></li>
+            <li class="list-group-item{% if (page.slug == 'website-instructor-profile' or page.slug == 'website-instructor-billing') %} active{% endif %}"{% if angular %} ng-class="{ 'active': $state.is('website-instructor.private-profile') || $state.is('website-instructor.billing') }"{% endif %}><a class="link-text-color" {% if angular %}ui-sref="website-instructor.private-profile"{% else %}href="website-instructor-profile.html"{% endif %}>Profile</a></li>
+            <li class="list-group-item"><a class="link-text-color" {% if angular %}ui-sref="login"{% else %}href="login.html"{% endif %}><span>Logout</span></a></li>
+        </ul>
+    </div>
+</div>
+
+<h4>Featured</h4>
+{% include "src/html/themes/html/courses/_carousel.html" { dataItems: 1, dataItemsLg: 1, dataItemsMd: 1, dataItemsSm: 1 } %}

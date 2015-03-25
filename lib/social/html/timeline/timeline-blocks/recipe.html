@@ -1,0 +1,41 @@
+<div class="panel panel-default">
+    {% if header !== false %}
+    <div class="panel-heading">
+        {% include "lib/social/html/timeline/timeline-blocks/_block-heading.html" { gender: "woman", image: "5" } %}
+    </div>
+    {% endif %}
+
+    <div class="panel-body">
+        <div class="boxed">
+            <a href="#" class="h4 margin-none">Vegetarian Pizza</a>
+            <div>
+                <span class="fa fa-star text-primary"></span>
+                <span class="fa fa-star text-primary"></span>
+                <span class="fa fa-star text-primary"></span>
+                <span class="fa fa-star text-primary"></span>
+                <span class="fa fa-star-o"></span>
+            </div>
+
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img src="images/food1.jpg" alt="" width="80" class="media-object">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor impedit ipsum laborum maiores tempore veritatis....</p>
+                </div>
+            </div>
+            <ul class="icon-list">
+                <li><i class="fa fa-star fa-fw"></i> 4.8</li>
+                <li><i class="fa fa-clock-o fa-fw"></i> 20 min</li>
+                <li><i class="fa fa-graduation-cap fa-fw"></i> Beginner</li>
+            </ul>
+        </div>
+
+    </div>
+    {% if comments !== false %}
+        {% include "lib/social/html/timeline/timeline-blocks/_view-all-comments.html" %}
+        {% include "lib/social/html/timeline/timeline-blocks/_comments.html" %}
+    {% endif %}
+</div>

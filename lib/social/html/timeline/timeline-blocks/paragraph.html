@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+    {% if header !== false %}
+    <div class="panel-heading">
+        {% include "lib/social/html/timeline/timeline-blocks/_block-heading.html" { gender: "guy", image: "2" } %}
+    </div>
+    {% endif %}
+    <div class="panel-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis perspiciatis praesentium quaerat repudiandae soluta? Cum doloribus esse et eum facilis impedit officiis omnis optio, placeat, quia quo reprehenderit sunt velit? Asperiores cumque deserunt eveniet hic reprehenderit sit, ut voluptatum?</p>
+    </div>
+    {% include "lib/social/html/timeline/timeline-blocks/_view-all-comments.html" %}
+    {% include "lib/social/html/timeline/timeline-blocks/_comments.html" %}
+</div>

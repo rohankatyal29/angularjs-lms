@@ -1,0 +1,49 @@
+<div class="sidebar{% if sidebarOptions %} {{sidebarOptions}}{% endif %}" id="sidebar-menu" data-type="collapse">
+    <div data-scrollable>
+
+        {% if !sidebarOptions|contains('sidebar-mini-reveal') %}
+        <div class="sidebar-block">
+            <div class="profile">
+                <a href="#">
+                    <img src="images/people/110/guy-6.jpg" alt="people" class="img-circle width-80"/>
+                </a>
+                <h4 class="text-display-1 margin-none">Student Name</h4>
+            </div>
+        </div>
+        {% endif %}
+
+        <ul class="sidebar-menu{% if sidebarOptions|contains('sidebar-mini-reveal') %} sm-icons-right{% endif %}">
+            <li ui-sref-active="active"><a ui-sref="app-student.dashboard"><i class="fa fa-bar-chart-o"></i><span>Dashboard</span></a></li>
+            <li class="hasSubmenu" ng-class="{ 'active open': $state.includes('app-courses') || $state.is('app-student.courses') || $state.is('app-student.take-course') || $state.is('app-student.take-quiz') || $state.is('app-student.course-forums') || $state.is('app-student.course-forum-thread') }">
+                <a href="#course-menu"><i class="fa fa-mortar-board"></i><span>Courses</span></a>
+                <ul id="course-menu" ng-class="{ 'in': $state.includes('app-courses') || $state.is('app-student.courses') || $state.is('app-student.take-course') || $state.is('app-student.take-quiz') || $state.is('app-student.course-forums') || $state.is('app-student.course-forum-thread') }">
+                    <li ui-sref-active="active"><a ui-sref="app-courses.grid"><span>Courses Grid</span></a></li>
+                    <li ui-sref-active="active"><a ui-sref="app-courses.list"><span>Courses List</span></a></li>
+                    <li ui-sref-active="active"><a ui-sref="app-courses.course"><span>Course Page</span></a></li>
+                    <li ui-sref-active="active"><a ui-sref="app-student.courses"><span>My Courses</span></a></li>
+                    <li ui-sref-active="active"><a ui-sref="app-student.take-course"><span>Take Course</span></a></li>
+                    <li ui-sref-active="active"><a ui-sref="app-student.course-forums"><span>Course Forums</span></a></li>
+                    <li ui-sref-active="active"><a ui-sref="app-student.course-forum-thread"><span>Course Forum Thread</span></a></li>
+                    <li ui-sref-active="active"><a ui-sref="app-student.take-quiz"><span>Take Quiz</span></a></li>
+                </ul>
+            </li>
+            <li class="hasSubmenu" ng-class="{ 'active open': $state.includes('app-forum') }">
+                <a href="#forum-menu"><i class="fa fa-file-text-o"></i><span>Forum</span></a>
+                <ul id="forum-menu" ng-class="{ 'in': $state.includes('app-forum') }">
+                    <li ui-sref-active="active"><a ui-sref="app-forum.home"><span>Forum Home</span></a></li>
+                    <li ui-sref-active="active"><a ui-sref="app-forum.category"><span>Forum Category</span></a></li>
+                    <li ui-sref-active="active"><a ui-sref="app-forum.thread"><span>Forum Thread</span></a></li>
+                </ul>
+            </li>
+            <li class="hasSubmenu" ng-class="{ 'active open': $state.is('app-student.private-profile') || $state.is('app-student.billing') }">
+                <a href="#account-menu"><i class="fa fa-user"></i><span>Account</span></a>
+                <ul id="account-menu" ng-class="{ 'in': $state.is('app-student.private-profile') || $state.is('app-student.billing') }">
+                    <li ui-sref-active="active"><a ui-sref="app-student.private-profile"><span>Edit Profile</span></a></li>
+                    <li ui-sref-active="active"><a ui-sref="app-student.billing"><span>Edit Billing</span></a></li>
+                </ul>
+            </li>
+            <li ui-sref-active="active"><a ui-sref="app-student.messages"><i class="fa fa-comments"></i><span>Messages</span></a></li>
+            <li><a ui-sref="login"><i class="fa fa-sign-out"></i><span>Logout</span></a></li>
+        </ul>
+    </div>
+</div>

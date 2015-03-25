@@ -1,0 +1,17 @@
+.jumbotron {
+	.cover & {
+		padding-left:  (@jumbotron-padding * 2);
+		padding-right: (@jumbotron-padding * 2);
+	}
+	h1 {
+		&:extend(.text-display-1);
+		margin-top: 0;
+	}
+	p {
+		&:extend(.text-subhead);
+	}
+	&.text-center {
+		padding-left: @grid-gutter-width/2;
+		padding-right: @grid-gutter-width/2;
+	}
+}

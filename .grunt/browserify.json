@@ -1,0 +1,27 @@
+[
+	{
+		"build": "module-essentials.js",
+		"cwd": "./lib/essential/js/",
+		"src": "main.js"
+	},
+	{
+		"build": "module-layout.js",
+		"cwd": "./lib/layout/js/",
+		"src": "main.js"
+	},
+	{
+		"build": "module-sidebar.js",
+		"cwd": "./lib/sidebar/js/",
+		"src": "main.js"
+	},
+	{
+		"build": "module-maps-google.js",
+		"cwd": "./lib/maps/js/google/",
+		"src": "_init.js"
+	},
+	{
+		"build": "module-charts-flot.js",
+		"cwd": "./lib/charts/js/flot/",
+		"src": "main.js"
+	}
+]

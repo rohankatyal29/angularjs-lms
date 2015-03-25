@@ -1,0 +1,6 @@
+{% include "lib/layout/html/_header.html" { htmlClass: "ls-top-navbar ls-bottom-footer", cwd: "choose/" } %}
+
+	{% include "src/html/themes/choose/_navbar.html" %}
+	{% block content %}{% endblock %}
+
+{% include "lib/layout/html/_footer_scripts.html" { cwd: "choose/" } %}

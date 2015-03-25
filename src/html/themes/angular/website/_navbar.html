@@ -1,0 +1,100 @@
+<!-- Fixed navbar -->
+<div class="navbar {{ navbarSkin or 'navbar-default' }} navbar-fixed-top navbar-size-large navbar-size-xlarge paper-shadow" data-z="0" data-animated role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand navbar-brand-logo">
+                <a class="svg" ui-sref="website-pages.home">{% include "src/html/themes/html/_logo.html" %}</a>
+            </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav navbar-nav navbar-nav-margin-left">
+                <li class="dropdown" ng-class="{ 'active': $state.includes('website-pages') || $state.includes('website-forum') || $state.includes('website-blog') }">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="website-pages.home">Home page</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-pages.pricing">Pricing</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-pages.tutors">Tutors</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-pages.survey">Survey</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-forum.home">Forum Home</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-forum.category">Forum Category</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-forum.thread">Forum Thread</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-blog.listing">Blog Listing</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-blog.post">Blog Post</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-pages.contact">Contact</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" ng-class="{ 'active': $state.includes('website-courses') }">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="website-courses.grid">Grid Directory</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-courses.list">List Directory</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-courses.single">Single Course</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" ng-class="{ 'active': $state.includes('website-student') }">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="website-student.dashboard">Dashboard</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-student.courses">My Courses</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-student.take-course">Take Course</a></li>
+                        <li ng-class="{ 'active' : $state.is('website-student.course-forums') || $state.is('website-student.course-forum-thread') }"><a ui-sref="website-student.course-forums">Course Forums</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-student.take-quiz">Take Quiz</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-student.messages">Messages</a></li>
+                        <li ng-class="{ 'active' : $state.is('website-student.private-profile') || $state.is('website-student.billing') }"><a ui-sref="website-student.private-profile">Private Profile</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" ng-class="{ 'active': $state.includes('website-instructor') }">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Instructor <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="website-instructor.dashboard">Dashboard</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-instructor.courses">My Courses</a></li>
+                        <li ng-class="{ 'active' : $state.is('website-instructor.edit-course') || $state.is('website-instructor.edit-course-meta') || $state.is('website-instructor.edit-course-lessons') }"><a ui-sref="website-instructor.edit-course">Edit Course</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-instructor.earnings">Earnings</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-instructor.statement">Statement</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-instructor.messages">Messages</a></li>
+                        <li ng-class="{ 'active' : $state.is('website-instructor.private-profile') || $state.is('website-instructor.billing') }"><a ui-sref="website-instructor.private-profile">Private Profile</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" ng-class="{ 'active': $state.includes('essential') }">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="essential.buttons">Buttons</a></li>
+                        <li ui-sref-active="active"><a ui-sref="essential.icons">Icons</a></li>
+                        <li ui-sref-active="active"><a ui-sref="essential.progress">Progress</a></li>
+                        <li ui-sref-active="active"><a ui-sref="essential.grid">Grid</a></li>
+                        <li ui-sref-active="active"><a ui-sref="essential.forms">Forms</a></li>
+                        <li ui-sref-active="active"><a ui-sref="essential.tables">Tables</a></li>
+                        <li ui-sref-active="active"><a ui-sref="essential.tabs">Tabs</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav navbar-nav-bordered navbar-nav-margin-right">
+                    <!-- user -->
+                    <li class="dropdown user{% if page.slug|contains('website-student-') %} active{% endif %}">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/people/110/guy-6.jpg" alt="" class="img-circle"/> Bill<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li>
+                            <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
+                            <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
+                            <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <!-- // END user -->
+                </ul>
+                <a ui-sref="login" class="navbar-btn btn btn-primary">Log In</a>
+            </div>
+        </div><!-- /.navbar-collapse -->
+
+    </div>
+</div>

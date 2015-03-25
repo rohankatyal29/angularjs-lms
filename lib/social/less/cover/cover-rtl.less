@@ -1,0 +1,98 @@
+// _profile.less
+.cover.profile {
+    .wrapper {
+        .friends {
+            left: 0;
+            right: auto;
+            li {
+                float: right;
+                a {
+                    padding-right: 1px;
+                    padding-left: 0;
+                }
+            }
+        }
+        .image {
+            padding-left: 250px;
+            padding-right: 0;
+        }
+    }
+    .cover-info {
+        .avatar {
+            right: 30px;
+            left: auto;
+        }
+        .name {
+            right: 155px;
+            left: auto;
+        }
+        .cover-nav {
+            right: 140px;
+            left: auto;
+            padding-right:0;
+            li {
+                border-left-color: @panel-default-border;
+                border-right-color: transparent;
+            }
+        }
+    }
+}
+
+
+.cover.profile {
+    // RESPONSIVE FIXES
+
+    @media (max-width: @screen-md-min) {
+        .wrapper {
+            .image {
+                padding-left: 120px;
+                padding-right:0;
+            }
+
+            .friends {
+                left: 0;
+                right: auto;
+            }
+            .nav {
+                right: 0;
+                left: auto;
+                padding-right: 140px;
+                padding-left: 0;
+            }
+        }
+        .cover-info {
+            height:auto;
+            .name {
+                right: 100px;
+                left: auto;
+            }
+            .cover-nav {
+                right: 85px;
+                left: auto;
+            }
+            .avatar {
+                right: 10px;
+                left: auto;
+            }
+        }
+    }
+    @media (max-width: @screen-sm) {
+        .cover-info {
+            .avatar {
+                right: 10px;
+                left: auto;
+            }
+            .name {
+                right: 10px;
+                left: auto;
+            }
+            .cover-nav {
+                right: auto;
+                padding-right: 0;
+                li {
+                    border-left: 0 !important;
+                }
+            }
+        }
+    }
+}

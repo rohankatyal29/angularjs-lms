@@ -1,0 +1,15 @@
+@mixin ribbon-mark-class-from-color-a($classColor, $classIndex) {
+	$class: ".ribbon-mark-#{$classColor}-#{$classIndex}";
+	$color: #{$classColor}-#{$classIndex};
+	#{$class} .caret {
+		border-color: map-get($colors-map, $color);
+		border-top-color: transparent;
+	}
+}
+
+@mixin ribbon-mark-class-from-color($classColor, $classIndex) {
+	@if $classIndex <= 900 {
+		@include ribbon-mark-class-from-color-a($classColor, $classIndex);
+		@include ribbon-mark-class-from-color($classColor, $classIndex + 100);
+	}
+}

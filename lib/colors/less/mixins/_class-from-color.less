@@ -1,0 +1,12 @@
+.class-from-color-a(@property, @classPrefix, @classColor, @classIndex) {
+	@class: ~".@{classPrefix}-@{classColor}-@{classIndex}";
+	@color: "@{classColor}-@{classIndex}";
+	@{class} {
+		@{property}: @@color;
+	}
+}
+
+.class-from-color(@property, @classPrefix, @classColor, @classIndex: 100) when (@classIndex =< 900) {
+	.class-from-color-a(@property, @classPrefix, @classColor, @classIndex);
+	.class-from-color(@property, @classPrefix, @classColor, @classIndex + 100);
+}

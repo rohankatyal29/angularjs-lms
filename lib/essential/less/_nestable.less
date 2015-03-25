@@ -1,0 +1,112 @@
+.nestable {
+	position: relative;
+}
+
+.nestable-list { display: block; position: relative; margin: 0; padding: 0; list-style: none; }
+.nestable-list .nestable-list {
+	padding-left: 30px;
+	margin-top: @grid-gutter-width/4;
+}
+.nestable-collapsed .nestable-list { display: none; }
+
+.nestable-item,
+.nestable-empty,
+.nestable-placeholder { display: block; position: relative; }
+.nestable-handle {
+	padding: 10px 15px;
+	background-color: @list-group-bg;
+	border: 1px solid @list-group-border;
+	margin-bottom: @grid-gutter-width/4;
+	border-radius: @border-radius-base;
+}
+.nestable-content {
+	&:extend(.nestable-handle);
+}
+.nestable-placeholder {
+	&:extend(.nestable-handle);
+	background-color: darken(@body-bg, 8%);
+	border-color: darken(@body-bg, 12%);
+}
+
+.nestable-item > button {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	float: left;
+	width: 35px;
+	height: 42px;
+	line-height: 42px;
+	padding: 0;
+	margin-right: @padding-base-horizontal/2;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	border: 0;
+	background: transparent;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	&:before {
+		text-indent: 0;
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		top: 0;
+		right: 0;
+		line-height: inherit;
+		font-family: 'Material Design Iconic Font';
+		font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		content: "\f29c";
+	}
+	&[data-action="collapse"]:before {
+		content:"\f29e";
+	}
+}
+.nestable-item-handle {
+	padding: 0 0 0 (@padding-base-horizontal/2) + 35px;
+	.nestable-handle {
+		cursor: pointer;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 35px;
+		height: 42px;
+		line-height: 42px;
+		white-space: nowrap;
+		overflow: hidden;
+		margin-right: @padding-base-horizontal/2;
+		padding: 0;
+		text-align: center;
+	}
+}
+
+.nestable-drag {
+	position: absolute;
+	pointer-events: none;
+	z-index: 9999;
+	list-style: none;
+}
+.nestable-drag .nestable-item {
+	box-shadow: 2px 4px 6px 0 fade(@black, 10%);
+	&.nestable-item-handle {
+		box-shadow: none;
+	}
+}
+
+.nestable-handle-primary {
+	.nestable-handle {
+		background-color: @primary-color;
+		color: @white;
+	}
+}
+
+.list-group.list-group-sp {
+	.list-group-item {
+		margin-bottom: @grid-gutter-width/4;
+		border-radius: @border-radius-base;
+	}
+}

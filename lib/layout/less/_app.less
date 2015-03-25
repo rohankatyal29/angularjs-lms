@@ -1,0 +1,29 @@
+// Layout Fixed
+.app() {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	body,
+	#content,
+	.ui-view-main {
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+	}
+	body > .container,
+	.ui-view-main > .container,
+	#content .container-fluid {
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+	}
+}
+
+html.app-mobile {
+	.app();
+}
+@media (min-width: @screen-sm) {
+	html.app-desktop {
+		.app();
+	}
+}

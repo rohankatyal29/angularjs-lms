@@ -1,0 +1,197 @@
+<div class="jumbotron text-center bg-transparent margin-none">
+    <h1>Tree Views</h1>
+    <p>Fancytree is a JavaScript dynamic tree view plugin for jQuery with support for persistence, keyboard, checkboxes, tables, drag and drop, and lazy loading. Fancytree is a sequel of the popular DynaTree plugin.</p>
+</div>
+
+<div class="page-section">
+    <div class="row">
+        <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+
+            <h4 class="page-section-heading">Default options</h4>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div data-toggle="tree">
+                        <ul style="display: none;">
+                            <li>item1</li>
+                            <li>item2</li>
+                            <li class="folder">
+                                Folder <em>with some</em> children
+                                <ul>
+                                    <li>Sub-item 3.1
+                                        <ul>
+                                            <li>Sub-item 3.1.1</li>
+                                            <li>Sub-item 3.1.2</li>
+                                        </ul>
+                                    </li>
+                                    <li>Sub-item 3.2
+                                        <ul>
+                                            <li>Sub-item 3.2.1</li>
+                                            <li>Sub-item 3.2.2</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="expanded">
+                                Document with some children (expanded on init)
+                                <ul>
+                                    <li class="active focused expanded">Sub-item 4.1 (expanded, active and focused on init)
+                                        <ul>
+                                            <li>Sub-item 4.1.1</li>
+                                            <li>Sub-item 4.1.2</li>
+                                        </ul>
+                                    </li>
+                                    <li>Sub-item 4.2
+                                        <ul>
+                                            <li>Sub-item 4.2.1</li>
+                                            <li>Sub-item 4.2.2</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="page-section-heading">With Multiple Selection</h4>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div data-toggle="tree" data-tree-checkbox data-tree-select="3">
+                        <ul style="display: none;">
+                            <li>item1</li>
+                            <li class="selected">item2 (selected on init)</li>
+                            <li class="folder">
+                                Folder <em>with some</em> children
+                                <ul>
+                                    <li>Sub-item 3.1
+                                        <ul>
+                                            <li>Sub-item 3.1.1</li>
+                                            <li>Sub-item 3.1.2</li>
+                                        </ul>
+                                    </li>
+                                    <li>Sub-item 3.2
+                                        <ul>
+                                            <li>Sub-item 3.2.1</li>
+                                            <li>Sub-item 3.2.2</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="expanded">
+                                Document with some children (expanded on init)
+                                <ul>
+                                    <li class="expanded">
+                                        Sub-item 4.1 (expanded on init)
+                                        <ul>
+                                            <li class="selected">Sub-item 4.1.1 (selected on init)</li>
+                                            <li class="selected">Sub-item 4.1.2 (selected on init)</li>
+                                        </ul>
+                                    </li>
+                                    <li>Sub-item 4.2
+                                        <ul>
+                                            <li>Sub-item 4.2.1</li>
+                                            <li>Sub-item 4.2.2</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="page-section-heading">With Single Selection</h4>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div data-toggle="tree" data-tree-checkbox data-tree-select="1">
+                        <ul style="display: none;">
+                            <li>item1</li>
+                            <li class="selected">item2 (selected on init)</li>
+                            <li class="folder">
+                                Folder <em>with some</em> children
+                                <ul>
+                                    <li>Sub-item 3.1
+                                        <ul>
+                                            <li>Sub-item 3.1.1</li>
+                                            <li>Sub-item 3.1.2</li>
+                                        </ul>
+                                    </li>
+                                    <li>Sub-item 3.2
+                                        <ul>
+                                            <li>Sub-item 3.2.1</li>
+                                            <li>Sub-item 3.2.2</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="expanded">
+                                Document with some children (expanded on init)
+                                <ul>
+                                    <li class="expanded">Sub-item 4.1 (expanded on init)
+                                        <ul>
+                                            <li>Sub-item 4.1.1</li>
+                                            <li>Sub-item 4.1.2</li>
+                                        </ul>
+                                    </li>
+                                    <li>Sub-item 4.2
+                                        <ul>
+                                            <li>Sub-item 4.2.1</li>
+                                            <li>Sub-item 4.2.2</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="page-section-heading">With Drag &amp; Drop</h4>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div data-toggle="tree" data-tree-dnd>
+                        <ul style="display: none;">
+                            <li>item1</li>
+                            <li class="selected">item2 (selected on init)</li>
+                            <li class="folder">
+                                Folder <em>with some</em> children
+                                <ul>
+                                    <li>Sub-item 3.1
+                                        <ul>
+                                            <li>Sub-item 3.1.1</li>
+                                            <li>Sub-item 3.1.2</li>
+                                        </ul>
+                                    </li>
+                                    <li>Sub-item 3.2
+                                        <ul>
+                                            <li>Sub-item 3.2.1</li>
+                                            <li>Sub-item 3.2.2</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="expanded">
+                                Document with some children (expanded on init)
+                                <ul>
+                                    <li class="expanded">Sub-item 4.1 (expanded on init)
+                                        <ul>
+                                            <li>Sub-item 4.1.1</li>
+                                            <li>Sub-item 4.1.2</li>
+                                        </ul>
+                                    </li>
+                                    <li>Sub-item 4.2
+                                        <ul>
+                                            <li>Sub-item 4.2.1</li>
+                                            <li>Sub-item 4.2.2</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

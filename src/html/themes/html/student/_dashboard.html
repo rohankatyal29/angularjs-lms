@@ -1,0 +1,30 @@
+{% include "src/html/themes/html/student/_subscription.html" %}
+
+<div class="row" data-toggle="isotope">
+    <div class="item col-xs-12 col-lg-6">
+        {% include "src/html/themes/html/student/_courses-in-progress.html" %}
+    </div>
+    <div class="item col-xs-12 col-lg-6">
+        <div class="panel panel-default paper-shadow" data-z="0.5">
+            <div class="panel-body">
+                {% include "src/html/themes/html/student/_badges.html" %}
+            </div>
+        </div>
+        <div class="panel panel-default paper-shadow" data-z="0.5">
+            <div class="panel-heading">
+                <h4 class="text-headline">Certificates <small>(4)</small></h4>
+            </div>
+            <div class="panel-body">
+                {% include "src/html/themes/html/student/_certificates.html" %}
+            </div>
+        </div>
+    </div>
+    <div class="item col-xs-12 col-lg-6">
+        {% include "src/html/themes/html/student/_quizes-in-progress.html" %}
+    </div>
+    <div class="item col-xs-12 col-lg-6">
+        <h4 class="text-headline margin-none">Forum Activity</h4>
+        <p class="text-subhead text-light">Latest forum topics & comments</p>
+        {% include "src/html/themes/html/student/_forum-activity.html" %}
+    </div>
+</div>

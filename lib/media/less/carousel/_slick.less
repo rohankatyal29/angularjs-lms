@@ -1,0 +1,30 @@
+.slick-slider {
+	padding-bottom: 35px;
+	margin: 0;
+	.item > * {
+		margin: 0;
+	}
+}
+.slick-basic {
+	position: relative;
+	overflow: hidden;
+	.item {
+		margin: 3px;
+	}
+}
+.slick-dots {
+	height: 25px;
+	bottom: 0;
+	margin: 0;
+	li {
+		margin: 0;
+	}
+	li button:before {
+		font-size: 14px;
+		color: @grey-300;
+		opacity: 1;
+	}
+	li.slick-active button:before {
+		color: @primary-color;
+	}
+}

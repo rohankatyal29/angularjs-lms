@@ -1,0 +1,54 @@
+.navbar {
+	.navbar-brand-logo {
+		.svg {
+			@svg-width: (106 / @navbar-height) * @navbar-height;
+
+			display: inline-block;
+			vertical-align: middle;
+			background-repeat: no-repeat;
+			fill: @primary-color;
+			height: @navbar-height;
+			width: ~"@{svg-width}px";
+			position: relative;
+			svg {
+				pointer-events: none;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+		}
+		&.navbar-brand-primary .svg {
+			fill: #ffffff;
+		}
+	}
+}
+.navbar.navbar-size-large .navbar-brand-logo .svg {
+	@media (min-width: @navbar-large-breakpoint) {
+		width: 106px;
+		height: @navbar-large-height;
+	}
+}
+
+.transition-navbar-scroll .navbar {
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	&:before, &:after {
+		transition-delay: 0.2s;
+	}
+	.navbar-nav > li > a, .navbar-brand, .navbar-btn {
+		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+}
+
+.sidebar {
+	.transition-navbar-scroll[class*="ls-top-navbar"] .st-container > & {
+		transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+}
+.st-container {
+	.transition-navbar-scroll[class*="ls-top-navbar"] & {
+		transition: padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+}

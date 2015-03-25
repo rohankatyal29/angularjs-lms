@@ -1,0 +1,10 @@
+{% include "lib/layout/html/_header.html" { htmlClass: 'ls-top-navbar show-sidebar sidebar-l1 sidebar-r2' } %}
+{% include "src/html/themes/layout/fluid/_navbar.html" %}
+{% include "lib/layout/html/samples/_sidebar.html" { sidebarOptions: "left sidebar-size-1 sidebar-mini sidebar-offset-0 sidebar-skin-dark sidebar-visible-desktop sidebar-visible-mobile", sidebarData: "data-type=dropdown" } %}
+{% include "lib/layout/html/samples/_sidebar.html" { sidebarOptions: "right sidebar-size-2 sidebar-offset-0 sidebar-skin-white sidebar-visible-desktop" } %}
+
+<div id="content">
+    <div class="container-fluid">
+        {% include "lib/layout/html/samples/_layouts.html" %}
+    </div>
+</div>

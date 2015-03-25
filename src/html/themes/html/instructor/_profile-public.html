@@ -1,0 +1,129 @@
+<div class="media media-grid media-clearfix-xs">
+	<div class="media-left">
+		<div class="width-200 width-auto-xs">
+			<div class="panel panel-default text-center paper-shadow" data-z="0.5">
+				<img src="images/people/110/guy-6.jpg" alt="person" class="width-100pc"/>
+				<div class="panel-body">
+					<a class="text-headline">Adrian Demian</a>
+				</div>
+				<hr/>
+				<div class="panel-body">
+					<span class="icon-block s25 img-circle bg-purple-300"><i class="fa fa-star text-white"></i></span>
+					<span class="icon-block s25 img-circle bg-indigo-300"><i class="fa fa-trophy text-white"></i></span>
+					<span class="icon-block s25 img-circle bg-green-300"><i class="fa fa-mortar-board text-white"></i></span>
+					<span class="icon-block s25 img-circle bg-orange-300"><i class="fa fa-code-fork text-white"></i></span>
+				</div>
+				<div class="panel-footer">
+					<a href="#" class="btn btn-white btn-flat">Send Message <i class="fa fa-envelope"></i></a>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<ul class="list-group text-subhead">
+					<li class="list-group-item">
+						<div class="media v-middle">
+							<div class="media-left">
+								<i class="fa fa-facebook fa-fw text-blue-800"></i>
+							</div>
+							<div class="media-body">
+								<a href="#" class="link-text-color">/facebook</a>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="media v-middle">
+							<div class="media-left">
+								<i class="fa fa-twitter fa-fw text-blue-300"></i>
+							</div>
+							<div class="media-body">
+								<a href="#" class="link-text-color">/twitter</a>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="media v-middle">
+							<div class="media-left">
+								<i class="fa fa-dribbble fa-fw text-pink-300"></i>
+							</div>
+							<div class="media-body">
+								<a href="#" class="link-text-color">/dribble</a>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="media v-middle">
+							<div class="media-left">
+								<i class="fa fa-google-plus fa-fw text-red-800"></i>
+							</div>
+							<div class="media-body">
+								<a href="#" class="link-text-color">/google-plus</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+	<div class="media-body">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="text-headline">
+					About the Author
+				</h4>
+			</div>
+			<div class="panel-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad aliquid asperiores excepturi fuga
+				   laborum maiores nihil vel voluptatibus? Architecto cum debitis deleniti exercitationem inventore
+				   maiores nostrum quibusdam, quo tenetur ut veniam veritatis vero voluptatem?</p>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="text-headline">
+					Adrian's Courses
+				</h4>
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+
+					{% include "src/html/themes/html/courses/_listing-list-widget.html" {
+					coverBg: "bg-default",
+					coverIcon: "fa-github",
+					coverBtn: "btn-white",
+					itemTitle: "Github Webhooks for Beginners",
+					itemLabel: "bg-gray-dark",
+					itemInstructor: false,
+					itemWrapper: false,
+					itemUrl: 'app-student-course.html' } %}
+
+				</div>
+				<div class="list-group-item">
+					{% include "src/html/themes/html/courses/_listing-list-widget.html" {
+					coverBg: "bg-primary",
+					coverIcon: "fa-css3",
+					coverBtn: "btn-primary",
+					itemTitle: "CSS Awesomeness with LESS Processing",
+					itemLabel: "label-primary",
+					itemInstructor: false,
+					itemWrapper: false,
+					itemUrl: 'app-student-course.html' } %}
+				</div>
+				<div class="list-group-item">
+					{% include "src/html/themes/html/courses/_listing-list-widget.html" {
+					coverBg: "bg-lightred",
+					coverIcon: "fa-windows",
+					coverBtn: "btn-red-500",
+					itemTitle: "Portable Environments with Vagrant",
+					itemLabel: "bg-lightred",
+					itemInstructor: false,
+					itemWrapper: false,
+					itemUrl: 'app-student-course.html' } %}
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+</div>

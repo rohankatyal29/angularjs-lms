@@ -1,0 +1,33 @@
+<div class="panel panel-default weather-svg">
+    <div class="list">
+        <div class="list-item">
+            <div class="text-h6">Today</div>
+            {% include "lib/icons/weather/svg/cloudDrizzleSunFill.html" %}
+        </div>
+        <div class="list-item">
+            <div class="text-h6">Tomorrow</div>
+            {% include "lib/icons/weather/svg/sun.html" %}
+        </div>
+        <div class="list-item">
+            <div class="text-h6">Saturday</div>
+            {% include "lib/icons/weather/svg/cloudRainFill.html" %}
+        </div>
+    </div>
+    <div class="cover overlay cover-image-full">
+        <img src="images/place1-full.jpg" alt="cover">
+        <div class="overlay overlay-full overlay-bg-black">
+            <div class="v-top">
+                <div class="text-h5">
+                    <span class="fa fa-fw fa-star text-primary"></span>
+                    <span class="fa fa-fw fa-star text-primary"></span>
+                    <span class="fa fa-fw fa-star text-primary"></span>
+                    <span class="fa fa-fw fa-star-o text-white"></span>
+                    <span class="fa fa-fw fa-star-o text-white"></span>
+                </div>
+            </div>
+            <div class="v-center today">
+                {% include "lib/icons/weather/svg/cloudDrizzleSunFillAlt.html" %}
+            </div>
+        </div>
+    </div>
+</div>

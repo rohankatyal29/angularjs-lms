@@ -1,0 +1,50 @@
+<div class="slick-basic slick-slider" data-items="{{ dataItems or 3 }}" data-items-lg="{{ dataItemsLg or 3 }}" data-items-md="{{ dataItemsMd or 2 }}" data-items-sm="{{ dataItemsSm or 2 }}" data-items-xs="{{ dataItemsXs or 1 }}"{% if rtl %} data-rtl="true"{% endif %}>
+    <div class="item">
+        {% include "src/html/themes/html/courses/_listing-mini-widget.html" {
+            coverBg: "bg-default",
+            coverIcon: "fa-github",
+            coverBtn: "btn-white",
+            itemTitle: "Github Webhooks for Beginners",
+            itemUrl: itemUrl } %}
+    </div>
+    <div class="item">
+        {% include "src/html/themes/html/courses/_listing-mini-widget.html" {
+            coverBg: "bg-primary",
+            coverIcon: "fa-css3",
+            coverBtn: "btn-primary",
+            itemTitle: "Awesome CSS with LESS Processing",
+            itemUrl: itemUrl } %}
+    </div>
+    <div class="item">
+        {% include "src/html/themes/html/courses/_listing-mini-widget.html" {
+            coverBg: "bg-lightred",
+            coverIcon: "fa-windows",
+            coverBtn: "btn-red-500",
+            itemTitle: "Portable Environments with Vagrant",
+            itemUrl: itemUrl } %}
+    </div>
+    <div class="item">
+        {% include "src/html/themes/html/courses/_listing-mini-widget.html" {
+            coverBg: "bg-brown",
+            coverIcon: "fa-wordpress",
+            coverBtn: "btn-orange-500",
+            itemTitle: "WordPress Theme Development",
+            itemUrl: itemUrl } %}
+    </div>
+    <div class="item">
+        {% include "src/html/themes/html/courses/_listing-mini-widget.html" {
+            coverBg: "bg-purple",
+            coverIcon: "fa-jsfiddle",
+            coverBtn: "btn-purple-500",
+            itemTitle: "Modular JavaScript with Browserify",
+            itemUrl: itemUrl } %}
+    </div>
+    <div class="item">
+        {% include "src/html/themes/html/courses/_listing-mini-widget.html" {
+            coverBg: "bg-default",
+            coverIcon: "fa-cc-visa",
+            coverBtn: "btn-white",
+            itemTitle: "Easy Online Payments with Stripe",
+            itemUrl: itemUrl } %}
+    </div>
+</div>

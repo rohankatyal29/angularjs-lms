@@ -1,0 +1,22 @@
+{% include "src/html/themes/angular/website/_navbar.html" %}
+
+{% include "src/html/themes/html/forum/_website-head-section.html" %}
+
+<div class="container">
+    <div class="page-section">
+
+        <div class="row">
+            <div class="col-md-8 col-lg-9">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-md-4 col-lg-3">
+                {% include "src/html/themes/html/forum/_sidebar.html" %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% include "src/html/themes/html/_footer.html" %}
+
+{% include "lib/layout/html/_footer_copyright.html" %}

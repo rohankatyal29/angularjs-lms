@@ -1,0 +1,11 @@
+.bg-white {
+	.st-content-inner > &,
+	.st-content-inner > .split-vertical > &,
+	body > & {
+		border-bottom: 1px solid darken(@body-bg, 4%);
+	}
+	.st-content-inner > .container + &,
+	body > .container + & {
+		border-top: 1px solid darken(@body-bg, 4%);
+	}
+}

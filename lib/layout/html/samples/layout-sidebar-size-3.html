@@ -1,0 +1,9 @@
+{% include "lib/layout/html/_header.html" { htmlClass: 'ls-top-navbar show-sidebar sidebar-l3' } %}
+{% include "src/html/themes/layout/fluid/_navbar_brand_active.html" %}
+{% include "lib/layout/html/samples/_sidebar.html" { sidebarOptions: "left sidebar-size-3 sidebar-offset-0 sidebar-skin-dark sidebar-visible-desktop sidebar-visible-mobile", sidebarData: "id=sidebar-menu data-type=dropdown" } %}
+
+<div id="content">
+    <div class="container-fluid">
+        {% include "lib/layout/html/samples/_layouts.html" %}
+    </div>
+</div>

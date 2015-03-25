@@ -1,0 +1,83 @@
+// Sidebar Offset Sum Single (2 digit)
+.make-sidebar-offset-sum(@direction, @prepend, @append, @index1: 1, @index2: 1) when (@index1 =< 3) and (@index2 =< 3) {
+	@item: ~".@{prepend}-@{index1}@{index2}@{append}";
+	@size1: "sidebar-width-@{index1}";
+	@size2: "sidebar-width-@{index2}";
+	&@{item} {
+		@{direction}: (@@size1 + @@size2);
+	}
+	.make-sidebar-offset-sum(@direction, @prepend, @append, (@index1 + 1), (@index2 + 1));
+}
+
+// Sidebar Offset Sum Single (3 digit)
+.make-sidebar-offset-sum(@direction, @prepend, @append, @index1: 1, @index2: 1, @index3: 1) when (@index1 =< 3) and (@index2 =< 3) and (@index3 =< 3) {
+	@item: ~".@{prepend}-@{index1}@{index2}@{index3}@{append}";
+	@size1: "sidebar-width-@{index1}";
+	@size2: "sidebar-width-@{index2}";
+	@size3: "sidebar-width-@{index3}";
+	&@{item} {
+		@{direction}: (@@size1 + @@size2 + @@size3);
+	}
+	.make-sidebar-offset-sum(@direction, @prepend, @append, (@index1 + 1), (@index2 + 1), (@index3 + 1));
+}
+
+// Sidebar Offset Sum Loop
+.loop-sidebar-offset-sum(@direction, @prepend, @append: "", @index: 1) when (@index =< 3) {
+	// 11; 12; 13; etc;
+	.make-sidebar-offset-sum(@direction, @prepend, @append, 1, @index);
+	// 22; 23; 24; etc;
+	.make-sidebar-offset-sum(@direction, @prepend, @append, (@index + 1), 1);
+	// 112; 113; 114; etc;
+	.make-sidebar-offset-sum(@direction, @prepend, @append, 1, 1, (@index + 1));
+	// 121; 131; 141; etc;
+	.make-sidebar-offset-sum(@direction, @prepend, @append, 1, (@index + 1), 1);
+	// 212; 313; 414; etc;
+	.make-sidebar-offset-sum(@direction, @prepend, @append, (@index + 1), 1, (@index + 1));
+	// next iteration
+	.loop-sidebar-offset-sum(@direction, @prepend, @append, (@index + 1));
+}
+
+.sidebar-size-pc(@index, @screen: "") when (@index =< 100) {
+	@percent: ~"@{index}%";
+	@class: ~".sidebar-size@{screen}-@{index}pc";
+	&@{class} {
+		width: @percent;
+	}
+	.sidebar-size-pc(@index + 1, @screen);
+}
+
+.sidebar-layout-pc(@property, @direction, @index: @sidebar-width-pc-min, @screen: "") when (@index =< 100) {
+	@percent: ~"@{index}%";
+	@class: ~"sidebar-@{direction}-@{index}pc@{screen}";
+	.show-sidebar.@{class} & {
+		@{property}: @percent;
+	}
+	.sidebar-layout-pc(@property, @direction, @index + 1, @screen);
+}
+
+.sidebar-size-px(@index, @screen: "") when (@index =< 3) {
+	@size: "sidebar-width-@{index}";
+	@class: ~".sidebar-size@{screen}-@{index}";
+	&@{class} {
+		width: @@size;
+	}
+	.sidebar-size-px(@index + 1, @screen);
+}
+
+.sidebar-layout-px(@property, @direction, @screen: "", @index: 1) when (@index =< 3) {
+	@size: ~"sidebar-width-@{index}";
+	@class: ~"sidebar-@{direction}@{index}@{screen}";
+	.show-sidebar.@{class} & {
+		@{property}: @@size;
+	}
+	.sidebar-layout-px(@property, @direction, @screen, @index + 1);
+}
+
+.sidebar-offset(@property, @screen: "", @index: 1) when (@index =< 3) {
+	@size: "sidebar-width-@{index}";
+	@class: ~".sidebar-offset@{screen}-@{index}";
+	&@{class} {
+		@{property}: @@size;
+	}
+	.sidebar-offset(@property, @screen, @index + 1);
+}

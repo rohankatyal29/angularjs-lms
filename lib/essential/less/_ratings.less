@@ -1,0 +1,29 @@
+// RATINGS
+.rating {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+	font-size: 20px;
+}
+
+.rating span.star {
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	display: inline-block;
+}
+
+.rating span.star:hover {
+	cursor: pointer;
+}
+
+.rating span.star:before {
+	content: "\f006";
+	padding-right: 5px;
+	color: #efefef;
+}
+
+.rating span.star:hover:before,
+.rating span.star.filled:before, .rating span.star:hover ~ span.star:before {
+	content: "\f005";
+	color: @primary-color;
+}

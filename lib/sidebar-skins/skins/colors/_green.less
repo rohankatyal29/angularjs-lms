@@ -1,0 +1,275 @@
+.sidebar.sidebar-skin-green {
+    background: @sidebar-green-background;
+
+	&.left {
+		border-right: 1px solid @sidebar-green-menu-border;
+	}
+	&.right {
+		border-left: 1px solid @sidebar-green-menu-border;
+	}
+
+	// simple links
+	.sidebar-link {
+		color: @sidebar-green-item-link;
+	}
+
+    // ../_block.less
+    .sidebar-block {
+        border-color: lighten(@sidebar-green-background, 4%);
+    }
+
+    // text
+    .sidebar-text, p {
+        color: @sidebar-green-text;
+    }
+
+    // headings
+    .sidebar-heading {
+        &, & > a {
+            color: @white;
+        }
+    }
+
+    // _brand.less
+    .sidebar-brand {
+        background-color: @sidebar-green-brand-background;
+        color: @sidebar-green-brand-color;
+        &:hover {
+            text-decoration: none;
+            color: @sidebar-green-brand-color-hover;
+        }
+    }
+
+    // Buttons
+    .btn-default {
+        .button-variant(#fff, @sidebar-green-item-link-active-background,@sidebar-green-item-link-active-background);
+    }
+
+    // Forms
+    .form-control, .form-control-default {
+        background: darken(@sidebar-green-background, 4%);
+        border-color: darken(@sidebar-green-background, 4%);
+        color: @sidebar-green-text;
+    }
+
+    // ../_list_group.less
+	.list-group-menu {
+        .list-group-item {
+            background: darken(@sidebar-green-background, 4%);
+            border-color: @sidebar-green-background;
+            .badge {
+                background: none;
+                color: #a9a9a9;
+            }
+            a {
+                color: @sidebar-green-item-link;
+                &:hover {
+                    color: #fff;
+                }
+            }
+            &.active {
+                a {
+                    color: #fff;
+                }
+            }
+        }
+        &.primary {
+            .list-group-item {
+                background: @green-500;
+                border-color: @green-500;
+                a {
+                    color: #fff;
+                }
+                .badge {
+                    color: #fff;
+                }
+                &.active {
+                    background: darken(@green-500, 8%);
+                }
+            }
+        }
+    }
+
+    // menus
+    .sidebar-menu {
+        border-color: @sidebar-green-menu-border;
+
+        a {
+			color: @sidebar-green-item-link;
+		}
+
+        i {
+            color: @sidebar-green-item-icon-color;
+        }
+
+        // First level items
+        > li {
+            border-color: @sidebar-green-menu-border;
+            a:hover {
+                color: @sidebar-green-item-hover-color;
+            }
+            &.open > a, > a:hover, > a:focus {
+                &,
+                .nav > & {
+                    background: @sidebar-green-item-hover-background;
+                }
+            }
+        }
+
+        li {
+            &.hasSubmenu {
+                > a:before {
+                    color: @sidebar-green-item-icon-color;
+                }
+            }
+            &.active {
+                > a {
+                    color: @sidebar-green-item-link-active;
+                    i {
+                        color: @sidebar-green-item-link-icon-active;
+                    }
+                }
+            }
+        }
+    }
+
+    // active item background
+    .sidebar-menu.sm-active-item-bg li.active > a {
+        background: @sidebar-green-item-link-active-background;
+        &:before {
+            color: @sidebar-green-item-link-active;
+        }
+    }
+
+    // block icons
+    .sidebar-menu.sm-icons-block li {
+        > a i {
+            background: lighten(@sidebar-green-background, 8%);
+            color: lighten(@sidebar-green-item-icon-color, 8%);
+        }
+        &.active > a i {
+            background: @sidebar-green-item-link-active-background;
+            color: @sidebar-green-item-link-icon-active;
+        }
+    }
+
+    // First submenu level
+    .sidebar-menu li.open > ul {
+        background: @sidebar-green-sub-item-background;
+        border-color: @sidebar-green-sub-item-border;
+    }
+
+    // Second submenu level
+    .sidebar-menu li ul li.open {
+        > a {
+            background: @sidebar-green-sub-item-second-link-open;
+        }
+        > ul {
+            background: @sidebar-green-sub-item-second-background;
+            border-color: @sidebar-green-sub-item-second-border;
+        }
+    }
+
+    // Third submenu level
+    .sidebar-menu li ul li ul li.open {
+        background: darken(@sidebar-green-background, 5%);
+    }
+
+    // ../_category.less
+    .category {
+        color: @sidebar-green-menu-category;
+    }
+
+    hr {
+        border-color: @sidebar-green-menu-border;
+    }
+
+    // ../_feed.less
+    .sidebar-feed li {
+        color: @sidebar-green-news-item-color;
+        background: @sidebar-green-news-item-background;
+
+        &:hover {
+            background: @sidebar-green-news-item-hover;
+            .media-object {
+                i {
+                    color: @sidebar-green-news-item-icon-color-hover;
+                }
+            }
+        }
+        .media-body {
+            a {
+                color: @sidebar-green-news-item-link;
+            }
+        }
+    }
+
+    // Forms
+    .checkbox label {
+        color: @sidebar-green-item-link;
+    }
+
+    // Slider
+    .slider {
+        color: @sidebar-green-item-link;
+        .tooltip-inner {
+            background: lighten(@sidebar-green-background, 5%);
+        }
+        .tooltip-arrow {
+            border-top-color: lighten(@sidebar-green-background, 5%);
+        }
+        .slider-track {
+            border: 1px solid darken(@sidebar-green-background, 5%);
+            background: darken(@sidebar-green-background, 5%);
+        }
+        .slider-handle {
+            color: @green-500;
+        }
+    }
+
+    // Datepicker
+    .datepicker {
+        table {
+            thead tr {
+                background: desaturate(@green-500, 13%) !important;
+                th.datepicker-switch, th.next, th.prev {
+                    &:hover {
+                        background: desaturate(@green-500, 13%) !important;
+                    }
+                }
+            }
+            tr td {
+                &.day, .month, .year {
+                    color: @sidebar-green-item-link;
+                    &.old {
+                        color: lighten(@sidebar-green-background, 10%);
+                    }
+                    &.active {
+                        color: #fff;
+                        background: desaturate(@green-500, 13%) !important;
+                    }
+                    &:hover {
+                        background: darken(@sidebar-green-background, 10%);
+                    }
+                }
+            }
+        }
+    }
+
+    .progress {
+        background-color: darken(@sidebar-green-background, 5%);
+    }
+
+    .badge {
+        background: darken(@sidebar-green-background, 7%);
+    }
+
+    .nav-tabs {
+        border-color: lighten(@sidebar-green-background, 4%);
+        > li.active > a {
+            &, &:focus, &:hover {
+                border-color: lighten(@sidebar-green-background, 4%);
+            }
+        }
+    }
+}

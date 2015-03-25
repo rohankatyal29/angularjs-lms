@@ -1,0 +1,27 @@
+{
+  "name": "jquery-ui-maps",
+  "version": "3.0.1",
+  "main": [
+    "ui/min/jquery.ui.map.full.min.js",
+    "ui/min/jquery.ui.map.microdata.min.js",
+    "ui/min/jquery.ui.map.microformat.min.js",
+    "ui/min/jquery.ui.map.min.js",
+    "ui/min/jquery.ui.map.overlays.min.js",
+    "ui/min/jquery.ui.map.rdfa.min.js",
+    "ui/min/jquery.ui.map.services.min.js"
+  ],
+  "dependencies": {
+    "jquery": ">= 2.1.0",
+    "jquery-ui": ">= 1.10.4"
+  },
+  "homepage": "https://github.com/somecallmechief/jquery-ui-map",
+  "_release": "3.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.1",
+    "commit": "be7fb3b0fe65b43581cb8e2a7a17edef045bc88d"
+  },
+  "_source": "git://github.com/somecallmechief/jquery-ui-map.git",
+  "_target": "~3.0.0",
+  "_originalSource": "jquery-ui-map"
+}

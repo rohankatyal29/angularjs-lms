@@ -1,0 +1,33 @@
+// Config
+@import "../../common/_config";
+
+// Variables
+@import "../../common/_variables";
+
+// Load Bootstrap
+@import "../../vendor/bootstrap/bootstrap";
+
+// Icons
+@import "@{theme-path-root}bower_components/font-awesome/less/font-awesome";
+
+// Color Mixins
+@import "@{theme-path-lib}colors/less/mixins/mixins";
+
+// CUSTOM
+a.navbar-brand {
+	background: #333333;
+	color:#fff;
+}
+.alert-choose {
+	background: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	border-left:8px solid @success-color;
+	i {
+		@media (max-width: @screen-sm) {
+			display: none;
+		}
+		vertical-align: middle;
+	}
+}
+.panel .panel-body img { margin-bottom:@grid-gutter-width/2;}

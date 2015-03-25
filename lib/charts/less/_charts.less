@@ -1,0 +1,108 @@
+.jqstooltip {
+    width: auto !important;
+    height: auto !important;
+    border-radius: 3px;
+    border-color: transparent !important;
+    .jqsfield {
+        font-size: 14px;
+        font-weight: bold
+    }
+}
+
+.panel {
+    .easy-pie {
+        position:relative;
+        display: inline-block; width: auto;
+        .value {
+            position: absolute;
+            top:25px;
+            left:0;
+            right:0;
+        }
+    }
+    &.txt-single {
+        .easy-pie { margin: 0 auto; }
+        .txt { padding: 7px 0 0; }
+    }
+    .sparkline-stats {
+        padding: @grid-gutter-width/2;
+        .pull-left {
+            text-align: center;
+        }
+        .sparkline-bar {
+            padding-left:10px;
+        }
+        ul {
+            margin-bottom:0;
+            li {
+                border: 0;
+                padding: 3px 7px;
+            }
+        }
+    }
+}
+
+#flotTip {
+    background: #f9f9f9;
+    border: 1px solid @default-color;
+    padding: 5px 10px;
+    border-radius:  5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.yAxis .tickLabel:first-child,
+.yAxis .tickLabel:last-child { display: none; }
+.tickLabel {
+    font-weight: bold;
+    font-size: 12px;
+    color: #666;
+    padding: 7px;
+}
+.flotchart-holder {
+    height: 200px;
+    padding: 0;
+    margin-top:20px !important;
+    .label {
+        padding: 5px 10px;
+    }
+}
+#chart_lines_fill_nopoints_2 { height: 160px; }
+.legend {
+    table {
+        top: -20px !important;
+        left: 0 !important;
+        border-radius: 5px;
+        border-collapse: separate;
+        tr {
+            td {
+                padding: 5px;
+                background: @grey-100;
+                border-color: @grey-100;
+                border-left: none;
+                border-right: none;
+                &.legendLabel { padding-left: 0; color: #666; font-size: 12px; font-weight: bold; }
+                &.legendColorBox {
+                    > div {
+                        border: none !important;
+                        > div { border-radius:  5px; }
+                    }
+                }
+                &:first-of-type {
+                    padding-left: 10px;
+                    -webkit-border-radius: 5px 0 0 5px;
+                    -moz-border-radius: 5px 0 0 5px;
+                    border-radius: 5px 0 0 5px;
+                    border-color: @grey-100;
+                }
+                &:last-of-type {
+                    padding-right: 10px;
+                    -webkit-border-radius: 0 5px 5px 0;
+                    -moz-border-radius: 0 5px 5px 0;
+                    border-radius: 0 5px 5px 0;
+                    border-color:@grey-100;
+                }
+            }
+        }
+    }
+}

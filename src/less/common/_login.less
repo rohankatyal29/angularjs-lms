@@ -1,0 +1,42 @@
+body.login {
+	position: initial;
+	background: @body-bg;
+	padding-top: 0;
+	#content {
+		max-width: 760px;
+		margin: auto;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	.lock-container {
+		@media (min-width: @screen-xs) {
+			bottom: 0;
+			height: 550px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		margin: auto;
+		width: 300px;
+		.panel {
+			max-width: 300px !important;
+			background: #fff;
+			position: relative;
+			img {
+				margin: 20px 0 10px;
+			}
+			.forgot-password {
+				margin: 10px 0 0;
+				font-weight: 500;
+				color: @primary-color;
+				display: block;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,22 @@
+.sidebar {
+	.panel {
+		margin-bottom: @sidebar-horizontal-spacing;
+		.panel-body > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.sidebar-block-full {
+		> .panel {
+			border-left: none;
+			border-right: none;
+			margin: 0;
+			border-radius: 0;
+			& + .panel {
+				border-top: none;
+			}
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+}

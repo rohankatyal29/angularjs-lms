@@ -1,0 +1,60 @@
+<div class="jumbotron text-center bg-transparent margin-none">
+    <h1>Wizards</h1>
+    <p>Wizards can split up large forms into multiple smaller logical sections and convert them into multi-step forms with cool progress bars.</p>
+</div>
+
+<div class="page-section">
+    <div class="row">
+        <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+
+            <h4 class="page-section-heading">Signup Wizard</h4>
+
+            <div class="wizard-container wizard-1" id="wizard-demo-1">
+                <div data-scrollable-h>
+                    <ul class="wiz-progress">
+                        <li class="active">Account Setup</li>
+                        <li>Social Profiles</li>
+                        <li>Personal Details</li>
+                    </ul>
+                </div>
+                <form action="#" data-toggle="wizard" class="max-width-400 h-center"{% if rtl %} data-rtl="true"{% endif %}>
+
+                    {% if rtl %}
+                        {% include "lib/essential/html/wizard/_personal-details.html" %}
+                    {% else %}
+                        {% include "lib/essential/html/wizard/_create-account.html" %}
+                    {% endif %}
+
+                    <fieldset class="step">
+                        <div class="page-section-heading">
+                            <h2 class="text-h3 margin-v-0">Social Profiles</h2>
+                            <h3 class="text-h4 margin-v-10 text-grey-400">Your presence on social networks</h3>
+                        </div>
+                        <div class="form-group form-control-default">
+                            <label for="wiz-twitter">Twitter:</label>
+                            <input class="form-control" type="text" id="wiz-twitter" placeholder="Twitter" />
+                        </div>
+                        <div class="form-group form-control-default">
+                            <label for="wiz-facebook">Facebook:</label>
+                            <input class="form-control" type="text" id="wiz-facebook" placeholder="Facebook" />
+                        </div>
+                        <div class="form-group form-control-default">
+                            <label for="wiz-gplus">Google Plus:</label>
+                            <input class="form-control" type="text" id="wiz-gplus" placeholder="Google Plus" />
+                        </div>
+                        <button type="button" class="wiz-prev btn btn-default">Previous</button>
+                        <button type="button" class="wiz-next btn btn-primary">Next</button>
+                    </fieldset>
+
+                    {% if rtl %}
+                        {% include "lib/essential/html/wizard/_create-account.html" %}
+                    {% else %}
+                        {% include "lib/essential/html/wizard/_personal-details.html" %}
+                    {% endif %}
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

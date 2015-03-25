@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+    {% if header !== false %}
+    <div class="panel-heading">
+        {% include "lib/social/html/timeline/timeline-blocks/_block-heading.html" { gender: "guy", image: "5" } %}
+    </div>
+    {% endif %}
+    <div class="panel-body">
+        Amazing 3D Animation
+    </div>
+    <!-- 4:3 aspect ratio -->
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="//player.vimeo.com/video/50522981?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff"></iframe>
+    </div>
+
+    <div class="view-all-comments"><i class="fa fa-comments-o"></i> Be the first to comment</div>
+    <ul class="comments">
+        <li class="comment-form">
+            <div class="input-group">
+                {% if !rtl %}
+                <input type="text" class="form-control"/>
+                {% endif %}
+                <span class="input-group-btn">
+                   <a href="" class="btn btn-default"><i class="fa fa-photo"></i></a>
+                </span>
+                {% if rtl %}
+                <input type="text" class="form-control"/>
+                {% endif %}
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,18 @@
+{% include "lib/layout/html/_header.html" { htmlClass: "ls-top-navbar ls-bottom-footer show-sidebar sidebar-l2 sidebar-r-sum-12 app-desktop" } %}
+{% include "src/html/themes/layout/fixed/_navbar_toggle_default.html" %}
+
+<div class="container">
+
+    {% include "lib/layout/html/samples/_sidebar.html" { sidebarOptions: "left sidebar-size-2 sidebar-offset-0 sidebar-skin-dark sidebar-visible-mobile sidebar-visible-desktop", sidebarData: "data-type=dropdown" } %}
+    {% include "lib/layout/html/samples/_sidebar.html" { sidebarOptions: "right sidebar-size-2 sidebar-offset-1 sidebar-skin-white sidebar-visible-desktop", sidebarData: "data-type=dropdown" } %}
+    {% include "lib/layout/html/samples/_sidebar.html" { sidebarOptions: "right sidebar-size-1 sidebar-mini sidebar-offset-0 sidebar-skin-dark sidebar-visible-desktop", sidebarData: "data-type=dropdown" } %}
+
+    <div id="content">
+        <div data-scrollable>
+            <div class="overflow-hidden">
+                {% include "lib/layout/html/samples/_layouts.html" %}
+            </div>
+        </div>
+        {% include "lib/layout/html/_footer_copyright.html" %}
+    </div>
+</div>

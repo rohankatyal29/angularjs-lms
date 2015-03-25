@@ -1,0 +1,15 @@
+.alert-class-from-color(@classColor, @classIndex) when (@classIndex =< 900) {
+	.alert-class-from-color-a(@classColor, @classIndex);
+	.alert-class-from-color(@classColor, @classIndex + 100);
+}
+
+.alert-class-from-color-a(@classColor, @classIndex) {
+	@class: ~".alert-@{classColor}-@{classIndex}";
+	@color: "@{classColor}-@{classIndex}";
+	@{class} {
+		.alert-variant(@@color; @@color; @white);
+		&.alert-stroke {
+			.alert-variant(fade(@@color, 15%); fade(@@color, 40%); @@color);
+		}
+	}
+}

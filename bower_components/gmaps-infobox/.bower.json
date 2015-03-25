@@ -1,0 +1,12 @@
+{
+  "name": "gmaps-infobox",
+  "_release": "infobox",
+  "_resolution": {
+    "type": "tag",
+    "tag": "infobox",
+    "commit": "467"
+  },
+  "_source": "http://google-maps-utility-library-v3.googlecode.com/svn",
+  "_target": "infobox",
+  "_originalSource": "svn+http://google-maps-utility-library-v3.googlecode.com/svn"
+}

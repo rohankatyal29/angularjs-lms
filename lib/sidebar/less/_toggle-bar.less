@@ -1,0 +1,54 @@
+.sidebar {
+	.sidebar-toggle-bar {
+		display: none;
+	}
+}
+@media (min-width: @screen-sm) {
+	.sidebar {
+		.sidebar-toggle-bar {
+			display: table;
+			visibility: visible;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			height: 100%;
+			width: @sidebar-toggle-bar-width;
+			transition: all .3s;
+			background-color: fade(@grey-400, 20%);
+			text-decoration: none;
+
+			&:hover {
+				background-color: fade(@grey-400, 30%);
+				width: @sidebar-toggle-bar-width * 2;
+			}
+			&:after {
+				display: table-cell;
+				font: normal normal normal 14px/1 FontAwesome;
+				font-size: inherit;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				content: "\f142";
+				vertical-align: middle;
+				color: @grey-500;
+				text-align: center;
+			}
+		}
+		.left& {
+			.sidebar-toggle-bar {
+				right: -@sidebar-toggle-bar-width;
+				&:hover {
+					right: -@sidebar-toggle-bar-width*2;
+				}
+			}
+		}
+		.right& {
+			.sidebar-toggle-bar {
+				left: -@sidebar-toggle-bar-width;
+				&:hover {
+					left: -@sidebar-toggle-bar-width*2;
+				}
+			}
+		}
+	}
+}

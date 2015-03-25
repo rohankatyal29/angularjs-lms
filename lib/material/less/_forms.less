@@ -1,0 +1,136 @@
+.form-control-material {
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid @input-border;
+	position: relative;
+	box-shadow: none;
+	padding: 16px 0 0;
+	height: 48px;
+	label {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		transition: all 0.2s ease;
+		font-size: 1.23rem;
+		font-weight: normal;
+		height: 48px;
+		line-height: 48px;
+		margin: 0;
+		display: block;
+	}
+	&:not(.static) label {
+		pointer-events: none;
+	}
+	.form-control {
+		font-size: 1.23rem;
+		border: none;
+		line-height: 16px;
+		background-color: transparent;
+		padding: 3px 0 13px;
+		box-shadow: none;
+		border-radius: 0;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		height: auto;
+		.placeholder(transparent);
+	}
+	textarea.form-control {
+		line-height: 22px;
+		height: 32px;
+		padding: 3px 0 0;
+	}
+	.ma-form-highlight {
+		position: absolute;
+		height: 60%;
+		width: 100px;
+		top: 25%;
+		left: 0;
+		pointer-events: none;
+		opacity: 0.2;
+	}
+	.ma-form-bar {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		top: 0;
+		left: 0;
+	}
+	.ma-form-bar:before,
+	.ma-form-bar:after {
+		content: '';
+		height: 2px;
+		width: 0;
+		bottom: -1px;
+		position: absolute;
+		background: @primary-color;
+		transition: all 0.2s ease;
+	}
+	.ma-form-bar:before {
+		left: 50%;
+	}
+	.ma-form-bar:after {
+		right: 50%;
+	}
+	.form-control:focus, &.static .form-control {
+		.placeholder();
+	}
+
+	&.static .form-control ~ label {
+		font-size: 1rem;
+		top: -18px;
+		cursor: pointer;
+	}
+
+	.form-control:focus ~ label,
+	.form-control.used ~ label {
+		color: @primary-color;
+		font-size: 1rem;
+		top: -18px;
+	}
+	.form-control:focus ~ .ma-form-highlight {
+		animation: inputHighlighter 0.3s ease;
+	}
+	.form-control:focus ~ .ma-form-bar:before,
+	.form-control:focus ~ .ma-form-bar:after {
+		width: 50%;
+	}
+	.input-group {
+		position: initial;
+		width: 100%;
+		label {
+			left: 36px;
+		}
+		.input-group-addon {
+			background-color: transparent;
+			border: none;
+			vertical-align: top;
+			padding: 0;
+			width: 36px;
+			text-align: left;
+			font-size: 1.23rem;
+		}
+	}
+
+	&.required:after {
+		color: @danger-color;
+		content: "*";
+		font-size: 20px;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+
+@keyframes inputHighlighter {
+	from {
+		background: @primary-color;
+	}
+	to {
+		width: 0;
+		background: transparent;
+	}
+}

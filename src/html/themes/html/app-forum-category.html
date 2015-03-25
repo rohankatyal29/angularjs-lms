@@ -1,0 +1,5 @@
+{% extends "src/html/themes/html/layouts/_app-student-default.html" %}
+
+{% block content %}
+    {% include "src/html/themes/html/forum/_app.html" { listing: "category", itemUrl: "app-forum-thread.html" } %}
+{% endblock %}

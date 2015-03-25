@@ -1,0 +1,45 @@
+// Sizing
+@mixin size($property: height, $index: 20, $size: "", $increment: 10) {
+	@if $index <= 600 {
+		.#{$property}-#{$index}#{$size} {
+			#{$property}: #{$index}px !important;
+		}
+		@include size($property, $index + $increment, $size);
+	}
+}
+@mixin size-auto($property, $size: "") {
+	.#{$property}-auto#{$size} {
+		#{$property}: auto !important;
+	}
+}
+@mixin size-100pc($property, $size: "") {
+	.#{$property}-100pc#{$size} {
+		#{$property}: 100% !important;
+	}
+}
+
+// Spacing
+@mixin spacing-class($prefix, $property, $index: 15) {
+	@if $index >= 0 {
+		.#{$prefix}-#{$index} {
+			#{$property}-top: #{$index}px !important;
+			#{$property}-bottom: #{$index}px !important;
+		}
+		@include spacing-class($prefix, $property, $index, 15);
+		@include spacing-class($prefix, $property, $index - 1);
+	}
+}
+@mixin spacing-class($prefix, $property, $size1: 15, $size2: 15) {
+	@if $size1 >= 0 and $size2 >= 0 and not $size1 == $size2 {
+		.#{$prefix}-#{$size1}-#{$size2} {
+			#{$property}-top: #{$size1}px !important;
+			#{$property}-bottom: #{$size2}px !important;
+		}
+		@include spacing-class($prefix, $property, $size1, $size2 - 1);
+	}
+}
+@mixin spacing-class($prefix, $property, $size1: 15, $size2: 15) {
+	@if $size1 == $size2 {
+		@include spacing-class($prefix, $property, $size1, $size2 - 1);
+	}
+}

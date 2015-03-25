@@ -1,0 +1,456 @@
+@media (min-width: @screen-sm) {
+
+	// Apply content margins
+
+	// Content with Single sidebars on each side
+	#content {
+
+		// left sidebars
+		.sidebar-layout-px(margin-left, l);
+		.sidebar-layout-pc(margin-left, l, @sidebar-width-pc-min);
+
+		// right sidebars
+		.sidebar-layout-px(margin-right, r);
+		.sidebar-layout-pc(margin-right, r, @sidebar-width-pc-min);
+	}
+
+	// footer
+	.container-fluid .footer {
+
+		// left sidebars
+		.sidebar-layout-px(left, l);
+
+		// right sidebars
+		.sidebar-layout-px(right, r);
+	}
+
+	// Multiple sidebars on each side
+	.show-sidebar {
+
+		// Content
+		.loop-sidebar-offset-sum(margin-left, "sidebar-l-sum", " #content");
+		.loop-sidebar-offset-sum(margin-right, "sidebar-r-sum", " #content");
+
+		// Footer
+		.loop-sidebar-offset-sum(left, "sidebar-l-sum", " .container-fluid .footer");
+		.loop-sidebar-offset-sum(right, "sidebar-r-sum", " .container-fluid .footer");
+	}
+}
+
+// ONLY SMALL to MEDIUM
+@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+
+	// Apply content margins
+
+	// Content with Single sidebars on each side
+	#content {
+
+		// left sidebars
+		.sidebar-layout-px(margin-left, l, "-sm");
+		.sidebar-layout-pc(margin-left, l, @sidebar-width-pc-min, "-sm");
+
+		// right sidebars
+		.sidebar-layout-px(margin-right, r, "-sm");
+		.sidebar-layout-pc(margin-right, r, @sidebar-width-pc-min, "-sm");
+	}
+
+	// footer
+	.container-fluid .footer {
+
+		// left sidebars
+		.sidebar-layout-px(left, l, "-sm");
+
+		// right sidebars
+		.sidebar-layout-px(right, r, "-sm");
+	}
+
+	// Multiple sidebars on each side
+	.show-sidebar {
+
+		// Content
+		.loop-sidebar-offset-sum(margin-left, "sidebar-l-sum-sm", " #content");
+		.loop-sidebar-offset-sum(margin-right, "sidebar-r-sum-sm", " #content");
+
+		// Footer
+		.loop-sidebar-offset-sum(left, "sidebar-l-sum-sm", " .container-fluid .footer");
+		.loop-sidebar-offset-sum(right, "sidebar-r-sum-sm", " .container-fluid .footer");
+	}
+}
+
+// ONLY MEDIUM
+@media (min-width: @screen-md) and (max-width: @screen-md-max) {
+
+	// Apply content margins
+
+	// Content with Single sidebars on each side
+	#content {
+
+		// left sidebars
+		.sidebar-layout-px(margin-left, l, "-md");
+		.sidebar-layout-pc(margin-left, l, @sidebar-width-pc-min, "-md");
+
+		// right sidebars
+		.sidebar-layout-px(margin-right, r, "-md");
+		.sidebar-layout-pc(margin-right, r, @sidebar-width-pc-min, "-md");
+	}
+
+	// footer
+	.container-fluid .footer {
+
+		// left sidebars
+		.sidebar-layout-px(left, l, "-md");
+
+		// right sidebars
+		.sidebar-layout-px(right, r, "-md");
+	}
+
+	// Multiple sidebars on each side
+	.show-sidebar {
+
+		// Content
+		.loop-sidebar-offset-sum(margin-left, "sidebar-l-sum-md", " #content");
+		.loop-sidebar-offset-sum(margin-right, "sidebar-r-sum-md", " #content");
+
+		// Footer
+		.loop-sidebar-offset-sum(left, "sidebar-l-sum-md", " .container-fluid .footer");
+		.loop-sidebar-offset-sum(right, "sidebar-r-sum-md", " .container-fluid .footer");
+	}
+
+}
+
+// ONLY LARGE
+@media (min-width: @screen-lg) {
+
+	// Apply content margins
+
+	// Content with Single sidebars on each side
+	#content {
+
+		// left sidebars
+		.sidebar-layout-px(margin-left, l, "-lg");
+		.sidebar-layout-pc(margin-left, l, @sidebar-width-pc-min, "-lg");
+
+		// right sidebars
+		.sidebar-layout-px(margin-right, r, "-lg");
+		.sidebar-layout-pc(margin-right, r, @sidebar-width-pc-min, "-lg");
+	}
+
+	// footer
+	.container-fluid .footer {
+
+		// left sidebars
+		.sidebar-layout-px(left, l, "-lg");
+
+		// right sidebars
+		.sidebar-layout-px(right, r, "-lg");
+	}
+
+	// Multiple sidebars on each side
+	.show-sidebar {
+
+		// Content
+		.loop-sidebar-offset-sum(margin-left, "sidebar-l-sum-lg", " #content");
+		.loop-sidebar-offset-sum(margin-right, "sidebar-r-sum-lg", " #content");
+
+		// Footer
+		.loop-sidebar-offset-sum(left, "sidebar-l-sum-lg", " .container-fluid .footer");
+		.loop-sidebar-offset-sum(right, "sidebar-r-sum-lg", " .container-fluid .footer");
+	}
+
+}
+
+// ONLY MOBILE
+@media (max-width: @screen-sm-min) {
+
+	// Apply content margins
+
+	// Content with Single sidebars on each side
+	#content {
+
+		// left sidebars
+		.sidebar-layout-px(margin-left, l, "-xs");
+		.sidebar-layout-pc(margin-left, l, @sidebar-width-pc-min, "-xs");
+
+		// right sidebars
+		.sidebar-layout-px(margin-right, r, "-xs");
+		.sidebar-layout-pc(margin-right, r, @sidebar-width-pc-min, "-lg");
+	}
+
+	// footer
+	.container-fluid .footer {
+
+		// left sidebars
+		.sidebar-layout-px(left, l, "-xs");
+
+		// right sidebars
+		.sidebar-layout-px(right, r, "-xs");
+	}
+
+	// Multiple sidebars on each side
+	.show-sidebar {
+
+		// Content
+		.loop-sidebar-offset-sum(margin-left, "sidebar-l-sum-xs", " #content");
+		.loop-sidebar-offset-sum(margin-right, "sidebar-r-sum-xs", " #content");
+
+		// Footer
+		.loop-sidebar-offset-sum(left, "sidebar-l-sum-xs", " .container-fluid .footer");
+		.loop-sidebar-offset-sum(right, "sidebar-r-sum-xs", " .container-fluid .footer");
+	}
+
+}
+
+// Mobile first
+.sidebar {
+	position: fixed;
+	bottom: 0;
+	z-index: 3;
+	display: none;
+	top: 0;
+
+	body > &,
+	.st-container > &,
+	.ui-view-main > & {
+		top: @sidebar-top;
+	}
+	.ls-bottom-footer .st-container > & {
+		bottom: @footer-height;
+	}
+	.ls-top-navbar-large .st-container > & {
+		top: @navbar-height;
+		@media (min-width: @navbar-large-breakpoint) {
+			top: @navbar-large-height;
+		}
+	}
+	.ls-top-navbar-xlarge .st-container > & {
+		top: @navbar-height;
+		@media (min-width: @navbar-large-breakpoint) {
+			top: @navbar-xlarge-height;
+		}
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	// Left sidebars
+	&.left {
+		left: 0;
+
+		// Tablet resolutions and above
+		@media (min-width: @screen-sm-min) {
+			&.sidebar-offset-0 {
+				left: 0;
+			}
+			.sidebar-offset(left);
+			.loop-sidebar-offset-sum(left, "sidebar-offset-sum");
+		}
+
+		// ONLY SMALL to MEDIUM
+		@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+			&.sidebar-offset-sm-0 {
+				left: 0;
+			}
+			.sidebar-offset(left, "-sm");
+			.loop-sidebar-offset-sum(left, "sidebar-offset-sum-sm");
+		}
+
+		// ONLY MEDIUM
+		@media (min-width: @screen-md) and (max-width: @screen-md-max) {
+			&.sidebar-offset-md-0 {
+				left: 0;
+			}
+			.sidebar-offset(left, "-md");
+			.loop-sidebar-offset-sum(left, "sidebar-offset-sum-md");
+		}
+
+		// ONLY LARGE
+		@media (min-width: @screen-lg) {
+			&.sidebar-offset-lg-0 {
+				left: 0;
+			}
+			.sidebar-offset(left, "-lg");
+			.loop-sidebar-offset-sum(left, "sidebar-offset-sum-lg");
+		}
+
+		// ONLY MOBILE
+		@media (max-width: @screen-sm-min) {
+			&.sidebar-offset-xs-0 {
+				left: 0;
+			}
+			.sidebar-offset(left, "-xs");
+			.loop-sidebar-offset-sum(left, "sidebar-offset-sum-xs");
+		}
+	}
+
+	// Right sidebars
+	&.right {
+		right: 0;
+
+		// Tablet resolutions and above
+		@media (min-width: @screen-sm-min) {
+			&.sidebar-offset-0 {
+				right: 0;
+			}
+			.sidebar-offset(right);
+			.loop-sidebar-offset-sum(right, "sidebar-offset-sum");
+		}
+
+		// ONLY SMALL to MEDIUM
+		@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+			&.sidebar-offset-sm-0 {
+				right: 0;
+			}
+			.sidebar-offset(right, "-sm");
+			.loop-sidebar-offset-sum(right, "sidebar-offset-sum-sm");
+		}
+
+		// ONLY MEDIUM
+		@media (min-width: @screen-md) and (max-width: @screen-md-max) {
+			&.sidebar-offset-md-0 {
+				right: 0;
+			}
+			.sidebar-offset(right, "-md");
+			.loop-sidebar-offset-sum(right, "sidebar-offset-sum-md");
+		}
+
+		// ONLY LARGE
+		@media (min-width: @screen-lg) {
+			&.sidebar-offset-lg-0 {
+				right: 0;
+			}
+			.sidebar-offset(right, "-lg");
+			.loop-sidebar-offset-sum(right, "sidebar-offset-sum-lg");
+		}
+
+		// ONLY MOBILE
+		@media (max-width: @screen-sm-min) {
+			&.sidebar-offset-xs-0 {
+				right: 0;
+			}
+			.sidebar-offset(right, "-xs");
+			.loop-sidebar-offset-sum(right, "sidebar-offset-sum-xs");
+		}
+	}
+}
+
+// Sidebar Sizes
+// MOBILE FIRST
+.sidebar-size-1 {
+	width: @sidebar-width-1-mobile;
+}
+.sidebar-size-2 {
+	width: @sidebar-width-2-mobile;
+}
+.sidebar-size-3 {
+	width: @sidebar-width-3-mobile;
+}
+
+// Tablet resolutions and above
+@media (min-width: @screen-sm) {
+
+	// Sidebar Sizes
+	.sidebar-size-px(1);
+	.sidebar-size-pc(@sidebar-width-pc-min);
+
+	// Sidebar Visibility
+	.show-sidebar .sidebar.sidebar-visible-desktop {
+		display: block;
+	}
+
+	// Display toggle button
+	.hide-sidebar {
+		.navbar {
+			[data-toggle="sidebar-menu"] {
+				display: inline-block !important;
+				&.visible-xs {
+					display: none !important;
+				}
+			}
+			.navbar-brand {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+// ONLY SMALL to MEDIUM
+@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+
+	// Sidebar Sizes
+	.sidebar-size-px(1, "-sm");
+	.sidebar-size-pc(@sidebar-width-pc-min, "-sm");
+
+}
+
+// ONLY MEDIUM
+@media (min-width: @screen-md) and (max-width: @screen-md-max) {
+
+	// Sidebar Sizes
+	.sidebar-size-px(1, "-md");
+	.sidebar-size-pc(@sidebar-width-pc-min, "-md");
+
+}
+
+// ONLY LARGE
+@media (min-width: @screen-lg) {
+
+	// Sidebar Sizes
+	.sidebar-size-px(1, "-lg");
+	.sidebar-size-pc(@sidebar-width-pc-min, "-lg");
+
+}
+
+// ONLY MOBILE
+@media (max-width: @screen-sm-min) {
+
+	// Sidebar Sizes
+	.sidebar-size-xs-1 {
+		width: @sidebar-width-1-mobile;
+	}
+	.sidebar-size-px(2, "-xs");
+	.sidebar-size-pc(@sidebar-width-pc-min, "-xs");
+
+	// Prevent page scroll under the sidebar
+	.show-sidebar {
+		position: relative;
+		overflow: hidden;
+	}
+
+	// Display sidebars with ".sidebar-visible-mobile" when ".show-sidebar" is applied to the body
+	.show-sidebar .sidebar-visible-mobile {
+		display: block !important;
+	}
+}
+
+// Layout Fixed
+html.app-mobile {
+	.container, #content .container-fluid {
+		.sidebar {
+			position: absolute;
+			top: 0;
+		}
+	}
+}
+@media (min-width: @screen-sm) {
+	html.app-desktop {
+		.container, #content .container-fluid {
+			.sidebar {
+				position: absolute;
+				top: 0;
+			}
+		}
+	}
+}
+
+// Split vertical
+.split-vertical #dropdown-temp {
+	display: table-row;
+}
+
+// sidebar closed
+// required for transitions
+.sidebar.sidebar-closed {
+	display: none !important;
+}

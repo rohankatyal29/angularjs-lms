@@ -1,0 +1,10 @@
+{% include "lib/layout/html/_header.html" { bodyClass: "login", htmlClass: "hide-sidebar ls-bottom-footer" } %}
+
+<div id="content">
+    <div class="container-fluid">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+
+{% include "lib/layout/html/_footer_copyright.html" %}
+{% include "lib/layout/html/_footer_scripts.html" %}

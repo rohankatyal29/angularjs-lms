@@ -1,0 +1,166 @@
+[
+	{
+		"build": "vendor-core.js",
+		"cwd": "bower_components/",
+		"files": [
+			"jquery/dist/jquery.min.js",
+			"bootstrap/dist/js/bootstrap.js",
+			"jquery.breakpoints/breakpoints.js",
+			"jquery.nicescroll/jquery.nicescroll.js",
+			"Grid-A-Licious/jquery.grid-a-licious.js",
+			"isotope/dist/isotope.pkgd.js",
+			"isotope-packery/packery-mode.pkgd.js",
+			"jquery.cookie/jquery.cookie.js",
+			"handlebars/handlebars.js",
+			"jquery-ui/ui/core.js",
+			"jquery-ui/ui/widget.js",
+			"jquery-ui/ui/mouse.js",
+			"jquery-ui/ui/position.js",
+			"jquery-ui/ui/draggable.js",
+			"jquery-ui/ui/droppable.js",
+			"jquery-ui/ui/resizable.js",
+			"jquery-ui/ui/selectable.js",
+			"jquery-ui/ui/sortable.js",
+			"jquery.hotkeys/jquery.hotkeys.js",
+			"load_image/load_image.js",
+			"jquery-smartresize/jquery.debouncedresize.js",
+			"modernizr/modernizr.js",
+			"velocity/velocity.js"
+		]
+	},
+	{
+		"build": "vendor-angular.js",
+		"cwd": "bower_components/",
+		"files": [
+			"angular/angular.js",
+			"angular-resource/angular-resource.js",
+			"angular-sanitize/angular-sanitize.js",
+			"angular-touch/angular-touch.js",
+			"angular-ui-router/release/angular-ui-router.js",
+			"angular-ui-utils/ui-utils.js"
+		],
+		"themes": ["angular"]
+	},
+	{
+		"build": "vendor-tables.js",
+		"cwd": "bower_components/",
+		"files": [
+			"datatables/media/js/jquery.dataTables.js",
+			"datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js"
+		]
+	},
+	{
+		"build": "vendor-countdown.js",
+		"cwd": "bower_components/kbwood_countdown/",
+		"files": [
+			"jquery.plugin.js",
+			"jquery.countdown.js"
+		]
+	},
+	{
+		"build": "vendor-forms.js",
+		"cwd": "bower_components/",
+		"files": [
+			"seiyria-bootstrap-slider/js/bootstrap-slider.js",
+			"bootstrap-select/dist/js/bootstrap-select.js",
+			"bootstrap-switch/dist/js/bootstrap-switch.js",
+			"bootstrap-datepicker/js/bootstrap-datepicker.js",
+			"moment/min/moment.min.js",
+			"bootstrap-daterangepicker/daterangepicker.js",
+			"jquery-minicolors/jquery.minicolors.js",
+			"bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js",
+			"select2/select2.js",
+			"summernote/dist/summernote.js"
+		]
+	},
+	{
+		"build": "vendor-carousel-slick.js",
+		"cwd": "bower_components/",
+		"files": ["slick.js/slick/slick.js"]
+	},
+	{
+		"build": "vendor-player.js",
+		"cwd": "bower_components/",
+		"files": [
+			"jplayer/dist/jplayer/jquery.jplayer.js",
+			"jplayer/dist/add-on/jplayer.playlist.js"
+		]
+	},
+	{
+		"build": "vendor-nestable.js",
+		"cwd": "bower_components/",
+		"files": ["nestable/jquery.nestable.js"]
+	},
+	{
+		"build": "vendor-charts-flot.js",
+		"cwd": "bower_components/",
+		"files": [
+			"flot/jquery.flot.js",
+			"flot/jquery.flot.pie.js",
+			"flot/jquery.flot.resize.js",
+			"flot-orderBars/js/jquery.flot.orderBars.js",
+			"flot/jquery.flot.stack.js"
+		]
+	},
+	{
+		"build": "module-carousel-slick.js",
+		"cwd": "lib/media/js/",
+		"files": ["carousel/slick/_default.js"]
+	},
+	{
+		"build": "module-player.js",
+		"cwd": "lib/media-player/js/",
+		"files": ["_player.js"]
+	},
+	{
+		"build": "module-material.js",
+		"cwd": "lib/material/js/",
+		"files": [
+			"_forms.js",
+			"_ripple.js"
+		]
+	},
+	{
+		"build": "module-messages.js",
+		"cwd": "lib/messages/js/",
+		"files": ["_breakpoints.js"]
+	},
+	{
+		"build": "module-bundle-all.js",
+		"cwd": "$THEME_DIR",
+		"files": [
+			"js/module-carousel-slick.js",
+			"js/module-player.js",
+			"js/module-messages.js",
+			"js/module-essentials.js",
+			"js/module-layout.js",
+			"js/module-sidebar.js",
+			"js/module-maps-google.js",
+			"js/module-charts-flot.js",
+			"js/module-material.js"
+		]
+	},
+	{
+		"build": "vendor-bundle-all.js",
+		"cwd": "$THEME_DIR",
+		"files": [
+			"js/vendor-core.js",
+			"js/vendor-tables.js",
+			"js/vendor-forms.js",
+			"js/vendor-carousel-slick.js",
+			"js/vendor-player.js",
+			"js/vendor-charts-flot.js",
+			"js/vendor-nestable.js",
+			"js/vendor-countdown.js"
+		]
+	},
+	{
+		"build": "vendor-bundle-all.js",
+		"cwd": "$THEME_DIR",
+		"files": [
+			"js/vendor-bundle-all.js",
+			"js/vendor-angular.js"
+		],
+		"themes": ["angular"]
+	}
+]

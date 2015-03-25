@@ -1,0 +1,13 @@
+{
+  "name": "load_image",
+  "homepage": "https://github.com/mixonic/load_image",
+  "_release": "e356d11a6d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e356d11a6dfbf5f6993469e237a097a342b40dc5"
+  },
+  "_source": "https://github.com/mixonic/load_image.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/mixonic/load_image.git"
+}

@@ -1,0 +1,14 @@
+---
+ip: "192.168.10.10"
+memory: 4096
+cpus: 4
+
+synced_folder:
+  from: /path/to/project/root
+  to: /home/vagrant/tk
+  type: nfs
+
+authorize: /Users/your-username/.ssh/id_rsa.pub
+
+keys:
+    - /Users/your-username/.ssh/id_rsa

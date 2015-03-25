@@ -1,0 +1,22 @@
+<div class="sidebar{% if sidebarOptions %} {{ sidebarOptions }}{% endif %}"{% if sidebarData %} {{ sidebarData }}{% endif %}>
+    <div data-scrollable>
+        <ul class="sidebar-menu sm-icons-right sm-icons-block sm-active-item-bg">
+            <li class="category">Essentials</li>
+            <li{% if (page.slug == 'index') %} class="active"{% endif %}><a href="index.html"><i class="fa fa-home"></i> <span>Essentials</span></a></li>
+            <li{% if (page.slug == 'buttons') %} class="active"{% endif %}><a href="buttons.html"><i class="fa fa-th"></i> <span>Buttons</span></a></li>
+            <li{% if (page.slug == 'icons') %} class="active"{% endif %}><a href="icons.html"><i class="fa fa-paint-brush"></i> <span>Icons</span></a></li>
+            <li{% if (page.slug == 'typography') %} class="active"{% endif %}><a href="typography.html"><i class="fa fa-font"></i> <span>Typography</span></a></li>
+            <li{% if (page.slug == 'expandable') %} class="active"{% endif %}><a href="expandable.html"><i class="fa fa-ellipsis-h"></i> <span>Expandable</span></a></li>
+            <li{% if (page.slug == 'ribbons') %} class="active"{% endif %}><a href="ribbons.html"><i class="fa fa-circle-o"></i> <span>Ribbons</span></a></li>
+            <li{% if (page.slug == 'forms') %} class="active"{% endif %}><a href="forms.html"><i class="fa fa-sliders"></i> <span>Forms</span></a></li>
+            <li{% if (page.slug == 'wizards') %} class="active"{% endif %}><a href="wizards.html"><i class="fa fa-magic"></i> <span>Wizards</span></a></li>
+            <li{% if (page.slug == 'tabs') %} class="active"{% endif %}><a href="tabs.html"><i class="md md-tab-unselected"></i> <span>Tabs</span></a></li>
+            <li{% if (page.slug == 'nestable') %} class="active"{% endif %}><a href="nestable.html"><i class="md md-menu"></i> <span>Nestable</span></a></li>
+            <li{% if (page.slug == 'tree') %} class="active"{% endif %}><a href="tree.html"><i class="md md-loupe"></i> <span>Tree View</span></a></li>
+            <li{% if (page.slug == 'modals') %} class="active"{% endif %}><a href="modals.html"><i class="fa fa-circle-o"></i> <span>Modals</span></a></li>
+            <li{% if (page.slug == 'tables') %} class="active"{% endif %}><a href="tables.html"><i class="fa fa-table"></i> <span>Tables</span></a></li>
+            <li{% if (page.slug == 'progress') %} class="active"{% endif %}><a href="progress.html"><i class="fa fa-tasks"></i> <span>Progress</span></a></li>
+            <li{% if (page.slug == 'grid') %} class="active"{% endif %}><a href="grid.html"><i class="fa fa-columns"></i> <span>Grid</span></a></li>
+        </ul>
+    </div>
+</div>

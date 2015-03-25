@@ -1,0 +1,102 @@
+<div class="page-section{% if page.slug|contains('website-') %} padding-top-none{% endif %}"{% if angular %} ng-class="{ 'padding-top-none': $state.includes('website-student') }"{% endif %}>
+    <div class="media v-middle">
+        <div class="media-body">
+            <h1 class="text-display-1 margin-none">Forums</h1>
+            <p class="text-subhead text-light">Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Dolores, illo.</p>
+        </div>
+        <div class="media-right">
+            <a href="#" class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated><i class="fa fa-fw fa-plus"></i> New Topic</a>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default paper-shadow" data-z="0.5">
+    <ul class="list-group">
+
+        {% include "src/html/themes/html/forum/_listing-item.html" {
+            title: 'Am I learning the right way?',
+            iconBg: 'bg-grey-300',
+            name: 'Adrian Demian',
+            photo: 'guy-6',
+            time: '5 mins',
+            itemUrl: itemUrl } %}
+
+        {% include "src/html/themes/html/forum/_listing-item.html" {
+            title: 'Can someone help me? I need a design advice',
+            iconBg: 'bg-grey-300',
+            name: 'Jennifer Hudson',
+            photo: 'woman-6',
+            time: '5 mins',
+            itemUrl: itemUrl } %}
+
+        {% include "src/html/themes/html/forum/_listing-item.html" {
+            title: 'I think this is the right way?',
+            iconBg: 'bg-grey-300',
+            name: 'Michelle Gustav',
+            photo: 'woman-4',
+            time: '5 mins',
+            itemUrl: itemUrl } %}
+
+        {% include "src/html/themes/html/forum/_listing-item.html" {
+            title: 'Getting around AngularJS',
+            iconBg: 'bg-grey-300',
+            name: 'Jonny Francine',
+            photo: 'guy-4',
+            time: '5 mins',
+            itemUrl: itemUrl } %}
+
+        {% include "src/html/themes/html/forum/_listing-item.html" {
+            title: 'I think this is the right way?',
+            iconBg: 'bg-grey-300',
+            name: 'Michelle Gustav',
+            photo: 'woman-4',
+            time: '5 mins',
+            itemUrl: itemUrl } %}
+
+        {% include "src/html/themes/html/forum/_listing-item.html" {
+            title: 'Responsive Bootstrap Question',
+            iconBg: 'bg-grey-300',
+            name: 'Mary Deb',
+            photo: 'woman-5',
+            time: '5 mins',
+            itemUrl: itemUrl } %}
+
+        {% include "src/html/themes/html/forum/_listing-item.html" {
+            title: 'Am I learning the right way?',
+            iconBg: 'bg-grey-300',
+            name: 'Adrian Demian',
+            photo: 'guy-6',
+            time: '5 mins',
+            itemUrl: itemUrl } %}
+
+        {% include "src/html/themes/html/forum/_listing-item.html" {
+            title: 'Responsive Bootstrap Question',
+            iconBg: 'bg-grey-300',
+            name: 'Mary Deb',
+            photo: 'woman-5',
+            time: '5 mins',
+            itemUrl: itemUrl } %}
+
+        {% include "src/html/themes/html/forum/_listing-item.html" {
+            title: 'Am I learning the right way?',
+            iconBg: 'bg-grey-300',
+            name: 'Adrian Demian',
+            photo: 'guy-6',
+            time: '5 mins',
+            itemUrl: itemUrl } %}
+
+        {% include "src/html/themes/html/forum/_listing-item.html" {
+            title: 'Can someone help me? I need a design advice',
+            iconBg: 'bg-grey-300',
+            name: 'Jennifer Hudson',
+            photo: 'woman-6',
+            time: '5 mins',
+            itemUrl: itemUrl } %}
+
+    </ul>
+</div>
+
+{% include "src/html/themes/html/_pagination.html" %}
+
+<br/>

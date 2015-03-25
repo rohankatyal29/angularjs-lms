@@ -1,0 +1,31 @@
+<!-- Top Navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#sidebar-menu" data-effect="st-effect-1" data-toggle="sidebar-menu" class="toggle pull-left visible-xs"><i class="fa fa-bars"></i></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand hidden-xs" href="index.html">Documentation</a>
+        </div>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="nav navbar-nav navbar-left">
+                <li{% if (page.slug == 'index') %} class="active"{% endif %}><a href="index.html">Overview</a></li>
+                <li class="dropdown{% if (page.slug == 'grunt' || page.slug == 'swig' || page.slug == 'assets' || page.slug == 'reference' || page.slug == 'vagrant') %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li{% if (page.slug == 'grunt') %} class="active"{% endif %}><a href="grunt.html">Grunt</a></li>
+                        <li{% if (page.slug == 'swig') %} class="active"{% endif %}><a href="swig.html">Swig</a></li>
+                        <li{% if (page.slug == 'assets') %} class="active"{% endif %}><a href="assets.html">Assets</a></li>
+                        <li{% if (page.slug == 'reference') %} class="active"{% endif %}><a href="reference.html">Reference</a></li>
+                        <li{% if (page.slug == 'vagrant') %} class="active"{% endif %}><a href="vagrant.html">Vagrant</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- //Top Navbar -->

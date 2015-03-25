@@ -1,0 +1,13 @@
+.ribbon-mark-class-from-color(@classColor, @classIndex) when (@classIndex =< 900) {
+	.ribbon-mark-class-from-color-a(@classColor, @classIndex);
+	.ribbon-mark-class-from-color(@classColor, @classIndex + 100);
+}
+
+.ribbon-mark-class-from-color-a(@classColor, @classIndex) {
+	@class: ~".ribbon-mark-@{classColor}-@{classIndex}";
+	@color: "@{classColor}-@{classIndex}";
+	@{class} .caret {
+		border-color: @@color;
+		border-top-color: transparent;
+	}
+}

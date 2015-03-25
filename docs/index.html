@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="st-layout ls-top-navbar ls-bottom-footer show-sidebar sidebar-l2" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Learning</title>
+    <!-- Compressed Vendor BUNDLE
+    Includes vendor (3rd party) styling such as the customized Bootstrap and other 3rd party libraries used for the current theme/module -->
+    <link href="css/vendor.css" rel="stylesheet">
+    <!-- Compressed Theme BUNDLE
+Note: The bundle includes all the custom styling required for the current theme, however
+it was tweaked for the current theme/module and does NOT include ALL of the standalone modules;
+The bundle was generated using modern frontend development tools that are provided with the package
+To learn more about the development process, please refer to the documentation. -->
+    <link href="css/theme-bundle.css" rel="stylesheet">
+    <!-- Compressed Theme CORE
+This variant is to be used when loading the separate styling modules -->
+    <!-- <link href="css/theme.core.css" rel="stylesheet"> -->
+    <!-- Standalone Modules
+    As a convenience, we provide the entire UI framework broke down in separate modules
+    Some of the standalone modules may have not been used with the current theme/module
+    but ALL modules are 100% compatible -->
+    <!-- <link href="css/module-essentials.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-material.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-layout.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-sidebar.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-sidebar-skins.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-navbar.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-messages.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-carousel-slick.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-charts.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-maps.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-alerts.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-background.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-buttons.css" rel="stylesheet" /> -->
+    <!-- <link href="css/module-colors-text.css" rel="stylesheet" /> -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body class="docs">
+    <!-- Wrapper required for sidebar transitions -->
+    <div class="st-container">
+        <!-- Top Navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="#sidebar-menu" data-effect="st-effect-1" data-toggle="sidebar-menu" class="toggle pull-left visible-xs"><i class="fa fa-bars"></i></a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand hidden-xs" href="index.html">Documentation</a>
+                </div>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li class="active"><a href="index.html">Overview</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="grunt.html">Grunt</a></li>
+                                <li><a href="swig.html">Swig</a></li>
+                                <li><a href="assets.html">Assets</a></li>
+                                <li><a href="reference.html">Reference</a></li>
+                                <li><a href="vagrant.html">Vagrant</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- //Top Navbar -->
+        <div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-dark sidebar-visible-desktop" id="sidebar-menu">
+            <div id="menu">
+                <ul class="nav sidebar-menu sm-active-item-bg">
+                    <li class="active"><a href="#overview">1. Getting started</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- content push wrapper -->
+        <div class="st-pusher" id="content">
+            <!-- this is the wrapper for the content -->
+            <div class="st-content">
+                <!-- extra div for emulating position:fixed of the menu -->
+                <div class="st-content-inner">
+                    <div class="container-fluid">
+                        <div class="s-container">
+                            <h1 id="overview" class="text-display-1">Overview</h1>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">What's included</h4>
+                            </div>
+                            <div class="highlight">
+                                <pre><code class="hljs aspectj">&lt;downloaded-<span class="hljs-keyword">package</span>&gt;
+├── &lt;html&gt;      <span class="hljs-comment">// Includes the static HTML version</span>
+├── &lt;angular&gt;   <span class="hljs-comment">// Includes the static Angular version</span>
+├── &lt;docs&gt;      <span class="hljs-comment">// Documentation</span>
+├── &lt;lib&gt;       <span class="hljs-comment">// Various libraries used within the source</span>
+└── &lt;src&gt;       <span class="hljs-comment">// Source</span></code></pre>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Using Grunt and Bower</h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="s-container">
+                                    <h4>Installing dependencies</h4>
+                                    <p>Within the dev directory, run the following from your Terminal:</p>
+                                    <div class="highlight">
+                                        <pre><code class="hljs cmake">&gt;npm <span class="hljs-keyword">install</span> -g grunt-cli
+&gt;npm <span class="hljs-keyword">install</span>
+&gt;bower <span class="hljs-keyword">install</span></code></pre>
+                                    </div>
+                                </div>
+                                <div class="s-container">
+                                    <h4>Building from source method #1:</h4>
+                                    <p>This method is faster and recommended while in development.</p>
+                                    <div class="highlight">
+                                        <pre><code class="hljs brainfuck">&gt;<span class="hljs-comment">grunt</span> <span class="hljs-comment">build:d</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">min</span> <span class="hljs-comment">false</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">theme</span> <span class="hljs-comment">html</span>
+&gt;<span class="hljs-comment">grunt</span> <span class="hljs-comment">build:d</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">min</span> <span class="hljs-comment">false</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">theme</span> <span class="hljs-comment">angular</span></code></pre>
+                                    </div>
+                                    <p>
+                                        <em>Will generate <code>dist/themes/html</code> and <code>dist/themes/angular</code> directories containing the resulting build files.</em>
+                                    </p>
+                                </div>
+                                <div class="s-container">
+                                    <h4>Building from source method #2:</h4>
+                                    <p>This method is slower and recommended for the final build.</p>
+                                    <div class="highlight">
+                                        <pre><code class="hljs applescript">&gt;grunt build:dm <span class="hljs-comment">--theme html</span>
+&gt;grunt build:dm <span class="hljs-comment">--theme angular</span></code></pre>
+                                    </div>
+                                    <p>
+                                        <em>Will generate <code>dist/themes/html</code> and <code>dist/themes/angular</code> directories containing the resulting build files.</em>
+                                    </p>
+                                </div>
+                                <div class="s-container">
+                                    <h4>Starting the built-in BrowserSync web server and watchers</h4>
+                                    <div class="highlight">
+                                        <pre><code class="hljs brainfuck">&gt;<span class="hljs-comment">grunt</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">theme</span> <span class="hljs-comment">html</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">min</span> <span class="hljs-comment">false</span>
+&gt;<span class="hljs-comment">grunt</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">theme</span> <span class="hljs-comment">html</span></code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /st-content-inner -->
+            </div>
+            <!-- /st-content -->
+        </div>
+        <!-- /st-pusher -->
+        <!-- Footer -->
+        <footer class="footer">
+            <strong>Learning</strong> v1.0.0 &copy; Copyright 2015
+        </footer>
+        <!-- // Footer -->
+    </div>
+    <!-- /st-container -->
+    <!-- Inline Script for colors and config objects; used by various external scripts; -->
+    <script>
+    var colors = {
+        "danger-color": "#e74c3c",
+        "success-color": "#81b53e",
+        "warning-color": "#f0ad4e",
+        "inverse-color": "#2c3e50",
+        "info-color": "#2d7cb5",
+        "default-color": "#6e7882",
+        "default-light-color": "#cfd9db",
+        "purple-color": "#9D8AC7",
+        "mustard-color": "#d4d171",
+        "lightred-color": "#e15258",
+        "body-bg": "#f6f6f6"
+    };
+    var config = {
+        theme: "docs",
+        skins: {
+            "default": {
+                "primary-color": "#42a5f5"
+            }
+        }
+    };
+    </script>
+    <!-- Separate Vendor Script Bundles -->
+    <script src="js/vendor-core.js"></script>
+    <script src="js/vendor-countdown.js"></script>
+    <script src="js/vendor-tables.js"></script>
+    <script src="js/vendor-forms.js"></script>
+    <script src="js/vendor-carousel-slick.js"></script>
+    <script src="js/vendor-player.js"></script>
+    <script src="js/vendor-charts-flot.js"></script>
+    <script src="js/vendor-nestable.js"></script>
+    <!-- <script src="js/vendor-angular.js"></script> -->
+    <!-- Compressed Vendor Scripts Bundle
+    Includes all of the 3rd party JavaScript libraries above.
+    The bundle was generated using modern frontend development tools that are provided with the package
+    To learn more about the development process, please refer to the documentation.
+    Do not use it simultaneously with the separate bundles above. -->
+    <!-- <script src="js/vendor-bundle-all.js"></script> -->
+    <!-- Compressed App Scripts Bundle
+    Includes Custom Application JavaScript used for the current theme/module;
+    Do not use it simultaneously with the standalone modules below. -->
+    <script src="js/module-bundle-main.js"></script>
+    <!-- Standalone Modules
+    As a convenience, we provide the entire UI framework broke down in separate modules
+    Some of the standalone modules may have not been used with the current theme/module
+    but ALL the modules are 100% compatible -->
+    <!-- <script src="js/module-essentials.js"></script> -->
+    <!-- <script src="js/module-material.js"></script> -->
+    <!-- <script src="js/module-layout.js"></script> -->
+    <!-- <script src="js/module-sidebar.js"></script> -->
+    <!-- <script src="js/module-carousel-slick.js"></script> -->
+    <!-- <script src="js/module-player.js"></script> -->
+    <!-- <script src="js/module-messages.js"></script> -->
+    <!-- <script src="js/module-maps-google.js"></script> -->
+    <!-- <script src="js/module-charts-flot.js"></script> -->
+    <!-- [docs] Core Theme Script:
+        Includes the custom JavaScript for this theme/module;
+        The file has to be loaded in addition to the UI modules above;
+        module-bundle-main.js already includes theme-core.js so this should be loaded
+        ONLY when using the standalone modules; -->
+    <!-- <script src="js/theme-core.js"></script> -->
+</body>
+</html>

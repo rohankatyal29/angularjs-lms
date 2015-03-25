@@ -1,0 +1,4 @@
+<!DOCTYPE html>
+<html{% if htmlClass %} class="{{ htmlClass }}"{% endif %} lang="en"{% if htmlData %} {{ htmlData }}{% endif %}>
+{% include "lib/layout/html/_head.html" %}
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>

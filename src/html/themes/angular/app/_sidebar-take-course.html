@@ -1,0 +1,62 @@
+<div class="sidebar{% if sidebarOptions %} {{sidebarOptions}}{% endif %}" id="sidebar-menu">
+    <div class="split-vertical">
+
+        <h4 class="category">Course Information</h4>
+        <div class="sidebar-block">
+            <div class="media margin-none">
+                <div class="media-left">
+                    <a href="#sidebar-course-info" data-toggle="collapse">
+                        <span class="icon-block s30 bg-lightred"><i class="fa fa-github"></i></span>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="sidebar-heading media-heading">
+                        <a href="#sidebar-course-info" data-toggle="collapse">Github Webhooks</a>
+                    </h4>
+                </div>
+            </div>
+            <div class="collapse" id="sidebar-course-info">
+                <br/>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda autem   ...</p>
+                <hr/>
+                <p class="text-caption text-light">
+                    <i class="fa fa-clock-o fa-fw"></i> 4 hrs &nbsp;
+                    <i class="fa fa-calendar fa-fw"></i> 21/10/14 <br/>
+                    <i class="fa fa-user fa-fw"></i> Instructor: Adrian Demian <br/>
+                    <i class="fa fa-user fa-fw"></i> Max. students: 50 <br/>
+                    <i class="fa fa-check fa-fw"></i> Attending: 30
+                </p>
+                <hr/>
+                <a class="btn btn-white btn-sm paper-shadow relative" data-animated data-z="0.5" data-hover-z="1" href="app-student-course.html">Course details</a>
+            </div>
+        </div>
+
+        <div class="split-vertical-body">
+            <div class="split-vertical-cell">
+                <div data-scrollable>
+
+                    <ul class="sidebar-menu sm-bordered sm-active-item-bg">
+                        <li ui-sref-active="active"><a ui-sref="app-student.take-course">Curriculum</a></li>
+                        <li ng-class="{ 'active': $state.is('app-student.course-forums') || $state.is('app-student.course-forum-thread') }"><a ui-sref="app-student.course-forums">Course Forums</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-student.take-quiz">Take Quiz</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app-student.quiz-results">Quiz Results</a></li>
+                    </ul>
+
+                    <h4 class="category">Tutor</h4>
+                    <div class="sidebar-block">
+                        <div class="media v-middle">
+                            <div class="media-left">
+                                <a href="" class="media-object"><img class="img-circle" src="images/people/50/guy-1.jpg" alt="people" /></a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="sidebar-heading media-heading"><a href="">John. S</a></h4>
+                                <p>Leading UX Designer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

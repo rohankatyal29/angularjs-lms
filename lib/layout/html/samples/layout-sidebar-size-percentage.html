@@ -1,0 +1,62 @@
+{% include "lib/layout/html/_header.html" { htmlClass: 'st-layout ls-top-navbar hide-sidebar' } %}
+
+<!-- Wrapper required for sidebar transitions -->
+<div class="st-container">
+
+    {% include "src/html/themes/layout/fluid/_navbar_brand_active.html" %}
+
+    {% include "lib/layout/html/samples/_sidebar.html" { sidebarOptions: "left sidebar-size-30pc sidebar-offset-0 sidebar-skin-dark sidebar-visible-desktop sidebar-visible-mobile", sidebarData: "id=sidebar-menu data-type=dropdown" } %}
+
+    <!-- sidebar effects OUTSIDE of st-pusher: -->
+    <!-- st-effect-1, st-effect-2, st-effect-4, st-effect-5, st-effect-9, st-effect-10, st-effect-11, st-effect-12, st-effect-13 -->
+
+    <!-- content push wrapper -->
+    <div class="st-pusher">
+
+        <!-- sidebar effects INSIDE of st-pusher: -->
+        <!-- st-effect-3, st-effect-6, st-effect-7, st-effect-8, st-effect-14 -->
+
+        <!-- this is the wrapper for the content -->
+        <div class="st-content" id="content">
+
+            <!-- extra div for emulating position:fixed of the menu -->
+            <div class="st-content-inner">
+
+                <div class="container">
+                    <div class="jumbotron bg-transparent">
+                        <div class="text-center">
+                            <h1>Percentage Sidebar Sizes</h1>
+                            <p>Apart from the predefined pixel sidebar sizes, the sidebars can also take percentage based sizes starting from 25% to 100% in 1% increments.</p>
+                            <p><a class="btn btn-default" href="index.html">Back to layouts</a></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">Live Demo</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <p><strong>Note:</strong> the sidebar will close after 5 seconds; you can also press ESC to close it manually;</p>
+                                    <p>All this demo does is add the appropriate classes to the sidebar container.</p>
+                                    <form id="sidebar-size-pc-demo" data-toggle="sidebar-size-pc-demo">
+                                        <label for="pc-value">Enter a value % between 25 and 100</label>
+                                        <div class="form-group input-group">
+                                            <input class="form-control" id="pc-value" type="text" value="25" />
+                                            <div class="input-group-addon">%</div>
+                                        </div>
+                                        <button type="submit" id="pc-open" class="btn btn-primary">Open Sidebar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /st-content-inner -->
+
+        </div><!-- /st-content -->
+
+    </div><!-- /st-pusher -->
+
+</div><!-- /st-container -->

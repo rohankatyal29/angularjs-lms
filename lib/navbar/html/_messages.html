@@ -1,0 +1,57 @@
+<!-- messages -->
+<li class="dropdown notifications{% if options %} {{ options }}{% endif %}">
+    <a href="#" class="dropdown-toggle{% if rtl %} flip{% endif %}" data-toggle="dropdown">
+        <i class="fa fa-envelope-o"></i>
+        {% if badge != false %}
+        <span class="badge floating badge-danger">12</span>
+        {% endif %}
+    </a>
+    <ul class="dropdown-menu">
+        <li class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object thumb" src="images/people/50/guy-2.jpg" alt="people">
+                </a>
+            </div>
+            <div class="media-body">
+                <div class="pull-right{% if rtl %} flip{% endif %}">
+                    <span class="label label-default">5 min</span>
+                </div>
+                <h5 class="media-heading">Adrian D.</h5>
+
+                <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </li>
+        <li class="media">
+            <div class="media-left">
+                <a  href="#">
+                    <img class="media-object thumb" src="images/people/50/woman-7.jpg" alt="people">
+                </a>
+            </div>
+
+            <div class="media-body">
+                <div class="pull-right{% if rtl %} flip{% endif %}">
+                    <span class="label label-default">2 days</span>
+                </div>
+                <h5 class="media-heading">Jane B.</h5>
+                <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </li>
+        <li class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object thumb" src="images/people/50/guy-8.jpg" alt="people">
+                </a>
+            </div>
+
+            <div class="media-body">
+                <div class="pull-right{% if rtl %} flip{% endif %}">
+                    <span class="label label-default">3 days</span>
+                </div>
+                <h5 class="media-heading">Andrew M.</h5>
+                <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </li>
+    </ul>
+</li>
+<!-- // END messages -->

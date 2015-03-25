@@ -1,0 +1,78 @@
+<form action="#" class="form-horizontal">
+    <div class="form-group">
+        <label for="name" class="col-md-2 control-label">Name on Invoice</label>
+        <div class="col-md-6">
+            <div class="form-control-material">
+                <input type="text" class="form-control used" id="name" value="Adrian Demian">
+                <label for="name">Name on Invoice</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="address" class="col-md-2 control-label">Address</label>
+        <div class="col-md-6">
+            <div class="form-control-material">
+                <textarea class="form-control used" id="address">Sunny Street 21, MI</textarea>
+                <label for="address">Address</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="country" class="col-md-2 control-label">Country</label>
+        <div class="col-md-6">
+            <select id="country" data-toggle="select2" class="width-100">
+                <option value="1" selected>USA</option>
+                <option value="2">Country</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group margin-bottom-none">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-success paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated>Update Billing</button>
+        </div>
+    </div>
+</form>
+<hr/>
+
+<div class="media v-middle s-container">
+    <div class="media-body">
+        <h5 class="text-subhead">Payment details</h5>
+    </div>
+    <div class="media-right">
+        <a href="#modal-update-credit-card" data-toggle="modal" class="btn btn-white paper-shadow relative" data-animated data-z="0.5" data-hover-z="1" href="">Add Credit Card</a>
+    </div>
+</div>
+<div class="list-group margin-none">
+    <div class="list-group-item media v-middle">
+        <div class="media-left">
+            <div class="icon-block half img-circle bg-primary">
+                <i class="fa fa-credit-card"></i>
+            </div>
+        </div>
+        <div class="media-body">
+            <h4 class="text-title media-heading">
+                <a href="#modal-update-credit-card" data-toggle="modal" class="link-text-color">**** **** **** 2422</a>
+            </h4>
+            <div class="text-caption">updated 1 month ago</div>
+        </div>
+        <div class="media-right">
+            <a href="#modal-update-credit-card" data-toggle="modal" class="btn btn-white btn-flat"><i class="fa fa-pencil fa-fw"></i> Edit</a>
+        </div>
+    </div>
+    <div class="list-group-item media v-middle">
+        <div class="media-left">
+            <div class="icon-block half img-circle bg-grey-100 text-light">
+                <i class="fa fa-credit-card"></i>
+            </div>
+        </div>
+        <div class="media-body">
+            <h4 class="text-title media-heading">
+                <a href="#modal-update-credit-card" data-toggle="modal" class="link-text-color">**** **** **** 3365</a>
+            </h4>
+            <div class="text-caption">updated 1 year ago</div>
+        </div>
+        <div class="media-right">
+            <a href="#modal-update-credit-card" data-toggle="modal" class="btn btn-white btn-flat"><i class="fa fa-pencil fa-fw"></i> Edit</a>
+        </div>
+    </div>
+</div>

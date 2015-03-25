@@ -1,0 +1,68 @@
+<!-- Compressed Vendor BUNDLE
+    Includes vendor (3rd party) styling such as the customized Bootstrap and other 3rd party libraries used for the current theme/module -->
+<link href="{{ cwd }}css/vendor{% if config.minify %}.min{% endif %}.css" rel="stylesheet">
+
+<!-- Compressed Theme BUNDLE
+Note: The bundle includes all the custom styling required for the current theme, however
+it was tweaked for the current theme/module and does NOT include ALL of the standalone modules;
+The bundle was generated using modern frontend development tools that are provided with the package
+To learn more about the development process, please refer to the documentation. -->
+{% if watch -%}
+    <link href="{{ cwd }}css/theme-bundle{% if config.minify %}.min{% endif %}.css" rel="stylesheet">
+{% else -%}
+    <!-- <link href="{{ cwd }}css/theme.bundle{% if config.minify %}.min{% endif %}.css" rel="stylesheet"> -->
+{% endif %}
+
+<!-- Compressed Theme CORE
+This variant is to be used when loading the separate styling modules -->
+{% if watch -%}
+    <!-- <link href="{{ cwd }}css/theme.core{% if config.minify %}.min{% endif %}.css" rel="stylesheet"> -->
+{% else -%}
+    <link href="{{ cwd }}css/theme-core{% if config.minify %}.min{% endif %}.css" rel="stylesheet">
+{% endif %}
+
+{% if css_modules !== false %}<!-- Standalone Modules
+    As a convenience, we provide the entire UI framework broke down in separate modules
+    Some of the standalone modules may have not been used with the current theme/module
+    but ALL modules are 100% compatible -->
+
+    {% for module in css_modules -%}
+
+        {%- if module|typeof('object') -%}
+
+            {%- if !module|array_key_exists("themes") and !module|array_key_exists("exclude") -%}
+                {%- if watch -%}
+                <!-- <link href="{{ cwd }}css/{{ module.name }}{% if config.minify %}.min{% endif %}.css" rel="stylesheet" /> -->
+                {%- else -%}
+                <link href="{{ cwd }}css/{{ module.name }}{% if config.minify %}.min{% endif %}.css" rel="stylesheet" />
+                {%- endif -%}
+            {%- endif -%}
+
+            {%- if module.themes|inArray(config.theme) or (module|array_key_exists("exclude") and !module.exclude|inArray(config.theme)) -%}
+                {%- if watch -%}
+                <!-- <link href="{{ cwd }}css/{{ module.name }}{% if config.minify %}.min{% endif %}.css" rel="stylesheet" /> -->
+                {%- else -%}
+                <link href="{{ cwd }}css/{{ module.name }}{% if config.minify %}.min{% endif %}.css" rel="stylesheet" />
+                {%- endif -%}
+            {%- else -%}
+                <!-- <link href="{{ cwd }}css/{{ module.name }}{% if config.minify %}.min{% endif %}.css" rel="stylesheet" /> -->
+            {%- endif -%}
+
+        {%- else -%}
+            {%- if watch -%}
+            <!-- <link href="{{ cwd }}css/{{ module }}{% if config.minify %}.min{% endif %}.css" rel="stylesheet" /> -->
+            {%- else -%}
+            <link href="{{ cwd }}css/{{ module }}{% if config.minify %}.min{% endif %}.css" rel="stylesheet" />
+            {%- endif -%}
+        {%- endif -%}
+
+    {% endfor -%}
+{% endif %}
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->

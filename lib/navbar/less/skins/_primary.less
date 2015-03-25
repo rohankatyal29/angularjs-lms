@@ -1,0 +1,143 @@
+// Primary navbar
+.navbar-primary {
+	background-color: @navbar-primary-background;
+	border-color: @navbar-primary-background;
+
+	// BORDERS
+	.navbar-brand {
+		@media (min-width: @screen-sm) {
+			border-right-color: @navbar-primary-border;
+		}
+	}
+	.navbar-nav.navbar-nav-bordered {
+		&.navbar-right:last-of-type {
+			@media (min-width: @grid-float-breakpoint) {
+				border-left-color: @navbar-primary-border;
+			}
+		}
+		> li {
+			@media (min-width: @screen-sm-min) {
+				border-right-color: @navbar-primary-border;
+			}
+		}
+	}
+
+	.navbar-brand {
+		&, a { color: @navbar-primary-brand-color; }
+		&.navbar-brand-primary {
+			background-color: darken(@navbar-primary-background, 4%);
+		}
+	}
+
+	.navbar-text {
+		color: @white;
+	}
+
+	.navbar-nav {
+		> li > a {
+			color: @white;
+			font-weight: 500;
+			&:focus, &:hover {
+				background-color: darken(@navbar-primary-background, 4%);
+			}
+		}
+		.open > a, > .active > a {
+			&, &:focus, &:hover {
+				background: darken(@navbar-primary-background, 4%);
+			}
+		}
+	}
+
+	.navbar-nav > .nav-item-primary > a {
+		background-color: darken(@navbar-primary-background, 4%);
+		color: #fff;
+		&:hover, &:focus {
+			background-color: darken(@navbar-primary-background, 8%);
+			color: #ffffff;
+		}
+	}
+
+	@media (max-width: @screen-xs-max) {
+		.navbar-nav .dropdown-menu {
+			background-color: @white;
+		}
+	}
+
+	.navbar-toggle {
+		background-color: darken(@primary-color, 4%);
+		&:hover,
+		&:focus {
+			background-color: darken(@primary-color, 8%);
+			.icon-bar {
+				background-color: #fff;
+			}
+		}
+		.icon-bar {
+			background-color: lighten(@primary-color, 30%);
+		}
+	}
+
+	// notifications
+	.navbar-nav > li.notifications {
+		a.dropdown-toggle {
+			.badge {
+				background: @white;
+				color: @text-color;
+			}
+			&.btn {
+				background: darken(@navbar-primary-background, 4%);
+			}
+		}
+	}
+
+	// Forms
+	.navbar-form .form-control {
+		background: darken(@navbar-primary-background, 4%);
+		border-color: darken(@navbar-primary-background, 4%);
+		color: @white;
+		.placeholder(@white);
+	}
+	.input-group-addon {
+		background-color: darken(@navbar-primary-background, 8%);
+		border-color: darken(@navbar-primary-background, 8%);
+		color: @white;
+	}
+	.navbar-form .checkbox {
+		color: @white;
+	}
+
+	// search
+	.search-1 {
+		.input-group-addon {
+			color: @white;
+		}
+		.form-control {
+			&:hover, &:active, &:focus {
+				background-color: darken(@navbar-primary-background, 3%);
+			}
+		}
+	}
+
+	// Buttons
+	.btn-default {
+		.button-variant(#fff, @navbar-primary-background, darken(@navbar-primary-background, 8%));
+	}
+	.btn-primary {
+		.button-variant(#fff, darken(@navbar-primary-background, 4%), darken(@navbar-primary-background, 8%));
+	}
+
+	// bootstrap-switch
+	.bootstrap-switch {
+		border-color: darken(@navbar-primary-background, 6%);
+		box-shadow: none;
+		.bootstrap-switch-label {
+			background-color: darken(@navbar-primary-background, 6%);
+		}
+	}
+
+	// slider
+	.slider .slider-track {
+		border: 1px solid darken(@navbar-primary-background, 8%);
+		background: darken(@navbar-primary-background, 5%);
+	}
+}

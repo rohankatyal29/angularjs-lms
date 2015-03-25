@@ -1,0 +1,53 @@
+[
+	{
+		"task": "select2-images",
+		"cwd": "bower_components/select2",
+		"src": [
+			"*.png",
+			"*.gif"
+		],
+		"dest": "css"
+	},
+	{
+		"task": "slick-fonts",
+		"cwd": "bower_components/slick.js/slick",
+		"src": ["fonts/*"],
+		"dest": "css"
+	},
+	{
+		"task": "slick-images",
+		"cwd": "bower_components/slick.js/slick",
+		"src": ["*.gif"],
+		"dest": "css"
+	},
+	{
+		"task": "learning-maps-data",
+		"cwd": "src/js/themes/html/maps_data",
+		"src": "*.json",
+		"dest": "js/data/google_maps"
+	},
+	{
+		"task": "jquery-ui-map",
+		"cwd": "bower_components/jquery-ui-map/ui",
+		"src": "*",
+		"dest": "js/plugins/maps_google/jquery-ui-map/ui"
+	},
+	{
+		"task": "jquery-ui-map-markerclusterer",
+		"cwd": "bower_components/jquery-ui-map/demos/js/markerclustererplus-2.0.6",
+		"src": ["*.js"],
+		"dest": "js/plugins/maps_google/jquery-ui-map/addons"
+	},
+	{
+		"task": "gmaps-infobox",
+		"cwd": "bower_components/gmaps-infobox/1.1.13/src",
+		"src": ["*.js"],
+		"dest": "js/plugins/maps_google/jquery-ui-map/addons"
+	},
+	{
+		"task": "jplayer",
+		"cwd": "bower_components/jplayer/dist/jplayer",
+		"src": ["*.swf"],
+		"dest": "js/jplayer/addons"
+	}
+]

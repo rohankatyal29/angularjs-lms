@@ -1,0 +1,21 @@
+.sidebar-menu li.open > ul {
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}
+
+.sidebar-menu li ul li.open > ul {
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}
+
+.sidebar-menu li ul li a {
+	line-height: @sidebar-sub-item-height;
+	padding-left: @sidebar-horizontal-spacing;
+	font-size: @sidebar-sub-item-link-size;
+	i {
+		top:-1px;
+		position: relative;
+		font-size: @sidebar-sub-item-icon-size;
+		width: @sidebar-sub-item-icon-size + (@sidebar-sub-item-icon-size / 2);
+	}
+}

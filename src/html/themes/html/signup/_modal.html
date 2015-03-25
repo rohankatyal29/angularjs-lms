@@ -1,0 +1,39 @@
+<div class="modal grow modal-overlay modal-backdrop-body fade" id="modal-overlay-signup">
+    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <div class="modal-dialog">
+        <div class="v-cell">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <div class="wizard-container wizard-1" id="wizard-demo-1">
+                        <div data-scrollable-h>
+                            <ul class="wiz-progress">
+                                <li class="active">Plan &amp; Payment</li>
+                                <li>Account Setup</li>
+                                <li>Personal Details</li>
+                            </ul>
+                        </div>
+                        <form action="#" data-toggle="wizard" class="max-width-400 h-center"{% if rtl %} data-rtl="true"{% endif %}>
+
+                            {% if rtl %}
+                            {% include "src/html/themes/html/signup/_personal-details.html" %}
+                            {% else %}
+                            {% include "src/html/themes/html/signup/_payment.html" %}
+                            {% endif %}
+
+                            {% include "src/html/themes/html/signup/_create-account.html" %}
+
+                            {% if rtl %}
+                            {% include "src/html/themes/html/signup/_payment.html" %}
+                            {% else %}
+                            {% include "src/html/themes/html/signup/_personal-details.html" %}
+                            {% endif %}
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

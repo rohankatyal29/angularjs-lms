@@ -1,0 +1,14 @@
+@mixin class-from-color-a($property, $classPrefix, $classColor, $classIndex) {
+    $class: ".#{$classPrefix}-#{$classColor}-#{$classIndex}";
+    $color: #{$classColor}-#{$classIndex};
+    #{$class} {
+        #{$property}: map-get($colors-map, $color);
+    }
+}
+
+@mixin class-from-color($property, $classPrefix, $classColor, $classIndex: 100) {
+    @if $classIndex <= 900 {
+        @include class-from-color-a($property, $classPrefix, $classColor, $classIndex);
+        @include class-from-color($property, $classPrefix, $classColor, $classIndex + 100);
+    }
+}

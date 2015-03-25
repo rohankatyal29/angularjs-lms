@@ -1,0 +1,69 @@
+.widget-user-1 {
+	.avatar {
+		padding: 30px 10px 10px;
+		margin-bottom: 10px;
+		h3 {
+			font-weight: 300;
+			color: lighten(@text-color, 15%);
+			margin: 10px;
+		}
+	}
+	p {
+		padding: 0 15px;
+		color: @text-color;
+	}
+	.profile-icons {
+		border-top: 1px solid @panel-default-border;
+		border-bottom: 1px solid @panel-default-border;
+		background: lighten(#efefef, 2%);
+		height: 40px;
+		line-height: 40px;
+		margin-bottom: 10px;
+	}
+}
+
+.user-box {
+	a.username {
+		display: block;
+		padding: 5px;
+		font-weight: 500;
+		font-size: 18px;
+		color: @text-color;
+	}
+	.media-body {
+		h4 {
+			margin-bottom: 8px;
+		}
+		p {
+			font-size: 13px;
+			margin-bottom: 0;
+			font-weight: 400;
+		}
+	}
+}
+
+.profile-block {
+	position: relative;
+	.cover {
+		overflow: visible;
+		height: 200px;
+		margin-bottom: 0;
+		&.overlay .overlay.overlay-full .v-bottom {
+			bottom: -59px;
+		}
+		.icon {
+			color: #fff;
+			font-size: 18px;
+		}
+	}
+	.avatar {
+		z-index: 4;
+		border: 3px solid #fff;
+	}
+	.profile-icons {
+		height: 65px;
+		line-height: 65px;
+		padding-left: 140px;
+		z-index: 5;
+	}
+}

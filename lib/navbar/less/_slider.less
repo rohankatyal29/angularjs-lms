@@ -1,0 +1,20 @@
+.slider {
+    .navbar & {
+        &.slider-horizontal {
+            width: 100px;
+        }
+        height: @navbar-height;
+        margin: 0 @navbar-padding-horizontal;
+        .slider-track {
+            background-color: @grey-100;
+        }
+    }
+    .navbar-size-small & {
+        height: @navbar-small-height;
+    }
+    .navbar-size-large & {
+        @media (min-width: @navbar-large-breakpoint) {
+            height: @navbar-large-height;
+        }
+    }
+}

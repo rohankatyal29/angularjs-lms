@@ -1,0 +1,88 @@
+.weather-svg {
+	overflow: hidden;
+	.list {
+		font-size: 12px;
+		background: lighten(#efefef, 4%);
+		display: table;
+		.today {
+			margin: 10px;
+		}
+		.list-item {
+			padding: 5px;
+			text-align: center;
+			border-right: 1px solid @grey-100;
+			display: table-cell;
+			&:last-of-type {
+				border-right:none;
+			}
+		}
+		svg {
+			width: 40%;
+			color: @primary-color;
+			height: auto;
+		}
+	}
+	.today {
+		svg {
+			width: 200px;
+			color: @primary-color;
+		}
+		.details {
+			display: inline-block;
+			border: 1px solid #efefef;
+			padding: 8px 10px;
+			background: lighten(#efefef, 4%);
+			font-size: 16px;
+			strong {
+				color: @primary-color;
+			}
+			margin-bottom: 20px;
+		}
+	}
+
+}
+
+// Weather with cover
+.cover svg {
+	color: #fff !important;
+	height: initial !important;
+
+	.climacon_component-fill {
+		fill-opacity: 0.4;
+		stroke-width: 3;
+		stroke: #fff;
+	}
+	&:not(.climacon_component-stroke) {
+		fill-opacity: 0;
+		stroke-width: 3;
+		stroke: #fff;
+	}
+}
+
+.weather-svg .cover {
+	svg {
+		width:30px;
+		vertical-align: middle;
+	}
+	.v-center svg {
+		width:50%;
+	}
+	color:#fff;
+	a {
+		color:#fff;
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+	.v-top {
+		font-size: 16px;
+	}
+	.list {
+		background: none;
+		width: 100%;
+		.list-item {
+			border-right-color: fade(@white,30%);
+		}
+	}
+
+}

@@ -1,0 +1,871 @@
+<div class="jumbotron text-center bg-transparent margin-none">
+    <h1>Tables</h1>
+    <p>Tables with clean, minimalistic design, that allows authors to arrange data such as text, images, links, forms, buttons, other tables and more into rows and columns of cells.</p>
+</div>
+
+<div class="page-section">
+    <div class="row">
+        <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+
+            <h4 class="page-section-heading">Responsive Table</h4>
+            <div class="panel panel-default">
+                <!-- Progress table -->
+                <div class="table-responsive">
+                    <table class="table v-middle">
+                        <thead>
+                        <tr>
+                            <th width="20">
+                                <div class="checkbox checkbox-single margin-none">
+                                    <input id="checkAll" data-toggle="check-all" data-target="#responsive-table-body" type="checkbox" checked>
+                                    <label for="checkAll">Check All</label>
+                                </div>
+                            </th>
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Location</th>
+                            <th>Progress</th>
+                            <th class="text-right">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody id="responsive-table-body">
+                        <tr>
+                            <td>
+                                <div class="checkbox checkbox-single">
+                                    <input id="checkbox1" type="checkbox" checked>
+                                    <label for="checkbox1">Label</label>
+                                </div>
+                            </td>
+                            <td><span class="label label-default">19/09/2014</span></td>
+                            <td>
+
+                                <img src="images/people/110/guy-5.jpg" width="40" class="img-circle"/>
+                                Jonathan Smith
+                            </td>
+                            <td><a href="#">contact@mosaicpro.biz</a></td>
+                            <td>Miami, FL<a href="#"><i class="fa fa-map-marker fa-fw text-muted"></i></a></td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                                         aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-right">
+                                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="top"
+                                   title="Edit"><i class="fa fa-pencil"></i></a>
+                                <a href="#" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                        class="fa fa-times"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="checkbox checkbox-single">
+                                    <input id="checkbox2" type="checkbox" checked>
+                                    <label for="checkbox2">Label</label>
+                                </div>
+                            </td>
+                            <td><span class="label label-primary">19/09/2014</span></td>
+                            <td>
+
+                                <img src="images/people/110/woman-4.jpg" width="40" class="img-circle"/>
+                                Michelle Smith
+
+                            </td>
+                            <td><a href="#">contact@mosaicpro.biz</a></td>
+                            <td>Amsterdam, EU <a href="#"><i class="fa fa-map-marker fa-fw text-muted"></i></a></td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="43"
+                                         aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-right">
+                                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="top"
+                                   title="Edit"><i class="fa fa-pencil"></i></a>
+                                <a href="#" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                        class="fa fa-times"></i></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- // Progress table -->
+
+                <div class="panel-footer padding-none text-center">
+                    <ul class="pagination">
+                        <li class="disabled"><a href="#">&laquo;</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 class="page-section-heading">Data Table</h4>
+            <div class="panel panel-default">
+                <!-- Data table -->
+                <table data-toggle="data-table" class="table" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>2011/04/25</td>
+                        <td>$320,800</td>
+                    </tr>
+                    <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>63</td>
+                        <td>2011/07/25</td>
+                        <td>$170,750</td>
+                    </tr>
+                    <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>2009/01/12</td>
+                        <td>$86,000</td>
+                    </tr>
+                    <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>22</td>
+                        <td>2012/03/29</td>
+                        <td>$433,060</td>
+                    </tr>
+                    <tr>
+                        <td>Airi Satou</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>33</td>
+                        <td>2008/11/28</td>
+                        <td>$162,700</td>
+                    </tr>
+                    <tr>
+                        <td>Brielle Williamson</td>
+                        <td>Integration Specialist</td>
+                        <td>New York</td>
+                        <td>61</td>
+                        <td>2012/12/02</td>
+                        <td>$372,000</td>
+                    </tr>
+                    <tr>
+                        <td>Herrod Chandler</td>
+                        <td>Sales Assistant</td>
+                        <td>San Francisco</td>
+                        <td>59</td>
+                        <td>2012/08/06</td>
+                        <td>$137,500</td>
+                    </tr>
+                    <tr>
+                        <td>Rhona Davidson</td>
+                        <td>Integration Specialist</td>
+                        <td>Tokyo</td>
+                        <td>55</td>
+                        <td>2010/10/14</td>
+                        <td>$327,900</td>
+                    </tr>
+                    <tr>
+                        <td>Colleen Hurst</td>
+                        <td>Javascript Developer</td>
+                        <td>San Francisco</td>
+                        <td>39</td>
+                        <td>2009/09/15</td>
+                        <td>$205,500</td>
+                    </tr>
+                    <tr>
+                        <td>Sonya Frost</td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>2008/12/13</td>
+                        <td>$103,600</td>
+                    </tr>
+                    <tr>
+                        <td>Jena Gaines</td>
+                        <td>Office Manager</td>
+                        <td>London</td>
+                        <td>30</td>
+                        <td>2008/12/19</td>
+                        <td>$90,560</td>
+                    </tr>
+                    <tr>
+                        <td>Quinn Flynn</td>
+                        <td>Support Lead</td>
+                        <td>Edinburgh</td>
+                        <td>22</td>
+                        <td>2013/03/03</td>
+                        <td>$342,000</td>
+                    </tr>
+                    <tr>
+                        <td>Charde Marshall</td>
+                        <td>Regional Director</td>
+                        <td>San Francisco</td>
+                        <td>36</td>
+                        <td>2008/10/16</td>
+                        <td>$470,600</td>
+                    </tr>
+                    <tr>
+                        <td>Haley Kennedy</td>
+                        <td>Senior Marketing Designer</td>
+                        <td>London</td>
+                        <td>43</td>
+                        <td>2012/12/18</td>
+                        <td>$313,500</td>
+                    </tr>
+                    <tr>
+                        <td>Tatyana Fitzpatrick</td>
+                        <td>Regional Director</td>
+                        <td>London</td>
+                        <td>19</td>
+                        <td>2010/03/17</td>
+                        <td>$385,750</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Silva</td>
+                        <td>Marketing Designer</td>
+                        <td>London</td>
+                        <td>66</td>
+                        <td>2012/11/27</td>
+                        <td>$198,500</td>
+                    </tr>
+                    <tr>
+                        <td>Paul Byrd</td>
+                        <td>Chief Financial Officer (CFO)</td>
+                        <td>New York</td>
+                        <td>64</td>
+                        <td>2010/06/09</td>
+                        <td>$725,000</td>
+                    </tr>
+                    <tr>
+                        <td>Gloria Little</td>
+                        <td>Systems Administrator</td>
+                        <td>New York</td>
+                        <td>59</td>
+                        <td>2009/04/10</td>
+                        <td>$237,500</td>
+                    </tr>
+                    <tr>
+                        <td>Bradley Greer</td>
+                        <td>Software Engineer</td>
+                        <td>London</td>
+                        <td>41</td>
+                        <td>2012/10/13</td>
+                        <td>$132,000</td>
+                    </tr>
+                    <tr>
+                        <td>Dai Rios</td>
+                        <td>Personnel Lead</td>
+                        <td>Edinburgh</td>
+                        <td>35</td>
+                        <td>2012/09/26</td>
+                        <td>$217,500</td>
+                    </tr>
+                    <tr>
+                        <td>Jenette Caldwell</td>
+                        <td>Development Lead</td>
+                        <td>New York</td>
+                        <td>30</td>
+                        <td>2011/09/03</td>
+                        <td>$345,000</td>
+                    </tr>
+                    <tr>
+                        <td>Yuri Berry</td>
+                        <td>Chief Marketing Officer (CMO)</td>
+                        <td>New York</td>
+                        <td>40</td>
+                        <td>2009/06/25</td>
+                        <td>$675,000</td>
+                    </tr>
+                    <tr>
+                        <td>Caesar Vance</td>
+                        <td>Pre-Sales Support</td>
+                        <td>New York</td>
+                        <td>21</td>
+                        <td>2011/12/12</td>
+                        <td>$106,450</td>
+                    </tr>
+                    <tr>
+                        <td>Doris Wilder</td>
+                        <td>Sales Assistant</td>
+                        <td>Sidney</td>
+                        <td>23</td>
+                        <td>2010/09/20</td>
+                        <td>$85,600</td>
+                    </tr>
+                    <tr>
+                        <td>Angelica Ramos</td>
+                        <td>Chief Executive Officer (CEO)</td>
+                        <td>London</td>
+                        <td>47</td>
+                        <td>2009/10/09</td>
+                        <td>$1,200,000</td>
+                    </tr>
+                    <tr>
+                        <td>Gavin Joyce</td>
+                        <td>Developer</td>
+                        <td>Edinburgh</td>
+                        <td>42</td>
+                        <td>2010/12/22</td>
+                        <td>$92,575</td>
+                    </tr>
+                    <tr>
+                        <td>Jennifer Chang</td>
+                        <td>Regional Director</td>
+                        <td>Singapore</td>
+                        <td>28</td>
+                        <td>2010/11/14</td>
+                        <td>$357,650</td>
+                    </tr>
+                    <tr>
+                        <td>Brenden Wagner</td>
+                        <td>Software Engineer</td>
+                        <td>San Francisco</td>
+                        <td>28</td>
+                        <td>2011/06/07</td>
+                        <td>$206,850</td>
+                    </tr>
+                    <tr>
+                        <td>Fiona Green</td>
+                        <td>Chief Operating Officer (COO)</td>
+                        <td>San Francisco</td>
+                        <td>48</td>
+                        <td>2010/03/11</td>
+                        <td>$850,000</td>
+                    </tr>
+                    <tr>
+                        <td>Shou Itou</td>
+                        <td>Regional Marketing</td>
+                        <td>Tokyo</td>
+                        <td>20</td>
+                        <td>2011/08/14</td>
+                        <td>$163,000</td>
+                    </tr>
+                    <tr>
+                        <td>Michelle House</td>
+                        <td>Integration Specialist</td>
+                        <td>Sidney</td>
+                        <td>37</td>
+                        <td>2011/06/02</td>
+                        <td>$95,400</td>
+                    </tr>
+                    <tr>
+                        <td>Suki Burks</td>
+                        <td>Developer</td>
+                        <td>London</td>
+                        <td>53</td>
+                        <td>2009/10/22</td>
+                        <td>$114,500</td>
+                    </tr>
+                    <tr>
+                        <td>Prescott Bartlett</td>
+                        <td>Technical Author</td>
+                        <td>London</td>
+                        <td>27</td>
+                        <td>2011/05/07</td>
+                        <td>$145,000</td>
+                    </tr>
+                    <tr>
+                        <td>Gavin Cortez</td>
+                        <td>Team Leader</td>
+                        <td>San Francisco</td>
+                        <td>22</td>
+                        <td>2008/10/26</td>
+                        <td>$235,500</td>
+                    </tr>
+                    <tr>
+                        <td>Martena Mccray</td>
+                        <td>Post-Sales support</td>
+                        <td>Edinburgh</td>
+                        <td>46</td>
+                        <td>2011/03/09</td>
+                        <td>$324,050</td>
+                    </tr>
+                    <tr>
+                        <td>Unity Butler</td>
+                        <td>Marketing Designer</td>
+                        <td>San Francisco</td>
+                        <td>47</td>
+                        <td>2009/12/09</td>
+                        <td>$85,675</td>
+                    </tr>
+                    <tr>
+                        <td>Howard Hatfield</td>
+                        <td>Office Manager</td>
+                        <td>San Francisco</td>
+                        <td>51</td>
+                        <td>2008/12/16</td>
+                        <td>$164,500</td>
+                    </tr>
+                    <tr>
+                        <td>Hope Fuentes</td>
+                        <td>Secretary</td>
+                        <td>San Francisco</td>
+                        <td>41</td>
+                        <td>2010/02/12</td>
+                        <td>$109,850</td>
+                    </tr>
+                    <tr>
+                        <td>Vivian Harrell</td>
+                        <td>Financial Controller</td>
+                        <td>San Francisco</td>
+                        <td>62</td>
+                        <td>2009/02/14</td>
+                        <td>$452,500</td>
+                    </tr>
+                    <tr>
+                        <td>Timothy Mooney</td>
+                        <td>Office Manager</td>
+                        <td>London</td>
+                        <td>37</td>
+                        <td>2008/12/11</td>
+                        <td>$136,200</td>
+                    </tr>
+                    <tr>
+                        <td>Jackson Bradshaw</td>
+                        <td>Director</td>
+                        <td>New York</td>
+                        <td>65</td>
+                        <td>2008/09/26</td>
+                        <td>$645,750</td>
+                    </tr>
+                    <tr>
+                        <td>Olivia Liang</td>
+                        <td>Support Engineer</td>
+                        <td>Singapore</td>
+                        <td>64</td>
+                        <td>2011/02/03</td>
+                        <td>$234,500</td>
+                    </tr>
+                    <tr>
+                        <td>Bruno Nash</td>
+                        <td>Software Engineer</td>
+                        <td>London</td>
+                        <td>38</td>
+                        <td>2011/05/03</td>
+                        <td>$163,500</td>
+                    </tr>
+                    <tr>
+                        <td>Sakura Yamamoto</td>
+                        <td>Support Engineer</td>
+                        <td>Tokyo</td>
+                        <td>37</td>
+                        <td>2009/08/19</td>
+                        <td>$139,575</td>
+                    </tr>
+                    <tr>
+                        <td>Thor Walton</td>
+                        <td>Developer</td>
+                        <td>New York</td>
+                        <td>61</td>
+                        <td>2013/08/11</td>
+                        <td>$98,540</td>
+                    </tr>
+                    <tr>
+                        <td>Finn Camacho</td>
+                        <td>Support Engineer</td>
+                        <td>San Francisco</td>
+                        <td>47</td>
+                        <td>2009/07/07</td>
+                        <td>$87,500</td>
+                    </tr>
+                    <tr>
+                        <td>Serge Baldwin</td>
+                        <td>Data Coordinator</td>
+                        <td>Singapore</td>
+                        <td>64</td>
+                        <td>2012/04/09</td>
+                        <td>$138,575</td>
+                    </tr>
+                    <tr>
+                        <td>Zenaida Frank</td>
+                        <td>Software Engineer</td>
+                        <td>New York</td>
+                        <td>63</td>
+                        <td>2010/01/04</td>
+                        <td>$125,250</td>
+                    </tr>
+                    <tr>
+                        <td>Zorita Serrano</td>
+                        <td>Software Engineer</td>
+                        <td>San Francisco</td>
+                        <td>56</td>
+                        <td>2012/06/01</td>
+                        <td>$115,000</td>
+                    </tr>
+                    <tr>
+                        <td>Jennifer Acosta</td>
+                        <td>Junior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>43</td>
+                        <td>2013/02/01</td>
+                        <td>$75,650</td>
+                    </tr>
+                    <tr>
+                        <td>Cara Stevens</td>
+                        <td>Sales Assistant</td>
+                        <td>New York</td>
+                        <td>46</td>
+                        <td>2011/12/06</td>
+                        <td>$145,600</td>
+                    </tr>
+                    <tr>
+                        <td>Hermione Butler</td>
+                        <td>Regional Director</td>
+                        <td>London</td>
+                        <td>47</td>
+                        <td>2011/03/21</td>
+                        <td>$356,250</td>
+                    </tr>
+                    <tr>
+                        <td>Lael Greer</td>
+                        <td>Systems Administrator</td>
+                        <td>London</td>
+                        <td>21</td>
+                        <td>2009/02/27</td>
+                        <td>$103,500</td>
+                    </tr>
+                    <tr>
+                        <td>Jonas Alexander</td>
+                        <td>Developer</td>
+                        <td>San Francisco</td>
+                        <td>30</td>
+                        <td>2010/07/14</td>
+                        <td>$86,500</td>
+                    </tr>
+                    <tr>
+                        <td>Shad Decker</td>
+                        <td>Regional Director</td>
+                        <td>Edinburgh</td>
+                        <td>51</td>
+                        <td>2008/11/13</td>
+                        <td>$183,000</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Bruce</td>
+                        <td>Javascript Developer</td>
+                        <td>Singapore</td>
+                        <td>29</td>
+                        <td>2011/06/27</td>
+                        <td>$183,000</td>
+                    </tr>
+                    <tr>
+                        <td>Donna Snider</td>
+                        <td>Customer Support</td>
+                        <td>New York</td>
+                        <td>27</td>
+                        <td>2011/01/25</td>
+                        <td>$112,000</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!-- // Data table -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="page-section">
+    <div class="row">
+        <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+
+            <h4 class="page-section-heading">Pricing Table #1</h4>
+
+            <div class="table-responsive">
+
+                <!-- Pricing table -->
+                <table class="table panel panel-default table-pricing">
+
+                    <!-- Table heading -->
+                    <thead>
+                    <tr>
+                        <th class="text-center">Choose your plan</th>
+                        <th class="text-center" style="width: 15%">
+                            <span class="plan">Free</span>
+                            <span class="price">&dollar;0.00</span>
+                            <button class="btn btn-primary btn-block">Sign up</button>
+                        </th>
+                        <th class="text-center" style="width: 15%">
+                            <span class="plan">Bronze</span>
+                            <span class="price">&dollar;9.99</span>
+                            <button class="btn btn-primary btn-block">Sign up</button>
+                        </th>
+                        <th class="text-center" style="width: 15%">
+                            <span class="plan">Silver</span>
+                            <span class="price">&dollar;19.99</span>
+                            <button class="btn btn-primary btn-block">Sign up</button>
+                        </th>
+                        <th class="text-center" style="width: 15%">
+                            <span class="plan">Gold</span>
+                            <span class="price">&dollar;49.99</span>
+                            <button class="btn btn-primary btn-block">Sign up</button>
+                        </th>
+                    </tr>
+                    </thead>
+                    <!-- // Table heading END -->
+
+                    <!-- Table body -->
+                    <tbody>
+
+                    <!-- Table row -->
+                    <tr>
+                        <td>Setup &amp; Installation</td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                    </tr>
+                    <!-- // Table row END -->
+
+                    <!-- Table row -->
+                    <tr>
+                        <td>HTML Templates</td>
+                        <td class="text-center text-danger"><span class="fa fa-times-circle"><i></i></span></td>
+                        <td class="text-center text-danger"><span class="fa fa-times-circle"><i></i></span></td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                    </tr>
+                    <!-- // Table row END -->
+
+                    <!-- Table row -->
+                    <tr>
+                        <td>SMS Templates</td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                    </tr>
+                    <!-- // Table row END -->
+
+                    <!-- Table row -->
+                    <tr>
+                        <td>API Included</td>
+                        <td class="text-center text-danger"><span class="fa fa-times-circle"><i></i></span></td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                    </tr>
+                    <!-- // Table row END -->
+
+                    <!-- Table row -->
+                    <tr>
+                        <td>Tracking System</td>
+                        <td class="text-center">Basic Tracking</td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                        <td class="text-center text-success"><span class="fa fa-check-circle"><i></i></span></td>
+                    </tr>
+                    <!-- // Table row END -->
+
+                    </tbody>
+                    <!-- // Table body END -->
+
+                </table>
+                <!-- // Pricing table END -->
+            </div>
+
+            <h4 class="page-section-heading">Pricing Table #2</h4>
+
+            <div class="table-responsive">
+
+                <!-- Pricing table -->
+                <table class="table panel panel-default table-pricing table-pricing-2">
+
+                    <!-- Table heading -->
+                    <thead>
+                    <tr>
+                        <th class="text-center">Free Plan</th>
+                        <th class="text-center">Bronze Plan</th>
+                        <th class="text-center">Silver Plan</th>
+                        <th class="text-center">Gold Plan</th>
+                    </tr>
+                    </thead>
+                    <!-- // Table heading END -->
+
+                    <!-- Table body -->
+                    <tbody>
+
+                    <!-- Table pricing row -->
+                    <tr class="pricing">
+                        <td class="text-center">
+                            <span class="price">&dollar;0.00</span>
+                            <span>per month</span>
+                        </td>
+                        <td class="text-center">
+                            <span class="price">&dollar;9.99</span>
+                            <span>per month</span>
+                        </td>
+                        <td class="text-center">
+                            <span class="price">&dollar;19.99</span>
+                            <span>per month</span>
+                        </td>
+                        <td class="text-center">
+                            <span class="price">&dollar;49.99</span>
+                            <span>per month</span>
+                        </td>
+                    </tr>
+                    <!-- // Table pricing row END -->
+
+                    <!-- Table row -->
+                    <tr>
+                        <td class="text-center">
+                            <p>
+                                Setup &amp; Installation<br/>
+                                HTML Templates<br/>
+                                SMS Templates<br/>
+                                API Included<br/>
+                                Tracking system
+                            </p>
+                            <button class="btn btn-primary">Sign up</button>
+                        </td>
+                        <td class="text-center">
+                            <p>
+                                Setup &amp; Installation<br/>
+                                HTML Templates<br/>
+                                SMS Templates<br/>
+                                API Included<br/>
+                                Tracking system
+                            </p>
+                            <button class="btn btn-primary">Sign up</button>
+                        </td>
+                        <td class="text-center">
+                            <p>
+                                Setup &amp; Installation<br/>
+                                HTML Templates<br/>
+                                SMS Templates<br/>
+                                API Included<br/>
+                                Tracking system
+                            </p>
+                            <button class="btn btn-primary">Sign up</button>
+                        </td>
+                        <td class="text-center">
+                            <p>
+                                Setup &amp; Installation<br/>
+                                HTML Templates<br/>
+                                SMS Templates<br/>
+                                API Included<br/>
+                                Tracking system
+                            </p>
+                            <button class="btn btn-primary">Sign up</button>
+                        </td>
+                    </tr>
+                    <!-- // Table row END -->
+
+                    </tbody>
+                    <!-- // Table body END -->
+
+                </table>
+                <!-- // Pricing table END -->
+
+            </div>
+
+            <h4 class="page-section-heading">Pricing Table #3</h4>
+
+            <div class="table-pricing-3">
+                <ul class="list-unstyled row">
+                    <li class="col-md-4">
+                        <div class="innerAll">
+                            <h3>Starter</h3>
+                            <div class="pricing-body">
+                                <div class="price">Free</div>
+                            </div>
+                            <div class="pricing-features">
+                                <ul>
+                                    <li>Basic Support</li>
+                                    <li>Unlimited Email Alerts</li>
+                                    <li>Free Weekly Digests</li>
+                                    <li><strong>5 Email</strong> Templates</li>
+                                    <li>Customizable Profile Page</li>
+                                    <li><strong>2 months</strong> listing</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-footer">
+                                <a href="#" class="btn btn-success">Get Started</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-md-4 active">
+                        <div class="innerAll">
+                            <h3>Silver</h3>
+                            <div class="pricing-body">
+                                <div class="price">
+                                    <span class="figure">&euro;19.99</span>
+                                    <span class="term">per month</span>
+                                </div>
+                            </div>
+                            <div class="pricing-features">
+                                <ul>
+                                    <li>Dedicated Support</li>
+                                    <li>Unlimited Email Alerts</li>
+                                    <li>Free Weekly Digests</li>
+                                    <li><strong>20 Email</strong> Templates</li>
+                                    <li>Customizable Profile Page</li>
+                                    <li><strong>6 months</strong> listing</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-footer">
+                                <a href="#" class="btn btn-success">Get Started</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-md-4">
+                        <div class="innerAll">
+                            <h3>Gold</h3>
+                            <div class="pricing-body">
+                                <div class="price">
+                                    <span class="figure">&euro;49</span>
+                                    <span class="term">per month</span>
+                                </div>
+                            </div>
+                            <div class="pricing-features">
+                                <ul>
+                                    <li>Premium Support</li>
+                                    <li>Unlimited Email Alerts</li>
+                                    <li>Free Weekly Digests</li>
+                                    <li><strong>50 Email</strong> Templates</li>
+                                    <li>Customizable Profile Page</li>
+                                    <li><strong>Lifetime</strong> listing</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-footer">
+                                <a href="#" class="btn btn-success">Get Started</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>

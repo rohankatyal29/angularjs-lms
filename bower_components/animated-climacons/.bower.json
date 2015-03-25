@@ -1,0 +1,13 @@
+{
+  "name": "animated-climacons",
+  "homepage": "https://github.com/noahblon/animated-climacons",
+  "_release": "a2c1d33e43",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a2c1d33e43fce7949d43253e26f48a101bb4ac52"
+  },
+  "_source": "https://github.com/noahblon/animated-climacons.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/noahblon/animated-climacons.git"
+}

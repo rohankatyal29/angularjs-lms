@@ -1,0 +1,38 @@
+.gallery-image {
+    margin: 0;
+    .item {
+        padding: 1px;
+        overflow: hidden;
+        > * {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.image-gallery-item {
+    @media (min-width: 768px) {
+        .modal-dialog {
+            width: 500px;
+        }
+    }
+    .modal-header {
+        border: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: fade(@black, 50%);
+        color: #fff;
+        font-size: 16px;
+        z-index: 2;
+        border-radius: 0 0 5px 5px;
+    }
+    button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+    }
+    img {
+        border-radius: 5px;
+    }
+}

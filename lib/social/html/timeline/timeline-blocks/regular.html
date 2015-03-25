@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+
+	{% if header !== false %}
+	<div class="panel-heading">
+		{% include "lib/social/html/timeline/timeline-blocks/_block-heading.html" { gender: "woman", image: "6" } %}
+	</div>
+	{% endif %}
+
+	<div class="panel-body">
+		<p>Late Night Show Photos</p>
+		<div class="timeline-added-images">
+			<img src="images/social/100/1.jpg" width="80" alt="photo"/>
+			<img src="images/social/100/2.jpg" width="80" alt="photo"/>
+			<img src="images/social/100/3.jpg" width="80" alt="photo"/>
+		</div>
+	</div>
+	{% include "lib/social/html/timeline/timeline-blocks/_view-all-comments.html" %}
+	{% include "lib/social/html/timeline/timeline-blocks/_comments.html" %}
+</div>

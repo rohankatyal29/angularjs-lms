@@ -1,0 +1,20 @@
+<li class="list-group-item media v-middle">
+	<div class="media-left">
+		<div class="icon-block half img-circle {% if iconBg !== false %}{{iconBg}}{% endif %}">
+			<i class="fa fa-file-text text-white"></i>
+		</div>
+	</div>
+	<div class="media-body">
+		<h4 class="text-subhead margin-none">
+			<a {% if angular %}ui-sref={{ itemUrl }}{% else %}href="{{ itemUrl }}"{% endif %} class="link-text-color">{{ title }}</a>
+		</h4>
+		<div class="text-light text-caption">
+            posted by
+            <a href="#"><img src="images/people/110/{{photo}}.jpg" alt="person" class="img-circle width-20" /> {{ name }}</a> &nbsp;
+            | <i class="fa fa-clock-o fa-fw"></i> {{ time }}
+		</div>
+	</div>
+	<div class="media-right">
+        <a {% if angular %}ui-sref={{ itemUrl }}{% else %}href="{{ itemUrl }}"{% endif %} class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> {{ random(1,17) }}</a>
+	</div>
+</li>

@@ -1,0 +1,12 @@
+.progress-bar-class-from-color(@classColor, @classIndex) when (@classIndex =< 900) {
+	.progress-bar-class-from-color-a(@classColor, @classIndex);
+	.progress-bar-class-from-color(@classColor, @classIndex + 100);
+}
+
+.progress-bar-class-from-color-a(@classColor, @classIndex) {
+	@class: ~".progress-bar-@{classColor}-@{classIndex}";
+	@color: "@{classColor}-@{classIndex}";
+	@{class} {
+		.progress-bar-variant(@@color);
+	}
+}

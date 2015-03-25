@@ -1,0 +1,14 @@
+@mixin progress-bar-class-from-color-a($classColor, $classIndex) {
+	$class: ".progress-bar-#{$classColor}-#{$classIndex}";
+	$color: #{$classColor}-#{$classIndex};
+	#{$class} {
+		@include progress-bar-variant(map-get($colors-map, $color));
+	}
+}
+
+@mixin progress-bar-class-from-color($classColor, $classIndex) {
+	@if $classIndex <= 900 {
+		@include progress-bar-class-from-color-a($classColor, $classIndex);
+		@include progress-bar-class-from-color($classColor, $classIndex + 100);
+	}
+}

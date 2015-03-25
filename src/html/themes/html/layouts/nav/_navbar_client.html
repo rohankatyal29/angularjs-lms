@@ -1,0 +1,80 @@
+<!-- Fixed navbar -->
+<div class="navbar navbar-size-large navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#sidebar-menu" data-toggle="sidebar-menu" class="toggle pull-left visible-xs"><i class="fa fa-ellipsis-v"></i></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand {{ navbarBrand or 'navbar-brand-primary' }} navbar-brand-logo navbar-nav-padding-left">
+                <a class="svg" href="app-student-dashboard.html">{% include "src/html/themes/html/_logo.html" %}</a>
+            </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav navbar-nav">
+                <li class="dropdown{% if page.slug|contains('app-forum') %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forum <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li{% if page.slug == 'app-forum' %} class="active"{% endif %}><a href="app-forum.html">Forum Home</a></li>
+                        <li{% if page.slug == 'app-forum-category' %} class="active"{% endif %}><a href="app-forum-category.html">Forum Category</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown{% if page.slug == 'app-student-course' or page.slug|contains('app-directory') %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li{% if page.slug == 'app-directory-grid' %} class="active"{% endif %}><a href="app-directory-grid.html">Courses Grid</a></li>
+                        <li{% if page.slug == 'app-directory-list' %} class="active"{% endif %}><a href="app-directory-list.html">Courses List</a></li>
+                        <li{% if page.slug == 'app-student-course' %} class="active"{% endif %}><a href="app-student-course.html">Course Details</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown{% if page.slug|contains('app-course-forum') or page.slug == 'app-student-dashboard' or page.slug == 'app-student-courses' or page.slug == 'app-student-profile' or page.slug == 'app-student-billing' or page.slug|contains('app-take') %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li{% if page.slug == 'app-student-dashboard' %} class="active"{% endif %}><a href="app-student-dashboard.html">Dashboard</a></li>
+                        <li{% if page.slug == 'app-student-courses' %} class="active"{% endif %}><a href="app-student-courses.html">My Courses</a></li>
+                        <li{% if page.slug == 'app-take-course' %} class="active"{% endif %}><a href="app-take-course.html">Take Course</a></li>
+                        <li{% if page.slug|contains('app-course-forum') %} class="active"{% endif %}><a href="app-course-forums.html">Course Forums</a></li>
+                        <li{% if page.slug == 'app-take-quiz' %} class="active"{% endif %}><a href="app-take-quiz.html">Take Quiz</a></li>
+                        <li{% if page.slug == 'app-student-profile' %} class="active"{% endif %}><a href="app-student-profile.html">Edit Profile</a></li>
+                        <li{% if page.slug == 'app-student-billing' %} class="active"{% endif %}><a href="app-student-billing.html">Edit Billing</a></li>
+                        <li{% if page.slug == 'app-student-messages' %} class="active"{% endif %}><a href="app-student-messages.html">Messages</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown{% if page.slug|contains('app-instructor') %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Instructor <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li{% if page.slug == 'app-instructor-dashboard' %} class="active"{% endif %}><a href="app-instructor-dashboard.html">Dashboard</a></li>
+                        <li{% if page.slug == 'app-instructor-courses' %} class="active"{% endif %}><a href="app-instructor-courses.html">My Courses</a></li>
+                        <li{% if page.slug|contains('app-instructor-course-edit') %} class="active"{% endif %}><a href="app-instructor-course-edit-course.html">Edit Course</a></li>
+                        <li{% if page.slug == 'app-instructor-earnings' %} class="active"{% endif %}><a href="app-instructor-earnings.html">Earnings</a></li>
+                        <li{% if page.slug == 'app-instructor-statement' %} class="active"{% endif %}><a href="app-instructor-statement.html">Statement</a></li>
+                        <li{% if page.slug == 'app-instructor-profile' %} class="active"{% endif %}><a href="app-instructor-profile.html">Edit Profile</a></li>
+                        <li{% if page.slug == 'app-instructor-billing' %} class="active"{% endif %}><a href="app-instructor-billing.html">Edit Billing</a></li>
+                        <li{% if page.slug == 'app-instructor-messages' %} class="active"{% endif %}><a href="app-instructor-messages.html">Messages</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-nav-bordered navbar-right">
+                {% include "lib/navbar/html/_notifications.html" %}
+                <!-- User -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle user" data-toggle="dropdown">
+                        <img src="images/people/110/guy-5.jpg" alt="Bill" class="img-circle" width="40"/>
+                        Bill <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="app-student-profile.html">Account</a></li>
+                        <li><a href="app-student-billing.html">Billing</a></li>
+                        <li><a href="login.html">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+
+    </div>
+</div>

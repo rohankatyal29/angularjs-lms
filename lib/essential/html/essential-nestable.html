@@ -1,0 +1,94 @@
+<div class="jumbotron text-center bg-transparent margin-none">
+    <h1>Nestable</h1>
+    <p>Nestable is a component for hierarchical lists with drag &amp; drop capabilities, compatible with both mouse events and touch enabled devices.</p>
+</div>
+
+<div class="page-section">
+    <div class="row">
+        <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+
+            <h4 class="page-section-heading">Draggable Items</h4>
+            <div class="nestable" id="nestable">
+                <ul class="nestable-list">
+                    <li class="nestable-item" data-id="1">
+                        <div class="nestable-handle">Item 1</div>
+                    </li>
+                    <li class="nestable-item" data-id="2">
+                        <div class="nestable-handle">Item 2</div>
+                        <ul class="nestable-list">
+                            <li class="nestable-item" data-id="2.1"><div class="nestable-handle">Item 2.1</div></li>
+                            <li class="nestable-item" data-id="2.2">
+                                <div class="nestable-handle">Item 2.2</div>
+                                <ul class="nestable-list">
+                                    <li class="nestable-item" data-id="2.3.1"><div class="nestable-handle">Item 2.2.1</div></li>
+                                    <li class="nestable-item" data-id="2.3.2"><div class="nestable-handle">Item 2.2.2</div></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="page-section">
+    <div class="row">
+        <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+
+            <h4 class="page-section-heading">Draggable Handles (Default color)</h4>
+            <div class="nestable" id="nestable-handles">
+                <ul class="nestable-list">
+                    <li class="nestable-item nestable-item-handle" data-id="1">
+                        <div class="nestable-handle"><i class="md md-menu"></i></div><div class="nestable-content">Item 1</div>
+                    </li>
+                    <li class="nestable-item nestable-item-handle" data-id="2">
+                        <div class="nestable-handle"><i class="md md-menu"></i></div><div class="nestable-content">Item 2</div>
+                    </li>
+                    <li class="nestable-item nestable-item-handle" data-id="3">
+                        <div class="nestable-handle"><i class="md md-menu"></i></div><div class="nestable-content">Item 3</div>
+                        <ul class="nestable-list">
+                            <li class="nestable-item nestable-item-handle" data-id="3.1">
+                                <div class="nestable-handle"><i class="md md-menu"></i></div><div class="nestable-content">Item 3.1</div>
+                            </li>
+                            <li class="nestable-item nestable-item-handle" data-id="3.2">
+                                <div class="nestable-handle"><i class="md md-menu"></i></div><div class="nestable-content">Item 3.2</div>
+                            </li>
+                            <li class="nestable-item nestable-item-handle" data-id="3.3">
+                                <div class="nestable-handle"><i class="md md-menu"></i></div><div class="nestable-content">Item 3.3</div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h4 class="page-section-heading">Draggable Handles (Primary color)</h4>
+            <div class="nestable nestable-handle-primary" id="nestable-handles-primary">
+                <ul class="nestable-list">
+                    <li class="nestable-item nestable-item-handle" data-id="1">
+                        <div class="nestable-handle"><i class="md md-menu"></i></div><div class="nestable-content">Item 1</div>
+                    </li>
+                    <li class="nestable-item nestable-item-handle" data-id="2">
+                        <div class="nestable-handle"><i class="md md-menu"></i></div><div class="nestable-content">Item 2</div>
+                    </li>
+                    <li class="nestable-item nestable-item-handle" data-id="3">
+                        <div class="nestable-handle"><i class="md md-menu"></i></div><div class="nestable-content">Item 3</div>
+                        <ul class="nestable-list">
+                            <li class="nestable-item nestable-item-handle" data-id="3.1">
+                                <div class="nestable-handle"><i class="md md-menu"></i></div><div class="nestable-content">Item 3.1</div>
+                            </li>
+                            <li class="nestable-item nestable-item-handle" data-id="3.2">
+                                <div class="nestable-handle"><i class="md md-menu"></i></div><div class="nestable-content">Item 3.2</div>
+                            </li>
+                            <li class="nestable-item nestable-item-handle" data-id="3.3">
+                                <div class="nestable-handle"><i class="md md-menu"></i></div><div class="nestable-content">Item 3.3</div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+@mixin btn-class-from-color-a($classColor, $classIndex) {
+	$class: ".btn-#{$classColor}-#{$classIndex}";
+	$color-name: #{$classColor}-#{$classIndex};
+	$color: map-get($colors-map, $color-name);
+	#{$class} {
+		@include button-variant($white, $color, $color);
+		&.btn-stroke {
+			@include button-variant($color, $white, $color);
+			&.active, &:active, &:focus, &:hover, .open>.dropdown-toggle#{$class}.btn-stroke {
+				background-color: $color;
+				border-color: $color;
+				color: $white;
+			}
+		}
+	}
+}
+
+@mixin btn-class-from-color($classColor, $classIndex) {
+	@if $classIndex <= 900 {
+		@include btn-class-from-color-a($classColor, $classIndex);
+		@include btn-class-from-color($classColor, $classIndex + 100);
+	}
+}

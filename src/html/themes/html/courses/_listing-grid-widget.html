@@ -1,0 +1,79 @@
+<div class="panel panel-default paper-shadow" data-z="0.5">
+    {% if lessons !== false %}
+    <div class="panel-heading">
+        <div class="media media-clearfix-xs-min v-middle">
+            <div class="media-body text-caption text-light">
+                Lessons {{ random(1,5) }} of {{ random(5,15) }}
+            </div>
+            <div class="media-right">
+                <div class="progress progress-mini width-100 margin-none">
+                    <div class="progress-bar {{ lessonsBar }}" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="cover overlay cover-image-full hover">
+        <span class="img icon-block {{ coverHeight or 'height-150' }} {{ coverBg or 'bg-default' }}"></span>
+        <a{% if angular %} ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %} href="{{ itemUrl or 'website-course.html' }}"{% endif %} class="padding-none overlay overlay-full icon-block {{ coverBg or 'bg-default' }}">
+            <span class="v-center">
+                <i class="fa {{ coverIcon }}"></i>
+            </span>
+        </a>
+        {% if coverHover !== false %}
+        <a{% if angular %} ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %} href="{{ itemUrl or 'website-course.html' }}"{% endif %} class="overlay overlay-full overlay-hover overlay-bg-white">
+            <span class="v-center">
+                <span class="btn btn-circle {{ coverBtn }} btn-lg"><i class="fa fa-graduation-cap"></i></span>
+            </span>
+        </a>
+        {% endif %}
+    </div>
+    {% if itemBody !== false %}
+    <div class="panel-body">
+        <h4 class="text-headline margin-v-0-10"><a{% if angular %} ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %} href="{{ itemUrl or 'website-course.html' }}"{% endif %}>{{ itemTitle }}</a></h4>
+        {% if itemRating !== false %}
+        <p class="small margin-none">
+            <span class="fa fa-fw fa-star text-yellow-800"></span>
+            <span class="fa fa-fw fa-star text-yellow-800"></span>
+            <span class="fa fa-fw fa-star text-yellow-800"></span>
+            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+        </p>
+        {% endif %}
+    </div>
+    <hr class="margin-none" />
+    <div class="panel-body">
+        {% if itemDescription !== false %}
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.</p>
+        {% endif %}
+        {% if itemMeta !== false %}
+        <p class="text-caption text-light margin-none">
+            <i class="fa fa-clock-o fa-fw"></i> 4 hrs &nbsp;
+            <i class="fa fa-calendar fa-fw"></i> 21/10/14
+            <br/>
+            <i class="fa fa-user fa-fw"></i> Instructor: Adrian Demian
+        </p>
+        {% endif %}
+        {% if itemMeta2 !== false %}
+        <div class="media v-middle">
+            <div class="media-left">
+                <img src="images/people/50/guy-{{ random(1,9) }}.jpg" alt="People" class="img-circle width-40"/>
+            </div>
+            <div class="media-body">
+                <h4><a href="">Adrian Demian</a><br/></h4>
+                Instructor
+            </div>
+        </div>
+        {% endif %}
+        {% if itemTags !== false %}
+        <span class="label {{ itemLabel or 'bg-gray-dark' }}">New</span>
+        <span class="label label-grey-200">WordPress</span>
+        <span class="label label-grey-200">Beginner</span>
+        {% endif %}
+        {% if itemButton !== false %}
+        <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated{% if angular %} ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %} href="{{ itemUrl or 'website-course.html' }}"{% endif %}>{% if itemButtonIcon %}<i class="fa fa-fw {{ itemButtonIcon }}"></i> {% endif %}{{ itemButtonText or 'Go to course' }}</a>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>

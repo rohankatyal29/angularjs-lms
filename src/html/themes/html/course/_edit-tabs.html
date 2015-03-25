@@ -1,0 +1,37 @@
+<!-- Tabbable Widget -->
+<div class="tabbable paper-shadow relative" data-z="0.5">
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs">
+        <li{% if !angular && page.slug|contains('-edit-course') %} class="active"{% endif %}{% if angular %} ui-sref-active="active"{% endif %}><a {% if angular %}ui-sref="{{ slug or 'app' }}-instructor.edit-course"{% else %}href="{{ slug or 'app' }}-instructor-course-edit-course.html"{% endif %}><i class="fa fa-fw fa-lock"></i> <span class="hidden-sm hidden-xs">Course</span></a></li>
+        <li{% if !angular && page.slug|contains('-meta') %} class="active"{% endif %}{% if angular %} ui-sref-active="active"{% endif %}><a {% if angular %}ui-sref="{{ slug or 'app' }}-instructor.edit-course-meta"{% else %}href="{{ slug or 'app' }}-instructor-course-edit-meta.html"{% endif %}><i class="fa fa-fw fa-credit-card"></i> <span class="hidden-sm hidden-xs">Meta</span></a></li>
+        <li{% if !angular && page.slug|contains('-lessons') %} class="active"{% endif %}{% if angular %} ui-sref-active="active"{% endif %}><a {% if angular %}ui-sref="{{ slug or 'app' }}-instructor.edit-course-lessons"{% else %}href="{{ slug or 'app' }}-instructor-course-edit-lessons.html"{% endif %}><i class="fa fa-fw fa-credit-card"></i> <span class="hidden-sm hidden-xs">Lessons</span></a></li>
+    </ul>
+    <!-- // END Tabs -->
+
+    <!-- Panes -->
+    <div class="tab-content">
+
+        {% if tab == 'course' %}
+        <div id="course" class="tab-pane active">
+            {% include "src/html/themes/html/course/_edit-course.html" %}
+        </div>
+        {% endif %}
+
+        {% if tab == 'meta' %}
+        <div id="meta" class="tab-pane active">
+            {% include "src/html/themes/html/course/_edit-meta.html" %}
+        </div>
+        {% endif %}
+
+        {% if tab == 'lessons' %}
+        <div id="lessons" class="tab-pane active">
+            {% include "src/html/themes/html/course/_edit-lessons.html" %}
+        </div>
+        {% endif %}
+
+    </div>
+    <!-- // END Panes -->
+
+</div>
+<!-- // END Tabbable Widget -->

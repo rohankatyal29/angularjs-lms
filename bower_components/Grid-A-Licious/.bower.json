@@ -1,0 +1,13 @@
+{
+  "name": "Grid-A-Licious",
+  "homepage": "https://github.com/suprb/Grid-A-Licious",
+  "_release": "7d88422dec",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "7d88422dec3cb7245283bb1dd505e8b5fcfe4aff"
+  },
+  "_source": "https://github.com/suprb/Grid-A-Licious.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/suprb/Grid-A-Licious.git"
+}

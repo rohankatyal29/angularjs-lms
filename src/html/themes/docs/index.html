@@ -1,0 +1,87 @@
+{% extends "lib/docs/html/_layout.html" %}
+
+{% block sidebar %}
+<div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-dark sidebar-visible-desktop" id="sidebar-menu">
+    <div id="menu">
+        <ul class="nav sidebar-menu sm-active-item-bg">
+            <li class="active"><a href="#overview">1. Getting started</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="s-container">
+    <h1 id="overview" class="text-display-1">Overview</h1>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading"><h4 class="panel-title">What's included</h4></div>
+
+<div class="highlight">
+<pre>{% highlight %}
+<downloaded-package>
+├── <html>      // Includes the static HTML version
+├── <angular>   // Includes the static Angular version
+├── <docs>      // Documentation
+├── <lib>       // Various libraries used within the source
+└── <src>       // Source
+{% endhighlight %}</pre>
+</div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading"><h4 class="panel-title">Using Grunt and Bower</h4></div>
+    <div class="panel-body">
+
+        <div class="s-container">
+        <h4>Installing dependencies</h4>
+        <p>Within the dev directory, run the following from your Terminal:</p>
+
+<div class="highlight">
+<pre>{% highlight %}
+>npm install -g grunt-cli
+>npm install
+>bower install
+{% endhighlight %}</pre>
+</div>
+</div>
+
+<div class="s-container">
+<h4>Building from source method #1:</h4>
+<p>This method is faster and recommended while in development.</p>
+<div class="highlight">
+<pre>{% highlight %}
+>grunt build:d --min false --theme html
+>grunt build:d --min false --theme angular
+{% endhighlight %}</pre>
+</div>
+<p><em>Will generate <code>dist/themes/html</code> and <code>dist/themes/angular</code> directories containing the resulting build files.</em></p>
+</div>
+
+<div class="s-container">
+<h4>Building from source method #2:</h4>
+<p>This method is slower and recommended for the final build.</p>
+<div class="highlight">
+<pre>{% highlight %}
+>grunt build:dm --theme html
+>grunt build:dm --theme angular
+{% endhighlight %}</pre>
+</div>
+<p><em>Will generate <code>dist/themes/html</code> and <code>dist/themes/angular</code> directories containing the resulting build files.</em></p>
+</div>
+
+<div class="s-container">
+<h4>Starting the built-in BrowserSync web server and watchers</h4>
+<div class="highlight">
+<pre>{% highlight %}
+>grunt --theme html --min false
+>grunt --theme html
+{% endhighlight %}</pre>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

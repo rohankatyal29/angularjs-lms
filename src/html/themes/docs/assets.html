@@ -1,0 +1,163 @@
+{% extends "lib/docs/html/_layout.html" %}
+
+{% block sidebar %}
+    <div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-dark sidebar-visible-desktop" id="sidebar-menu">
+        <div id="menu">
+            <ul class="nav sidebar-menu sm-active-item-bg">
+                <li class="active"><a href="#javascript">1. JavaScript</a></li>
+                <li><a href="#stylesheet">2. Styling</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+        <h1 class="text-display-1">Assets</h1>
+    </div>
+
+    <h3 id="javascript">JavaScript</h3>
+    <p>All the static JavaScript files are located in <code>dist/&lt;theme_name&gt;/js</code>.</p>
+    <hr/>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">Application scripts</h4>
+        </div>
+        <div class="panel-body">
+            <h4>Standalone JavaScript Modules</h4>
+            <p class="margin-none">As a convenience, we provide the entire UI framework broken down in separate modules. Some of the standalone modules were not used with every theme but ALL of the modules are 100% compatible with any of the provided themes.</p>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item"><code>module-essentials.js</code> - the required JavaScript for Essential UI components such as Tabs and Tree Views</li>
+            <li class="list-group-item"><code>module-layout.js</code> - the required JavaScript for Layout components</li>
+            <li class="list-group-item"><code>module-maps.js</code> - the required JavaScript for Maps components (Vector Maps &amp; Google Maps)</li>
+            <li class="list-group-item"><code>module-media.js</code> - the required JavaScript for Media components, such as Carousels, Galleries and Media Players</li>
+            <li class="list-group-item"><code>module-navbar.js</code> - the required JavaScript for Navbar components</li>
+            <li class="list-group-item"><code>module-sidebar.js</code> - the required JavaScript for Sidebar components</li>
+        </ul>
+        <div class="panel-body">
+            <h4>All Standalone JavaScript Modules Bundle</h4>
+            <p>Each theme includes an extra Standalone JavaScript Modules Bundle that contains ALL THE AVAILABLE standalone JavaScript modules. The bundle file name is <code>module-bundle-all.js</code>. There is also a minified version <code>module-bundle-all.min.js</code> within the same directory.</p>
+            <hr/>
+            <h4>Theme-specific Standalone JavaScript Modules Bundle</h4>
+            <p class="margin-none">Each theme includes a Theme-specific Standalone JavaScript Modules Bundle that contains only the JavaScript modules used for the theme as showcased in the demo. The bundle file name is <code>module-bundle-main.js</code>. There is also a minified version <code>module-bundle-main.min.js</code> within the same directory. <strong>This is the default file loaded in every theme</strong> and it's the recommended way, even more so if you're using the grunt watchers included with the development suite.</p>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">Vendor scripts</h4>
+        </div>
+        <div class="panel-body">
+            <h4>Vendor Script Bundles</h4>
+            <p class="margin-none">As a convenience, we provide separate 3rd party script bundles used for the entire UI framework. Some of the bundles were not used with every theme but ALL of the bundles are 100% compatible with any of the provided themes.</p>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <p><code>vendor-core.js</code></p>
+                <p><strong>Includes, in this exact order:</strong></p>
+                <ol>
+                    <li>jQuery</li>
+                    <li>Bootstrap</li>
+                    <li>jQuery Breakpoints</li>
+                    <li>jQuery Nicescroll</li>
+                    <li>Grid-A-Licious</li>
+                    <li>jQuery Cookie</li>
+                    <li>Holder.js</li>
+                    <li>Handlebars</li>
+                    <li>
+                        A custom build of jQuery UI with only the following components:
+                        <ul>
+                            <li>Core</li>
+                            <li>Widget</li>
+                            <li>Mouse</li>
+                            <li>Position</li>
+                            <li>Draggable</li>
+                            <li>Droppable</li>
+                            <li>Resizable</li>
+                            <li>Selectable</li>
+                            <li>Sortable</li>
+                        </ul>
+                    </li>
+                    <li>jQuery Hotkeys</li>
+                </ol>
+            </li>
+            <li class="list-group-item">
+                <p><code>vendor-tables.js</code></p>
+                <p><strong>Includes, in this exact order:</strong></p>
+                <ol>
+                    <li>jQuery Datatables</li>
+                    <li>Datatables Bootstrap Integration Plugin</li>
+                </ol>
+            </li>
+            <li class="list-group-item">
+                <p><code>vendor-forms.js</code></p>
+                <p><strong>Includes, in this exact order:</strong></p>
+                <ol>
+                    <li>Seiyria Bootstrap Slider</li>
+                    <li>Bootstrap Select Plugin</li>
+                    <li>Bootstrap Switch</li>
+                    <li>Bootstrap3 Datepicker</li>
+                    <li>jQuery Minicolors</li>
+                </ol>
+            </li>
+            <li class="list-group-item">
+                <p><code>vendor-media.js</code></p>
+                <p><strong>Includes, in this exact order:</strong></p>
+                <ol>
+                    <li>jQuery jPlayer</li>
+                    <li>jPlayer Playlist Plugin</li>
+                    <li>Owl Carousel</li>
+                </ol>
+            </li>
+            <li class="list-group-item">
+                <p><code>vendor-tree.js</code></p>
+                <p><strong>Includes, in this exact order:</strong></p>
+                <ol>
+                    <li>jQuery FancyTree Plugin</li>
+                </ol>
+            </li>
+            <li class="list-group-item">
+                <p><code>vendor-charts.js</code></p>
+                <p><strong>Includes, in this exact order:</strong></p>
+                <ol>
+                    <li>Flot Charts</li>
+                    <li>jQuery Sparkline</li>
+                    <li>Easy Pie Chart</li>
+                    <li>Raphael (required by Morris)</li>
+                    <li>Morris.js</li>
+                </ol>
+            </li>
+            <li class="list-group-item">
+                <p><code>vendor-maps.js</code></p>
+                <p><strong>Includes, in this exact order:</strong></p>
+                <ol>
+                    <li>jQuery Vector Maps</li>
+                </ol>
+            </li>
+        </ul>
+        <div class="panel-body">
+            <h4>All Vendor Scripts Bundle</h4>
+            <p class="margin-none">Each theme includes a Vendor Scripts Bundle with ALL THE AVAILABLE 3rd party JavaScript libraries. The vendor bundle file name is <code>vendor-bundle-all.js</code>. There is also a minified version <code>vendor-bundle-all.min.js</code> within the same directory.</p>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <p><strong>Includes, in this exact order:</strong></p>
+                <ol>
+                    <li>vendor-core.js</li>
+                    <li>vendor-tables.js</li>
+                    <li>vendor-forms.js</li>
+                    <li>vendor-media.js</li>
+                    <li>vendor-charts.js</li>
+                    <li>vendor-maps.js</li>
+                    <li>vendor-tree.js</li>
+                </ol>
+            </li>
+        </ul>
+        <div class="panel-body">
+            <strong>PRO TIP:</strong> You can get the full list of all the various libraries installed and the versions used and also check for available updates for each library in seconds, anytime! Just go into a <em>Terminal</em> from the root directory and type <code>bower list</code>. After updating a package using Bower, you only need to run <code>grunt --theme your_theme_name build:dist</code> to recreate all the bundles with the updated plugins.
+        </div>
+    </div>
+
+{% endblock %}

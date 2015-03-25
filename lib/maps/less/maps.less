@@ -1,0 +1,129 @@
+.jvectormap-zoomin,
+.jvectormap-zoomout {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    background: @primary-color;
+}
+.jvectormap-label {
+    z-index: 1;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background: @primary-color;
+    padding: 3px 5px;
+}
+.jvm-legend-item {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+#world-map-markers.fs {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.maps-google-fs {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gm-style-iw {
+    > div {
+        width: auto !important;
+    }
+}
+
+.gm-style {
+    font-size: 14px;
+}
+
+.infoBox {
+    background-color: #fff;
+    border-radius: @border-radius-large;
+    box-shadow: 0 0 15px 0 fade(@black, 20%);
+    overflow: hidden;
+    > div {
+        max-width: 240px;
+        max-height: 390px;
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding: @panel-body-padding;
+        > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .full {
+        > .list-group {
+            .list-group-item {
+                border-left: none;
+                border-right: none;
+                border-radius: 0;
+            }
+        }
+    }
+    > img {
+        position: absolute !important;
+        top: 5px;
+        right: 5px;
+        z-index: 10;
+        margin: 0 !important;
+    }
+}
+
+[data-toggle="google-maps"] {
+    #pagination {
+        width: 100%;
+        overflow: hidden;
+        min-width: 220px;
+        .btn {
+            border-radius: 0;
+        }
+    }
+    &[data-pagination-position*="BOTTOM"] #pagination {
+        width: auto;
+    }
+}
+
+.map-overlay {
+    background-color: fade(@white, 90%);
+    border-color: @panel-default-border;
+}
+.navbar-map-overlay {
+    &:extend(.map-overlay);
+    z-index: 2;
+    .toggle.active {
+        background-color: transparent;
+        color: @text-color;
+    }
+}
+.map-overlay-sidebar {
+    &:extend(.map-overlay);
+    padding: @panel-body-padding;
+    width: @sidebar-width-2;
+}
+.map-overlay-panel {
+    &:extend(.map-overlay);
+    padding: @panel-body-padding;
+}
+.map-overlay-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    [data-pagination="true"] + & {
+        top: 45px;
+    }
+    [data-pagination="true"][data-pagination-position*="BOTTOM"] + & {
+        top: 0;
+    }
+}

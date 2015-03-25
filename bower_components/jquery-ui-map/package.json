@@ -1,0 +1,36 @@
+{
+  "name": "jquery-ui-maps",
+  "version": "3.0.0",
+  "main": [
+
+    "ui/min/jquery.ui.map.full.min.js",
+    "ui/min/jquery.ui.map.microdata.min.js",
+    "ui/min/jquery.ui.map.microformat.min.js",
+    "ui/min/jquery.ui.map.min.js",
+    "ui/min/jquery.ui.map.overlays.min.js",
+    "ui/min/jquery.ui.map.rdfa.min.js",
+    "ui/min/jquery.ui.map.services.min.js"
+  ],
+  "title": "Google maps v3 plugin for jQuery and jQuery Mobile",
+  "description": "The Google Map version 3 plugin for jQuery and jQM takes away some of the head aches from working with the Google Map API. Instead of having to use Google event listeners for simple events like click, you can use jQuery click events on the map and markers.",
+  "homepage": "https://code.google.com/p/jquery-ui-map/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/somecallmechief/jquery-ui-maps"
+  },
+  "bugs": {
+    "url": "https://code.google.com/p/jquery-ui-map/issues/list"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "keywords": ["jquery", "jquery-ui", "maps", "google-maps"],
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  },
+  "scripts": {}
+}

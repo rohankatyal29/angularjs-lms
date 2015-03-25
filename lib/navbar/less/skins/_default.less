@@ -1,0 +1,85 @@
+// General Navbar Styling
+.navbar-default {
+	border-bottom: 1px solid @navbar-border-bottom;
+
+	// BORDERS
+	.navbar-brand {
+		@media (min-width: @screen-sm) {
+			border-right-color: @navbar-default-border;
+		}
+	}
+	.navbar-nav.navbar-nav-bordered {
+		&.navbar-right:last-of-type {
+			@media (min-width: @grid-float-breakpoint) {
+				border-left-color: @navbar-default-border;
+			}
+		}
+		> li {
+			@media (min-width: @screen-sm-min) {
+				border-right-color: @navbar-default-border;
+			}
+		}
+	}
+
+	.navbar-nav > li {
+		&.active, &.open {
+			> a i {
+				color: @navbar-default-link-active-icon-color;
+			}
+		}
+		> a {
+			i {
+				color: @navbar-default-link-icon-color;
+			}
+			&:hover i {
+				color: @primary-color;
+			}
+		}
+	}
+
+	.navbar-nav > .nav-item-primary > a {
+		background-color: @primary-color;
+		color: #fff;
+		&:hover, &:focus {
+			background-color: darken(@primary-color, 4%);
+			color: #ffffff;
+		}
+	}
+
+	.navbar-form .checkbox {
+		color: @navbar-default-color;
+	}
+
+	// notifications
+	.navbar-nav > li.notifications {
+		a.dropdown-toggle {
+			.badge {
+				background: @navbar-default-color;
+				&.badge-primary {
+					background: @primary-color;
+				}
+				&.badge-danger {
+					background: @danger-color;
+				}
+			}
+			&.btn {
+				background: @btn-default-bg;
+				i {
+					color: @btn-default-color;
+				}
+			}
+		}
+	}
+
+	// search
+	.search-1 {
+		.input-group-addon {
+			color: #ccc;
+		}
+		.form-control {
+			&:hover, &:active, &:focus {
+				background-color: lighten(#efefef, 3%);
+			}
+		}
+	}
+}
