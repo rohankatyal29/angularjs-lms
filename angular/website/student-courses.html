@@ -81,9 +81,9 @@
                             <img src="images/people/110/guy-6.jpg" alt="" class="img-circle" /> Bill<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li>
+                            <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Timeline</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
-                            <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
+                            <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Settings</a></li>
                             <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     </li>
@@ -95,24 +95,7 @@
         <!-- /.navbar-collapse -->
     </div>
 </div>
-<!-- <div class="parallax overflow-hidden bg-blue-400 page-section third">
-    <div class="container parallax-layer" data-opacity="true">
-        <div class="media v-middle">
-            <div class="media-left text-center">
-                <a href="#">
-                    <img src="images/people/110/guy-6.jpg" alt="people" class="img-circle width-80" />
-                </a>
-            </div>
-            <div class="media-body">
-                <h1 class="text-white text-display-1 margin-v-0">Bill Smith</h1>
-                <p class="text-subhead"><a class="link-white text-underline" href="website-student-public-profile.html">View public profile</a></p>
-            </div>
-            <div class="media-right">
-                <span class="label bg-blue-500">Student</span>
-            </div>
-        </div>
-    </div>
-</div> -->
+
 <div class="container">
     <div class="page-section">
         <div class="row">
@@ -351,18 +334,31 @@
             <div class="col-md-3">
                 <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
                     <div class="panel-heading panel-collapse-trigger">
-                        <h4 class="panel-title">Recent Updates</h4>
+                        <h4 class="panel-title">Upcoming Deadlines</h4>
                     </div>
                     <div class="panel-body list-group">
                         <ul class="list-group list-group-menu">
-                            <li class="list-group-item" ui-sref-active="active"><a class="link-text-color" ui-sref="website-student.dashboard">Update 1</a></li>
-                            <li class="list-group-item" ui-sref-active="active"><a class="link-text-color" ui-sref="website-student.courses">Update 2</a></li>
-                            <li class="list-group-item" ui-sref-active="active"><a class="link-text-color" ui-sref="website-student.private-profile">Update 3</a></li>
-                            <li class="list-group-item" ui-sref-active="active"><a class="link-text-color" ui-sref="website-student.messages">Update 4</a></li>
-                            <li class="list-group-item"><a class="link-text-color" ui-sref="login"><span>Update 5</span></a></li>
+                            <li class="list-group-item" ><a class="link-text-color" ui-sref="website-student.dashboard">Non Programming Assignment # 3 - Computer Networks<br />
+                            <strong><font style="color:red;">4 DAYS, 22 HOURS, 9 MINS</font></strong></a></li>
                         </ul>
                     </div>
                 </div>
+
+                <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
+                    <div class="panel-heading panel-collapse-trigger">
+                            <h4 class="panel-title">Recent Annoucements</h4>
+                    </div>
+                    <div class="panel-body list-group">
+                        <ul class="list-group list-group-menu">
+                            <li class="list-group-item" ><a class="link-text-color" ui-sref="website-student.dashboard">Quiz on April 6, 2015 - Computer Networks <br />
+                             <strong><font style="color:#42A5F5;">ABOUT 3 HOURS AGO</font></strong></a></li>
+                            <li class="list-group-item" ><a class="link-text-color" ui-sref="website-student.courses">Office hours on Mar 25, 2015 - Computer Networks<br />
+                            <strong><font style="color:#42A5F5;">3 DAYS AGO</font></strong></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
 <!--                 <h4>Featured</h4>
                 <div class="slick-basic slick-slider" data-items="1" data-items-lg="1" data-items-md="1" data-items-sm="1" data-items-xs="1">
                     <div class="item">
