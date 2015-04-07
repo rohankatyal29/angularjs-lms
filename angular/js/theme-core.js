@@ -1081,6 +1081,62 @@ require('./_sidebar-toggle-bar');
                             $scope.app.settings.bodyClass = '';
                         }]
                     })
+                    .state('website-student.take-course-course-info', {
+                        url: '/take-course-course-info',
+                        templateUrl: 'website/student-take-course-course-info.html',
+                        controller: ['$scope', function($scope){
+                            $scope.app.settings.htmlClass = htmlClass.website;
+                            $scope.app.settings.bodyClass = '';
+                        }]
+                    })
+                    .state('website-student.take-course-announcement', {
+                        url: '/take-course-announcement',
+                        templateUrl: 'website/student-take-course-announcement.html',
+                        controller: ['$scope', function($scope){
+                            $scope.app.settings.htmlClass = htmlClass.website;
+                            $scope.app.settings.bodyClass = '';
+                        }]
+                    })
+                    .state('website-student.take-course-deadlines', {
+                        url: '/take-course-deadlines',
+                        templateUrl: 'website/student-take-course-deadlines.html',
+                        controller: ['$scope', function($scope){
+                            $scope.app.settings.htmlClass = htmlClass.website;
+                            $scope.app.settings.bodyClass = '';
+                        }]
+                    })
+                    .state('website-student.take-course-resources', {
+                        url: '/take-course-resources',
+                        templateUrl: 'website/student-take-course-resources.html',
+                        controller: ['$scope', function($scope){
+                            $scope.app.settings.htmlClass = htmlClass.website;
+                            $scope.app.settings.bodyClass = '';
+                        }]
+                    })
+                    .state('website-student.take-course-grades', {
+                        url: '/take-course-grades',
+                        templateUrl: 'website/student-take-course-grades.html',
+                        controller: ['$scope', function($scope){
+                            $scope.app.settings.htmlClass = htmlClass.website;
+                            $scope.app.settings.bodyClass = '';
+                        }]
+                    })
+                    .state('website-student.take-course-discussions', {
+                        url: '/take-course-discussions',
+                        templateUrl: 'website/student-take-course-discussions.html',
+                        controller: ['$scope', function($scope){
+                            $scope.app.settings.htmlClass = htmlClass.website;
+                            $scope.app.settings.bodyClass = '';
+                        }]
+                    })
+                    .state('website-student.take-course-students', {
+                        url: '/take-course-students',
+                        templateUrl: 'website/student-take-course-students.html',
+                        controller: ['$scope', function($scope){
+                            $scope.app.settings.htmlClass = htmlClass.website;
+                            $scope.app.settings.bodyClass = '';
+                        }]
+                    })
                     .state('website-student.course-forums', {
                         url: '/course-forums',
                         templateUrl: 'website/student-course-forums.html',
@@ -1343,6 +1399,14 @@ require('./_sidebar-toggle-bar');
                         }]
                     })
                     .state('app-student.take-course', {
+                        url: '/take-course',
+                        templateUrl: 'app/student-take-course.html',
+                        controller: ['$scope', function($scope){
+                            $scope.app.settings.htmlClass = htmlClass.appl1r3;
+                            $scope.app.settings.bodyClass = '';
+                        }]
+                    })
+                    .state('app-student.take-course-a', {
                         url: '/take-course',
                         templateUrl: 'app/student-take-course.html',
                         controller: ['$scope', function($scope){
