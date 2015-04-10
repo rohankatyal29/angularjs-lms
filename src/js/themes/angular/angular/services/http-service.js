@@ -1,12 +1,14 @@
-// TODO: add AppState as a dependency 
-App.factory('HttpService', function ($log, $q, $http, $state, $rootScope) {
-    var node_root = $rootScope.app.nodeUrl;
-    var rest_root = $rootScope.app.restUrl;
+angular.module('app').factory('HttpService', function ($log, $q, $http, $state, $rootScope ) {
+    
+    var rest_root = 'http://10.31.169.169:8080/lms/api'; 
+    var node_root ;
+
     var nodeUrl = function (path) {
-        return node_root + path
+        return node_root + path;
     };
+
     var restUrl = function (path) {
-        return rest_root + path
+        return rest_root + path;
     };
 
     var get = function (path, queryData, isNode, returnOnlySuccess, isCached, suspendLogging) {
@@ -28,7 +30,7 @@ App.factory('HttpService', function ($log, $q, $http, $state, $rootScope) {
     var stripList = function (data) {
         if(data.entries)
             return _.map(data.entries, function (entry) {
-                return entry.content.properties
+                return entry.content.properties;
             });
         else if(data.data && data.data.variables){
             return listifyProcessData(data);
@@ -40,7 +42,7 @@ App.factory('HttpService', function ($log, $q, $http, $state, $rootScope) {
         if (!processData || !processData.data || !processData.data.variables)
             return;
 
-        var processData = processData.data.variables;
+        processData = processData.data.variables;
         var variableOutputLength = 0;
         var processOutputs = [];
         var variables = _.map(processData, function (value, variable) {
@@ -52,6 +54,7 @@ App.factory('HttpService', function ($log, $q, $http, $state, $rootScope) {
             return variable;
         });
 
+        /* jshint loopfunc:true */
         for (var i = 0; i < variableOutputLength; i++) {
             var processOutput = {};
             _.each(variables, function (variable) {
@@ -76,8 +79,10 @@ App.factory('HttpService', function ($log, $q, $http, $state, $rootScope) {
         return deferred.promise;
     };
 
+
     var http = function (method, path, postData, queryData, isNode, returnOnlySuccess, isCached, suspendLogging) {
-        const hasRawPostData = postData != undefined;
+        /*jshint esnext: true */
+        const hasRawPostData = postData !== undefined;
         const callDetails = method.toUpperCase() + " " + path + (hasRawPostData ? "(raw)" : "");
 
         var deferred = $q.defer();
@@ -96,8 +101,10 @@ App.factory('HttpService', function ($log, $q, $http, $state, $rootScope) {
             method: method,
             cache: isCached,
             withCredentials: true,
-            url: isNode ? nodeUrl(path) : restUrl(path),
-            data: undefined == postData ? undefined : (hasRawPostData ? postData : $.param(postData)),
+            // what is node and rest? 
+            // url: isNode ? nodeUrl(path) : restUrl(path),
+            url: restUrl(path),
+            data: undefined === postData ? undefined : (hasRawPostData ? postData : $.param(postData)),
             params: queryData,
             headers: {'Content-Type': 'application/json'}
         }).
@@ -145,6 +152,6 @@ App.factory('HttpService', function ($log, $q, $http, $state, $rootScope) {
         nodeUrl: nodeUrl,
         restUrl: restUrl
     };
-});
+}); 
 
 

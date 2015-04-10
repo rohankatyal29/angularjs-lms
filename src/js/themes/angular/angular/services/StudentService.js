@@ -1,47 +1,49 @@
-App.service('DashboardService', function ($http, $rootScope, HttpService, $q) {
+angular.module('app').service('StudentService', function ($http, $rootScope, HttpService, $q) {
 
-    var dashboardData = new Object();
+    var studentData = new Object({});
     var dataFetched = false;
-    var fetchedContestid ='';
+    var fetchedStudentid ='';
 
-    var getDashboardData = function (contestid) {
+    var getAllStudents = function () {
         var deferred = $q.defer();
-        if(dataFetched && fetchedContestid == contestid){
-            deferred.resolve(dashboardData);
+        if(dataFetched){
+            deferred.resolve(studentData);
         } else{
-            HttpService.post('processes/tapp_dashboarddata', {
+            HttpService.get('/students', {
                     page: 1,
                     start: 0,
                     "items-per-page": 1000,
                     "run-stateless": "true",
-                    "data": {"variables": { "contestid": contestid}}}
-            ).then(function(data){
-                    dashboardData = data;
-                    deferred.resolve(dashboardData);
+                    "data": null
+            }).then(function(data){
+                    studentData = data;
+                    deferred.resolve(studentData);
                 });
-            fetchedContestid = contestid
             dataFetched = true;
         }
         return deferred.promise;
 
     };
 
-    var getHistoricalData = function(contestid){
-        return HttpService.cleanService(HttpService.get('historical-queries/tapp_noofentriesperweek', {
-            inline: true,
-            input_s1gro_contestid: contestid,
-            "items-per-page": 1000,
-            "time-dimension":"weekly",
-            "appNamespace":"tapp",
-            "relative-last-time":12
-        }));
+    // var getAllStudents = function(){
+    //     return [{name:'rohan', rollno: 2012086, emailid: 'rohan12086@iiitd.ac.in'},
+    //             {name:'rohan', rollno: 2012086, emailid: 'rohan12086@iiitd.ac.in'},
+    //             {name:'rohan', rollno: 2012086, emailid: 'rohan12086@iiitd.ac.in'},
+    //             {name:'rohan', rollno: 2012086, emailid: 'rohan12086@iiitd.ac.in'}];
+    // };
+    // var getHistoricalData = function(contestid){
+    //     return HttpService.cleanService(HttpService.get('historical-queries/tapp_noofentriesperweek', {
+    //         inline: true,
+    //         input_s1gro_contestid: contestid,
+    //         "items-per-page": 1000,
+    //         "time-dimension":"weekly",
+    //         "appNamespace":"tapp",
+    //         "relative-last-time":12
+    //     }));
 
-
-    }
 
     return {
-        getDashboardData : getDashboardData,
-        getHistoricalData : getHistoricalData
+        getAllStudents : getAllStudents
     };
 
 });

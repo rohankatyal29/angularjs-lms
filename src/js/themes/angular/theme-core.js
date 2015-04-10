@@ -28,3 +28,24 @@ require('./angular/directives/navbar-transition-scroll');
 require('./angular/directives/countdown');
 require('./angular/directives/curriculum');
 require('./angular/directives/flotchart-earnings');
+
+// Custom Services 
+require('./angular/services/http-service');
+require('./angular/services/StudentService');
+require('./angular/services/CourseService');
+require('./angular/services/RandomDataGeneratorService');
+
+// Custom Controllers 
+require('./angular/controllers/StudentsController');
+require('./angular/controllers/CourseController');
+
+require('./angular/controllers/StudentTakeCourseController');
+require('./angular/controllers/StudentTakeCourseInfoController');
+require('./angular/controllers/StudentTakeCourseAnnouncementController');
+require('./angular/controllers/StudentTakeCourseDeadlinesController');
+require('./angular/controllers/StudentTakeCourseResourcesController');
+require('./angular/controllers/StudentTakeCourseGradesController');
+require('./angular/controllers/StudentTakeCourseDiscussionController');
+
+
+

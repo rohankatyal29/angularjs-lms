@@ -6,5 +6,5 @@
 
 module.exports = function (grunt) {
     require('time-grunt')(grunt);
-    grunt.loadTasks('lib/grunt/tasks');
+    grunt.loadTasks('lib/grunt/tasks'); 
 };
