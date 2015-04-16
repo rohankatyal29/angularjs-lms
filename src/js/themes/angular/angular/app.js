@@ -7,13 +7,15 @@
         'ngTouch',
         'ui.router',
         'ui.utils',
-        'ui.jq'
+        'ui.jq',
+        'ngCookies', 
+        'LocalStorageModule'
     ]);
 
     var app = angular.module('app')
         .config(
-        [ '$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$interpolateProvider',
-            function ($controllerProvider, $compileProvider, $filterProvider, $provide, $interpolateProvider) {
+        [ '$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$interpolateProvider', 'localStorageServiceProvider',
+            function ($controllerProvider, $compileProvider, $filterProvider, $provide, $interpolateProvider, localStorageServiceProvider) {
                 app.controller = $controllerProvider.register;
                 app.directive = $compileProvider.directive;
                 app.filter = $filterProvider.register;
@@ -24,7 +26,13 @@
 
                 $interpolateProvider.startSymbol('::');
                 $interpolateProvider.endSymbol('::');
-            }
+
+                localStorageServiceProvider
+                    .setPrefix('LMSApp')
+                    .setStorageType('localStorage')
+                    .setNotify(true, true)
+                    .setStorageCookieDomain('');
+                }
         ]);
 
 })();

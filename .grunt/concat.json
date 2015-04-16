@@ -33,6 +33,8 @@
 		"cwd": "bower_components/",
 		"files": [
 			"angular/angular.js",
+			"angular-cookies/angular-cookies.js",
+			"angular-local-storage/dist/angular-local-storage.js",
 			"angular-resource/angular-resource.js",
 			"angular-sanitize/angular-sanitize.js",
 			"angular-touch/angular-touch.js",

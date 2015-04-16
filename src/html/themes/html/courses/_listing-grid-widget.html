@@ -30,8 +30,9 @@
         {% endif %}
     </div>
     {% if itemBody !== false %}
+    <!-- change course details -->
     <div class="panel-body">
-        <h4 class="text-headline margin-v-0-10"><a{% if angular %} ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %} href="{{ itemUrl or 'website-course.html' }}"{% endif %}>{{ itemTitle }}</a></h4>
+        <h4 class="text-headline margin-v-0-10"><a{% if angular %} ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %} href="{{ itemUrl or 'website-course.html' }}"{% endif %} ng-click="setCourseId('0801e24080053ab5');">{{ itemTitle }}</a></h4> 
         {% if itemRating !== false %}
         <p class="small margin-none">
             <span class="fa fa-fw fa-star text-yellow-800"></span>
@@ -45,7 +46,7 @@
     <hr class="margin-none" />
     <div class="panel-body">
         {% if itemDescription !== false %}
-        <p>{{itemOverview}}</p>
+            <p>{{itemOverview}}</p>
         {% endif %}
         {% if itemMeta !== false %}
         <p class="text-caption text-light margin-none">

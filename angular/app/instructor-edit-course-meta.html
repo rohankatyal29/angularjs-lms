@@ -220,65 +220,66 @@
         <h1 class="text-display-1">Create New Course</h1>
     </div>
 
-    <!-- Tabbable Widget -->
-<div class="tabbable paper-shadow relative" data-z="0.5">
+    <div class="panel panel-default">
+                    <div class="panel-body">
+                       <form class="form-horizontal ng-pristine ng-valid" role="form" ng-submit="createNewCourse()">
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-control-material">
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Type here.." ng-model="courseName"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                        <label for="inputEmail3">Course name</label>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- Tabs -->
-    <ul class="nav nav-tabs">
-        <li ui-sref-active="active"><a ui-sref="app-instructor.edit-course"><i class="fa fa-fw fa-lock"></i> <span class="hidden-sm hidden-xs">Course</span></a></li>
-        <li ui-sref-active="active"><a ui-sref="app-instructor.edit-course-meta"><i class="fa fa-fw fa-credit-card"></i> <span class="hidden-sm hidden-xs">Meta</span></a></li>
-        <li ui-sref-active="active"><a ui-sref="app-instructor.edit-course-lessons"><i class="fa fa-fw fa-credit-card"></i> <span class="hidden-sm hidden-xs">Lessons</span></a></li>
-    </ul>
-    <!-- // END Tabs -->
+                       <form class="form-horizontal ng-pristine ng-valid" role="form">
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-control-material">
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Type here.." ng-model="domain"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                        <label for="inputEmail3">Domain</label>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- Panes -->
-    <div class="tab-content">
 
-        
+                       <form class="form-horizontal ng-pristine ng-valid" role="form">
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-control-material">
+                                        <input type="number" class="form-control" id="inputEmail3" placeholder="Type here.." ng-model="credits"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                        <label for="inputEmail3">Credits</label>
+                                    </div>
+                                </div>
+                            </div>
 
-        
-        <div id="meta" class="tab-pane active">
-            <form class="form-horizontal">
-    <div class="form-group">
-        <label for="select" class="col-sm-3 control-label">Category</label>
-        <div class="col-sm-9 col-md-9">
-            <select id="select" class="form-control select2">
-                <option value="#">HTML</option>
-                <option value="#">Angular JS</option>
-                <option value="#">CSS / LESS</option>
-                <option value="#">Design / Concept</option>
-            </select>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="duration" class="col-sm-3 control-label">Course Duration</label>
-        <div class="col-sm-4 col-md-2">
-            <input type="text" class="form-control" placeholder="No. of Days" value="10">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="start" class="col-sm-3 control-label">Start Date</label>
-        <div class="col-sm-9 col-md-4">
-            <input id="datepicker" type="text" class="form-control datepicker">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="end" class="col-sm-3 control-label">End Date</label>
-        <div class="col-sm-9 col-md-4">
-            <input id="datepicker" type="text" class="form-control datepicker">
-        </div>
-    </div>
-</form>
-        </div>
-        
+                       <form class="form-horizontal ng-pristine ng-valid" role="form">
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-control-material">
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Type here.." ng-model="overview"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                        <label for="inputEmail3">Overview</label>
+                                    </div>
+                                </div>
+                            </div>
 
-        
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-control-material">
+                                        <textarea id="textarea" class="form-control" rows="5"></textarea ng-model="description"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                        <label for="textarea">Description</label>
+                                    </div>
+                                </div>
+                            </div>
 
-    </div>
-    <!-- // END Panes -->
-
-</div>
-<!-- // END Tabbable Widget -->
+                            <div class="form-group margin-none">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                   <center><button type="submit" class="btn btn-primary">Sign in</button></center>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
 
                 </div>

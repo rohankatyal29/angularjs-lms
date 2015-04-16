@@ -1,10 +1,10 @@
 angular.module('app').factory('HttpService', function ($log, $q, $http, $state, $rootScope ) {
     
-    var rest_root = 'http://10.31.169.169:8080/lms/api'; 
+    var rest_root = 'http://localhost:8040/lms/api'; 
     var node_root ;
 
     var nodeUrl = function (path) {
-        return node_root + path;
+        return node_root + path;   
     };
 
     var restUrl = function (path) {

@@ -3,7 +3,7 @@
         {% include "src/html/themes/html/courses/_listing-grid-widget.html" {
         coverBg: "bg-primary",
         coverIcon: "::courseIconPicker()::",
-        coverBtn: "btn-primary",
+        coverBtn: "btn-primary", 
         coverHeight: "height-100",
         itemTitle: "::course.name::",
         itemLabel: "bg-gray-dark",
@@ -14,7 +14,9 @@
         itemOverview: "::course.overview::",
         itemDescription: true,
         itemUrl: itemUrl,
-        lessonsBar: "progress-bar-grey-600" } %}
+        lessonsBar: "progress-bar-grey-600",
+        courseID: "::course.id::"
+         } %}
     </div>
 </div>
 {% include "src/html/themes/html/_pagination.html" %}

@@ -35,10 +35,12 @@ require('./angular/services/StudentService');
 require('./angular/services/CourseService');
 require('./angular/services/RandomDataGeneratorService');
 
+// Custom Factories
+require('./angular/factories/LocalStorageFactory');  
+
 // Custom Controllers 
 require('./angular/controllers/StudentsController');
 require('./angular/controllers/CourseController');
-
 require('./angular/controllers/StudentTakeCourseController');
 require('./angular/controllers/StudentTakeCourseInfoController');
 require('./angular/controllers/StudentTakeCourseAnnouncementController');
@@ -46,6 +48,7 @@ require('./angular/controllers/StudentTakeCourseDeadlinesController');
 require('./angular/controllers/StudentTakeCourseResourcesController');
 require('./angular/controllers/StudentTakeCourseGradesController');
 require('./angular/controllers/StudentTakeCourseDiscussionController');
+require('./angular/controllers/StudentTakeCourseStudentsController');
 
 
 

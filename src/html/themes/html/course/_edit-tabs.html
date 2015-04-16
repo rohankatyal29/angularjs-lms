@@ -1,37 +1,60 @@
-<!-- Tabbable Widget -->
-<div class="tabbable paper-shadow relative" data-z="0.5">
+<div class="panel panel-default">
+                    <div class="panel-body">
+                       <form class="form-horizontal ng-pristine ng-valid" role="form" ng-submit="createNewCourse()">
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-control-material">
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Type here.." ng-model="courseName"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                        <label for="inputEmail3">Course name</label>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- Tabs -->
-    <ul class="nav nav-tabs">
-        <li{% if !angular && page.slug|contains('-edit-course') %} class="active"{% endif %}{% if angular %} ui-sref-active="active"{% endif %}><a {% if angular %}ui-sref="{{ slug or 'app' }}-instructor.edit-course"{% else %}href="{{ slug or 'app' }}-instructor-course-edit-course.html"{% endif %}><i class="fa fa-fw fa-lock"></i> <span class="hidden-sm hidden-xs">Course</span></a></li>
-        <li{% if !angular && page.slug|contains('-meta') %} class="active"{% endif %}{% if angular %} ui-sref-active="active"{% endif %}><a {% if angular %}ui-sref="{{ slug or 'app' }}-instructor.edit-course-meta"{% else %}href="{{ slug or 'app' }}-instructor-course-edit-meta.html"{% endif %}><i class="fa fa-fw fa-credit-card"></i> <span class="hidden-sm hidden-xs">Meta</span></a></li>
-        <li{% if !angular && page.slug|contains('-lessons') %} class="active"{% endif %}{% if angular %} ui-sref-active="active"{% endif %}><a {% if angular %}ui-sref="{{ slug or 'app' }}-instructor.edit-course-lessons"{% else %}href="{{ slug or 'app' }}-instructor-course-edit-lessons.html"{% endif %}><i class="fa fa-fw fa-credit-card"></i> <span class="hidden-sm hidden-xs">Lessons</span></a></li>
-    </ul>
-    <!-- // END Tabs -->
+                       <form class="form-horizontal ng-pristine ng-valid" role="form">
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-control-material">
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Type here.." ng-model="domain"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                        <label for="inputEmail3">Domain</label>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- Panes -->
-    <div class="tab-content">
 
-        {% if tab == 'course' %}
-        <div id="course" class="tab-pane active">
-            {% include "src/html/themes/html/course/_edit-course.html" %}
-        </div>
-        {% endif %}
+                       <form class="form-horizontal ng-pristine ng-valid" role="form">
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-control-material">
+                                        <input type="number" class="form-control" id="inputEmail3" placeholder="Type here.." ng-model="credits"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                        <label for="inputEmail3">Credits</label>
+                                    </div>
+                                </div>
+                            </div>
 
-        {% if tab == 'meta' %}
-        <div id="meta" class="tab-pane active">
-            {% include "src/html/themes/html/course/_edit-meta.html" %}
-        </div>
-        {% endif %}
+                       <form class="form-horizontal ng-pristine ng-valid" role="form">
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-control-material">
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Type here.." ng-model="overview"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                        <label for="inputEmail3">Overview</label>
+                                    </div>
+                                </div>
+                            </div>
 
-        {% if tab == 'lessons' %}
-        <div id="lessons" class="tab-pane active">
-            {% include "src/html/themes/html/course/_edit-lessons.html" %}
-        </div>
-        {% endif %}
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-control-material">
+                                        <textarea id="textarea" class="form-control" rows="5"></textarea ng-model="description"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                        <label for="textarea">Description</label>
+                                    </div>
+                                </div>
+                            </div>
 
-    </div>
-    <!-- // END Panes -->
-
-</div>
-<!-- // END Tabbable Widget -->
+                            <div class="form-group margin-none">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                   <center><button type="submit" class="btn btn-primary">Sign in</button></center>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>

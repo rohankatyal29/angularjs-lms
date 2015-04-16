@@ -228,7 +228,7 @@
                     .state('website-student.take-course-students', {
                         url: '/take-course-students',
                         templateUrl: 'website/student-take-course-students.html',
-                        controller:  'StudentsController'
+                        controller:  'StudentTakeCourseStudentsController'  
                     })
                     .state('website-student.course-forums', {
                         url: '/course-forums',
@@ -304,10 +304,7 @@
                     .state('website-instructor.edit-course', {
                         url: '/edit-course',
                         templateUrl: 'website/instructor-edit-course.html',
-                        controller: ['$scope', function($scope){
-                            $scope.app.settings.htmlClass = htmlClass.website;
-                            $scope.app.settings.bodyClass = '';
-                        }]
+                        controller: 'CourseController'
                     })
                     .state('website-instructor.edit-course-meta', {
                         url: '/edit-course-meta',
