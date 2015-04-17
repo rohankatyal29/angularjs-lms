@@ -9,13 +9,15 @@
         'ui.utils',
         'ui.jq',
         'ngCookies', 
-        'LocalStorageModule'
+        'LocalStorageModule', 
+        'angularFileUpload'
     ]);
 
     var app = angular.module('app')
         .config(
         [ '$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$interpolateProvider', 'localStorageServiceProvider',
             function ($controllerProvider, $compileProvider, $filterProvider, $provide, $interpolateProvider, localStorageServiceProvider) {
+                
                 app.controller = $controllerProvider.register;
                 app.directive = $compileProvider.directive;
                 app.filter = $filterProvider.register;
@@ -34,5 +36,13 @@
                     .setStorageCookieDomain('');
                 }
         ]);
+
+// angular.module('app').controller('Constants', ['$scope', '$rootScope', 'localStorageService',function ($scope, $rootScope, localStorageService) {
+//     // TODO: change to the VM base url
+//     localStorageService.set('baseUrl', '10.31.169.169:8080/lms/api/');        
+// }]);      
+
+                
+
 
 })();

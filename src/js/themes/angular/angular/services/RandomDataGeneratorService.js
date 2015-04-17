@@ -1,4 +1,4 @@
-angular.module('app').service('RandomDataGeneratorService',  function ( ) {
+angular.module('app').service('RandomDataGeneratorService',  function () {
 
     var images = ["guy-1.jpg", "guy-2.jpg", "guy-3.jpg", "guy-4.jpg", "guy-5.jpg", "guy-6.jpg",  "guy-7.jpg",  "guy-8.jpg", "woman-1.jpg", "woman-2.jpg", "woman-3.jpg", "woman-4.jpg", "woman-5.jpg", "woman-6.jpg", "woman-7.jpg", "woman-8.jpg"];
     var classes = ["primary", "success", "danger", "info", "warning"];
@@ -18,7 +18,8 @@ angular.module('app').service('RandomDataGeneratorService',  function ( ) {
     // for grid course listing     
     var courseIconPicker = function() {
         courseIconPickerIndex = courseIconPickerIndex >= 5 ? 0 : (courseIconPickerIndex + 1) ;
-        return "fa-" + icons[courseIconPickerIndex];
+        // return "fa-" + icons[courseIconPickerIndex];
+        return "fa-windows";
     };   
        
     // for grid course listing 
@@ -33,5 +34,5 @@ angular.module('app').service('RandomDataGeneratorService',  function ( ) {
         courseBackgroundColorPicker: courseBackgroundColorPicker
     };
 
-});
+});   
  

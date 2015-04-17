@@ -39,7 +39,9 @@
 			"angular-sanitize/angular-sanitize.js",
 			"angular-touch/angular-touch.js",
 			"angular-ui-router/release/angular-ui-router.js",
-			"angular-ui-utils/ui-utils.js"
+			"angular-ui-utils/ui-utils.js", 
+			"ng-file-upload/dist/angular-file-upload-shim.js",
+			"ng-file-upload/dist/angular-file-upload.js"
 		],
 		"themes": ["angular"]
 	},

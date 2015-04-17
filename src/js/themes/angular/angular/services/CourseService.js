@@ -11,10 +11,6 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
             deferred.resolve(courses);
         } else{
             HttpService.get('/courses', {
-                    page: 1,
-                    start: 0,
-                    "items-per-page": 1000,
-                    "run-stateless": "true",
                     "data": null
             }).then(function(data){
                     courses = data;
@@ -28,24 +24,14 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
 
     var getCourseForID = function (courseId) {
         var deferred = $q.defer();
-        if(dataFetched){
-            deferred.resolve(course);    
-        } else{
-            HttpService.get('/courses/' + courseId, {
-                    page: 1,
-                    start: 0,
-                    "items-per-page": 1000,
-                    "run-stateless": "true",
-                    "data": null
-            }).then(function(data){
-                    course = data;
-                    deferred.resolve(course);
-                });
-            dataFetched = true;
-        }
+        HttpService.get('/courses/' + courseId, {
+            "data": null
+        }, false, false, false).then(function(data){
+                course = data;
+                deferred.resolve(course);
+            });
         return deferred.promise;
     };
-
 
     var createNewCourse = function (data) {
         return HttpService.post('/courses', { "data": data });
@@ -56,5 +42,5 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
         getCourseForID : getCourseForID,
         createNewCourse: createNewCourse
     };
-
-}]);  
+      
+}]);   

@@ -31,9 +31,9 @@
     </div>
     {% if itemBody !== false %}
     <!-- change course details -->
-    <div class="panel-body">
-        <h4 class="text-headline margin-v-0-10"><a{% if angular %} ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %} href="{{ itemUrl or 'website-course.html' }}"{% endif %} ng-click="setCourseId('0801e24080053ab5');">{{ itemTitle }}</a></h4> 
-        {% if itemRating !== false %}
+    <div class="panel-body" >
+        <h4 class="text-headline margin-v-0-10"><a{% if angular %} ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %} href="{{ itemUrl or 'website-course.html' }}"{% endif %} ng-click="setCourseId('{{ courseID }}');">{{ itemTitle }}</a></h4>  
+        {% if itemRating !== false %}  
         <p class="small margin-none">
             <span class="fa fa-fw fa-star text-yellow-800"></span>
             <span class="fa fa-fw fa-star text-yellow-800"></span>
@@ -53,7 +53,7 @@
             <i class="fa fa-clock-o fa-fw"></i> 4 hrs &nbsp;
             <i class="fa fa-calendar fa-fw"></i> 21/10/14
             <br/>
-            <i class="fa fa-user fa-fw"></i> Instructor: Adrian Demian
+            <i class="fa fa-user fa-fw"></i> Instructor: {{ instructor }}
         </p>
         {% endif %}
         {% if itemMeta2 !== false %}
@@ -62,7 +62,7 @@
                 <img src="images/people/50/guy-{{ random(1,9) }}.jpg" alt="People" class="img-circle width-40"/>
             </div>
             <div class="media-body">
-                <h4><a href="">Adrian Demian</a><br/></h4>
+                <h4><a href="">{{ instructor }}</a><br/></h4>
                 Instructor
             </div>
         </div>

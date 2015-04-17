@@ -85,7 +85,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active"><a ui-sref="website-student.dashboard">Dashboard</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.courses">My Courses</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-student.courses" >My Courses</a></li>
                         <li ui-sref-active="active"><a ui-sref="website-student.take-course">Take Course</a></li>
                         <li ng-class="{ 'active' : $state.is('website-student.course-forums') || $state.is('website-student.course-forum-thread') }"><a ui-sref="website-student.course-forums">Course Forums</a></li>
                         <li ui-sref-active="active"><a ui-sref="website-student.take-quiz">Take Quiz</a></li>
@@ -141,23 +141,6 @@
     </div>
 </div>
 
-<div class="parallax overflow-hidden bg-blue-400 page-section third">
-    <div class="container parallax-layer" data-opacity="true">
-        <div class="media v-middle">
-            <div class="media-left text-center">
-                <a href="#"><img src="images/people/110/guy-1.jpg" alt="people" class="img-circle width-80"/></a>
-            </div>
-            <div class="media-body">
-                <h1 class="text-white text-display-1 margin-v-0">John Doe</h1>
-                <p class="text-subhead"><a class="link-white text-underline" href="website-instructor-public-profile.html">View public profile</a></p>
-            </div>
-            <div class="media-right">
-                <span class="label bg-blue-500">Instructor</span>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="container">
 
     <div class="page-section">
@@ -188,8 +171,8 @@
     </div>
     
     <!-- change course details -->
-    <div class="panel-body">
-        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-instructor.edit-course" ng-click="setCourseId('0801e24080053ab5');">Github Webhooks for Beginners</a></h4> 
+    <div class="panel-body" >
+        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-instructor.edit-course" ng-click="setCourseId('');">Github Webhooks for Beginners</a></h4>  
         
     </div>
     <hr class="margin-none" />
@@ -225,8 +208,8 @@
     </div>
     
     <!-- change course details -->
-    <div class="panel-body">
-        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-instructor.edit-course" ng-click="setCourseId('0801e24080053ab5');">Awesome CSS with LESS Processing</a></h4> 
+    <div class="panel-body" >
+        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-instructor.edit-course" ng-click="setCourseId('');">Awesome CSS with LESS Processing</a></h4>  
         
     </div>
     <hr class="margin-none" />
@@ -262,8 +245,8 @@
     </div>
     
     <!-- change course details -->
-    <div class="panel-body">
-        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-instructor.edit-course" ng-click="setCourseId('0801e24080053ab5');">Vagrant Portable Environments</a></h4> 
+    <div class="panel-body" >
+        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-instructor.edit-course" ng-click="setCourseId('');">Vagrant Portable Environments</a></h4>  
         
     </div>
     <hr class="margin-none" />

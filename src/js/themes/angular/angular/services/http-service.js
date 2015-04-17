@@ -1,5 +1,6 @@
 angular.module('app').factory('HttpService', function ($log, $q, $http, $state, $rootScope ) {
     
+    //TODO: change to the VM base url
     var rest_root = 'http://localhost:8040/lms/api'; 
     var node_root ;
 

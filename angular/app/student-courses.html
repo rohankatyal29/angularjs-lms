@@ -286,13 +286,14 @@
 </div>
 
 <div class="row" data-toggle="isotope">
+
     <div class="item col-xs-12 col-sm-6 col-lg-4" ng-repeat="course in courses">
         <div class="panel panel-default paper-shadow" data-z="0.5">
     
     <div class="panel-heading">
         <div class="media media-clearfix-xs-min v-middle">
             <div class="media-body text-caption text-light">
-                Lessons 4 of 7
+                Lessons 1 of 8
             </div>
             <div class="media-right">
                 <div class="progress progress-mini width-100 margin-none">
@@ -305,13 +306,13 @@
     
     <div class="cover overlay cover-image-full hover">
         <span class="img icon-block height-100 bg-primary"></span>
-        <a ui-sref="app-student-courses.take-course" class="padding-none overlay overlay-full icon-block bg-primary">
+        <a ui-sref="website-student.take-course-course-info" class="padding-none overlay overlay-full icon-block bg-primary">
             <span class="v-center">
                 <i class="fa ::courseIconPicker()::"></i>
             </span>
         </a>
         
-        <a ui-sref="app-student-courses.take-course" class="overlay overlay-full overlay-hover overlay-bg-white">
+        <a ui-sref="website-student.take-course-course-info" class="overlay overlay-full overlay-hover overlay-bg-white">
             <span class="v-center">
                 <span class="btn btn-circle btn-primary btn-lg"><i class="fa fa-graduation-cap"></i></span>
             </span>
@@ -320,16 +321,8 @@
     </div>
     
     <!-- change course details -->
-    <div class="panel-body">
-        <h4 class="text-headline margin-v-0-10"><a ui-sref="app-student-courses.take-course" ng-click="setCourseId('0801e24080053ab5');">::course.name::</a></h4> 
-        
-        <p class="small margin-none">
-            <span class="fa fa-fw fa-star text-yellow-800"></span>
-            <span class="fa fa-fw fa-star text-yellow-800"></span>
-            <span class="fa fa-fw fa-star text-yellow-800"></span>
-            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-        </p>
+    <div class="panel-body" >
+        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-student.take-course-course-info" ng-click="setCourseId('::course.id::');">::course.name::</a></h4>  
         
     </div>
     <hr class="margin-none" />
@@ -341,30 +334,24 @@
         
         <div class="media v-middle">
             <div class="media-left">
-                <img src="images/people/50/guy-5.jpg" alt="People" class="img-circle width-40"/>
+                <img src="images/people/50/guy-1.jpg" alt="People" class="img-circle width-40"/>
             </div>
             <div class="media-body">
-                <h4><a href="">Adrian Demian</a><br/></h4>
+                <h4><a href="">::course.instructors[0].name::</a><br/></h4>
                 Instructor
             </div>
         </div>
         
         
         
-        <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated ui-sref="app-student-courses.take-course">Go to course</a>
+        <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated ui-sref="website-student.take-course-course-info">Go to course</a>
         
     </div>
     
 </div>
     </div>
 </div>
-<ul class="pagination margin-top-none">
-    <li class="disabled"><a href="#">&laquo;</a></li>
-    <li class="active"><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">&raquo;</a></li>
-</ul>
+  
 
                 </div>
 

@@ -85,7 +85,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active"><a ui-sref="website-student.dashboard">Dashboard</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.courses">My Courses</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-student.courses" >My Courses</a></li>
                         <li ui-sref-active="active"><a ui-sref="website-student.take-course">Take Course</a></li>
                         <li ng-class="{ 'active' : $state.is('website-student.course-forums') || $state.is('website-student.course-forum-thread') }"><a ui-sref="website-student.course-forums">Course Forums</a></li>
                         <li ui-sref-active="active"><a ui-sref="website-student.take-quiz">Take Quiz</a></li>
@@ -150,13 +150,14 @@
 
                 
     <div class="row" data-toggle="isotope">
+
     <div class="item col-xs-12 col-sm-6 col-lg-4" ng-repeat="course in courses">
         <div class="panel panel-default paper-shadow" data-z="0.5">
     
     <div class="panel-heading">
         <div class="media media-clearfix-xs-min v-middle">
             <div class="media-body text-caption text-light">
-                Lessons 2 of 8
+                Lessons 1 of 10
             </div>
             <div class="media-right">
                 <div class="progress progress-mini width-100 margin-none">
@@ -169,13 +170,13 @@
     
     <div class="cover overlay cover-image-full hover">
         <span class="img icon-block height-100 bg-primary"></span>
-        <a ui-sref="website-student.take-course" class="padding-none overlay overlay-full icon-block bg-primary">
+        <a ui-sref="website-student.take-course-course-info" class="padding-none overlay overlay-full icon-block bg-primary">
             <span class="v-center">
                 <i class="fa ::courseIconPicker()::"></i>
             </span>
         </a>
         
-        <a ui-sref="website-student.take-course" class="overlay overlay-full overlay-hover overlay-bg-white">
+        <a ui-sref="website-student.take-course-course-info" class="overlay overlay-full overlay-hover overlay-bg-white">
             <span class="v-center">
                 <span class="btn btn-circle btn-primary btn-lg"><i class="fa fa-graduation-cap"></i></span>
             </span>
@@ -184,16 +185,8 @@
     </div>
     
     <!-- change course details -->
-    <div class="panel-body">
-        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-student.take-course" ng-click="setCourseId('0801e24080053ab5');">::course.name::</a></h4> 
-        
-        <p class="small margin-none">
-            <span class="fa fa-fw fa-star text-yellow-800"></span>
-            <span class="fa fa-fw fa-star text-yellow-800"></span>
-            <span class="fa fa-fw fa-star text-yellow-800"></span>
-            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-        </p>
+    <div class="panel-body" >
+        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-student.take-course-course-info" ng-click="setCourseId('::course.id::');">::course.name::</a></h4>  
         
     </div>
     <hr class="margin-none" />
@@ -205,62 +198,54 @@
         
         <div class="media v-middle">
             <div class="media-left">
-                <img src="images/people/50/guy-3.jpg" alt="People" class="img-circle width-40"/>
+                <img src="images/people/50/guy-9.jpg" alt="People" class="img-circle width-40"/>
             </div>
             <div class="media-body">
-                <h4><a href="">Adrian Demian</a><br/></h4>
+                <h4><a href="">::course.instructors[0].name::</a><br/></h4>
                 Instructor
             </div>
         </div>
         
         
         
-        <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated ui-sref="website-student.take-course">Go to course</a>
+        <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated ui-sref="website-student.take-course-course-info">Go to course</a>
         
     </div>
     
 </div>
     </div>
 </div>
-<ul class="pagination margin-top-none">
-    <li class="disabled"><a href="#">&laquo;</a></li>
-    <li class="active"><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">&raquo;</a></li>
-</ul>
+  
 
 
-                <br/>
-                <br/>
 
             </div>
-<!--             <div class="col-md-3">
+            <div class="col-md-3">
+			
+                <div class="panel panel-default paper-shadow" data-z="0.5">
+                    <div class="cover overlay cover-image-full hover" style="height: 150px;">
+                        <span class="img icon-block height-150 bg-grey-200"></span>
+                        <a ui-sref="website-courses.list" ng-click="getAllUnregisteredCourses();" class="padding-none overlay overlay-full icon-block bg-grey-200" href="#/website-courses/list" style="height: 150px;">
+                            <span class="v-center">
+        <i class="fa fa-plus text-grey-600"></i>
+    </span>
+                        </a>
+                    </div>
+                </div>
+        
 
-                <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
-    <div class="panel-heading panel-collapse-trigger">
-        <h4 class="panel-title">Recent updates</h4>
-    </div>
-    <div class="panel-body list-group">
-        <ul class="list-group list-group-menu">
-            <li class="list-group-item" ui-sref-active="active"><a class="link-text-color" ui-sref="website-student.dashboard">New assignment 1 </a></li>
-            <li class="list-group-item" ui-sref-active="active"><a class="link-text-color" ui-sref="website-student.dashboard">New deadline 1 </a></li>
-            <li class="list-group-item" ui-sref-active="active"><a class="link-text-color" ui-sref="website-student.dashboard">New announcement 1 </a></li>
-        </ul>
-    </div>
-</div>
-
-
-
-            </div> -->
+            </div>
 
         </div>
     </div>
 
 </div>
+</div>   
 
 <!-- Footer -->
 <footer class="footer" style="background: #444444">
     <strong></strong> v1.0.0 &copy; Copyright 2015
 </footer>
 <!-- // Footer -->
+
+

@@ -127,18 +127,13 @@
 
             <div class="col-xs-6 col-sm-3 add-info" style="color:#fff">
               <p><strong>Instructors</strong></p>
-                  <a href="#" class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                      <img title="" data-toggle="tooltip" data-placement="top" src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Vinayak Naik">
-                        <!--  -->
-                    </a>
-                  <br>
-                  <a href="#" class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                      <img title="" data-toggle="tooltip" data-placement="top" src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Nikita Jain">
-
-                      Nikita Jain
-                    </a>
-                  <br>
-            <br>
+              <ul>
+                  <li ng-repeat="instructor in course.instructors">  
+                        <img title="" data-toggle="tooltip" data-placement="top" src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title= "::instructor.name::" >
+                          ::instructor.name::
+                    <br>
+                  </li>
+              </ul>
             </div>
 
             <div class="col-xs-6 col-sm-3 add-info">
@@ -214,78 +209,18 @@
 
                 
     
-<div style="position: relative; min-height: 50px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;">  
-	<h4>Quiz copies
-		<span class="label label-default new-response-label">New</span>
-	</h4>
+<div style="position: relative; min-height: 50px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;" ng-repeat="announcement in course.announcements">  
+	<h4>::announcement.announcement_title::</h4>
 	<p>
-		<a href="#" data-toggle="modal">
-	  	Nikita Jain
-		</a>
-		announced <abbr class="timeago" title="2015-04-10 08:29:35 +0530">about 5 hours ago</abbr>
+	
+		announced <abbr class="timeago" >::announcement.created_time | date:'yyyy-MM-dd HH:mm:ss Z'::</abbr>
 	</p>
 
-	<p>We'll show the copies on Saturday in class timings and not again.&nbsp;All regrading request will be taken in the class itself.&nbsp;so if you are interested please be there in Saturday''s class.</p>
-</div>
-
-<div style="position: relative; min-height: 50px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;">  
-	<h4>Quiz copies
-		<span class="label label-default new-response-label">New</span>
-	</h4>
-	<p>
-		<a href="#" data-toggle="modal">
-	  	Nikita Jain
-		</a>
-		announced <abbr class="timeago" title="2015-04-10 08:29:35 +0530">about 5 hours ago</abbr>
-	</p>
-
-	<p>We'll show the copies on Saturday in class timings and not again.&nbsp;All regrading request will be taken in the class itself.&nbsp;so if you are interested please be there in Saturday''s class.</p>
+	<p>::announcement.announcement_text::</p>
 </div>
 
 
-<div style="position: relative; min-height: 50px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;">  
-	<h4>Quiz copies
-		<span class="label label-default new-response-label">New</span>
-	</h4>
-	<p>
-		<a href="#" data-toggle="modal">
-	  	Nikita Jain
-		</a>
-		announced <abbr class="timeago" title="2015-04-10 08:29:35 +0530">about 5 hours ago</abbr>
-	</p>
 
-	<p>We'll show the copies on Saturday in class timings and not again.&nbsp;All regrading request will be taken in the class itself.&nbsp;so if you are interested please be there in Saturday''s class.</p>
-</div>
-
-
-<div style="position: relative; min-height: 50px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;">  
-	<h4>Quiz copies
-		<span class="label label-default new-response-label">New</span>
-	</h4>
-	<p>
-		<a href="#" data-toggle="modal">
-	  	Nikita Jain
-		</a>
-		announced <abbr class="timeago" title="2015-04-10 08:29:35 +0530">about 5 hours ago</abbr>
-	</p>
-
-	<p>We'll show the copies on Saturday in class timings and not again.&nbsp;All regrading request will be taken in the class itself.&nbsp;so if you are interested please be there in Saturday''s class.</p>
-</div>
-
-
-<div style="position: relative; min-height: 50px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;">  
-	<h4>Quiz copies
-		<span class="label label-default new-response-label">New</span>
-	</h4>
-	<p>
-		<a href="#" data-toggle="modal">
-	  	Nikita Jain
-		</a>
-		announced <abbr class="timeago" title="2015-04-10 08:29:35 +0530">about 5 hours ago</abbr>
-	</p>
-
-	<p>We'll show the copies on Saturday in class timings and not again.&nbsp;All regrading request will be taken in the class itself.&nbsp;so if you are interested please be there in Saturday''s class.</p>
-</div>
 
 
 

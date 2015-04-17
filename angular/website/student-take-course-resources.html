@@ -127,18 +127,13 @@
 
             <div class="col-xs-6 col-sm-3 add-info" style="color:#fff">
               <p><strong>Instructors</strong></p>
-                  <a href="#" class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                      <img title="" data-toggle="tooltip" data-placement="top" src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Vinayak Naik">
-                        <!--  -->
-                    </a>
-                  <br>
-                  <a href="#" class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                      <img title="" data-toggle="tooltip" data-placement="top" src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Nikita Jain">
-
-                      Nikita Jain
-                    </a>
-                  <br>
-            <br>
+              <ul>
+                  <li ng-repeat="instructor in course.instructors">  
+                        <img title="" data-toggle="tooltip" data-placement="top" src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title= "::instructor.name::" >
+                          ::instructor.name::
+                    <br>
+                  </li>
+              </ul>
             </div>
 
             <div class="col-xs-6 col-sm-3 add-info">
@@ -213,290 +208,24 @@
             <div class="col-md-9">
 
                 
-    <div class="page-section" ng-class="{ 'padding-top-none': $state.includes('website-student') }">
-    <div class="media media-grid v-middle">
-        <div class="media-left">
-            <span class="icon-block half bg-blue-300 text-white">2</span>
-        </div>
-        <div class="media-body">
-            <h1 class="text-display-1 margin-none">The MVC architectural pattern</h1>
-        </div>
-    </div>
-    <br/>
-    <p class="text-body-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventore minus optio ratione veritatis. Beatae deserunt illum ipsam magni minima mollitia officiis quia tempora! Aliquid autem beatae, dignissimos exercitationem illum, incidunt itaque libero, minima molestiae necessitatibus perferendis quae quas quidem recusandae sit! Esse maxime porro provident quasi?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda aut debitis, ducimus, ea eaque earum eius enim eos explicabo facilis harum impedit natus nemo, nobis obcaecati omnis perspiciatis praesentium quaerat quas quod reprehenderit sapiente temporibus vel voluptatem voluptates voluptatibus?</p>
+     <center><button style="margin: 20px 20px 20px 20px;" class="btn btn-primary" ng-file-select ng-model="files">Upload course material</button></center>
+
+ <div class="box" style="position: relative; min-height: 50px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;" ng-repeat="course_material in courseMaterials">
+
+    <!-- If there is a resource attached -->
+     <button class="btn btn-info btn-sm pull-right" style="margin-top:15px;"><a href="http://10.31.169.169:8080/lms/api/courses/::course.id::/course_material/::course_material.id::" target="_blank"><font color="white">Download resource</font></a></button>
+    <!-- End of resource part -->
+
+    <h4>
+        ::course_material.name::
+    </h4>
+
+    <p>
+      uploaded <abbr class="timeago" title="2015-04-15 10:51:50 +0530"> :: course_material.created_time | date:'yyyy-MM-dd HH:mm:ss Z'::</abbr>
+    </p>
 </div>
 
-<h5 class="text-subhead-2 text-light">Curriculum</h5>
-<div class="panel panel-default curriculum open paper-shadow" data-z="0.5">
-    <div class="panel-heading panel-heading-gray" data-toggle="collapse" data-target="#curriculum-1">
-        <div class="media">
-            <div class="media-left">
-                <span class="icon-block img-circle bg-indigo-300 half text-white"><i class="fa fa-graduation-cap"></i></span>
-            </div>
-            <div class="media-body">
-                <h4 class="text-headline">Chapter 1</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cumque minima nemo repudiandae rerum! Aspernatur at, autem expedita id illum laudantium molestias officiis quaerat, rem sapiente sint totam velit. Enim.</p>
-            </div>
-        </div>
-        <span class="collapse-status collapse-open">Open</span>
-        <span class="collapse-status collapse-close">Close</span>
-    </div>
-    <div class="list-group collapse in" id="curriculum-1">
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">1.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-green-300"></i>
-                Installation
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">2:03 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media active" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">2.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-blue-300"></i>
-                The MVC architectural pattern
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">25:01 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">3.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Database Models
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">12:10 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">4.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Database Access
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">1:25 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">5.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Eloquent Basics
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">22:30 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="website-student.take-quiz">
-            <div class="media-left">
-                <div class="text-crt">6.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Take Quiz
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">10:00 min</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="panel panel-default curriculum paper-shadow" data-z="0.5">
-    <div class="panel-heading panel-heading-gray" data-toggle="collapse" data-target="#curriculum-2">
-        <div class="media">
-            <div class="media-left">
-                <span class="icon-block half img-circle bg-orange-300 text-white"><i class="fa fa-graduation-cap"></i></span>
-            </div>
-            <div class="media-body">
-                <h4 class="text-headline">Chapter 2</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cumque minima nemo repudiandae rerum! Aspernatur at, autem expedita id illum laudantium molestias officiis quaerat, rem sapiente sint totam velit. Enim.</p>
-            </div>
-        </div>
-        <span class="collapse-status collapse-open">Open</span>
-        <span class="collapse-status collapse-close">Close</span>
-    </div>
-    <div class="list-group collapse" id="curriculum-2">
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">1.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Installation
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">2:03 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">2.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                The MVC architectural pattern
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">25:01 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">3.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Database Models
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">12:10 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">4.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Database Access
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">1:25 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">5.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Eloquent Basics
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">22:30 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="website-student.take-quiz">
-            <div class="media-left">
-                <div class="text-crt">6.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Take Quiz
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">10:00 min</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="panel panel-default curriculum paper-shadow" data-z="0.5">
-    <div class="panel-heading panel-heading-gray" data-toggle="collapse" data-target="#curriculum-3">
-        <div class="media">
-            <div class="media-left">
-                <span class="icon-block half img-circle bg-green-300 text-white"><i class="fa fa-graduation-cap"></i></span>
-            </div>
-            <div class="media-body">
-                <h4 class="text-headline">Chapter 3</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cumque minima nemo repudiandae rerum! Aspernatur at, autem expedita id illum laudantium molestias officiis quaerat, rem sapiente sint totam velit. Enim.</p>
-            </div>
-        </div>
-        <span class="collapse-status collapse-open">Open</span>
-        <span class="collapse-status collapse-close">Close</span>
-    </div>
-    <div class="list-group collapse" id="curriculum-3">
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">1.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Installation
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">2:03 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">2.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                The MVC architectural pattern
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">25:01 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">3.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Database Models
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">12:10 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">4.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Database Access
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">1:25 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="::$state.current.name::">
-            <div class="media-left">
-                <div class="text-crt">5.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Eloquent Basics
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">22:30 min</div>
-            </div>
-        </div>
-        <div class="list-group-item media" data-target="website-student.take-quiz">
-            <div class="media-left">
-                <div class="text-crt">6.</div>
-            </div>
-            <div class="media-body">
-                <i class="fa fa-fw fa-circle text-grey-200"></i>
-                Take Quiz
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right text-caption">10:00 min</div>
-            </div>
-        </div>
-    </div>
-</div>
+  
 
 
                 <br/>

@@ -127,18 +127,13 @@
 
             <div class="col-xs-6 col-sm-3 add-info" style="color:#fff">
               <p><strong>Instructors</strong></p>
-                  <a href="#" class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                      <img title="" data-toggle="tooltip" data-placement="top" src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Vinayak Naik">
-                        <!--  -->
-                    </a>
-                  <br>
-                  <a href="#" class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                      <img title="" data-toggle="tooltip" data-placement="top" src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Nikita Jain">
-
-                      Nikita Jain
-                    </a>
-                  <br>
-            <br>
+              <ul>
+                  <li ng-repeat="instructor in course.instructors">  
+                        <img title="" data-toggle="tooltip" data-placement="top" src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title= "::instructor.name::" >
+                          ::instructor.name::
+                    <br>
+                  </li>
+              </ul>
             </div>
 
             <div class="col-xs-6 col-sm-3 add-info">
@@ -267,7 +262,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 4</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 17</a>
 	</div>
 </li>
 
@@ -288,7 +283,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 17</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 2</a>
 	</div>
 </li>
 
@@ -309,7 +304,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 16</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 8</a>
 	</div>
 </li>
 
@@ -330,7 +325,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 10</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 6</a>
 	</div>
 </li>
 
@@ -351,7 +346,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 3</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 1</a>
 	</div>
 </li>
 
@@ -372,7 +367,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 12</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 16</a>
 	</div>
 </li>
 
@@ -414,7 +409,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 17</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 7</a>
 	</div>
 </li>
 
@@ -435,7 +430,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 11</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 13</a>
 	</div>
 </li>
 

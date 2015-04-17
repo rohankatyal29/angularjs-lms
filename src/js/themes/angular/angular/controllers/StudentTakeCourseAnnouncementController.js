@@ -4,9 +4,8 @@ angular.module('app').controller('StudentTakeCourseAnnouncementController', ['$s
     	return RandomDataGeneratorService.personImagePicker();
   	};
 
-    $scope.$on('$viewContentLoaded', function(){
-      $scope.course = localStorageService.get('course');
- 	  }); 
-         	 
+    $scope.$on('$viewContentLoaded', function(){  
+      $scope.course = localStorageService.get("course");
+    });       	 
 }]);
   

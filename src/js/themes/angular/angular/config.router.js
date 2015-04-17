@@ -157,10 +157,7 @@
                     .state('website-courses.list', {
                         url: '/list',
                         templateUrl: 'website/courses-list.html',
-                        controller: ['$scope', function($scope){
-                            $scope.app.settings.htmlClass = htmlClass.website;
-                            $scope.app.settings.bodyClass = '';
-                        }]
+                        controller: 'CourseController'
                     })
                     .state('website-courses.single', {
                         url: '/single',

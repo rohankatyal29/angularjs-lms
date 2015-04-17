@@ -85,7 +85,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active"><a ui-sref="website-student.dashboard">Dashboard</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.courses">My Courses</a></li>
+                        <li ui-sref-active="active"><a ui-sref="website-student.courses" >My Courses</a></li>
                         <li ui-sref-active="active"><a ui-sref="website-student.take-course">Take Course</a></li>
                         <li ng-class="{ 'active' : $state.is('website-student.course-forums') || $state.is('website-student.course-forum-thread') }"><a ui-sref="website-student.course-forums">Course Forums</a></li>
                         <li ui-sref-active="active"><a ui-sref="website-student.take-quiz">Take Quiz</a></li>
@@ -141,25 +141,6 @@
     </div>
 </div>
 
-<div class="parallax bg-white page-section">
-    <div class="container parallax-layer" data-opacity="true">
-        <div class="media v-middle">
-            <div class="media-body">
-                <h1 class="text-display-2 margin-none">Library</h1>
-                <p class="text-light lead">Browse through thousands of lessons.</p>
-            </div>
-            <div class="media-right">
-                <div class="width-100 text-right">
-                    <div class="btn-group">
-                        <a ng-class="{ 'btn-grey-900': $state.is('website-courses.grid'), 'btn-white': !$state.is('website-courses.grid') }" class="btn btn-white" ui-sref="website-courses.grid"><i class="fa fa-th"></i></a>
-                        <a ng-class="{ 'btn-grey-900': $state.is('website-courses.list'), 'btn-white': !$state.is('website-courses.list') }" class="btn btn-white" ui-sref="website-courses.list"><i class="fa fa-list"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="container">
 
     <div class="page-section">
@@ -189,9 +170,9 @@
     </div>
     
     <!-- change course details -->
-    <div class="panel-body">
-        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-courses.single" ng-click="setCourseId('0801e24080053ab5');">Github Webhooks for Beginners</a></h4> 
-        
+    <div class="panel-body" >
+        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-courses.single" ng-click="setCourseId('');">Github Webhooks for Beginners</a></h4>  
+          
         <p class="small margin-none">
             <span class="fa fa-fw fa-star text-yellow-800"></span>
             <span class="fa fa-fw fa-star text-yellow-800"></span>
@@ -210,10 +191,10 @@
         
         <div class="media v-middle">
             <div class="media-left">
-                <img src="images/people/50/guy-6.jpg" alt="People" class="img-circle width-40"/>
+                <img src="images/people/50/guy-2.jpg" alt="People" class="img-circle width-40"/>
             </div>
             <div class="media-body">
-                <h4><a href="">Adrian Demian</a><br/></h4>
+                <h4><a href=""></a><br/></h4>
                 Instructor
             </div>
         </div>
@@ -244,9 +225,9 @@
     </div>
     
     <!-- change course details -->
-    <div class="panel-body">
-        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-courses.single" ng-click="setCourseId('0801e24080053ab5');">Awesome CSS with LESS Processing</a></h4> 
-        
+    <div class="panel-body" >
+        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-courses.single" ng-click="setCourseId('');">Awesome CSS with LESS Processing</a></h4>  
+          
         <p class="small margin-none">
             <span class="fa fa-fw fa-star text-yellow-800"></span>
             <span class="fa fa-fw fa-star text-yellow-800"></span>
@@ -265,10 +246,10 @@
         
         <div class="media v-middle">
             <div class="media-left">
-                <img src="images/people/50/guy-7.jpg" alt="People" class="img-circle width-40"/>
+                <img src="images/people/50/guy-5.jpg" alt="People" class="img-circle width-40"/>
             </div>
             <div class="media-body">
-                <h4><a href="">Adrian Demian</a><br/></h4>
+                <h4><a href=""></a><br/></h4>
                 Instructor
             </div>
         </div>
@@ -299,9 +280,9 @@
     </div>
     
     <!-- change course details -->
-    <div class="panel-body">
-        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-courses.single" ng-click="setCourseId('0801e24080053ab5');">Vagrant Portable Environments</a></h4> 
-        
+    <div class="panel-body" >
+        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-courses.single" ng-click="setCourseId('');">Vagrant Portable Environments</a></h4>  
+          
         <p class="small margin-none">
             <span class="fa fa-fw fa-star text-yellow-800"></span>
             <span class="fa fa-fw fa-star text-yellow-800"></span>
@@ -320,10 +301,10 @@
         
         <div class="media v-middle">
             <div class="media-left">
-                <img src="images/people/50/guy-1.jpg" alt="People" class="img-circle width-40"/>
+                <img src="images/people/50/guy-8.jpg" alt="People" class="img-circle width-40"/>
             </div>
             <div class="media-body">
-                <h4><a href="">Adrian Demian</a><br/></h4>
+                <h4><a href=""></a><br/></h4>
                 Instructor
             </div>
         </div>
@@ -354,9 +335,9 @@
     </div>
     
     <!-- change course details -->
-    <div class="panel-body">
-        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-courses.single" ng-click="setCourseId('0801e24080053ab5');">WordPress Theme Development</a></h4> 
-        
+    <div class="panel-body" >
+        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-courses.single" ng-click="setCourseId('');">WordPress Theme Development</a></h4>  
+          
         <p class="small margin-none">
             <span class="fa fa-fw fa-star text-yellow-800"></span>
             <span class="fa fa-fw fa-star text-yellow-800"></span>
@@ -375,10 +356,10 @@
         
         <div class="media v-middle">
             <div class="media-left">
-                <img src="images/people/50/guy-6.jpg" alt="People" class="img-circle width-40"/>
+                <img src="images/people/50/guy-4.jpg" alt="People" class="img-circle width-40"/>
             </div>
             <div class="media-body">
-                <h4><a href="">Adrian Demian</a><br/></h4>
+                <h4><a href=""></a><br/></h4>
                 Instructor
             </div>
         </div>
@@ -409,9 +390,9 @@
     </div>
     
     <!-- change course details -->
-    <div class="panel-body">
-        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-courses.single" ng-click="setCourseId('0801e24080053ab5');">Browserify: Writing Modular JavaScript</a></h4> 
-        
+    <div class="panel-body" >
+        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-courses.single" ng-click="setCourseId('');">Browserify: Writing Modular JavaScript</a></h4>  
+          
         <p class="small margin-none">
             <span class="fa fa-fw fa-star text-yellow-800"></span>
             <span class="fa fa-fw fa-star text-yellow-800"></span>
@@ -430,10 +411,10 @@
         
         <div class="media v-middle">
             <div class="media-left">
-                <img src="images/people/50/guy-5.jpg" alt="People" class="img-circle width-40"/>
+                <img src="images/people/50/guy-3.jpg" alt="People" class="img-circle width-40"/>
             </div>
             <div class="media-body">
-                <h4><a href="">Adrian Demian</a><br/></h4>
+                <h4><a href=""></a><br/></h4>
                 Instructor
             </div>
         </div>
@@ -464,9 +445,9 @@
     </div>
     
     <!-- change course details -->
-    <div class="panel-body">
-        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-courses.single" ng-click="setCourseId('0801e24080053ab5');">Super Easy Online Payments with Stripe</a></h4> 
-        
+    <div class="panel-body" >
+        <h4 class="text-headline margin-v-0-10"><a ui-sref="website-courses.single" ng-click="setCourseId('');">Super Easy Online Payments with Stripe</a></h4>  
+          
         <p class="small margin-none">
             <span class="fa fa-fw fa-star text-yellow-800"></span>
             <span class="fa fa-fw fa-star text-yellow-800"></span>
@@ -485,10 +466,10 @@
         
         <div class="media v-middle">
             <div class="media-left">
-                <img src="images/people/50/guy-5.jpg" alt="People" class="img-circle width-40"/>
+                <img src="images/people/50/guy-4.jpg" alt="People" class="img-circle width-40"/>
             </div>
             <div class="media-body">
-                <h4><a href="">Adrian Demian</a><br/></h4>
+                <h4><a href=""></a><br/></h4>
                 Instructor
             </div>
         </div>
@@ -787,59 +768,6 @@
     </div>
 
 </div>
-
-<section class="footer-section">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 col-md-3">
-				<h4 class="text-headline text-light">Corporate</h4>
-				<ul class="list-unstyled">
-					<li><a href="#">About the company</a></li>
-					<li><a href="#">Company offices</a></li>
-					<li><a href="#">Partners</a></li>
-					<li><a href="#">Terms of use</a></li>
-					<li><a href="#">Privacy</a></li>
-					<li><a href="#">Contact us</a></li>
-				</ul>
-			</div>
-			<div class="col-sm-6 col-md-3">
-				<h4 class="text-headline text-light">Explore</h4>
-				<ul class="list-unstyled">
-					<li><a href="">Courses</a></li>
-					<li><a href="">Tutors</a></li>
-					<li><a href="">Pricing</a></li>
-					<li><a href="">Become Tutor</a></li>
-					<li><a href="">Sign Up</a></li>
-				</ul>
-			</div>
-			<div class="col-xs-12 col-md-6">
-				<h4 class="text-headline text-light">Newsletter</h4>
-
-				<div class="form-group">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Enter email here...">
-								<span class="input-group-btn">
-								<button class="btn btn-grey-800" type="button">Subscribe</button>
-							  </span>
-					</div>
-				</div>
-				<br/>
-				<p>
-					<a href="#" class="btn btn-indigo-500 btn-circle"><i class="fa fa-facebook"></i></a>
-					<a href="#" class="btn btn-pink-500 btn-circle"><i class="fa fa-dribbble"></i></a>
-					<a href="#" class="btn btn-blue-500 btn-circle"><i class="fa fa-twitter"></i></a>
-					<a href="#" class="btn btn-danger btn-circle"><i class="fa fa-google-plus"></i></a>
-				</p>
-
-				<p class="text-subhead">
-					&copy; 2015 Learning App by mosaicpro.
-				</p>
-
-			</div>
-		</div>
-	</div>
-	</div>
-</section>
 
 <!-- Footer -->
 <footer class="footer" style="background: #444444">
