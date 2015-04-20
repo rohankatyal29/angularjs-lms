@@ -4,12 +4,15 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
         	return RandomDataGeneratorService.courseIconPicker();
       };
 
+       $scope.personImagePicker = function(){
+          return RandomDataGeneratorService.personImagePicker();
+      };
+
       // fetches all the courses not enrolled by the current user 
       // TODO: Get only student specific courses
-      $scope.getAllUnregisteredCourses = function(){
-        alert("YES");
+      var getAllUnregisteredCourses = function(){
         CourseDataService.getAllCourses().then(function(data){
-          $scope.unregisteredCourses = data; 
+          $scope.unregisteredCourses = data;  
         });
       };
 
@@ -22,14 +25,13 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
       };
 
       $scope.setCourseId = function(id){
-
-        localStorageService.set('courseId', id);   
+        
+        localStorageService.set('courseId', id);
 
         CourseDataService.getCourseForID(id).then(function(data){
-          console.log(data);
           localStorageService.set("course", data); 
         });
-  
+   
       };   
 
       // create new course called by instructor
@@ -50,7 +52,8 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
       };   
 
       $scope.$on('$viewContentLoaded', function(){
-        getAllCourses();     
+        getAllCourses();
+        getAllUnregisteredCourses();     
       });     
 
 

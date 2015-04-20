@@ -4,9 +4,12 @@ angular.module('app').controller('StudentTakeCourseGradesController', ['$scope',
     	return RandomDataGeneratorService.personImagePicker();
     };
 	
-    $scope.$on('$viewContentLoaded', function(){
-      $scope.course = localStorageService.get('course');
- 	});  
+   $scope.$on('$viewContentLoaded', function(){  
+	    CourseDataService.getCourseForID(localStorageService.get("courseId")).then(function(data){
+	    	localStorageService.set("course", data); 
+	     	$scope.course = data;
+	    });
+    });   
 
 }]);
   

@@ -16,4 +16,4 @@ angular.module('app').controller('StudentTakeCourseStudentsController', ['$scope
  	});     	 
 
 }]);
-  
+    

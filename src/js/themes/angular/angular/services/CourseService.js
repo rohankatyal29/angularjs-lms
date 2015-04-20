@@ -1,4 +1,4 @@
-angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpService', '$q', function ($http, $rootScope, HttpService, $q) {
+angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpService', '$q', 'RandomDataGeneratorService', function ($http, $rootScope, HttpService, $q, RandomDataGeneratorService) {
 
     var courses = new Object({});
     var dataFetched = false;
@@ -10,10 +10,15 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
         if(dataFetched){
             deferred.resolve(courses);
         } else{
-            HttpService.get('/courses', {
+            HttpService.get('/courses', {  
                     "data": null
             }).then(function(data){
                     courses = data;
+                    courses.forEach(function(e){
+                        e.image = RandomDataGeneratorService.personImagePicker();
+                        e.icon = RandomDataGeneratorService.courseIconPicker();
+                        e.backgroundColor = RandomDataGeneratorService.courseBackgroundColorPicker();   
+                    });
                     deferred.resolve(courses);
                 });
             dataFetched = true;
@@ -24,7 +29,7 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
 
     var getCourseForID = function (courseId) {
         var deferred = $q.defer();
-        HttpService.get('/courses/' + courseId, {
+        HttpService.get('/courses/' + courseId.replace(/"/g , ""), {  
             "data": null
         }, false, false, false).then(function(data){
                 course = data;
@@ -36,7 +41,7 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
     var createNewCourse = function (data) {
         return HttpService.post('/courses', { "data": data });
     };
-
+  
     return {
         getAllCourses : getAllCourses, 
         getCourseForID : getCourseForID,
@@ -44,3 +49,5 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
     };
       
 }]);   
+
+

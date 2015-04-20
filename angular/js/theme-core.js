@@ -1590,12 +1590,15 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
         	return RandomDataGeneratorService.courseIconPicker();
       };
 
+       $scope.personImagePicker = function(){
+          return RandomDataGeneratorService.personImagePicker();
+      };
+
       // fetches all the courses not enrolled by the current user 
       // TODO: Get only student specific courses
-      $scope.getAllUnregisteredCourses = function(){
-        alert("YES");
+      var getAllUnregisteredCourses = function(){
         CourseDataService.getAllCourses().then(function(data){
-          $scope.unregisteredCourses = data; 
+          $scope.unregisteredCourses = data;  
         });
       };
 
@@ -1608,14 +1611,13 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
       };
 
       $scope.setCourseId = function(id){
-
-        localStorageService.set('courseId', id);   
+        
+        localStorageService.set('courseId', id);
 
         CourseDataService.getCourseForID(id).then(function(data){
-          console.log(data);
           localStorageService.set("course", data); 
         });
-  
+   
       };   
 
       // create new course called by instructor
@@ -1636,7 +1638,8 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
       };   
 
       $scope.$on('$viewContentLoaded', function(){
-        getAllCourses();     
+        getAllCourses();
+        getAllUnregisteredCourses();     
       });     
 
 
@@ -1652,7 +1655,10 @@ angular.module('app').controller('StudentTakeCourseAnnouncementController', ['$s
   	};
 
     $scope.$on('$viewContentLoaded', function(){  
-      $scope.course = localStorageService.get("course");
+	    CourseDataService.getCourseForID(localStorageService.get("courseId")).then(function(data){
+	    	localStorageService.set("course", data); 
+	     	$scope.course = data;
+	    });
     });       	 
 }]);
   
@@ -1690,10 +1696,6 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
     	return RandomDataGeneratorService.personImagePicker();
     };
 
-    $scope.$on('$viewContentLoaded', function(){
- 		$scope.course = localStorageService.get('course');  
- 	});
-
     // To upload solutions to deadlines
  	$scope.$watch('files', function () {
         $scope.upload($scope.files);
@@ -1705,7 +1707,7 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
             for (var i = 0; i < files.length; i++) {  
                 var file = files[i];
                 $upload.upload({
-                    url: 'http://10.31.169.169:8080/lms/api/courses/' + localStorageService.get("courseId").replace("\"","").replace("\"","") + '/course_material',
+                    url: 'http://10.31.169.169:8080/lms/api/courses/' + localStorageService.get("courseId").replace(/"/g , "") + '/course_material',
                     file: file
                 }).progress(function (evt) {
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
@@ -1715,7 +1717,14 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
                 });
             }
         }
-    };       	 
+    };    
+
+    $scope.$on('$viewContentLoaded', function(){  
+        CourseDataService.getCourseForID(localStorageService.get("courseId")).then(function(data){
+            localStorageService.set("course", data); 
+            $scope.course = data;
+        });
+    });     	 
 
 }]);
   
@@ -1726,10 +1735,12 @@ angular.module('app').controller('StudentTakeCourseDiscussionController', ['$sco
     	return RandomDataGeneratorService.personImagePicker();
     };  
 
-    $scope.$on('$viewContentLoaded', function(){
-      $scope.course = localStorageService.get('course');
- 	});     	 
-
+  	$scope.$on('$viewContentLoaded', function(){  
+	    CourseDataService.getCourseForID(localStorageService.get("courseId")).then(function(data){
+	    	localStorageService.set("course", data); 
+	     	$scope.course = data;
+	    });
+    });  
 
 }]);
   
@@ -1740,21 +1751,27 @@ angular.module('app').controller('StudentTakeCourseGradesController', ['$scope',
     	return RandomDataGeneratorService.personImagePicker();
     };
 	
-    $scope.$on('$viewContentLoaded', function(){
-      $scope.course = localStorageService.get('course');
- 	});  
+   $scope.$on('$viewContentLoaded', function(){  
+	    CourseDataService.getCourseForID(localStorageService.get("courseId")).then(function(data){
+	    	localStorageService.set("course", data); 
+	     	$scope.course = data;
+	    });
+    });   
 
 }]);
   
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentTakeCourseInfoController.js":[function(require,module,exports){
 angular.module('app').controller('StudentTakeCourseInfoController', [ '$scope',  '$rootScope','CourseDataService', 'RandomDataGeneratorService', 'localStorageService', function ($scope, $rootScope, CourseDataService, RandomDataGeneratorService, localStorageService){ 
+    
     $scope.personImagePicker = function(){
        return RandomDataGeneratorService.personImagePicker();
     };
     
-    $scope.$on('$viewContentLoaded', function(){
-      $scope.course = localStorageService.get('course');
- 	});     	 
+    $scope.$on('$viewContentLoaded', function(){  
+	    CourseDataService.getCourseForID(localStorageService.get("courseId")).then(function(data){
+	     	$scope.course = data;
+	    });
+    });      	 
 }]);    
   
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentTakeCourseResourcesController.js":[function(require,module,exports){
@@ -1776,7 +1793,7 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
             for (var i = 0; i < files.length; i++) {  
                 var file = files[i];
                 $upload.upload({
-                    url: 'http://10.31.169.169:8080/lms/api/courses/' + localStorageService.get("courseId").replace("\"","").replace("\"","") + '/course_material',
+                    url: 'http://10.31.169.169:8080/lms/api/courses/' + localStorageService.get("courseId").replace(/"/g , "") + '/course_material',
                     file: file
                 }).progress(function (evt) {
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
@@ -1788,13 +1805,14 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
         }
     };   
 
-
-    $scope.$on('$viewContentLoaded', function(){
-      $scope.baseUrl = "10.31.169.169:8080/lms/api"; //localStorageService.get('baseUrl');
-      $scope.course = localStorageService.get('course');
-      $scope.courseMaterials = $scope.course.courseMaterials;
- 	});     	 
-
+    $scope.$on('$viewContentLoaded', function(){  
+	    CourseDataService.getCourseForID(localStorageService.get("courseId")).then(function(data){
+	    	localStorageService.set("course", data); 
+	     	$scope.course = data;
+	     	$scope.courseMaterials = $scope.course.courseMaterials;
+	    });
+    });  
+ 	 
 }]);
     
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentTakeCourseStudentsController.js":[function(require,module,exports){
@@ -1816,7 +1834,7 @@ angular.module('app').controller('StudentTakeCourseStudentsController', ['$scope
  	});     	 
 
 }]);
-  
+    
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentsController.js":[function(require,module,exports){
 angular.module('app').controller('StudentsController', ['$scope', '$rootScope',  'StudentService', 'RandomDataGeneratorService', function ($scope, $rootScope, StudentService, RandomDataGeneratorService) {
        
@@ -1948,7 +1966,7 @@ angular.module('app').factory("LocalStorageFactory", function($window, $rootScop
 })();
 
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/services/CourseService.js":[function(require,module,exports){
-angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpService', '$q', function ($http, $rootScope, HttpService, $q) {
+angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpService', '$q', 'RandomDataGeneratorService', function ($http, $rootScope, HttpService, $q, RandomDataGeneratorService) {
 
     var courses = new Object({});
     var dataFetched = false;
@@ -1960,10 +1978,15 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
         if(dataFetched){
             deferred.resolve(courses);
         } else{
-            HttpService.get('/courses', {
+            HttpService.get('/courses', {  
                     "data": null
             }).then(function(data){
                     courses = data;
+                    courses.forEach(function(e){
+                        e.image = RandomDataGeneratorService.personImagePicker();
+                        e.icon = RandomDataGeneratorService.courseIconPicker();
+                        e.backgroundColor = RandomDataGeneratorService.courseBackgroundColorPicker();   
+                    });
                     deferred.resolve(courses);
                 });
             dataFetched = true;
@@ -1974,7 +1997,7 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
 
     var getCourseForID = function (courseId) {
         var deferred = $q.defer();
-        HttpService.get('/courses/' + courseId, {
+        HttpService.get('/courses/' + courseId.replace(/"/g , ""), {  
             "data": null
         }, false, false, false).then(function(data){
                 course = data;
@@ -1986,7 +2009,7 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
     var createNewCourse = function (data) {
         return HttpService.post('/courses', { "data": data });
     };
-
+  
     return {
         getAllCourses : getAllCourses, 
         getCourseForID : getCourseForID,
@@ -1994,6 +2017,8 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
     };
       
 }]);   
+
+
 
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/services/RandomDataGeneratorService.js":[function(require,module,exports){
 angular.module('app').service('RandomDataGeneratorService',  function () {
@@ -2006,30 +2031,29 @@ angular.module('app').service('RandomDataGeneratorService',  function () {
     var personImagePickerIndex = -1;
     var courseBackgroundColorPickerIndex = -1;
 
+    function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     // for TA and instructor images
     var personImagePicker = function() {
-       personImagePickerIndex = personImagePickerIndex >= 15 ? 0 : (personImagePickerIndex + 1);      
-       // return "images/people/50/" + images[personImagePickerIndex];
-        return "images/people/50/guy-1.jpg";
+       return "images/people/50/" + images[getRandomNumber(0, 15)];
     };
 
     // for grid course listing     
     var courseIconPicker = function() {
-        courseIconPickerIndex = courseIconPickerIndex >= 5 ? 0 : (courseIconPickerIndex + 1) ;
-        // return "fa-" + icons[courseIconPickerIndex];
-        return "fa-windows";
+        return "fa-" + icons[getRandomNumber(0, 5)];
     };   
        
     // for grid course listing 
     var courseBackgroundColorPicker = function () {
-        courseBackgroundColorPickerIndex = courseBackgroundColorPickerIndex >= 4 ? 0 : (courseBackgroundColorPicker + 1) ;
-        return "bg-" + classes[courseBackgroundColorPickerIndex];
+        return "bg-" + classes[getRandomNumber(0, 4)];   
     };
 
     return {
         personImagePicker : personImagePicker,
         courseIconPicker: courseIconPicker,
-        courseBackgroundColorPicker: courseBackgroundColorPicker
+        courseBackgroundColorPicker: courseBackgroundColorPicker  
     };
 
 });   

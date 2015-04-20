@@ -5,7 +5,10 @@ angular.module('app').controller('StudentTakeCourseAnnouncementController', ['$s
   	};
 
     $scope.$on('$viewContentLoaded', function(){  
-      $scope.course = localStorageService.get("course");
+	    CourseDataService.getCourseForID(localStorageService.get("courseId")).then(function(data){
+	    	localStorageService.set("course", data); 
+	     	$scope.course = data;
+	    });
     });       	 
 }]);
   

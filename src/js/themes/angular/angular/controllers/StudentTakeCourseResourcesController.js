@@ -16,7 +16,7 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
             for (var i = 0; i < files.length; i++) {  
                 var file = files[i];
                 $upload.upload({
-                    url: 'http://10.31.169.169:8080/lms/api/courses/' + localStorageService.get("courseId").replace("\"","").replace("\"","") + '/course_material',
+                    url: 'http://10.31.169.169:8080/lms/api/courses/' + localStorageService.get("courseId").replace(/"/g , "") + '/course_material',
                     file: file
                 }).progress(function (evt) {
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
@@ -28,12 +28,13 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
         }
     };   
 
-
-    $scope.$on('$viewContentLoaded', function(){
-      $scope.baseUrl = "10.31.169.169:8080/lms/api"; //localStorageService.get('baseUrl');
-      $scope.course = localStorageService.get('course');
-      $scope.courseMaterials = $scope.course.courseMaterials;
- 	});     	 
-
+    $scope.$on('$viewContentLoaded', function(){  
+	    CourseDataService.getCourseForID(localStorageService.get("courseId")).then(function(data){
+	    	localStorageService.set("course", data); 
+	     	$scope.course = data;
+	     	$scope.courseMaterials = $scope.course.courseMaterials;
+	    });
+    });  
+ 	 
 }]);
     

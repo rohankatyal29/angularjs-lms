@@ -8,30 +8,29 @@ angular.module('app').service('RandomDataGeneratorService',  function () {
     var personImagePickerIndex = -1;
     var courseBackgroundColorPickerIndex = -1;
 
+    function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     // for TA and instructor images
     var personImagePicker = function() {
-       personImagePickerIndex = personImagePickerIndex >= 15 ? 0 : (personImagePickerIndex + 1);      
-       // return "images/people/50/" + images[personImagePickerIndex];
-        return "images/people/50/guy-1.jpg";
+       return "images/people/50/" + images[getRandomNumber(0, 15)];
     };
 
     // for grid course listing     
     var courseIconPicker = function() {
-        courseIconPickerIndex = courseIconPickerIndex >= 5 ? 0 : (courseIconPickerIndex + 1) ;
-        // return "fa-" + icons[courseIconPickerIndex];
-        return "fa-windows";
+        return "fa-" + icons[getRandomNumber(0, 5)];
     };   
        
     // for grid course listing 
     var courseBackgroundColorPicker = function () {
-        courseBackgroundColorPickerIndex = courseBackgroundColorPickerIndex >= 4 ? 0 : (courseBackgroundColorPicker + 1) ;
-        return "bg-" + classes[courseBackgroundColorPickerIndex];
+        return "bg-" + classes[getRandomNumber(0, 4)];   
     };
 
     return {
         personImagePicker : personImagePicker,
         courseIconPicker: courseIconPicker,
-        courseBackgroundColorPicker: courseBackgroundColorPicker
+        courseBackgroundColorPicker: courseBackgroundColorPicker  
     };
 
 });   
