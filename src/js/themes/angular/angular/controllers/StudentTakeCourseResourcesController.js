@@ -1,4 +1,4 @@
-angular.module('app').controller('StudentTakeCourseResourcesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', 'localStorageService', '$upload',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload) {
+angular.module('app').controller('StudentTakeCourseResourcesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', 'localStorageService', '$upload', 'CONSTANTS',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS) {
   
     $scope.personImagePicker = function(){
     	return RandomDataGeneratorService.personImagePicker();
@@ -16,7 +16,7 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
             for (var i = 0; i < files.length; i++) {  
                 var file = files[i];
                 $upload.upload({
-                    url: 'http://10.31.169.169:8080/lms/api/courses/' + localStorageService.get("courseId").replace(/"/g , "") + '/course_material',
+                    url: CONSTANTS.rest_url + 'courses/' + localStorageService.get("courseId").replace(/"/g , "") + '/course_material',
                     file: file
                 }).progress(function (evt) {
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
@@ -33,6 +33,7 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
 	    	localStorageService.set("course", data); 
 	     	$scope.course = data;
 	     	$scope.courseMaterials = $scope.course.courseMaterials;
+            $scope.base_download_url = CONSTANTS.rest_url;
 	    });
     });  
  	 

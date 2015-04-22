@@ -41,7 +41,9 @@
 			"angular-ui-router/release/angular-ui-router.js",
 			"angular-ui-utils/ui-utils.js", 
 			"ng-file-upload/dist/angular-file-upload-shim.js",
-			"ng-file-upload/dist/angular-file-upload.js"
+			"ng-file-upload/dist/angular-file-upload.js",
+			"angular-loading-bar/build/loading-bar.js", 
+			"angular-animate/angular-animate.js"
 		],
 		"themes": ["angular"]
 	},

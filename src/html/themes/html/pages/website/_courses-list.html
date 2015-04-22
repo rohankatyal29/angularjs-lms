@@ -1,11 +1,44 @@
-<div ng-repeat ="course in unregisteredCourses" >
-	{% include "src/html/themes/html/courses/_listing-list-widget.html" {
-	coverBg: "bg-default",
-	coverIcon: "::courseIconPicker()::",
-	coverBtn: "btn-white",
-	itemTitle: "::course.name::",
-	courseOverview: "::course.overview::", 
-	courseInstructor: "::course.instructors[0].name::",
-	personImage: "::personImagePicker()::",
-	itemLabel: "bg-gray-dark" } %}  
+<div ng-repeat= "course in unregisteredCourses">
+	{% if itemWrapper !== false %}
+	<div class="panel panel-default paper-shadow" data-z="0.5">
+	    <div class="panel-body">
+	{% endif %}
+			<button ng-click="enroll('::course.id::')"class="btn btn-success btn-stroke pull-right" target="_blank" style="margin-top:10px;margin-right: 10px;">Enroll</button>
+		        <div class="media media-clearfix-xs">
+		            <div class="media-left text-center">
+		                <div class="cover width-150 width-100pc-xs overlay cover-image-full hover margin-v-0-10">
+		                    <span class="img icon-block height-130 ::course.backgroundColor::"></span>
+		                    <span class="overlay overlay-full padding-none icon-block ::course.backgroundColor::">
+		                        <span class="v-center">
+		                            <i class="fa ::course.icon::"></i>   
+		                        </span>
+		                    </span>
+		                    <a {% if angular %}ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %}href="{{ itemUrl or 'website-course.html' }}"{% endif %} class="overlay overlay-full overlay-hover overlay-bg-white">
+		                        <span class="v-center">
+		                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+		                        </span>
+		                    </a>
+		                </div>
+		            </div>
+		            <div class="media-body">
+		                <h4 class="text-headline margin-v-5-0"><a {% if angular %}ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %}href="{{ itemUrl or 'website-course.html' }}"{% endif %}>::course.name::</a></h4>
+		                <p>::course.overview::</p>
+		                {% if itemInstructor !== false %}
+						<hr class="margin-v-8" />
+		                <div class="media v-middle">
+		                    <div class="media-left">  
+		                        <img ng-src="::course.image::" alt="People" class="img-circle width-40"/>
+		                    </div>
+		                    <div class="media-body">
+		                        <h4><a href="">::course.instructors[0].name::</a><br/></h4>
+		                        Instructor
+		                    </div>
+		                </div>
+						{% endif %}
+		            </div>
+		        </div>
+	{% if itemWrapper !== false %}
+	    </div>
+	</div>
+	{% endif %}
 </div>

@@ -222,7 +222,7 @@
 
     <div class="panel panel-default">
                     <div class="panel-body">
-                       <form class="form-horizontal ng-pristine ng-valid" role="form" ng-submit="createNewCourse()">
+                       <form class="form-horizontal ng-pristine ng-valid" role="form" >
                             <div class="form-group">
                                 <div class="col-sm-9">
                                     <div class="form-control-material">
@@ -274,7 +274,7 @@
 
                             <div class="form-group margin-none">
                                 <div class="col-sm-offset-3 col-sm-9">
-                                   <center><button type="submit" class="btn btn-primary">Add new course</button></center>
+                                   <center><button type="submit" ng-click="createNewCourse()" class="btn btn-primary">Add new course</button></center>
                                 </div>
                             </div>
                         </form>

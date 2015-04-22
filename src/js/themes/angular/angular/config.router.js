@@ -29,6 +29,7 @@
                     .state('login', {
                         url: '/login',
                         templateUrl: 'website/login.html',
+                        controller: 'LoginController'
                     })
                     .state('sign-up', {
                         url: '/sign-up',
@@ -157,7 +158,7 @@
                     .state('website-courses.list', {
                         url: '/list',
                         templateUrl: 'website/courses-list.html',
-                        controller: 'CourseController'
+                        controller: 'StudentEnrollCourseController'
                     })
                     .state('website-courses.single', {
                         url: '/single',
@@ -301,7 +302,7 @@
                     .state('website-instructor.edit-course', {
                         url: '/edit-course',
                         templateUrl: 'website/instructor-edit-course.html',
-                        controller: 'CourseController'
+                        controller: 'AddNewCourseController'
                     })
                     .state('website-instructor.edit-course-meta', {
                         url: '/edit-course-meta',

@@ -103,7 +103,7 @@
     </div>
 </div>
 
-<div class="container" style="background-image: url(images/github-cover.jpg);">
+<div class="container" style="background-image: url('::course.coverImage::');">     
     <div class="course-cover">
     <div class="row-fluid">
       <div class="col-md-12 white nopadding cover-info">
@@ -129,7 +129,7 @@
               <p><strong>Instructors</strong></p>
               <ul>
                   <li ng-repeat="instructor in course.instructors">  
-                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title= "::instructor.name::" >
+                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::instructor.image::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title= "::instructor.name::" >
                           ::instructor.name::
                     <br>
                   </li>
@@ -216,7 +216,7 @@
                 adipisicing elit. Dolores, illo.</p>
         </div>
         <div class="media-right">
-            <a href="#" class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated><i class="fa fa-fw fa-plus"></i> New Topic</a>
+            <a href="#" class="btn btn-primary btn-stroke" data-z="0.5" data-hover-z="1" data-animated><i class="fa fa-fw fa-plus"></i> New Topic</a>
         </div>
     </div>
 </div>
@@ -241,7 +241,175 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 13</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 16</a>
+	</div>
+</li>
+
+        <li class="list-group-item media v-middle">
+	<div class="media-left">
+		<div class="icon-block half img-circle bg-grey-300">
+			<i class="fa fa-file-text text-white"></i>
+		</div>
+	</div>
+	<div class="media-body">
+		<h4 class="text-subhead margin-none">
+			<a ui-sref=website-student.course-forum-thread class="link-text-color">Can someone help me? I need a design advice</a>
+		</h4>
+		<div class="text-light text-caption">
+            posted by
+            <a href="#"><img src="images/people/110/woman-6.jpg" alt="person" class="img-circle width-20" /> Jennifer Hudson</a> &nbsp;
+            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
+		</div>
+	</div>
+	<div class="media-right">
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 3</a>
+	</div>
+</li>
+
+        <li class="list-group-item media v-middle">
+	<div class="media-left">
+		<div class="icon-block half img-circle bg-grey-300">
+			<i class="fa fa-file-text text-white"></i>
+		</div>
+	</div>
+	<div class="media-body">
+		<h4 class="text-subhead margin-none">
+			<a ui-sref=website-student.course-forum-thread class="link-text-color">I think this is the right way?</a>
+		</h4>
+		<div class="text-light text-caption">
+            posted by
+            <a href="#"><img src="images/people/110/woman-4.jpg" alt="person" class="img-circle width-20" /> Michelle Gustav</a> &nbsp;
+            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
+		</div>
+	</div>
+	<div class="media-right">
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 15</a>
+	</div>
+</li>
+
+        <li class="list-group-item media v-middle">
+	<div class="media-left">
+		<div class="icon-block half img-circle bg-grey-300">
+			<i class="fa fa-file-text text-white"></i>
+		</div>
+	</div>
+	<div class="media-body">
+		<h4 class="text-subhead margin-none">
+			<a ui-sref=website-student.course-forum-thread class="link-text-color">Getting around AngularJS</a>
+		</h4>
+		<div class="text-light text-caption">
+            posted by
+            <a href="#"><img src="images/people/110/guy-4.jpg" alt="person" class="img-circle width-20" /> Jonny Francine</a> &nbsp;
+            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
+		</div>
+	</div>
+	<div class="media-right">
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 2</a>
+	</div>
+</li>
+
+        <li class="list-group-item media v-middle">
+	<div class="media-left">
+		<div class="icon-block half img-circle bg-grey-300">
+			<i class="fa fa-file-text text-white"></i>
+		</div>
+	</div>
+	<div class="media-body">
+		<h4 class="text-subhead margin-none">
+			<a ui-sref=website-student.course-forum-thread class="link-text-color">I think this is the right way?</a>
+		</h4>
+		<div class="text-light text-caption">
+            posted by
+            <a href="#"><img src="images/people/110/woman-4.jpg" alt="person" class="img-circle width-20" /> Michelle Gustav</a> &nbsp;
+            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
+		</div>
+	</div>
+	<div class="media-right">
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 4</a>
+	</div>
+</li>
+
+        <li class="list-group-item media v-middle">
+	<div class="media-left">
+		<div class="icon-block half img-circle bg-grey-300">
+			<i class="fa fa-file-text text-white"></i>
+		</div>
+	</div>
+	<div class="media-body">
+		<h4 class="text-subhead margin-none">
+			<a ui-sref=website-student.course-forum-thread class="link-text-color">Responsive Bootstrap Question</a>
+		</h4>
+		<div class="text-light text-caption">
+            posted by
+            <a href="#"><img src="images/people/110/woman-5.jpg" alt="person" class="img-circle width-20" /> Mary Deb</a> &nbsp;
+            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
+		</div>
+	</div>
+	<div class="media-right">
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 4</a>
+	</div>
+</li>
+
+        <li class="list-group-item media v-middle">
+	<div class="media-left">
+		<div class="icon-block half img-circle bg-grey-300">
+			<i class="fa fa-file-text text-white"></i>
+		</div>
+	</div>
+	<div class="media-body">
+		<h4 class="text-subhead margin-none">
+			<a ui-sref=website-student.course-forum-thread class="link-text-color">Am I learning the right way?</a>
+		</h4>
+		<div class="text-light text-caption">
+            posted by
+            <a href="#"><img src="images/people/110/guy-6.jpg" alt="person" class="img-circle width-20" /> Adrian Demian</a> &nbsp;
+            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
+		</div>
+	</div>
+	<div class="media-right">
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 14</a>
+	</div>
+</li>
+
+        <li class="list-group-item media v-middle">
+	<div class="media-left">
+		<div class="icon-block half img-circle bg-grey-300">
+			<i class="fa fa-file-text text-white"></i>
+		</div>
+	</div>
+	<div class="media-body">
+		<h4 class="text-subhead margin-none">
+			<a ui-sref=website-student.course-forum-thread class="link-text-color">Responsive Bootstrap Question</a>
+		</h4>
+		<div class="text-light text-caption">
+            posted by
+            <a href="#"><img src="images/people/110/woman-5.jpg" alt="person" class="img-circle width-20" /> Mary Deb</a> &nbsp;
+            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
+		</div>
+	</div>
+	<div class="media-right">
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 7</a>
+	</div>
+</li>
+
+        <li class="list-group-item media v-middle">
+	<div class="media-left">
+		<div class="icon-block half img-circle bg-grey-300">
+			<i class="fa fa-file-text text-white"></i>
+		</div>
+	</div>
+	<div class="media-body">
+		<h4 class="text-subhead margin-none">
+			<a ui-sref=website-student.course-forum-thread class="link-text-color">Am I learning the right way?</a>
+		</h4>
+		<div class="text-light text-caption">
+            posted by
+            <a href="#"><img src="images/people/110/guy-6.jpg" alt="person" class="img-circle width-20" /> Adrian Demian</a> &nbsp;
+            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
+		</div>
+	</div>
+	<div class="media-right">
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 6</a>
 	</div>
 </li>
 
@@ -266,186 +434,9 @@
 	</div>
 </li>
 
-        <li class="list-group-item media v-middle">
-	<div class="media-left">
-		<div class="icon-block half img-circle bg-grey-300">
-			<i class="fa fa-file-text text-white"></i>
-		</div>
-	</div>
-	<div class="media-body">
-		<h4 class="text-subhead margin-none">
-			<a ui-sref=website-student.course-forum-thread class="link-text-color">I think this is the right way?</a>
-		</h4>
-		<div class="text-light text-caption">
-            posted by
-            <a href="#"><img src="images/people/110/woman-4.jpg" alt="person" class="img-circle width-20" /> Michelle Gustav</a> &nbsp;
-            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
-		</div>
-	</div>
-	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 16</a>
-	</div>
-</li>
-
-        <li class="list-group-item media v-middle">
-	<div class="media-left">
-		<div class="icon-block half img-circle bg-grey-300">
-			<i class="fa fa-file-text text-white"></i>
-		</div>
-	</div>
-	<div class="media-body">
-		<h4 class="text-subhead margin-none">
-			<a ui-sref=website-student.course-forum-thread class="link-text-color">Getting around AngularJS</a>
-		</h4>
-		<div class="text-light text-caption">
-            posted by
-            <a href="#"><img src="images/people/110/guy-4.jpg" alt="person" class="img-circle width-20" /> Jonny Francine</a> &nbsp;
-            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
-		</div>
-	</div>
-	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 10</a>
-	</div>
-</li>
-
-        <li class="list-group-item media v-middle">
-	<div class="media-left">
-		<div class="icon-block half img-circle bg-grey-300">
-			<i class="fa fa-file-text text-white"></i>
-		</div>
-	</div>
-	<div class="media-body">
-		<h4 class="text-subhead margin-none">
-			<a ui-sref=website-student.course-forum-thread class="link-text-color">I think this is the right way?</a>
-		</h4>
-		<div class="text-light text-caption">
-            posted by
-            <a href="#"><img src="images/people/110/woman-4.jpg" alt="person" class="img-circle width-20" /> Michelle Gustav</a> &nbsp;
-            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
-		</div>
-	</div>
-	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 13</a>
-	</div>
-</li>
-
-        <li class="list-group-item media v-middle">
-	<div class="media-left">
-		<div class="icon-block half img-circle bg-grey-300">
-			<i class="fa fa-file-text text-white"></i>
-		</div>
-	</div>
-	<div class="media-body">
-		<h4 class="text-subhead margin-none">
-			<a ui-sref=website-student.course-forum-thread class="link-text-color">Responsive Bootstrap Question</a>
-		</h4>
-		<div class="text-light text-caption">
-            posted by
-            <a href="#"><img src="images/people/110/woman-5.jpg" alt="person" class="img-circle width-20" /> Mary Deb</a> &nbsp;
-            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
-		</div>
-	</div>
-	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 17</a>
-	</div>
-</li>
-
-        <li class="list-group-item media v-middle">
-	<div class="media-left">
-		<div class="icon-block half img-circle bg-grey-300">
-			<i class="fa fa-file-text text-white"></i>
-		</div>
-	</div>
-	<div class="media-body">
-		<h4 class="text-subhead margin-none">
-			<a ui-sref=website-student.course-forum-thread class="link-text-color">Am I learning the right way?</a>
-		</h4>
-		<div class="text-light text-caption">
-            posted by
-            <a href="#"><img src="images/people/110/guy-6.jpg" alt="person" class="img-circle width-20" /> Adrian Demian</a> &nbsp;
-            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
-		</div>
-	</div>
-	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 15</a>
-	</div>
-</li>
-
-        <li class="list-group-item media v-middle">
-	<div class="media-left">
-		<div class="icon-block half img-circle bg-grey-300">
-			<i class="fa fa-file-text text-white"></i>
-		</div>
-	</div>
-	<div class="media-body">
-		<h4 class="text-subhead margin-none">
-			<a ui-sref=website-student.course-forum-thread class="link-text-color">Responsive Bootstrap Question</a>
-		</h4>
-		<div class="text-light text-caption">
-            posted by
-            <a href="#"><img src="images/people/110/woman-5.jpg" alt="person" class="img-circle width-20" /> Mary Deb</a> &nbsp;
-            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
-		</div>
-	</div>
-	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 12</a>
-	</div>
-</li>
-
-        <li class="list-group-item media v-middle">
-	<div class="media-left">
-		<div class="icon-block half img-circle bg-grey-300">
-			<i class="fa fa-file-text text-white"></i>
-		</div>
-	</div>
-	<div class="media-body">
-		<h4 class="text-subhead margin-none">
-			<a ui-sref=website-student.course-forum-thread class="link-text-color">Am I learning the right way?</a>
-		</h4>
-		<div class="text-light text-caption">
-            posted by
-            <a href="#"><img src="images/people/110/guy-6.jpg" alt="person" class="img-circle width-20" /> Adrian Demian</a> &nbsp;
-            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
-		</div>
-	</div>
-	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 12</a>
-	</div>
-</li>
-
-        <li class="list-group-item media v-middle">
-	<div class="media-left">
-		<div class="icon-block half img-circle bg-grey-300">
-			<i class="fa fa-file-text text-white"></i>
-		</div>
-	</div>
-	<div class="media-body">
-		<h4 class="text-subhead margin-none">
-			<a ui-sref=website-student.course-forum-thread class="link-text-color">Can someone help me? I need a design advice</a>
-		</h4>
-		<div class="text-light text-caption">
-            posted by
-            <a href="#"><img src="images/people/110/woman-6.jpg" alt="person" class="img-circle width-20" /> Jennifer Hudson</a> &nbsp;
-            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
-		</div>
-	</div>
-	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 5</a>
-	</div>
-</li>
-
     </ul>
 </div>
 
-<ul class="pagination margin-top-none">
-    <li class="disabled"><a href="#">&laquo;</a></li>
-    <li class="active"><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">&raquo;</a></li>
-</ul>
-
-<br/>
 
 
                 <br/>

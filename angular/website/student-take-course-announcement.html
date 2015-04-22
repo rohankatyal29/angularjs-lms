@@ -103,7 +103,7 @@
     </div>
 </div>
 
-<div class="container" style="background-image: url(images/github-cover.jpg);">
+<div class="container" style="background-image: url('::course.coverImage::');">     
     <div class="course-cover">
     <div class="row-fluid">
       <div class="col-md-12 white nopadding cover-info">
@@ -129,7 +129,7 @@
               <p><strong>Instructors</strong></p>
               <ul>
                   <li ng-repeat="instructor in course.instructors">  
-                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title= "::instructor.name::" >
+                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::instructor.image::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title= "::instructor.name::" >
                           ::instructor.name::
                     <br>
                   </li>
@@ -217,6 +217,10 @@
 	</p>
 
 	<p>::announcement.announcement_text::</p>
+</div>
+
+<div ng-if="course.announcements.length == 0">
+  	<center><h3>There are no announcements for ::course.name::</h3></center>
 </div>
 
 

@@ -103,7 +103,7 @@
     </div>
 </div>
 
-<div class="container" style="background-image: url(images/github-cover.jpg);">
+<div class="container" style="background-image: url('::course.coverImage::');">     
     <div class="course-cover">
     <div class="row-fluid">
       <div class="col-md-12 white nopadding cover-info">
@@ -129,7 +129,7 @@
               <p><strong>Instructors</strong></p>
               <ul>
                   <li ng-repeat="instructor in course.instructors">  
-                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title= "::instructor.name::" >
+                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::instructor.image::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title= "::instructor.name::" >
                           ::instructor.name::
                     <br>
                   </li>
@@ -213,7 +213,7 @@
  <div class="box" style="position: relative; min-height: 50px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;" ng-repeat="course_material in courseMaterials">
 
     <!-- If there is a resource attached -->
-     <button class="btn btn-info btn-sm pull-right" style="margin-top:15px;"><a href="http://10.31.169.169:8080/lms/api/courses/::course.id::/course_material/::course_material.id::" target="_blank"><font color="white">Download resource</font></a></button>
+     <a href="::base_download_url::courses/::course.id::/course_material/::course_material.id::" target="_blank"><button class="btn btn-primary btn-stroke pull-right" style="margin-top:15px;">Download</button></a>
     <!-- End of resource part -->
 
     <h4>
@@ -225,7 +225,10 @@
     </p>
 </div>
 
-  
+<div ng-if="courseMaterials.length == 0">
+  	<center><h3>There is no course material for ::course.name::</h3></center>
+</div>
+
 
 
                 <br/>

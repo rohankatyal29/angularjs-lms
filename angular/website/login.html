@@ -8,23 +8,23 @@
         <div class="panel-body">
             <div class="form-group">
                 <div class="form-control-material">
-                    <input class="form-control" id="username" type="text" placeholder="Username">
+                    <input ng-model="username" class="form-control" id="username" type="text" placeholder="Username">
                     <label for="username">Username</label>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-control-material">
-                    <input class="form-control" id="password" type="password" placeholder="Enter Password">
+                    <input ng-model="password" class="form-control" id="password" type="password" placeholder="Enter Password">
                     <label for="password">Password</label>
                 </div>
             </div>
 
-            <a ui-sref="website-student.courses" class="btn btn-primary">Login <i class="fa fa-fw fa-unlock-alt"></i></a>
-            <a href="#" class="forgot-password">Forgot password?</a>
-            <a ui-sref="sign-up" class="link-text-color">Create account</a>
+            <a data-ng-click="login()" class="btn btn-primary">Login <i class="fa fa-fw fa-unlock-alt"></i></a>
         </div>
     </div>
 </div>
+
+<center><h3>::authMsg::</h3></center>
 
     </div>
 </div>

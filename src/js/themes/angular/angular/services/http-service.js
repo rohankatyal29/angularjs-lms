@@ -1,8 +1,8 @@
-angular.module('app').factory('HttpService', function ($log, $q, $http, $state, $rootScope ) {
+angular.module('app').factory('HttpService', ['$log', '$q', '$http', '$state', '$rootScope', 'CONSTANTS' ,function ($log, $q, $http, $state, $rootScope, CONSTANTS ) {
     
     //TODO: change to the VM base url
-    var rest_root = 'http://localhost:8040/lms/api'; 
-    var node_root ;
+    var rest_root = CONSTANTS.rest_url_cors_proxy; 
+    var node_root;
 
     var nodeUrl = function (path) {
         return node_root + path;   
@@ -153,6 +153,6 @@ angular.module('app').factory('HttpService', function ($log, $q, $http, $state, 
         nodeUrl: nodeUrl,
         restUrl: restUrl
     };
-}); 
+}]); 
 
 

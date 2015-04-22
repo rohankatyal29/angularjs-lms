@@ -37,12 +37,11 @@
                 }
         ]);
 
-// angular.module('app').controller('Constants', ['$scope', '$rootScope', 'localStorageService',function ($scope, $rootScope, localStorageService) {
-//     // TODO: change to the VM base url
-//     localStorageService.set('baseUrl', '10.31.169.169:8080/lms/api/');        
-// }]);      
 
-                
+    //TODO: Put the correct URL and proxy details here 
+    app.constant("CONSTANTS", {
+        "rest_url": "http://10.31.169.169:8080/lms/api/",
+        "rest_url_cors_proxy": "http://localhost:8040/lms/api/"
+    });
 
-
-})();
+})();  
