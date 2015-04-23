@@ -1,5 +1,8 @@
 angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScope',  'CourseDataService','$http' ,'localStorageService',function ($scope, $rootScope, CourseDataService, $http, localStorageService) {
        
+
+      $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+      $scope.app.settings.bodyClass = '';
       
       // create new course called by instructor
       $scope.createNewCourse = function(){
@@ -23,12 +26,6 @@ angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScop
         CourseDataService.createNewCourse(data);   
 
       };   
-
-      // $scope.$on('$viewContentLoaded', function(){
-      //   alert("HERE");   
-      // });     
-
-
 
 }]); 
         

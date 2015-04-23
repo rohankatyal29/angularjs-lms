@@ -1,5 +1,10 @@
 angular.module('app').controller('StudentEnrollCourseController', ['$scope', '$rootScope',  'CourseDataService','$http' ,'localStorageService','$state',function ($scope, $rootScope, CourseDataService, $http, localStorageService, $state) {
        
+
+
+      $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+      $scope.app.settings.bodyClass = '';
+
       $scope.enroll = function(courseId){
         CourseDataService.registerCourseForStudent(localStorageService.get("currentUserId"), courseId).then(function(data){
           $state.go("website-courses.list");

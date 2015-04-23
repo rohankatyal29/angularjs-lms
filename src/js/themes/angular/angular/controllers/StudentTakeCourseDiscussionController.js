@@ -1,5 +1,8 @@
 angular.module('app').controller('StudentTakeCourseDiscussionController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', 'localStorageService',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService) {
   
+	$scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+    $scope.app.settings.bodyClass = '';
+
     $scope.personImagePicker = function(){
     	return RandomDataGeneratorService.personImagePicker();
     };  

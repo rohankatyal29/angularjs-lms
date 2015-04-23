@@ -1,5 +1,10 @@
 angular.module('app').controller('CourseController', ['$scope', '$rootScope',  'CourseDataService','RandomDataGeneratorService' ,'$http' ,'localStorageService',function ($scope, $rootScope, CourseDataService, RandomDataGeneratorService, $http, localStorageService) {
        
+ 
+
+      $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+      $scope.app.settings.bodyClass = '';
+
       // fetches all the courses not enrolled by the current user 
       // TODO: Get only student specific courses
       var getAllUnregisteredCourses = function(){

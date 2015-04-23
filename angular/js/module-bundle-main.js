@@ -6033,6 +6033,16 @@ require('./_sidebar-toggle');
             function ($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
+                 var htmlClass = {
+                    website: 'transition-navbar-scroll top-navbar-xlarge bottom-footer',
+                    websitePricing: 'top-navbar-xlarge bottom-footer app-desktop',
+                    websiteSurvey: 'top-navbar-xlarge bottom-footer app-desktop app-mobile',
+                    websiteLogin: 'hide-sidebar ls-bottom-footer',
+                    websiteTakeQuiz: 'transition-navbar-scroll top-navbar-xlarge bottom-footer app-desktop app-mobile',
+                    appl3: 'st-layout ls-top-navbar-large ls-bottom-footer show-sidebar sidebar-l3',
+                    appl1r3: 'st-layout ls-top-navbar-large ls-bottom-footer show-sidebar sidebar-l1 sidebar-r3'
+                };
+                $rootScope.htmlClass = htmlClass;
             }
         ])
         .config(
@@ -6694,6 +6704,9 @@ require('./_sidebar-toggle');
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/AddNewCourseController.js":[function(require,module,exports){
 angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScope',  'CourseDataService','$http' ,'localStorageService',function ($scope, $rootScope, CourseDataService, $http, localStorageService) {
        
+
+      $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+      $scope.app.settings.bodyClass = '';
       
       // create new course called by instructor
       $scope.createNewCourse = function(){
@@ -6718,18 +6731,17 @@ angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScop
 
       };   
 
-      // $scope.$on('$viewContentLoaded', function(){
-      //   alert("HERE");   
-      // });     
-
-
-
 }]); 
         
 
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/CourseController.js":[function(require,module,exports){
 angular.module('app').controller('CourseController', ['$scope', '$rootScope',  'CourseDataService','RandomDataGeneratorService' ,'$http' ,'localStorageService',function ($scope, $rootScope, CourseDataService, RandomDataGeneratorService, $http, localStorageService) {
        
+ 
+
+      $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+      $scope.app.settings.bodyClass = '';
+
       // fetches all the courses not enrolled by the current user 
       // TODO: Get only student specific courses
       var getAllUnregisteredCourses = function(){
@@ -6769,6 +6781,9 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/LoginController.js":[function(require,module,exports){
 angular.module('app').controller('LoginController', ['$scope', '$http', '$state', '$rootScope', '$q', 'HttpService', '$log', 'localStorageService', 'CONSTANTS', 'LoginService', function ($scope, $http, $state, $rootScope, $q, HttpService, $log, localStorageService, CONSTANTS, LoginService) {
 
+    $scope.app.settings.bodyClass = 'login';
+    $scope.app.settings.htmlClass = $rootScope.htmlClass.websiteLogin;
+
 
     $scope.login = function(){
         LoginService.checkCredentials($scope.username, $scope.password, "rohankatyal@gmail.com").then(function(data){
@@ -6807,6 +6822,11 @@ angular.module('app').controller('LoginController', ['$scope', '$http', '$state'
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentEnrollCourseController.js":[function(require,module,exports){
 angular.module('app').controller('StudentEnrollCourseController', ['$scope', '$rootScope',  'CourseDataService','$http' ,'localStorageService','$state',function ($scope, $rootScope, CourseDataService, $http, localStorageService, $state) {
        
+
+
+      $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+      $scope.app.settings.bodyClass = '';
+
       $scope.enroll = function(courseId){
         CourseDataService.registerCourseForStudent(localStorageService.get("currentUserId"), courseId).then(function(data){
           $state.go("website-courses.list");
@@ -6833,6 +6853,10 @@ angular.module('app').controller('StudentEnrollCourseController', ['$scope', '$r
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentTakeCourseAnnouncementController.js":[function(require,module,exports){
 angular.module('app').controller('StudentTakeCourseAnnouncementController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', '$cookies', 'localStorageService', function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, $cookies, localStorageService) {
   
+	$scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+    $scope.app.settings.bodyClass = '';
+
+
   	$scope.personImagePicker = function(){
     	return RandomDataGeneratorService.personImagePicker();
   	};
@@ -6848,6 +6872,9 @@ angular.module('app').controller('StudentTakeCourseAnnouncementController', ['$s
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentTakeCourseController.js":[function(require,module,exports){
 angular.module('app').controller('StudentTakeCourseController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', '$cookies', 'localStorageService',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, $cookies, localStorageService) {
   
+    $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+    $scope.app.settings.bodyClass = '';
+
     $scope.personImagePicker = function(){
     	return RandomDataGeneratorService.personImagePicker();
     };
@@ -6874,7 +6901,11 @@ angular.module('app').controller('StudentTakeCourseController', ['$scope', '$roo
    
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentTakeCourseDeadlinesController.js":[function(require,module,exports){
 angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService','localStorageService' ,'$upload', 'CONSTANTS',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS) {
-  
+    
+    $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+    $scope.app.settings.bodyClass = '';
+
+
     // $scope.personImagePicker = function(){
     // 	return RandomDataGeneratorService.personImagePicker();
     // };
@@ -6916,6 +6947,9 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentTakeCourseDiscussionController.js":[function(require,module,exports){
 angular.module('app').controller('StudentTakeCourseDiscussionController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', 'localStorageService',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService) {
   
+	$scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+    $scope.app.settings.bodyClass = '';
+
     $scope.personImagePicker = function(){
     	return RandomDataGeneratorService.personImagePicker();
     };  
@@ -6931,6 +6965,11 @@ angular.module('app').controller('StudentTakeCourseDiscussionController', ['$sco
   
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentTakeCourseGradesController.js":[function(require,module,exports){
 angular.module('app').controller('StudentTakeCourseGradesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', 'localStorageService', function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService) {
+  
+
+
+	$scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+    $scope.app.settings.bodyClass = '';
   
     $scope.personImagePicker = function(){
     	return RandomDataGeneratorService.personImagePicker();
@@ -6948,6 +6987,9 @@ angular.module('app').controller('StudentTakeCourseGradesController', ['$scope',
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentTakeCourseInfoController.js":[function(require,module,exports){
 angular.module('app').controller('StudentTakeCourseInfoController', [ '$scope',  '$rootScope','CourseDataService', 'RandomDataGeneratorService', 'localStorageService', 'CONSTANTS',function ($scope, $rootScope, CourseDataService, RandomDataGeneratorService, localStorageService, CONSTANTS){ 
     
+    $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+    $scope.app.settings.bodyClass = '';
+
     $scope.personImagePicker = function(){
        return RandomDataGeneratorService.personImagePicker();
     };
@@ -6962,6 +7004,10 @@ angular.module('app').controller('StudentTakeCourseInfoController', [ '$scope', 
   
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentTakeCourseResourcesController.js":[function(require,module,exports){
 angular.module('app').controller('StudentTakeCourseResourcesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', 'localStorageService', '$upload', 'CONSTANTS',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS) {
+  
+    $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+    $scope.app.settings.bodyClass = '';
+
   
     $scope.personImagePicker = function(){
     	return RandomDataGeneratorService.personImagePicker();
@@ -7004,6 +7050,9 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
     
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentTakeCourseStudentsController.js":[function(require,module,exports){
 angular.module('app').controller('StudentTakeCourseStudentsController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', 'localStorageService', 'StudentService',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, StudentService) {
+  
+	$scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+    $scope.app.settings.bodyClass = '';
   
     var getAllStudentsData = function(){
     		StudentService.getAllStudents().then(function(data){

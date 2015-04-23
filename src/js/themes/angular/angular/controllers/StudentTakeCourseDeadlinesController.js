@@ -1,5 +1,9 @@
 angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService','localStorageService' ,'$upload', 'CONSTANTS',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS) {
-  
+    
+    $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+    $scope.app.settings.bodyClass = '';
+
+
     // $scope.personImagePicker = function(){
     // 	return RandomDataGeneratorService.personImagePicker();
     // };
