@@ -1,15 +1,14 @@
 angular.module('app').service('LoginService',['$http', '$rootScope', 'HttpService', '$q',function ($http, $rootScope, HttpService, $q) {
 
-    var id = new Object({});
+    var user = new Object({});
 
     var checkCredentials = function (username, password, email) {
         var deferred = $q.defer();
-        HttpService.get('students/login', {  
+        HttpService.get('/students/login', {  
             'email' : email
         }).then(function(data){
-                console.log(data);
-                id = data;
-                deferred.resolve(id);   
+                user = data;
+                deferred.resolve(user);   
             });
         return deferred.promise;  
     };

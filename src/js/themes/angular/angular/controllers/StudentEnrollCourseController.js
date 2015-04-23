@@ -1,29 +1,51 @@
-angular.module('app').controller('StudentEnrollCourseController', ['$scope', '$rootScope',  'CourseDataService','$http' ,'localStorageService','$state',function ($scope, $rootScope, CourseDataService, $http, localStorageService, $state) {
-       
+angular.module('app').controller('StudentEnrollCourseController', ['$scope', '$rootScope',  'CourseDataService','$http' ,'localStorageService','$state','StudentService',function ($scope, $rootScope, CourseDataService, $http, localStorageService, $state, StudentService) {
+			 
+			$scope.user = localStorageService.get("user");
 
+			$scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+			$scope.app.settings.bodyClass = '';
 
-      $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
-      $scope.app.settings.bodyClass = '';
+			$scope.enroll = function(courseId){
+				CourseDataService.registerCourseForStudent($scope.user.id, courseId).then(function(data){
+					$state.go($state.$current, null, { reload: true });
+				});
+			};
 
-      $scope.enroll = function(courseId){
-        CourseDataService.registerCourseForStudent(localStorageService.get("currentUserId"), courseId).then(function(data){
-          $state.go("website-courses.list");
-        });
-      };
+			// fetches all the courses not enrolled by the current user 
+			$scope.unregisteredCourses = [];
+			var getAllUnregisteredCourses = function(){
+				CourseDataService.getAllCourses().then(function(data){
+					courses = data;
+					StudentService.getStudentForId($scope.user.id).then(function(data){
+						registeredCourses = data.courses;
+						courses.forEach(function(course){
 
-      // fetches all the courses not enrolled by the current user 
-      // TODO: Get only student specific courses
-      var getAllUnregisteredCourses = function(){
-        CourseDataService.getAllCourses().then(function(data){
-          $scope.unregisteredCourses = data;  
-        });
-      };
+							var id = course.id, flag = 0;
+							registeredCourses.forEach(function(registeredCourse){
 
-      $scope.$on('$viewContentLoaded', function(){
-        getAllUnregisteredCourses();     
-      });     
+								if(id === registeredCourse.id){
+									flag = 1;
+								}
+							});
 
-  
+							if(flag === 0){
+								$scope.unregisteredCourses.push(course);
+							}
+
+						});
+
+				});
+			
+
+				});
+
+			};
+
+			$scope.$on('$viewContentLoaded', function(){
+				getAllUnregisteredCourses();     
+			});     
+
+	
 
 }]); 
-        
+				

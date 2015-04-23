@@ -33,29 +33,9 @@
     <!-- change course details -->
     <div class="panel-body" >
         <h4 class="text-headline margin-v-0-10"><a{% if angular %} ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %} href="{{ itemUrl or 'website-course.html' }}"{% endif %} ng-click="setCourseId('{{ courseID }}');">{{ itemTitle }}</a></h4>  
-        {% if itemRating !== false %}  
-        <p class="small margin-none">
-            <span class="fa fa-fw fa-star text-yellow-800"></span>
-            <span class="fa fa-fw fa-star text-yellow-800"></span>
-            <span class="fa fa-fw fa-star text-yellow-800"></span>
-            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-        </p>
-        {% endif %}
     </div>
     <hr class="margin-none" />
     <div class="panel-body">
-        {% if itemDescription !== false %}
-            <p>{{itemOverview}}</p>
-        {% endif %}
-        {% if itemMeta !== false %}
-        <p class="text-caption text-light margin-none">
-            <i class="fa fa-clock-o fa-fw"></i> 4 hrs &nbsp;
-            <i class="fa fa-calendar fa-fw"></i> 21/10/14
-            <br/>
-            <i class="fa fa-user fa-fw"></i> Instructor: {{ instructor }}
-        </p>
-        {% endif %}
         {% if itemMeta2 !== false %}
         <div class="media v-middle">
             <div class="media-left">
@@ -66,14 +46,6 @@
                 Instructor
             </div>
         </div>
-        {% endif %}
-        {% if itemTags !== false %}
-        <span class="label {{ itemLabel or 'bg-gray-dark' }}">New</span>
-        <span class="label label-grey-200">WordPress</span>
-        <span class="label label-grey-200">Beginner</span>
-        {% endif %}
-        {% if itemButton !== false %}
-        <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated{% if angular %} ui-sref="{{ itemUrl or 'website-courses.single' }}"{% else %} href="{{ itemUrl or 'website-course.html' }}"{% endif %}>{% if itemButtonIcon %}<i class="fa fa-fw {{ itemButtonIcon }}"></i> {% endif %}{{ itemButtonText or 'Go to course' }}</a>
         {% endif %}
     </div>
     {% endif %}

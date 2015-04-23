@@ -28,6 +28,7 @@ require('./angular/directives/navbar-transition-scroll');
 require('./angular/directives/countdown');
 require('./angular/directives/curriculum');
 require('./angular/directives/flotchart-earnings');
+require('./angular/directives/modal');
 
 // Custom Services 
 require('./angular/services/http-service');

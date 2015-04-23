@@ -1,9 +1,9 @@
- <center><button style="margin: 20px 20px 20px 20px;" class="btn btn-primary" ng-file-select ng-model="files">Upload course material</button></center>
+<center><button style="margin: 20px 20px 20px 20px;" class="btn btn-primary btn-stroke" ng-file-select ng-model="files">Upload course material</button></center>
 
  <div class="box" style="position: relative; min-height: 50px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;" ng-repeat="course_material in courseMaterials">
 
     <!-- If there is a resource attached -->
-     <a href="::base_download_url::courses/::course.id::/course_material/::course_material.id::" target="_blank"><button class="btn btn-primary btn-stroke pull-right" style="margin-top:15px;">Download</button></a>
+     <a href="::base_download_url::/courses/::course.id::/course_material/::course_material.id::" target="_blank"><button class="btn btn-primary btn-stroke pull-right" style="margin-top:15px;">Download</button></a>
     <!-- End of resource part -->
 
     <h4>
@@ -11,7 +11,7 @@
     </h4>
 
     <p>
-      uploaded <abbr class="timeago" title="2015-04-15 10:51:50 +0530"> :: course_material.created_time | date:'yyyy-MM-dd HH:mm:ss Z'::</abbr>
+      uploaded <abbr class="timeago" title="2015-04-15 10:51:50 +0530"> :: course_material.created_time | date:'yyyy-MM-dd HH:mm:ss'::</abbr>
     </p>
 </div>
 

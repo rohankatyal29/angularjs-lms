@@ -1,8 +1,9 @@
-angular.module('app').service('StudentService', function ($http, $rootScope, HttpService, $q) {
+angular.module('app').service('StudentService', function ($http, $rootScope, HttpService, $q, RandomDataGeneratorService) {
 
     var studentData = new Object({});
     var dataFetched = false;
     var fetchedStudentid ='';
+    var student = new Object({});
 
     var getAllStudents = function () {
         var deferred = $q.defer();
@@ -25,6 +26,25 @@ angular.module('app').service('StudentService', function ($http, $rootScope, Htt
 
     };
 
+    var getStudentForId = function (studentId) {
+        var deferred = $q.defer();
+        HttpService.get('/students/' + studentId.replace(/"/g , ""), {  
+            "data": null
+        }, false, false, false).then(function(data){
+                student = data;
+                student.courses.forEach(function(e){
+                    
+                    //TODO: set TA's, cover photo and instructors image
+                    e.image = RandomDataGeneratorService.personImagePicker();
+                    e.icon = RandomDataGeneratorService.courseIconPicker();
+                    e.backgroundColor = RandomDataGeneratorService.courseBackgroundColorPicker();
+
+                });
+                deferred.resolve(student);   
+            });
+        return deferred.promise;  
+    };
+
     // var getAllStudents = function(){
     //     return [{name:'rohan', rollno: 2012086, emailid: 'rohan12086@iiitd.ac.in'},
     //             {name:'rohan', rollno: 2012086, emailid: 'rohan12086@iiitd.ac.in'},
@@ -43,7 +63,8 @@ angular.module('app').service('StudentService', function ($http, $rootScope, Htt
 
 
     return {
-        getAllStudents : getAllStudents
+        getAllStudents : getAllStudents, 
+        getStudentForId: getStudentForId
     };
 
 });

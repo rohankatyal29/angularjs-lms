@@ -1,18 +1,18 @@
 angular.module('app').controller('LoginController', ['$scope', '$http', '$state', '$rootScope', '$q', 'HttpService', '$log', 'localStorageService', 'CONSTANTS', 'LoginService', function ($scope, $http, $state, $rootScope, $q, HttpService, $log, localStorageService, CONSTANTS, LoginService) {
 
+
+    $scope.user = localStorageService.get("user");
+
     $scope.app.settings.bodyClass = 'login';
     $scope.app.settings.htmlClass = $rootScope.htmlClass.websiteLogin;
 
 
     $scope.login = function(){
         LoginService.checkCredentials($scope.username, $scope.password, "rohankatyal@gmail.com").then(function(data){
-           localStorageService.set("currentUserName", data.name);
-           localStorageService.set("currentUserId", data.id);
+           localStorageService.set("user", data);
            $state.go("website-student.courses");
         });
     };
-
-    
 
     //TODO: add error handling to the above function using the one below
     

@@ -1,18 +1,21 @@
-angular.module('app').controller('StudentTakeCourseResourcesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', 'localStorageService', '$upload', 'CONSTANTS',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS) {
+angular.module('app').controller('StudentTakeCourseResourcesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', 'localStorageService', '$upload', 'CONSTANTS', '$state',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS, $state) {
   
+    $scope.user = localStorageService.get("user");
+
     $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
     $scope.app.settings.bodyClass = '';
 
   
-    $scope.personImagePicker = function(){
-    	return RandomDataGeneratorService.personImagePicker();
-    };
-
-
     // To upload solutions to deadlines
  	$scope.$watch('files', function () {
-        $scope.upload($scope.files);
+        $scope.upload($scope.files);  
     });
+
+
+
+    var reloadPage = function(){
+        $state.go($state.$current, null, { reload: true });
+    };
 
     $scope.upload = function (files) {
         if (files && files.length) {
@@ -20,13 +23,15 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
             for (var i = 0; i < files.length; i++) {  
                 var file = files[i];
                 $upload.upload({
-                    url: CONSTANTS.rest_url + 'courses/' + localStorageService.get("courseId").replace(/"/g , "") + '/course_material',
+                    url: CONSTANTS.rest_url_cors_proxy + '/courses/' + localStorageService.get("courseId").replace(/"/g , "") + '/course_material',
                     file: file
                 }).progress(function (evt) {
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                     console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
                 }).success(function (data, status, headers, config) {
-                    console.log('file ' + config.file.name + 'uploaded. Response: ' + data);  
+                    reloadPage();
+                }).error(function(){
+                    reloadPage();
                 });
             }
         }
@@ -37,7 +42,7 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
 	    	localStorageService.set("course", data); 
 	     	$scope.course = data;
 	     	$scope.courseMaterials = $scope.course.courseMaterials;
-            $scope.base_download_url = CONSTANTS.rest_url;
+            $scope.base_download_url = CONSTANTS.rest_url_cors_proxy;
 	    });
     });  
  	 

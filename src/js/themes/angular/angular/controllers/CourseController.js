@@ -1,23 +1,62 @@
-angular.module('app').controller('CourseController', ['$scope', '$rootScope',  'CourseDataService','RandomDataGeneratorService' ,'$http' ,'localStorageService',function ($scope, $rootScope, CourseDataService, RandomDataGeneratorService, $http, localStorageService) {
+angular.module('app').controller('CourseController', ['$scope', '$rootScope',  'CourseDataService','RandomDataGeneratorService' ,'$http' ,'localStorageService', '$state', 'StudentService',function ($scope, $rootScope, CourseDataService, RandomDataGeneratorService, $http, localStorageService, $state, StudentService) {
        
- 
 
+      var courses, announcement, deadline;
+        
+      $scope.user = localStorageService.get("user");
+        
       $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
       $scope.app.settings.bodyClass = '';
 
-      // fetches all the courses not enrolled by the current user 
-      // TODO: Get only student specific courses
-      var getAllUnregisteredCourses = function(){
-        CourseDataService.getAllCourses().then(function(data){
-          $scope.unregisteredCourses = data;  
-        });
+      $scope.recentAnnouncements = [];
+      $scope.recentDeadlines = [];
+
+      var getRandomIndex = function(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
       };
 
 
-      //fetches all the courses from the API
-      var getAllCourses = function(){  
-        CourseDataService.getAllCourses().then(function(data){
-          $scope.courses = data; 
+      $scope.goToAnnouncement = function(courseId){
+        localStorageService.set('courseId', courseId);
+        $state.go('website-student.take-course-announcement');
+      };
+
+      $scope.goToDeadline = function(courseId){
+        localStorageService.set('courseId', courseId);
+        $state.go('website-student.take-course-deadlines');
+      };   
+
+
+
+      //TODO: change this to only current user updates
+      var getRecentUpdatesForStudent = function(){  
+        StudentService.getStudentForId($scope.user.id).then(function(data){
+    
+          registeredCourses = data.courses;
+
+          registeredCourses.forEach(function(course){
+
+            announcement = course.announcements[getRandomIndex(0, (course.announcements).length-1)];
+            deadline = course.assessments[getRandomIndex(0, (course.assessments).length-1)];
+
+            if(announcement){
+              $scope.recentAnnouncements.push({ "announcement": announcement, "course": course });
+            }
+          
+            if(deadline){
+              $scope.recentDeadlines.push({ "deadline": deadline , "course": course });
+            }
+
+          });
+        });
+      };
+  
+
+      //fetches registered courses for current user
+      var getRegisteredCourses = function(){  
+        StudentService.getStudentForId($scope.user.id).then(function(data){
+          $scope.courses = data.courses;
+          getRecentUpdatesForStudent();
         });
       };
 
@@ -32,10 +71,8 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
       };   
 
       $scope.$on('$viewContentLoaded', function(){
-        getAllCourses();
-        getAllUnregisteredCourses();     
-      });     
-
+        getRegisteredCourses();  
+      });       
 
 
 }]); 

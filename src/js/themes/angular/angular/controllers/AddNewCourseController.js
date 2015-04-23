@@ -1,5 +1,6 @@
-angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScope',  'CourseDataService','$http' ,'localStorageService',function ($scope, $rootScope, CourseDataService, $http, localStorageService) {
+angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScope',  'CourseDataService','$http' ,'localStorageService', '$state', function ($scope, $rootScope, CourseDataService, $http, localStorageService, $state) {
        
+      $scope.user = localStorageService.get("user");
 
       $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
       $scope.app.settings.bodyClass = '';
@@ -22,9 +23,8 @@ angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScop
           "textbooks":["Corporate Finance, 2nd Edition, by Ivo Welch.","Corporate Finance, 9th Edition, by Ross, Westerfield & Jaffee.","Principles of Corporate Finance, 10th Edition, by Brealey, Myers & Allen."]
         };
       
-
-        CourseDataService.createNewCourse(data);   
-
+        CourseDataService.createNewCourse(data); 
+        $state.go($state.$current, null, { reload: true });
       };   
 
 }]); 

@@ -1,8 +1,8 @@
 angular.module('app').service('RandomDataGeneratorService',  function () {
 
     var images = ["guy-1.jpg", "guy-2.jpg", "guy-3.jpg", "guy-4.jpg", "guy-5.jpg", "guy-6.jpg",  "guy-7.jpg",  "guy-8.jpg", "woman-1.jpg", "woman-2.jpg", "woman-3.jpg", "woman-4.jpg", "woman-5.jpg", "woman-6.jpg", "woman-7.jpg", "woman-8.jpg"];
-    var classes = ["primary", "success", "danger", "info", "warning"];
-    var icons = ["css3", "github", "windows", "wordpress", "jsfiddle", "cc-visa"];
+    var classes = ["primary", "success", "danger", "info", "warning", "purple", "pink-400", "brown"];
+    var icons = ["css3", "database", "cube", "code", "cloud-download", "info-circle"];
     var courseImages = ["computer-1.jpg", "computer-2.jpg", "computer-3.jpg", "computer-4.jpg"];
 
     var courseIconPickerIndex = -1;
@@ -25,7 +25,7 @@ angular.module('app').service('RandomDataGeneratorService',  function () {
        
     // for grid course listing 
     var courseBackgroundColorPicker = function () {
-        return "bg-" + classes[getRandomNumber(0, 4)];   
+        return "bg-" + classes[getRandomNumber(0, 7)];   
     };
 
         // for grid course listing 

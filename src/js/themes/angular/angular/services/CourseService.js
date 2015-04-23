@@ -15,6 +15,7 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
             }).then(function(data){
                     courses = data;
                     courses.forEach(function(e){
+                        
                         //TODO: set TA's, cover photo and instructors image
                         e.image = RandomDataGeneratorService.personImagePicker();
                         e.icon = RandomDataGeneratorService.courseIconPicker();
@@ -38,7 +39,15 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
                 course.instructors.forEach(function(e){
                     e.image = RandomDataGeneratorService.personImagePicker();
                 });
-                course.coverImage = RandomDataGeneratorService.courseBackgroundImagePicker();
+
+                TA = [];
+                TA.push({"name": "James Smith", "image": RandomDataGeneratorService.personImagePicker()},
+                    {"name": "Mary Anderson", "image": RandomDataGeneratorService.personImagePicker()}
+                );              
+
+                course.tas = TA;
+                
+                course.coverImage = "images/course-cover/computer-5.jpg";
                 deferred.resolve(course);   
             });
         return deferred.promise;  
@@ -51,7 +60,7 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
 
     var registerCourseForStudent = function(studentId, courseId){
         var deferred = $q.defer();
-        HttpService.get('students/' + studentId.replace(/"/g, "") +'/addCourse/' + courseId.replace(/"/g , ""), {  
+        HttpService.get('/students/' + studentId.replace(/"/g, "") +'/addCourse/' + courseId.replace(/"/g , ""), {  
             "data": null
         }, false, false, false).then(function(data){
                 deferred.resolve(course);   

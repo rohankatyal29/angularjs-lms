@@ -85,12 +85,13 @@
                     <!-- user -->
                     <li class="dropdown user">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="images/people/110/guy-6.jpg" alt="" class="img-circle"/> Bill<span class="caret"></span>
+                            <img src="images/people/110/guy-6.jpg" alt="" class="img-circle"/>::user.name::<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
+                            <li ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
                             <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     </li>
@@ -137,50 +138,13 @@
             </div>
 
             <div class="col-xs-6 col-sm-3 add-info">
-
-                <p><strong><font style="color:white">Teaching Assistants</font></strong></p>
-
-
-                      <a href="#" class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Nishtha Phutela">
-                      </a>
-
-
-                      <a href="#" class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Chaitanya Tanwar">
-                      </a>
-
-
-                      <a href="#" class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Nishesh Manaktala">
-                      </a>
-
-
-                      <a href="#" class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Siddharth Gupta">
-                      </a>
-
-
-                      <a href="#"class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Rohit Mehra">
-                      </a>
-
-
-                      <a href="#" class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Ishan Manjani">
-                      </a>
-
- 
-                      <a href="#" class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Chaitanya Kumar">
-                      </a>
-
-
-                      <a href="#" class="ajaxlink" data-remote="true" data-target="#user_profile_modal" data-toggle="modal">
-                        <img title="" data-toggle="tooltip" data-placement="top" ng-src="::personImagePicker()::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="Archie Gupta">
-                      </a>
-
-
+              <p><strong><font style="color:white">Teaching Assistants</font></strong></p>
+              <div ng-repeat="ta in course.tas">
+                <a href="#">
+                  <img title="" data-toggle="tooltip" data-placement="top" ng-src="::ta.image::" style="width:30px;height:30px;margin-bottom:5px;margin-right:10px;" class="img-circle tooltip_class  badge-icon ta-photo" data-original-title="::ta.name::">
+                  <font color="white">::ta.name::</font>
+                </a>
+              </div>
             </div>
 
             <div class="col-xs-6 col-sm-3 add-info">
@@ -208,21 +172,49 @@
             <div class="col-md-9">
 
                 
-     <center><button style="margin: 20px 20px 20px 20px;" class="btn btn-primary" ng-file-select ng-model="files">Upload deadline</button></center>
+    
+<div class="container">
+  <modal title="Login form" visible="showModal">
+
+    <form role="form">
+      <div class="form-group">
+        <label for="email">Deadline</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" />
+      </div>
+
+    <h4>Deadline Date</h4>
+    <div style="display:inline-block; min-height:290px;">
+        <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+    </div>
+
+      <button ng-file-select ng-model="files" class="btn btn-primary btn-stroke">Upload file and submit</button>
+    </form>
+  </modal>
+</div>
+
+
+
+ <button ng-file-select ng-model="files" class="btn btn-primary btn-stroke">Upload file and submit</button>
+
+ <center><button ng-click="toggleModal()" style="margin: 20px 20px 20px 20px;" class="btn btn-primary btn-stroke" >Upload deadline</button></center>
 
  <div class="box" style="position: relative; min-height: 100px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;" ng-repeat="deadline in deadlines">
 
 
-    <button class="btn btn-success btn-stroke pull-right" style="margin-top:15px;" ng-file-select ng-model="files"><i class="icon-upload-alt"></i> Upload</button>
+    <button class="btn btn-success btn-stroke pull-right" style="margin-top:15px;" ng-file-select ng-model="solutions" ng-click="uploadSolution('::deadline.id::')"><i class="icon-upload-alt"></i> Upload</button>
 
-     <a href="::base_download_url::courses/::course.id::/course_material/::course_material.id::" target="_blank"><button class="btn btn-primary btn-stroke pull-right" style="margin-top:15px;margin-right:15px;">Download</button></a>
+     <a href="::base_download_url::/courses/::course.id::/deadline/::deadline.id::" target="_blank"><button class="btn btn-primary btn-stroke pull-right" style="margin-top:15px;margin-right:15px;">Download</button></a>
 
     <h4>
         ::deadline.deadline_title::
     </h4>
 
     <p>
-      uploaded <abbr class="timeago" title="2015-04-15 10:51:50 +0530"> :: deadline.created_time | date:'yyyy-MM-dd HH:mm:ss Z' ::</abbr>
+      Uploaded: <abbr class="timeago" title="2015-04-15 10:51:50 +0530"> :: deadline.created_time | date:'yyyy-MM-dd HH:mm:ss' ::</abbr>
     </p>
 </div>
 

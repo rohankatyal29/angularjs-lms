@@ -43,7 +43,8 @@
 			"ng-file-upload/dist/angular-file-upload-shim.js",
 			"ng-file-upload/dist/angular-file-upload.js",
 			"angular-loading-bar/build/loading-bar.js", 
-			"angular-animate/angular-animate.js"
+			"angular-animate/angular-animate.js", 
+			"angular-bootstrap/dist/ui-bootstrap-tpls.js"
 		],
 		"themes": ["angular"]
 	},

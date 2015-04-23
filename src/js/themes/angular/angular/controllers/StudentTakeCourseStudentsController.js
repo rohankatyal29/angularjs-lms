@@ -1,6 +1,8 @@
 angular.module('app').controller('StudentTakeCourseStudentsController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', 'localStorageService', 'StudentService',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, StudentService) {
   
-	$scope.app.settings.htmlClass = $rootScope.htmlClass.website;
+	$scope.user = localStorageService.get("user");
+
+    $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
     $scope.app.settings.bodyClass = '';
   
     var getAllStudentsData = function(){

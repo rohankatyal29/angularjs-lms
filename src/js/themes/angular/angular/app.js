@@ -10,7 +10,8 @@
         'ui.jq',
         'ngCookies', 
         'LocalStorageModule', 
-        'angularFileUpload'
+        'angularFileUpload', 
+        'ui.bootstrap'
     ]);
 
     var app = angular.module('app')
@@ -40,8 +41,8 @@
 
     //TODO: Put the correct URL and proxy details here 
     app.constant("CONSTANTS", {
-        "rest_url": "http://10.31.169.169:8080/lms/api/",
-        "rest_url_cors_proxy": "http://localhost:8040/lms/api/"
+        "rest_url": "http://10.31.169.169:8080/lms/api",
+        "rest_url_cors_proxy": "http://localhost:8040/api"
     });
 
 })();  
