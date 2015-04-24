@@ -1,4 +1,4 @@
-angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService','localStorageService' ,'$upload', 'CONSTANTS', function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS) {
+angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService','localStorageService' ,'$upload', 'CONSTANTS', '$state', function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS, $state) {
     
     $scope.user = localStorageService.get("user");
 
@@ -7,13 +7,17 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
 
     $scope.base_download_url =  CONSTANTS.rest_url_cors_proxy;  
 
-
-    // To upload deadlines
  	$scope.$watch('files', function () {
-        $scope.uploadFiles($scope.files);
+        $scope.uploadDeadline($scope.files);
     });
 
-    $scope.uploadFiles = function (files) {
+
+    // $scope.$watch('solution', function () {
+    //     $scope.uploadSolution($scope.solution);
+    // });
+
+
+    $scope.uploadDeadline= function (files) {
         if (files && files.length) {
             /*jshint loopfunc: true */
             for (var i = 0; i < files.length; i++) {
@@ -21,24 +25,43 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
                 $upload.upload({
                     url: CONSTANTS.rest_url_cors_proxy + '/courses/' + localStorageService.get("courseId").replace(/"/g , "") + '/deadline',
                     file: file,
-                    params: { 'deadline_time': "12312312321" }
+                    params: { 'deadline_time': $scope.deadlineDate, 'deadline_title': $scope.deadlineTitle }
                 }).progress(function (evt) {
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                     console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
                 }).success(function (data, status, headers, config) {
                     console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+                    $state.go($state.current, {}, {reload: true});
+                }).error(function(){
+                    $state.go($state.current, {}, {reload: true});
                 });  
             }
         }
-    };    
-
-
-    $scope.showModal = false;
-    $scope.toggleModal = function(){
-        $scope.showModal = !$scope.showModal;
     };
 
-  
+    
+    // var uploadSolutionHelper = function(){
+    //   files = $scope.solutionUploaded;
+    //   console.log("sfds");
+    //   console.log(files);
+    //   if (files && files.length) {
+    //         /*jshint loopfunc: true */
+    //         for (var i = 0; i < files.length; i++) {
+    //             var file = files[i];
+    //             $upload.upload({
+    //                 url: CONSTANTS.rest_url_cors_proxy + '/students/' + localStorageService.get("user").id.replace(/"/g , "") + '/deadline/' + $scope.assessmentId,
+    //                 file: file
+    //             }).progress(function (evt) {
+    //                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+    //                 console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+    //             }).success(function (data, status, headers, config) {
+    //                 console.log('file' + config.files.name + 'uploaded. Response: ' + data);
+    //             });  
+    //         }
+    //     }
+    // };
+
+
 
     $scope.$on('$viewContentLoaded', function(){  
         CourseDataService.getCourseForID(localStorageService.get("courseId")).then(function(data){

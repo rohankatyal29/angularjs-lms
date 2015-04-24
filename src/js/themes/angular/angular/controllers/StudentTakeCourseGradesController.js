@@ -4,10 +4,6 @@ angular.module('app').controller('StudentTakeCourseGradesController', ['$scope',
 
 	$scope.app.settings.htmlClass = $rootScope.htmlClass.website;
     $scope.app.settings.bodyClass = '';
-  
-    $scope.personImagePicker = function(){
-    	return RandomDataGeneratorService.personImagePicker();
-    };
 	
    $scope.$on('$viewContentLoaded', function(){  
 	    CourseDataService.getCourseForID(localStorageService.get("courseId")).then(function(data){

@@ -188,10 +188,7 @@
                     .state('website-student.dashboard', {
                         url: '/dashboard',
                         templateUrl: 'website/student-dashboard.html',
-                        controller: ['$scope', function($scope){
-                            $scope.app.settings.htmlClass = htmlClass.website;
-                            $scope.app.settings.bodyClass = '';
-                        }]
+                        controller: 'StudentTimelineController'
                     })
                     .state('website-student.courses', {
                         url: '/courses',

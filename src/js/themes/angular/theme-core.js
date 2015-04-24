@@ -55,6 +55,7 @@ require('./angular/controllers/StudentTakeCourseStudentsController');
 require('./angular/controllers/StudentEnrollCourseController');
 require('./angular/controllers/AddNewCourseController');
 require('./angular/controllers/LoginController');
+require('./angular/controllers/StudentTimelineController');
 
 
 

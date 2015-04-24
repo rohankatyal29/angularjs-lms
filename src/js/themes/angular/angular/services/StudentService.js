@@ -32,14 +32,15 @@ angular.module('app').service('StudentService', function ($http, $rootScope, Htt
             "data": null
         }, false, false, false).then(function(data){
                 student = data;
-                student.courses.forEach(function(e){
-                    
-                    //TODO: set TA's, cover photo and instructors image
-                    e.image = RandomDataGeneratorService.personImagePicker();
-                    e.icon = RandomDataGeneratorService.courseIconPicker();
-                    e.backgroundColor = RandomDataGeneratorService.courseBackgroundColorPicker();
+                if (student){
+                    student.courses.forEach(function(e){  
+                        //TODO: set TA's, cover photo and instructors image
+                        e.image = RandomDataGeneratorService.personImagePicker();
+                        e.icon = RandomDataGeneratorService.courseIconPicker();
+                        e.backgroundColor = RandomDataGeneratorService.courseBackgroundColorPicker();
 
-                });
+                    });
+                }
                 deferred.resolve(student);   
             });
         return deferred.promise;  

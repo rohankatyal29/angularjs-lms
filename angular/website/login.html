@@ -6,19 +6,14 @@
         <h1 class="text-display-1 text-center margin-bottom-none">Sign In</h1>
         <img src="images/people/110/guy-5.jpg" class="img-circle width-80">
         <div class="panel-body">
-            <div class="form-group">
-                <div class="form-control-material">
-                    <input ng-model="username" class="form-control" id="username" type="text" placeholder="Username">
-                    <label for="username">Username</label>
-                </div>
+            <div class="form-group form-control-material static required">
+                <input ng-model="email"type="email" class="form-control" id="loginEmail" placeholder="Enter email"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                <label for="loginEmail">Email address</label>
             </div>
-            <div class="form-group">
-                <div class="form-control-material">
-                    <input ng-model="password" class="form-control" id="password" type="password" placeholder="Enter Password">
-                    <label for="password">Password</label>
-                </div>
+            <div class="form-group form-control-material static required">
+                <input ng-model="password"type="password" class="form-control" id="loginPassword" placeholder="Enter password"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                <label for="loginPassword">Password</label>
             </div>
-
             <a data-ng-click="login()" class="btn btn-primary">Login <i class="fa fa-fw fa-unlock-alt"></i></a>
         </div>
     </div>
@@ -26,11 +21,13 @@
 
 <center><h3>::authMsg::</h3></center>
 
+
+
     </div>
 </div>
 
 <!-- Footer -->
 <footer class="footer" style="background: #444444">
-    <strong></strong> v1.0.0 &copy; Copyright 2015
+    <strong></strong> Copyright &copy; 2015 EMC Corporation. All Rights Reserved
 </footer>
 <!-- // Footer -->

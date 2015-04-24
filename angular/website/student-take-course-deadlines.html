@@ -173,39 +173,35 @@
 
                 
     
-<div class="container">
-  <modal title="Login form" visible="showModal">
-
-    <form role="form">
-      <div class="form-group">
-        <label for="email">Deadline</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email" />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Password" />
-      </div>
-
-    <h4>Deadline Date</h4>
-    <div style="display:inline-block; min-height:290px;">
-        <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
-    </div>
-
-      <button ng-file-select ng-model="files" class="btn btn-primary btn-stroke">Upload file and submit</button>
-    </form>
-  </modal>
-</div>
 
 
+ <div class="panel panel-default">
+ 	<div class="panel-body">
+	    <center>
+		    <form role="form" class="form-inline">
 
- <button ng-file-select ng-model="files" class="btn btn-primary btn-stroke">Upload file and submit</button>
+		        <div class="form-group form-control-material static">  
+	                <input ng-model="deadlineTitle" type="text" class="form-control" id="title"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+	                <label for="title">Title: </label>
+            	</div>
 
- <center><button ng-click="toggleModal()" style="margin: 20px 20px 20px 20px;" class="btn btn-primary btn-stroke" >Upload deadline</button></center>
+		        <div class="form-group form-control-material static">
+		            <input id="datepicker" ng-model="deadlineDate" type="text" class="form-control datepicker" ><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+		            <label for="datepicker">Datepicker: </label>
+		        </div>
+
+		      <button ng-file-select ng-model="files" class="btn btn-primary btn-stroke">Upload file and submit</button>
+		    </form>
+	    </center>
+	</div>
+ </div>
+
 
  <div class="box" style="position: relative; min-height: 100px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;" ng-repeat="deadline in deadlines">
+    
 
 
-    <button class="btn btn-success btn-stroke pull-right" style="margin-top:15px;" ng-file-select ng-model="solutions" ng-click="uploadSolution('::deadline.id::')"><i class="icon-upload-alt"></i> Upload</button>
+    <button ng-file-select ng-model="solution" ng-click="uploadSolution('::deadline.id::');" style="margin-top:15px;margin-right:15px;" class="btn btn-success btn-stroke pull-right"><i class="icon-upload-alt"></i> Upload</button>
 
      <a href="::base_download_url::/courses/::course.id::/deadline/::deadline.id::" target="_blank"><button class="btn btn-primary btn-stroke pull-right" style="margin-top:15px;margin-right:15px;">Download</button></a>
 
@@ -280,6 +276,6 @@
 
 <!-- Footer -->
 <footer class="footer" style="background: #444444">
-    <strong></strong> v1.0.0 &copy; Copyright 2015
+    <strong></strong> Copyright &copy; 2015 EMC Corporation. All Rights Reserved
 </footer>
 <!-- // Footer -->

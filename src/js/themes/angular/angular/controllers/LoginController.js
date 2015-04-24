@@ -8,7 +8,7 @@ angular.module('app').controller('LoginController', ['$scope', '$http', '$state'
 
 
     $scope.login = function(){
-        LoginService.checkCredentials($scope.username, $scope.password, "rohankatyal@gmail.com").then(function(data){
+        LoginService.checkCredentials($scope.email, $scope.password).then(function(data){
            localStorageService.set("user", data);
            $state.go("website-student.courses");
         });

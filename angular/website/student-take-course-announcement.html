@@ -173,11 +173,34 @@
 
                 
     
+ <div class="panel panel-default">
+ 	<div class="panel-body">
+	    <center>
+		    <form role="form" class="form-inline">
+
+		        <div class="form-group form-control-material static">  
+	                <input ng-model="announcementTitle" type="text" class="form-control" id="title"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+	                <label for="title">Title: </label>
+            	</div>
+
+            	<div class="form-group form-control-material static">  
+	                <input ng-model="announcementText" type="text" class="form-control" id="textBody"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+	                <label for="textBody">Text: </label>
+            	</div>
+
+		      <button ng-click="addNewAnnouncement();" class="btn btn-primary btn-stroke">Announce</button>
+		    </form>
+	    </center>
+	</div>
+ </div>
+
+
+
 <div style="position: relative; min-height: 50px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;" ng-repeat="announcement in course.announcements">  
 	<h4>::announcement.announcement_title::</h4>
 	<p>
 	
-		Announced: <abbr class="timeago" >::announcement.created_time | date:'yyyy-MM-dd HH:mm:ss'::</abbr>
+	 <abbr class="timeago" >::announcement.created_time | date:'yyyy-MM-dd HH:mm:ss'::</abbr>
 	</p>
 
 	<p>::announcement.announcement_text::</p>
@@ -250,6 +273,6 @@
 
 <!-- Footer -->
 <footer class="footer" style="background: #444444">
-    <strong></strong> v1.0.0 &copy; Copyright 2015
+    <strong></strong> Copyright &copy; 2015 EMC Corporation. All Rights Reserved
 </footer>
 <!-- // Footer -->

@@ -57,7 +57,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="main-nav">
-            <ul class="nav navbar-nav navbar-nav-margin-left">
+            <!-- <ul class="nav navbar-nav navbar-nav-margin-left">
                 <li class="dropdown" ng-class="{ 'active': $state.includes('website-pages') || $state.includes('website-forum') || $state.includes('website-blog') }">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -117,7 +117,7 @@
                         <li ui-sref-active="active"><a ui-sref="essential.tabs">Tabs</a></li>
                     </ul>
                 </li>
-            </ul>
+            </ul> -->
             <div class="navbar-right">
                 <ul class="nav navbar-nav navbar-nav-bordered navbar-nav-margin-right">
                     <!-- user -->
@@ -153,57 +153,33 @@
     <div class="panel panel-default">
                     <div class="panel-body">
                        <form class="form-horizontal ng-pristine ng-valid" role="form" >
-                            <div class="form-group">
-                                <div class="col-sm-9">
-                                    <div class="form-control-material">
-                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Type here.." ng-model="courseName"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
-                                        <label for="inputEmail3">Course name</label>
-                                    </div>
-                                </div>
+                            <div class="form-group form-control-material static">
+                                <input ng-model="courseName" type="text" class="form-control" id="courseName" ><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                <label for="courseName">Name</label>
                             </div>
 
-                       <form class="form-horizontal ng-pristine ng-valid" role="form">
-                            <div class="form-group">
-                                <div class="col-sm-9">
-                                    <div class="form-control-material">
-                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Type here.." ng-model="domain"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
-                                        <label for="inputEmail3">Domain</label>
-                                    </div>
-                                </div>
+                            <div class="form-group form-control-material static">
+                                <input ng-model="domain" type="text" class="form-control" id="domain"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                <label for="domain">Domain</label>
                             </div>
 
-
-                       <form class="form-horizontal ng-pristine ng-valid" role="form">
-                            <div class="form-group">
-                                <div class="col-sm-9">
-                                    <div class="form-control-material">
-                                        <input type="number" class="form-control" id="inputEmail3" placeholder="Type here.." ng-model="credits"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
-                                        <label for="inputEmail3">Credits</label>
-                                    </div>
-                                </div>
+                             <div class="form-group form-control-material static">
+                                <input ng-model="credits" type="number" class="form-control" id="credits"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                <label for="credits">Credits</label>
                             </div>
 
-                       <form class="form-horizontal ng-pristine ng-valid" role="form">
-                            <div class="form-group">
-                                <div class="col-sm-9">
-                                    <div class="form-control-material">
-                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Type here.." ng-model="overview"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
-                                        <label for="inputEmail3">Overview</label>
-                                    </div>
-                                </div>
+                             <div class="form-group form-control-material static">
+                                <input ng-model="overview" type="text" class="form-control" id="overview"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                <label for="overview">Overview</label>
                             </div>
 
-                            <div class="form-group">
-                                <div class="col-sm-9">
-                                    <div class="form-control-material">
-                                        <textarea id="textarea" class="form-control" rows="5"></textarea ng-model="description"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
-                                        <label for="textarea">Description</label>
-                                    </div>
-                                </div>
+                             <div class="form-group form-control-material static">
+                                <input ng-model="description" type="text" class="form-control" id="description"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+                                <label for="description">Description</label>
                             </div>
 
                             <div class="form-group margin-none">
-                                <div class="col-sm-offset-3 col-sm-9">
+                                <div class="col-sm-9">
                                    <center><button type="submit" ng-click="createNewCourse()" class="btn btn-primary">Add new course</button></center>
                                 </div>
                             </div>
@@ -446,6 +422,6 @@
 
 <!-- Footer -->
 <footer class="footer" style="background: #444444">
-    <strong></strong> v1.0.0 &copy; Copyright 2015
+    <strong></strong> Copyright &copy; 2015 EMC Corporation. All Rights Reserved
 </footer>
 <!-- // Footer -->

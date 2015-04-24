@@ -18,6 +18,12 @@ angular.module('app').controller('StudentEnrollCourseController', ['$scope', '$r
 					courses = data;
 					StudentService.getStudentForId($scope.user.id).then(function(data){
 						registeredCourses = data.courses;
+
+						if(!registeredCourses){
+							$scope.unregisteredCourses = courses;
+							return;
+						}
+
 						courses.forEach(function(course){
 
 							var id = course.id, flag = 0;

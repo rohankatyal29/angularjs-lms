@@ -2,9 +2,9 @@ angular.module('app').service('LoginService',['$http', '$rootScope', 'HttpServic
 
     var user = new Object({});
 
-    var checkCredentials = function (username, password, email) {
+    var checkCredentials = function (email, password) {
         var deferred = $q.defer();
-        HttpService.get('/students/login', {  
+        HttpService.get('/users/login', {  
             'email' : email
         }).then(function(data){
                 user = data;

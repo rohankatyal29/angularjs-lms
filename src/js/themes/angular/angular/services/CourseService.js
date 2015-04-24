@@ -57,6 +57,11 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
         return HttpService.post('/courses', data);
     };
 
+    var createNewAnnouncement = function (params, courseId) {
+        return HttpService.post('/courses/' + courseId + '/announcement', params);
+    };
+
+
 
     var registerCourseForStudent = function(studentId, courseId){
         var deferred = $q.defer();
@@ -72,7 +77,8 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
         getAllCourses: getAllCourses, 
         getCourseForID: getCourseForID,
         createNewCourse: createNewCourse, 
-        registerCourseForStudent: registerCourseForStudent
+        registerCourseForStudent: registerCourseForStudent, 
+        createNewAnnouncement: createNewAnnouncement
     };
       
 }]);   

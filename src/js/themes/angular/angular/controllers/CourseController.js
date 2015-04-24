@@ -27,18 +27,16 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
       };   
 
 
-
-      //TODO: change this to only current user updates
       var getRecentUpdatesForStudent = function(){  
         StudentService.getStudentForId($scope.user.id).then(function(data){
     
-          registeredCourses = data.courses;
+          var registeredCourses = data.courses;
 
           registeredCourses.forEach(function(course){
 
-            announcement = course.announcements[getRandomIndex(0, (course.announcements).length-1)];
-            deadline = course.assessments[getRandomIndex(0, (course.assessments).length-1)];
-
+            announcement = course.announcements[(course.announcements).length-1];
+            deadline = course.assessments[(course.assessments).length-1];
+ 
             if(announcement){
               $scope.recentAnnouncements.push({ "announcement": announcement, "course": course });
             }
