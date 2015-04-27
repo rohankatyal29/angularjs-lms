@@ -6714,7 +6714,7 @@ angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScop
         
         data = { "name" : $scope.courseName,
           "domain" : $scope.domain,
-          "credits" : $scope.credits,
+          "credits" : String($scope.credits),
           "overview" : $scope.overview, 
           "description": $scope.description,
           "class_timings": ["Monday 11:30 - 13:00","Wednesday 10:00 - 11:30"], 
@@ -6725,11 +6725,12 @@ angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScop
           "instructors": [localStorageService.get("user")] 
         };
       
-        console.log(data);  
-
         CourseDataService.createNewCourse(data, localStorageService.get("user").id).then(function(response){
+          $scope.courseUploadIsSuccess = true;
           $state.go($state.$current, null, { reload: true });
-        });
+        }).error(function(){
+          $state.go($state.current, null, {reload: true});
+        });  
         
       };   
 
@@ -6789,9 +6790,9 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
       };
 
       var getRecentUpdatesForInstructor = function(){  
-        InstructorService.getInstructorForId($scope.user.id).then(function(data){
+        InstructorService.getInstructorCourses($scope.user.id).then(function(data){
     
-          var registeredCourses = data.courses;
+          var registeredCourses = data;
 
           registeredCourses.forEach(function(course){
 
@@ -6813,8 +6814,10 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
 
 
       var getInstructorCourses = function(){  
-        InstructorService.getInstructorForId($scope.user.id).then(function(data){
-          $scope.courses = data.courses;
+        InstructorService.getInstructorCourses($scope.user.id).then(function(data){
+          console.log("look here");
+          console.log(data);
+          $scope.courses = data;
           getRecentUpdatesForInstructor();
         });
       };
@@ -7046,9 +7049,12 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
             for (var i = 0; i < files.length; i++) {
                 var file = files[i];
                 $upload.upload({
-                    url: CONSTANTS.rest_url_cors_proxy + '/instructors/' + localStorageService.get("user").id.replace(/"/g , "") + '/deadline/' + localStorageService.get("course").id.replace(/"/g , "") ,
+                    url: CONSTANTS.rest_url_cors_proxy + '/instructors/' + localStorageService.get("user").id.replace(/"/g , "") + '/deadline/' + localStorageService.get("courseId").replace(/"/g , "") ,
+                    headers:{
+                        'Content-Type': 'multipart/mixed'
+                    },
                     file: file,
-                    params: { 'deadline_time': $scope.deadline.date, 'deadline_title': $scope.deadline.title }
+                    params: {'deadline_time': $scope.deadline.date, 'deadline_title': $scope.deadline.title }
                 }).progress(function (evt) {
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                     console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
@@ -7061,29 +7067,6 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
             }
         }
     };
-
-    
-    // var uploadSolutionHelper = function(){
-    //   files = $scope.solutionUploaded;
-    //   console.log("sfds");
-    //   console.log(files);
-    //   if (files && files.length) {
-    //         /*jshint loopfunc: true */
-    //         for (var i = 0; i < files.length; i++) {
-    //             var file = files[i];
-    //             $upload.upload({
-    //                 url: CONSTANTS.rest_url_cors_proxy + '/students/' + localStorageService.get("user").id.replace(/"/g , "") + '/deadline/' + $scope.assessmentId,
-    //                 file: file
-    //             }).progress(function (evt) {
-    //                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-    //                 console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-    //             }).success(function (data, status, headers, config) {
-    //                 console.log('file' + config.files.name + 'uploaded. Response: ' + data);
-    //             });  
-    //         }
-    //     }
-    // };
-
 
 
     $scope.$on('$viewContentLoaded', function(){  
@@ -7208,19 +7191,18 @@ angular.module('app').controller('StudentTakeCourseStudentsController', ['$scope
     $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
     $scope.app.settings.bodyClass = '';
   
-    var getAllStudentsData = function(){
-    		StudentService.getAllStudents().then(function(data){
- 				$scope.students = data;
+    var getCourseStudents = function(courseId){
+    	CourseDataService.getCourseStudents(courseId).then(function(data){
+ 			console.log("dataaatatata");
+            console.log(data);
+            $scope.students = data;
    		});
     };
 
-    $scope.personImagePicker = function(){
-    	return RandomDataGeneratorService.personImagePicker();
-    };
 
     $scope.$on('$viewContentLoaded', function(){
       $scope.course = localStorageService.get('course');
- 	  getAllStudentsData();
+ 	  getCourseStudents(localStorageService.get('courseId'));
  	});     	 
 
 }]);
@@ -7509,12 +7491,33 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
             });
         return deferred.promise;  
     };
+
+
+    var getCourseStudents = function (courseId) {  
+        var deferred = $q.defer();
+        if(dataFetched){
+            deferred.resolve(courses);
+        } else{
+            HttpService.get('/courses/' + courseId + '/students', {
+                    "data": null
+            }).then(function(data){
+
+                    deferred.resolve(data);
+                });
+
+            dataFetched = true;
+        }
+        return deferred.promise;
+
+    };
+
   
     return {
         getAllCourses: getAllCourses, 
         getCourseForID: getCourseForID,
         createNewCourse: createNewCourse, 
-        registerCourseForStudent: registerCourseForStudent
+        registerCourseForStudent: registerCourseForStudent, 
+        getCourseStudents: getCourseStudents
     };
       
 }]);   
@@ -7527,6 +7530,7 @@ angular.module('app').service('InstructorService', function ($http, $rootScope, 
     var instructorData = new Object({});
     var dataFetched = false;
     var instructor = new Object({});
+    var courses = new Object({});
 
     var getAllInstructors = function () {
         var deferred = $q.defer();
@@ -7555,8 +7559,19 @@ angular.module('app').service('InstructorService', function ($http, $rootScope, 
             "data": null
         }, false, false, false).then(function(data){
                 instructor = data;
-                if (instructor){
-                    instructor.courses.forEach(function(e){  
+                deferred.resolve(instructor);   
+            });
+        return deferred.promise;  
+    };
+
+    var getInstructorCourses = function (instructorId) {
+        var deferred = $q.defer();
+        HttpService.get('/instructors/' + instructorId.replace(/"/g , "") + '/courses',{      
+            "data": null
+        }, false, false, false).then(function(data){
+                courses = data;
+                if (courses){
+                    courses.forEach(function(e){  
                         //TODO: set TA's, cover photo and instructors image
                         e.image = RandomDataGeneratorService.personImagePicker();
                         e.icon = RandomDataGeneratorService.courseIconPicker();
@@ -7565,7 +7580,7 @@ angular.module('app').service('InstructorService', function ($http, $rootScope, 
                     });
                     
                 }
-                deferred.resolve(instructor);   
+                deferred.resolve(courses);   
             });
         return deferred.promise;  
     };
@@ -7582,7 +7597,8 @@ angular.module('app').service('InstructorService', function ($http, $rootScope, 
     return {
         getAllInstructors : getAllInstructors, 
         getInstructorForId: getInstructorForId, 
-        createNewAnnouncement: createNewAnnouncement
+        createNewAnnouncement: createNewAnnouncement, 
+        getInstructorCourses: getInstructorCourses
     };
 
 });

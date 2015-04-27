@@ -220,7 +220,14 @@
         <h1 class="text-display-1">Create New Course</h1>
     </div>
 
-    <div class="panel panel-default">
+    
+    <alert data-ng-show="courseUploadIsSuccess == true" type="success">
+        <center><h3>
+            Course ::uploadedCourse:: has been added! 
+        </h3></center>
+    </alert>
+
+<div class="panel panel-default">
                     <div class="panel-body">
                        <form class="form-horizontal ng-pristine ng-valid" role="form" >
                             <div class="form-group form-control-material static">

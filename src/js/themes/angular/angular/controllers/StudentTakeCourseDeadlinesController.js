@@ -23,9 +23,12 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
             for (var i = 0; i < files.length; i++) {
                 var file = files[i];
                 $upload.upload({
-                    url: CONSTANTS.rest_url_cors_proxy + '/instructors/' + localStorageService.get("user").id.replace(/"/g , "") + '/deadline/' + localStorageService.get("course").id.replace(/"/g , "") ,
+                    url: CONSTANTS.rest_url_cors_proxy + '/instructors/' + localStorageService.get("user").id.replace(/"/g , "") + '/deadline/' + localStorageService.get("courseId").replace(/"/g , "") ,
+                    headers:{
+                        'Content-Type': 'multipart/mixed'
+                    },
                     file: file,
-                    params: { 'deadline_time': $scope.deadline.date, 'deadline_title': $scope.deadline.title }
+                    params: {'deadline_time': $scope.deadline.date, 'deadline_title': $scope.deadline.title }
                 }).progress(function (evt) {
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                     console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
@@ -38,29 +41,6 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
             }
         }
     };
-
-    
-    // var uploadSolutionHelper = function(){
-    //   files = $scope.solutionUploaded;
-    //   console.log("sfds");
-    //   console.log(files);
-    //   if (files && files.length) {
-    //         /*jshint loopfunc: true */
-    //         for (var i = 0; i < files.length; i++) {
-    //             var file = files[i];
-    //             $upload.upload({
-    //                 url: CONSTANTS.rest_url_cors_proxy + '/students/' + localStorageService.get("user").id.replace(/"/g , "") + '/deadline/' + $scope.assessmentId,
-    //                 file: file
-    //             }).progress(function (evt) {
-    //                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-    //                 console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-    //             }).success(function (data, status, headers, config) {
-    //                 console.log('file' + config.files.name + 'uploaded. Response: ' + data);
-    //             });  
-    //         }
-    //     }
-    // };
-
 
 
     $scope.$on('$viewContentLoaded', function(){  

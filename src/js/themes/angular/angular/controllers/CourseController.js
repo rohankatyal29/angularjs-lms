@@ -50,9 +50,9 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
       };
 
       var getRecentUpdatesForInstructor = function(){  
-        InstructorService.getInstructorForId($scope.user.id).then(function(data){
+        InstructorService.getInstructorCourses($scope.user.id).then(function(data){
     
-          var registeredCourses = data.courses;
+          var registeredCourses = data;
 
           registeredCourses.forEach(function(course){
 
@@ -74,8 +74,10 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
 
 
       var getInstructorCourses = function(){  
-        InstructorService.getInstructorForId($scope.user.id).then(function(data){
-          $scope.courses = data.courses;
+        InstructorService.getInstructorCourses($scope.user.id).then(function(data){
+          console.log("look here");
+          console.log(data);
+          $scope.courses = data;
           getRecentUpdatesForInstructor();
         });
       };

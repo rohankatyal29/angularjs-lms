@@ -29,9 +29,6 @@
                     <a {% if angular %}ui-sref="website-student.take-course-resources"{% else %}href="student-take-course-announcement.html"{% endif %}> Resources </a>
                 </li>
                 <li>
-                    <a {% if angular %}ui-sref="website-student.take-course-grades"{% else %}href="student-take-course-announcement.html"{% endif %}> Grades </a>
-                </li>
-                <li>
                     <a {% if angular %}ui-sref="website-student.take-course-discussions"{% else %}href="student-take-course-announcement.html"{% endif %}> Discussions </a>
                 </li>
                 <li>
@@ -46,6 +43,7 @@
                             <img src="images/people/110/guy-6.jpg" alt="" class="img-circle"/>::user.name::<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
+                            <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Timeline</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
@@ -55,7 +53,7 @@
                     </li>
                     <!-- // END user -->
                 </ul>
-                <a ui-sref="login" class="navbar-btn btn btn-primary">Log In</a>
+                <a ui-sref="login" class="navbar-btn btn btn-danger btn-stroke">Logout</a>   
             </div>
         </div><!-- /.navbar-collapse -->
 

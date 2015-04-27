@@ -72,12 +72,33 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
             });
         return deferred.promise;  
     };
+
+
+    var getCourseStudents = function (courseId) {  
+        var deferred = $q.defer();
+        if(dataFetched){
+            deferred.resolve(courses);
+        } else{
+            HttpService.get('/courses/' + courseId + '/students', {
+                    "data": null
+            }).then(function(data){
+
+                    deferred.resolve(data);
+                });
+
+            dataFetched = true;
+        }
+        return deferred.promise;
+
+    };
+
   
     return {
         getAllCourses: getAllCourses, 
         getCourseForID: getCourseForID,
         createNewCourse: createNewCourse, 
-        registerCourseForStudent: registerCourseForStudent
+        registerCourseForStudent: registerCourseForStudent, 
+        getCourseStudents: getCourseStudents
     };
       
 }]);   

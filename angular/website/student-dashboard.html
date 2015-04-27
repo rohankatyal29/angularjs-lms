@@ -135,7 +135,7 @@
                     </li>
                     <!-- // END user -->
                 </ul>
-                <a ui-sref="login" class="navbar-btn btn btn-primary">Log In</a>
+                <a ui-sref="login" class="navbar-btn btn btn-danger btn-stroke">Logout</a>
             </div>
         </div><!-- /.navbar-collapse -->
 
@@ -174,7 +174,18 @@
 
         </div>
     </div>
-</div>   
+</div>  
+
+
+<div ng-if="timelineUpdates.length == 0 || timelineUpdates == undefined">
+    <alert>
+      <center><h3>
+        There are no updates for you 
+      </h3></center>
+    </alert>
+</div>
+
+
   
 
             </div>

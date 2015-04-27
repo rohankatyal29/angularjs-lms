@@ -135,7 +135,7 @@
                     </li>
                     <!-- // END user -->
                 </ul>
-                <a ui-sref="login" class="navbar-btn btn btn-primary">Log In</a>
+                <a ui-sref="login" class="navbar-btn btn btn-danger btn-stroke">Logout</a>
             </div>
         </div><!-- /.navbar-collapse -->
 
@@ -150,7 +150,14 @@
             <div class="col-md-9">
 
                 
-    <div class="panel panel-default">
+    
+    <alert data-ng-show="courseUploadIsSuccess == true" type="success">
+        <center><h3>
+            Course ::uploadedCourse:: has been added! 
+        </h3></center>
+    </alert>
+
+<div class="panel panel-default">
                     <div class="panel-body">
                        <form class="form-horizontal ng-pristine ng-valid" role="form" >
                             <div class="form-group form-control-material static">

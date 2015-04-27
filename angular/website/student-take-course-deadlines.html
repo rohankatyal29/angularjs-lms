@@ -71,9 +71,6 @@
                     <a ui-sref="website-student.take-course-resources"> Resources </a>
                 </li>
                 <li>
-                    <a ui-sref="website-student.take-course-grades"> Grades </a>
-                </li>
-                <li>
                     <a ui-sref="website-student.take-course-discussions"> Discussions </a>
                 </li>
                 <li>
@@ -88,6 +85,7 @@
                             <img src="images/people/110/guy-6.jpg" alt="" class="img-circle"/>::user.name::<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
+                            <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Timeline</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
@@ -97,7 +95,7 @@
                     </li>
                     <!-- // END user -->
                 </ul>
-                <a ui-sref="login" class="navbar-btn btn btn-primary">Log In</a>
+                <a ui-sref="login" class="navbar-btn btn btn-danger btn-stroke">Logout</a>   
             </div>
         </div><!-- /.navbar-collapse -->
 
@@ -114,10 +112,7 @@
         <div class="row-fluid-main">
           <div class="row-fluid">
             <div class="col-xs-6 col-sm-3" style="">
-              <p style="font-weight:bold;color:#fff;">
-                IIIT-Delhi
-              </p>
-              <p style="font-weight:bold;color:#fff;">
+                <p style="font-weight:bold;color:#fff;">
                
                             </p>
                 <p style="font-weight:bold;color:#fff;">
@@ -153,7 +148,7 @@
     <input id="quick_usercourse_course_id" name="course[164]" type="hidden" value="0">
     <input id="quick_usercourse_user_id" name="usercourse[user_id]" type="hidden" value="781">
     <input id="1" name="ajax" type="hidden" value="value">
-    <input class="btn btn-info" name="commit" style="margin-bottom:10px;margin-left:5px;" type="submit" value="Leave Course">
+    <button class="btn btn-danger">LEAVE COURSE</button>
 </form>
                     </div>
             </div>

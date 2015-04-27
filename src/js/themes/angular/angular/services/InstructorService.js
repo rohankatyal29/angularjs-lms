@@ -3,6 +3,7 @@ angular.module('app').service('InstructorService', function ($http, $rootScope, 
     var instructorData = new Object({});
     var dataFetched = false;
     var instructor = new Object({});
+    var courses = new Object({});
 
     var getAllInstructors = function () {
         var deferred = $q.defer();
@@ -31,8 +32,19 @@ angular.module('app').service('InstructorService', function ($http, $rootScope, 
             "data": null
         }, false, false, false).then(function(data){
                 instructor = data;
-                if (instructor){
-                    instructor.courses.forEach(function(e){  
+                deferred.resolve(instructor);   
+            });
+        return deferred.promise;  
+    };
+
+    var getInstructorCourses = function (instructorId) {
+        var deferred = $q.defer();
+        HttpService.get('/instructors/' + instructorId.replace(/"/g , "") + '/courses',{      
+            "data": null
+        }, false, false, false).then(function(data){
+                courses = data;
+                if (courses){
+                    courses.forEach(function(e){  
                         //TODO: set TA's, cover photo and instructors image
                         e.image = RandomDataGeneratorService.personImagePicker();
                         e.icon = RandomDataGeneratorService.courseIconPicker();
@@ -41,7 +53,7 @@ angular.module('app').service('InstructorService', function ($http, $rootScope, 
                     });
                     
                 }
-                deferred.resolve(instructor);   
+                deferred.resolve(courses);   
             });
         return deferred.promise;  
     };
@@ -58,7 +70,8 @@ angular.module('app').service('InstructorService', function ($http, $rootScope, 
     return {
         getAllInstructors : getAllInstructors, 
         getInstructorForId: getInstructorForId, 
-        createNewAnnouncement: createNewAnnouncement
+        createNewAnnouncement: createNewAnnouncement, 
+        getInstructorCourses: getInstructorCourses
     };
 
 });

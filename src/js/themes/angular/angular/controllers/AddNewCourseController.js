@@ -12,7 +12,7 @@ angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScop
         
         data = { "name" : $scope.courseName,
           "domain" : $scope.domain,
-          "credits" : $scope.credits,
+          "credits" : String($scope.credits),
           "overview" : $scope.overview, 
           "description": $scope.description,
           "class_timings": ["Monday 11:30 - 13:00","Wednesday 10:00 - 11:30"], 
@@ -23,11 +23,12 @@ angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScop
           "instructors": [localStorageService.get("user")] 
         };
       
-        console.log(data);  
-
         CourseDataService.createNewCourse(data, localStorageService.get("user").id).then(function(response){
+          $scope.courseUploadIsSuccess = true;
           $state.go($state.$current, null, { reload: true });
-        });
+        }).error(function(){
+          $state.go($state.current, null, {reload: true});
+        });  
         
       };   
 
