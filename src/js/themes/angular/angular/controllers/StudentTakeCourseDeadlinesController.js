@@ -11,6 +11,40 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
         $scope.uploadDeadline($scope.deadline.file);
     });
 
+    $scope.$watch('solution.file', function () {
+        $scope.uploadSolution($scope.solution);    
+    });
+
+
+    $scope.uploadSolution = function (files) {
+        if (files && files.length) {
+            /*jshint loopfunc: true */
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                $upload.upload({
+                    url: CONSTANTS.rest_url_cors_proxy + '/students/' + localStorageService.get("user").id.replace(/"/g , "") + '/deadline/' + $scope.assessmentId,
+                    headers:{
+                        'Content-Type': 'multipart/mixed'
+                    },
+                    file: file
+                }).progress(function (evt) {
+                    var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                    console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+                }).success(function (data, status, headers, config) {
+                    console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+                    $state.go($state.current, {}, {reload: true});
+                }).error(function(){
+                    $state.go($state.current, {}, {reload: true});
+                });  
+            }
+        }
+    };
+
+    // $scope.uploadSolutionForStudent = function(assessmentId){
+    //     $scope.$watch('solution', function () {
+    //         uploadSolution(assessmentId, $scope.solution);
+    //     });
+    // };
 
     // $scope.$watch('solution', function () {
     //     $scope.uploadSolution($scope.solution);
@@ -51,6 +85,7 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
             $scope.base_download_url = CONSTANTS.rest_url;
         });
         $scope.deadline = {title: "", date: "", file: ""};
+        $scope.solution = {file: ""};
 
     });     	 
 
