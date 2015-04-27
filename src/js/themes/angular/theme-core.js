@@ -33,6 +33,7 @@ require('./angular/directives/modal');
 // Custom Services 
 require('./angular/services/http-service');
 require('./angular/services/StudentService');
+require('./angular/services/InstructorService');
 require('./angular/services/CourseService');
 require('./angular/services/RandomDataGeneratorService');
 require('./angular/services/LoginService');
@@ -55,7 +56,7 @@ require('./angular/controllers/StudentTakeCourseStudentsController');
 require('./angular/controllers/StudentEnrollCourseController');
 require('./angular/controllers/AddNewCourseController');
 require('./angular/controllers/LoginController');
-require('./angular/controllers/StudentTimelineController');
+require('./angular/controllers/TimelineController');
 
 
 

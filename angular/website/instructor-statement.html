@@ -129,7 +129,7 @@
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Timeline</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
-                            <li ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
+                            <li ng-if="user.role == 'instructor' " ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
                             <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     </li>
@@ -174,50 +174,50 @@
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#12467</a></td>
-                <td class="text-center">&dollar;16</td>
+                <td class="text-center"><a href="#">#5659</a></td>
+                <td class="text-center">&dollar;19</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#860</a></td>
-                <td class="width-50 text-center">&dollar;31</td>
+                <td class="text-center"><a href="#">#13777</a></td>
+                <td class="width-50 text-center">&dollar;18</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#5384</a></td>
-                <td class="text-center">&dollar;31</td>
+                <td class="text-center"><a href="#">#13905</a></td>
+                <td class="text-center">&dollar;77</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#1685</a></td>
-                <td class="text-center">&dollar;51</td>
+                <td class="text-center"><a href="#">#9661</a></td>
+                <td class="text-center">&dollar;98</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#12737</a></td>
-                <td class="text-center">&dollar;58</td>
+                <td class="text-center"><a href="#">#3568</a></td>
+                <td class="text-center">&dollar;75</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#1369</a></td>
-                <td class="width-50 text-center">&dollar;25</td>
+                <td class="text-center"><a href="#">#8113</a></td>
+                <td class="width-50 text-center">&dollar;57</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#5049</a></td>
-                <td class="text-center">&dollar;9</td>
+                <td class="text-center"><a href="#">#1082</a></td>
+                <td class="text-center">&dollar;5</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#7295</a></td>
-                <td class="text-center">&dollar;59</td>
+                <td class="text-center"><a href="#">#1127</a></td>
+                <td class="text-center">&dollar;11</td>
             </tr>
             </tbody>
         </table>

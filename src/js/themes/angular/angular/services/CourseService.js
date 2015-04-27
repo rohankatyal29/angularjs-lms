@@ -36,10 +36,12 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
         }, false, false, false).then(function(data){
                 course = data;
                 //TODO: add images for TA's inside the loop
-                course.instructors.forEach(function(e){
-                    e.image = RandomDataGeneratorService.personImagePicker();
-                });
-
+                var courseInstructors = course.instructors;
+                if(courseInstructors){
+                    courseInstructors.forEach(function(e){
+                        e.image = RandomDataGeneratorService.personImagePicker();
+                    });
+                }
                 TA = [];
                 TA.push({"name": "James Smith", "image": RandomDataGeneratorService.personImagePicker()},
                     {"name": "Mary Anderson", "image": RandomDataGeneratorService.personImagePicker()}
@@ -47,21 +49,19 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
 
                 course.tas = TA;
                 
-                course.coverImage = "images/course-cover/computer-5.jpg";
+                course.coverImage = "images/course-cover/computer-1.jpg";
                 deferred.resolve(course);   
             });
         return deferred.promise;  
     };
 
-    var createNewCourse = function (data) {
-        return HttpService.post('/courses', data);
+    var createNewCourse = function (data, instructorId) {
+        var deferred = $q.defer();
+        HttpService.post('/instructors/' + instructorId + '/addCourse', data).then(function(response){
+            deferred.resolve(response);
+        });
+        return deferred.promise;
     };
-
-    var createNewAnnouncement = function (params, courseId) {
-        return HttpService.post('/courses/' + courseId + '/announcement', params);
-    };
-
-
 
     var registerCourseForStudent = function(studentId, courseId){
         var deferred = $q.defer();
@@ -77,8 +77,7 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
         getAllCourses: getAllCourses, 
         getCourseForID: getCourseForID,
         createNewCourse: createNewCourse, 
-        registerCourseForStudent: registerCourseForStudent, 
-        createNewAnnouncement: createNewAnnouncement
+        registerCourseForStudent: registerCourseForStudent
     };
       
 }]);   

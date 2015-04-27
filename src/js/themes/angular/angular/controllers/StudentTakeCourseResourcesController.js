@@ -7,8 +7,8 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
 
   
     // To upload solutions to deadlines
- 	$scope.$watch('files', function () {
-        $scope.upload($scope.files);  
+ 	$scope.$watch('resource.files', function () {
+        $scope.upload($scope.resource.files);  
     });
 
 
@@ -23,7 +23,7 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
             for (var i = 0; i < files.length; i++) {  
                 var file = files[i];
                 $upload.upload({
-                    url: CONSTANTS.rest_url_cors_proxy + '/courses/' + localStorageService.get("courseId").replace(/"/g , "") + '/course_material',
+                    url: CONSTANTS.rest_url_cors_proxy + '/instructors/' + localStorageService.get("user").id.replace(/"/g , "") + '/course_material/' + localStorageService.get("course").id.replace(/"/g , ""),
                     file: file
                 }).progress(function (evt) {
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
@@ -44,6 +44,7 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
 	     	$scope.courseMaterials = $scope.course.courseMaterials;
             $scope.base_download_url = CONSTANTS.rest_url_cors_proxy;
 	    });
+        $scope.resource = {files : ''};
     });  
  	 
 }]);

@@ -7,8 +7,8 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
 
     $scope.base_download_url =  CONSTANTS.rest_url_cors_proxy;  
 
- 	$scope.$watch('files', function () {
-        $scope.uploadDeadline($scope.files);
+ 	$scope.$watch('deadline.file', function () {
+        $scope.uploadDeadline($scope.deadline.file);
     });
 
 
@@ -23,9 +23,9 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
             for (var i = 0; i < files.length; i++) {
                 var file = files[i];
                 $upload.upload({
-                    url: CONSTANTS.rest_url_cors_proxy + '/courses/' + localStorageService.get("courseId").replace(/"/g , "") + '/deadline',
+                    url: CONSTANTS.rest_url_cors_proxy + '/instructors/' + localStorageService.get("user").id.replace(/"/g , "") + '/deadline/' + localStorageService.get("course").id.replace(/"/g , "") ,
                     file: file,
-                    params: { 'deadline_time': $scope.deadlineDate, 'deadline_title': $scope.deadlineTitle }
+                    params: { 'deadline_time': $scope.deadline.date, 'deadline_title': $scope.deadline.title }
                 }).progress(function (evt) {
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                     console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
@@ -70,6 +70,8 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
             $scope.deadlines = data.assessments;
             $scope.base_download_url = CONSTANTS.rest_url;
         });
+        $scope.deadline = {title: "", date: "", file: ""};
+
     });     	 
 
 }]);

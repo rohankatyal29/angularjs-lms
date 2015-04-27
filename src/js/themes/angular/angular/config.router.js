@@ -188,7 +188,7 @@
                     .state('website-student.dashboard', {
                         url: '/dashboard',
                         templateUrl: 'website/student-dashboard.html',
-                        controller: 'StudentTimelineController'
+                        controller: 'TimelineController'
                     })
                     .state('website-student.courses', {
                         url: '/courses',

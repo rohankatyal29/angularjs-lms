@@ -91,7 +91,7 @@
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
-                            <li ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
+                                <li ng-if="user.role == 'instructor' " ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
                             <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     </li>
@@ -104,7 +104,7 @@
     </div>
 </div>
 
-<div class="container" style="background-image: url('::course.coverImage::');">     
+<div class="container"  style= "background-image: url(::course.coverImage::)">     
     <div class="course-cover">
     <div class="row-fluid">
       <div class="col-md-12 white nopadding cover-info">
@@ -172,19 +172,19 @@
             <div class="col-md-9">
 
                 
-    
- <div class="panel panel-default">
+     
+ <div ng-if="user.role == 'instructor'" class="panel panel-default">
  	<div class="panel-body">
 	    <center>
 		    <form role="form" class="form-inline">
 
 		        <div class="form-group form-control-material static">  
-	                <input ng-model="announcementTitle" type="text" class="form-control" id="title"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+	                <input ng-model="announcement.title" type="text" class="form-control" id="title"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
 	                <label for="title">Title: </label>
             	</div>
 
             	<div class="form-group form-control-material static">  
-	                <input ng-model="announcementText" type="text" class="form-control" id="textBody"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+	                <input ng-model="announcement.text" type="text" class="form-control" id="textBody"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
 	                <label for="textBody">Text: </label>
             	</div>
 

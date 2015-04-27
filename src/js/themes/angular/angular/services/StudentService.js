@@ -40,6 +40,7 @@ angular.module('app').service('StudentService', function ($http, $rootScope, Htt
                         e.backgroundColor = RandomDataGeneratorService.courseBackgroundColorPicker();
 
                     });
+                
                 }
                 deferred.resolve(student);   
             });

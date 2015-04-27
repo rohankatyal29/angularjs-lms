@@ -129,7 +129,7 @@
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Timeline</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
-                            <li ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
+                            <li ng-if="user.role == 'instructor' " ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
                             <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     </li>
@@ -159,92 +159,12 @@
                         <center><h1 id="timeline">Recent Updates</h1></center>
                     </div>
                     <ul class="timeline">
-                        <li>
-                          <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                        <li ng-repeat="timelineUpdate in timelineUpdates" class="::timelineUpdate.boxClass::">
+                          <div class="timeline-badge ::timelineUpdate.badge::"><i class="glyphicon glyphicon-check"></i></div>
                           <div class="timeline-panel">
                             <div class="timeline-heading">
-                              <h4 class="timeline-title" style="color:red;">Deadline Missed</h4>
-                              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours</small></p>
-                            </div>
-                            <div class="timeline-body">
-                              <p>You missed your Computer Networks deadline</p>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="timeline-inverted">
-                          <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
-                          <div class="timeline-panel">
-                            <div class="timeline-heading">
-                              <h4 class="timeline-title" style="color:blue;">Quiz Flunked</h4>
-                            </div>
-                            <div class="timeline-body">
-                              <p>You got 2 marks less than the passing grade</p>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
-                          <div class="timeline-panel">
-                            <div class="timeline-heading">
-                              <h4 class="timeline-title">Assignment Uploaded</h4>
-                            </div>
-                            <div class="timeline-body">
-                              <p>Thank god you made this deadline</p>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="timeline-inverted">
-                          <div class="timeline-panel">
-                            <div class="timeline-heading">
-                              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                            </div>
-                            <div class="timeline-body">
-                              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
-                          <div class="timeline-panel">
-                            <div class="timeline-heading">
-                              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                            </div>
-                            <div class="timeline-body">
-                              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-                              <hr>
-                              <div class="btn-group">
-                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                                  <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                  <li><a href="#">Action</a></li>
-                                  <li><a href="#">Another action</a></li>
-                                  <li><a href="#">Something else here</a></li>
-                                  <li class="divider"></li>
-                                  <li><a href="#">Separated link</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="timeline-panel">
-                            <div class="timeline-heading">
-                              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                            </div>
-                            <div class="timeline-body">
-                              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="timeline-inverted">
-                          <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-                          <div class="timeline-panel">
-                            <div class="timeline-heading">
-                              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                            </div>
-                            <div class="timeline-body">
-                              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                              <h4 class="timeline-title" style="color: #42A5F5;">::timelineUpdate.update_text::</h4>
+                              <h5><i class="glyphicon glyphicon-time"></i> :: timelineUpdate.created_time |  date:'yyyy-MM-dd HH:mm:ss'::</h5>
                             </div>
                           </div>
                         </li>
@@ -254,22 +174,24 @@
 
         </div>
     </div>
-</div>
-
+</div>   
+  
 
             </div>
-            <div class="col-md-3">
-			
-                <div class="panel panel-default paper-shadow" data-z="0.5">
-                    <div class="cover overlay cover-image-full hover" style="height: 150px;">
-                        <span class="img icon-block height-150 bg-grey-200"></span>
-                        <a ui-sref="website-courses.list" class="padding-none overlay overlay-full icon-block bg-grey-200" href="#/website-courses/list" style="height: 150px;">
-                        <span class="v-center">
-                            <i class="fa fa-plus text-grey-600"></i>
-                        </span>
-                        </a>
+            <div data-ng-show="!$state.includes('website-student.dashboard')" class="col-md-3">
+			    <div ng-if="user.role == 'student' ">
+                    <div class="panel panel-default paper-shadow" data-z="0.5">
+                        <div class="cover overlay cover-image-full hover" style="height: 150px;">
+                            <span class="img icon-block height-150 bg-grey-200"></span>
+                            <a ui-sref="website-courses.list" class="padding-none overlay overlay-full icon-block bg-grey-200" href="#/website-courses/list" style="height: 150px;">
+                            <span class="v-center">
+                                <i class="fa fa-plus text-grey-600"></i>
+                            </span>
+                            </a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
                     <div class="panel-heading panel-collapse-trigger">
                         <h4 class="panel-title">Upcoming Deadlines</h4>

@@ -8,11 +8,17 @@ angular.module('app').controller('LoginController', ['$scope', '$http', '$state'
 
 
     $scope.login = function(){
-        LoginService.checkCredentials($scope.email, $scope.password).then(function(data){
-           localStorageService.set("user", data);
-           $state.go("website-student.courses");
+        LoginService.checkCredentials($scope.email, $scope.password).then(function(responses){
+           
+            if(responses === undefined){
+                $scope.authMsg = "Incorrect credentials";
+            } 
+            else{
+                localStorageService.set("user", responses);
+                $state.go("website-student.courses");
+            }
         });
-    };
+    };    
 
     //TODO: add error handling to the above function using the one below
     

@@ -91,7 +91,7 @@
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
-                            <li ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
+                                <li ng-if="user.role == 'instructor' " ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
                             <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     </li>
@@ -104,7 +104,7 @@
     </div>
 </div>
 
-<div class="container" style="background-image: url('::course.coverImage::');">     
+<div class="container"  style= "background-image: url(::course.coverImage::)">     
     <div class="course-cover">
     <div class="row-fluid">
       <div class="col-md-12 white nopadding cover-info">

@@ -1,4 +1,6 @@
-<center><button style="margin: 20px 20px 20px 20px;" class="btn btn-primary btn-stroke" ng-file-select ng-model="files">Upload course material</button></center>
+
+  <center><button ng-if="user.role == 'instructor'" style="margin: 20px 20px 20px 20px;" class="btn btn-primary btn-stroke" ng-file-select ng-model="resource.files">Upload course material</button></center>
+
 
  <div class="box" style="position: relative; min-height: 50px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;" ng-repeat="course_material in courseMaterials">
 

@@ -91,7 +91,7 @@
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
-                            <li ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
+                                <li ng-if="user.role == 'instructor' " ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
                             <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     </li>
@@ -104,7 +104,7 @@
     </div>
 </div>
 
-<div class="container" style="background-image: url('::course.coverImage::');">     
+<div class="container"  style= "background-image: url(::course.coverImage::)">     
     <div class="course-cover">
     <div class="row-fluid">
       <div class="col-md-12 white nopadding cover-info">
@@ -172,7 +172,9 @@
             <div class="col-md-9">
 
                 
-    <center><button style="margin: 20px 20px 20px 20px;" class="btn btn-primary btn-stroke" ng-file-select ng-model="files">Upload course material</button></center>
+    
+  <center><button ng-if="user.role == 'instructor'" style="margin: 20px 20px 20px 20px;" class="btn btn-primary btn-stroke" ng-file-select ng-model="resource.files">Upload course material</button></center>
+
 
  <div class="box" style="position: relative; min-height: 50px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;" ng-repeat="course_material in courseMaterials">
 

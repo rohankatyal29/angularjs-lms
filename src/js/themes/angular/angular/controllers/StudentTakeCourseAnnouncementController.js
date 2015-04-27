@@ -1,4 +1,4 @@
-angular.module('app').controller('StudentTakeCourseAnnouncementController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', '$cookies', 'localStorageService', function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, $cookies, localStorageService) {
+angular.module('app').controller('StudentTakeCourseAnnouncementController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', '$cookies', 'localStorageService', 'InstructorService', '$state',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, $cookies, localStorageService, InstructorService, $state) {
   
 
     $scope.user = localStorageService.get("user");
@@ -8,17 +8,21 @@ angular.module('app').controller('StudentTakeCourseAnnouncementController', ['$s
 
 
     $scope.addNewAnnouncement = function(){
-      var params = {"announcement_text": $scope.announcementText, "announcement_title": $scope.announcementTitle};
-      CourseDataService.createNewAnnouncement(params, localStorageService.get("courseId")); 
-    };
-
+      var params = new Object({});
+      params = {"announcement_text": $scope.announcement.text, "announcement_title": $scope.announcement.title};
+      InstructorService.createNewAnnouncement(params, localStorageService.get("courseId"), localStorageService.get("user").id).then(function(data){
+          $state.go($state.$current, null, { reload: true });
+      });
+      
+    };   
 
 
     $scope.$on('$viewContentLoaded', function(){  
 	    CourseDataService.getCourseForID(localStorageService.get("courseId")).then(function(data){
 	    	localStorageService.set("course", data); 
 	     	$scope.course = data;
-	    });
+	      $scope.announcement = {"text": "", "title": ""};
+      });
     });       	 
 }]);
   

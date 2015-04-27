@@ -1,26 +1,24 @@
 
-
-
- <div class="panel panel-default">
- 	<div class="panel-body">
+<div ng-if="user.role == 'instructor'" class="panel panel-default">
+	<div class="panel-body">
 	    <center>
 		    <form role="form" class="form-inline">
 
 		        <div class="form-group form-control-material static">  
-	                <input ng-model="deadlineTitle" type="text" class="form-control" id="title"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+	                <input ng-model="deadline.title" type="text" class="form-control" id="title"><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
 	                <label for="title">Title: </label>
-            	</div>
+	        	</div>
 
 		        <div class="form-group form-control-material static">
-		            <input id="datepicker" ng-model="deadlineDate" type="text" class="form-control datepicker" ><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
+		            <input id="datepicker" ng-model="deadline.date" type="text" class="form-control datepicker" ><span class="ma-form-highlight"></span><span class="ma-form-bar"></span>
 		            <label for="datepicker">Datepicker: </label>
 		        </div>
 
-		      <button ng-file-select ng-model="files" class="btn btn-primary btn-stroke">Upload file and submit</button>
+		      <button ng-file-select ng-model="deadline.file" class="btn btn-primary btn-stroke">Upload file and submit</button>
 		    </form>
 	    </center>
 	</div>
- </div>
+</div>
 
 
  <div class="box" style="position: relative; min-height: 100px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;" ng-repeat="deadline in deadlines">

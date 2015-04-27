@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="media-body">
-                        <h4 class="text-headline margin-v-5-0"><a{% if angular %} ui-sref="website-student.take-course-course-info" {% else %} href="website-student.take-course-course-info"{% endif %}>::course.name::</a></h4>
+                        <h4 class="text-headline margin-v-5-0"><a{% if angular %} ui-sref="website-student.take-course-course-info" {% else %} href="website-student.take-course-course-info"{% endif %} ng-click="setCourseId('::course.id::')">::course.name::</a></h4>
                         <p>::course.overview::</p>
                         {% if itemInstructor !== false %}
                         <hr class="margin-v-8" />

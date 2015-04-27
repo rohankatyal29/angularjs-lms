@@ -129,7 +129,7 @@
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Timeline</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
-                            <li ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
+                            <li ng-if="user.role == 'instructor' " ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
                             <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     </li>
@@ -189,63 +189,63 @@
                 <tbody>
                 <tr>
                     <td><a href="#">January 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;97120</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;97879</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;73241</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;82630</td>
                 </tr>
                 <tr>
                     <td><a href="#">February 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;8322</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;7697</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;45106</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;64106</td>
                 </tr>
                 <tr>
                     <td><a href="#">March 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;78830</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;99691</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;45104</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;31059</td>
                 </tr>
                 <tr>
                     <td><a href="#">April 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;99614</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;83428</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;68405</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;85867</td>
                 </tr>
                 <tr>
                     <td><a href="#">May 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;34947</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;23408</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;82295</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;42383</td>
                 </tr>
                 <tr>
                     <td><a href="#">June 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;63293</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;77743</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;21838</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;74392</td>
                 </tr>
                 <tr>
                     <td><a href="#">July 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;35051</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;45707</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;93775</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;98369</td>
                 </tr>
                 <tr>
                     <td><a href="#">August 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;36499</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;97158</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;29752</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;15934</td>
                 </tr>
                 <tr>
                     <td><a href="#">September 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;3052</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;1738</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;93921</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;58778</td>
                 </tr>
                 <tr>
                     <td><a href="#">October 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;68764</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;57934</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;93426</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;8949</td>
                 </tr>
                 <tr>
                     <td><a href="#">November 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;67452</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;94751</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;66116</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;56125</td>
                 </tr>
                 <tr>
                     <td><a href="#">December 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;41160</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;63638</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;98205</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;35839</td>
                 </tr>
                 </tbody>
             </table>

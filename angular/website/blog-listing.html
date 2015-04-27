@@ -129,7 +129,7 @@
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Timeline</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
-                            <li ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
+                            <li ng-if="user.role == 'instructor' " ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
                             <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     </li>
@@ -172,7 +172,7 @@
         <div class="panel panel-default paper-shadow" data-z="0.5">
             <div class="panel-body">
                 <div class="pull-right">
-                    <a ui-sref="website-blog.post" class="btn btn-white btn-flat"><i class="fa fa-comments fa-fw"></i> 15</a>
+                    <a ui-sref="website-blog.post" class="btn btn-white btn-flat"><i class="fa fa-comments fa-fw"></i> 1</a>
                 </div>
                 <h4 class="text-title media-heading">
                     <a ui-sref="website-blog.post" class="link-text-color">Am I learning the right way?</a>
@@ -198,7 +198,7 @@
         <div class="panel panel-default paper-shadow" data-z="0.5">
             <div class="panel-body">
                 <div class="pull-right">
-                    <a ui-sref="website-blog.post" class="btn btn-white btn-flat"><i class="fa fa-comments fa-fw"></i> 8</a>
+                    <a ui-sref="website-blog.post" class="btn btn-white btn-flat"><i class="fa fa-comments fa-fw"></i> 1</a>
                 </div>
                 <h4 class="text-title media-heading">
                     <a ui-sref="website-blog.post" class="link-text-color">Can someone help me? I need a design advice</a>
@@ -224,7 +224,7 @@
         <div class="panel panel-default paper-shadow" data-z="0.5">
             <div class="panel-body">
                 <div class="pull-right">
-                    <a ui-sref="website-blog.post" class="btn btn-white btn-flat"><i class="fa fa-comments fa-fw"></i> 14</a>
+                    <a ui-sref="website-blog.post" class="btn btn-white btn-flat"><i class="fa fa-comments fa-fw"></i> 12</a>
                 </div>
                 <h4 class="text-title media-heading">
                     <a ui-sref="website-blog.post" class="link-text-color">I think this is the right way?</a>
@@ -250,7 +250,7 @@
         <div class="panel panel-default paper-shadow" data-z="0.5">
             <div class="panel-body">
                 <div class="pull-right">
-                    <a ui-sref="website-blog.post" class="btn btn-white btn-flat"><i class="fa fa-comments fa-fw"></i> 9</a>
+                    <a ui-sref="website-blog.post" class="btn btn-white btn-flat"><i class="fa fa-comments fa-fw"></i> 13</a>
                 </div>
                 <h4 class="text-title media-heading">
                     <a ui-sref="website-blog.post" class="link-text-color">Getting around AngularJS</a>
@@ -276,7 +276,7 @@
         <div class="panel panel-default paper-shadow" data-z="0.5">
             <div class="panel-body">
                 <div class="pull-right">
-                    <a ui-sref="website-blog.post" class="btn btn-white btn-flat"><i class="fa fa-comments fa-fw"></i> 9</a>
+                    <a ui-sref="website-blog.post" class="btn btn-white btn-flat"><i class="fa fa-comments fa-fw"></i> 15</a>
                 </div>
                 <h4 class="text-title media-heading">
                     <a ui-sref="website-blog.post" class="link-text-color">I think this is the right way?</a>
@@ -328,7 +328,7 @@
         <div class="panel panel-default paper-shadow" data-z="0.5">
             <div class="panel-body">
                 <div class="pull-right">
-                    <a ui-sref="website-blog.post" class="btn btn-white btn-flat"><i class="fa fa-comments fa-fw"></i> 4</a>
+                    <a ui-sref="website-blog.post" class="btn btn-white btn-flat"><i class="fa fa-comments fa-fw"></i> 15</a>
                 </div>
                 <h4 class="text-title media-heading">
                     <a ui-sref="website-blog.post" class="link-text-color">Am I learning the right way?</a>

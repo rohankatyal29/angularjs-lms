@@ -5,6 +5,9 @@ angular.module('app').service('RandomDataGeneratorService',  function () {
     var icons = ["css3", "database", "cube", "code", "cloud-download", "info-circle"];
     var courseImages = ["computer-1.jpg", "computer-2.jpg", "computer-3.jpg", "computer-4.jpg"];
 
+    var timelineUpdateBoxClass = ["timeline","timeline-inverted"];
+    var timelineBadges = ["warning", "danger", "info",  "success"];
+
     var courseIconPickerIndex = -1;
     var personImagePickerIndex = -1;
     var courseBackgroundColorPickerIndex = -1;
@@ -33,11 +36,20 @@ angular.module('app').service('RandomDataGeneratorService',  function () {
         return "images/course-cover/"+ courseImages[getRandomNumber(0, 3)];   
     };
 
+    var timelineUIGenerator = function(data){
+        data.updates.forEach(function(e){
+            e.badge = timelineBadges[getRandomNumber(0, 3)];
+            e.boxClass = timelineUpdateBoxClass[getRandomNumber(0,1)];
+        });
+        return data;
+    };
+
     return {
         personImagePicker : personImagePicker,
         courseIconPicker: courseIconPicker,
         courseBackgroundColorPicker: courseBackgroundColorPicker, 
-        courseBackgroundImagePicker: courseBackgroundImagePicker  
+        courseBackgroundImagePicker: courseBackgroundImagePicker, 
+        timelineUIGenerator: timelineUIGenerator 
     };
 
 });   

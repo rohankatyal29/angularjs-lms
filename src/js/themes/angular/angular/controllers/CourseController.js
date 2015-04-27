@@ -1,4 +1,4 @@
-angular.module('app').controller('CourseController', ['$scope', '$rootScope',  'CourseDataService','RandomDataGeneratorService' ,'$http' ,'localStorageService', '$state', 'StudentService',function ($scope, $rootScope, CourseDataService, RandomDataGeneratorService, $http, localStorageService, $state, StudentService) {
+angular.module('app').controller('CourseController', ['$scope', '$rootScope',  'CourseDataService','RandomDataGeneratorService' ,'$http' ,'localStorageService', '$state', 'StudentService', 'InstructorService',function ($scope, $rootScope, CourseDataService, RandomDataGeneratorService, $http, localStorageService, $state, StudentService, InstructorService) {
        
 
       var courses, announcement, deadline;
@@ -48,10 +48,41 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
           });
         });
       };
-  
+
+      var getRecentUpdatesForInstructor = function(){  
+        InstructorService.getInstructorForId($scope.user.id).then(function(data){
+    
+          var registeredCourses = data.courses;
+
+          registeredCourses.forEach(function(course){
+
+            announcement = course.announcements[(course.announcements).length-1];
+            deadline = course.assessments[(course.assessments).length-1];
+ 
+            if(announcement){
+              $scope.recentAnnouncements.push({ "announcement": announcement, "course": course });
+            }
+          
+            if(deadline){
+              $scope.recentDeadlines.push({ "deadline": deadline , "course": course });
+            }
+
+          });
+        });
+      };
+
+
+
+      var getInstructorCourses = function(){  
+        InstructorService.getInstructorForId($scope.user.id).then(function(data){
+          $scope.courses = data.courses;
+          getRecentUpdatesForInstructor();
+        });
+      };
+
 
       //fetches registered courses for current user
-      var getRegisteredCourses = function(){  
+      var getStudentRegisteredCourses = function(){  
         StudentService.getStudentForId($scope.user.id).then(function(data){
           $scope.courses = data.courses;
           getRecentUpdatesForStudent();
@@ -69,7 +100,13 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
       };   
 
       $scope.$on('$viewContentLoaded', function(){
-        getRegisteredCourses();  
+        if(($scope.user.role).localeCompare("student") === 0){
+          getStudentRegisteredCourses();
+        }
+        else {
+          getInstructorCourses();
+        }
+
       });       
 
 
