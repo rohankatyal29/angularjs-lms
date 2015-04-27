@@ -6952,8 +6952,65 @@ angular.module('app').controller('StudentEnrollCourseController', ['$scope', '$r
 
 	};
 
+
+	$scope.recentAnnouncements = [];
+	$scope.recentDeadlines = [];
+
+    var getRecentUpdatesForStudent = function(){  
+        StudentService.getStudentForId($scope.user.id).then(function(data){
+    
+          var registeredCourses = data.courses;
+
+          registeredCourses.forEach(function(course){
+
+            announcement = course.announcements[(course.announcements).length-1];
+            deadline = course.assessments[(course.assessments).length-1];
+ 
+            if(announcement){
+              $scope.recentAnnouncements.push({ "announcement": announcement, "course": course });
+            }
+          
+            if(deadline){
+              $scope.recentDeadlines.push({ "deadline": deadline , "course": course });
+            }
+
+          });
+        });
+      };
+
+      var getRecentUpdatesForInstructor = function(){  
+        InstructorService.getInstructorCourses($scope.user.id).then(function(data){
+    
+          var registeredCourses = data;
+
+          registeredCourses.forEach(function(course){
+
+            announcement = course.announcements[(course.announcements).length-1];
+            deadline = course.assessments[(course.assessments).length-1];
+ 
+            if(announcement){
+              $scope.recentAnnouncements.push({ "announcement": announcement, "course": course });
+            }
+          
+            if(deadline){
+              $scope.recentDeadlines.push({ "deadline": deadline , "course": course });
+            }
+
+          });
+        });
+      };
+
+
+
 	$scope.$on('$viewContentLoaded', function(){
-		getAllUnregisteredCourses();     
+		getAllUnregisteredCourses(); 
+		if(($scope.user.role).localeCompare("student") === 0){
+          getRecentUpdatesForStudent();
+        }
+        else {
+          getRecentUpdatesForInstructor();
+        }
+    
 	});     
 
 	

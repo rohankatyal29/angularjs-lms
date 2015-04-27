@@ -155,275 +155,48 @@
 
 
             </div>
-            <div class="col-md-3">
+            <div data-ng-show="!$state.includes('website-student.dashboard')" class="col-md-3">
+                <div data-ng-show="(user.role == 'student') && ($state.includes('website-student.courses'))">
+                    <div class="panel panel-default paper-shadow" data-z="0.5">
+                        <div class="cover overlay cover-image-full hover" style="height: 150px;">
+                            <span class="img icon-block height-150 bg-grey-200"></span>
+                            <a ui-sref="website-courses.list" class="padding-none overlay overlay-full icon-block bg-grey-200" href="#/website-courses/list" style="height: 150px;">
+                            <span class="v-center">
+                                <i class="fa fa-plus text-grey-600"></i>
+                            </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
-    <div class="panel-heading panel-collapse-trigger">
-        <h4 class="panel-title">Category</h4>
-    </div>
-    <div class="panel-body list-group">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <span class="badge pull-right">120+</span>
-                <a class="list-group-link" href="index.html">Design</a>
-            </li>
-            <li class="list-group-item active">
-                <span class="badge pull-right">30+</span>
-                <a class="list-group-link" href="index.html">Programming</a>
-            </li>
-            <li class="list-group-item">
-                <span class="badge pull-right">40+</span>
-                <a class="list-group-link" href="index.html">WordPress</a>
-            </li>
-            <li class="list-group-item">
-                <span class="badge pull-right">60+</span>
-                <a class="list-group-link" href="index.html">Workflow</a>
-            </li>
-            <li class="list-group-item">
-                <span class="badge pull-right">15+</span>
-                <a class="list-group-link" href="index.html">HTML</a>
-            </li>
-            <li class="list-group-item">
-                <span class="badge pull-right">25+</span>
-                <a class="list-group-link" href="index.html">CSS</a>
-            </li>
-            <li class="list-group-item">
-                <span class="badge pull-right">35+</span>
-                <a class="list-group-link" href="index.html">iOS</a>
-            </li>
-            <li class="list-group-item">
-                <span class="badge pull-right">20+</span>
-                <a class="list-group-link" href="index.html">Free</a>
-            </li>
-        </ul>
-    </div>
-</div>
+                    <div class="panel-heading panel-collapse-trigger">
+                        <h4 class="panel-title">Upcoming Deadlines</h4>
+                    </div>
+                    <div class="panel-body list-group">
+                        <ul class="list-group list-group-menu">
+                            <li class="list-group-item" ng-repeat="recentDeadline in recentDeadlines"><a href ng-click="goToDeadline('::recentDeadline.course.id::')"><strong>::recentDeadline.deadline.deadline_title:: - ::recentDeadline.course.name::</strong> <br/>
+                             <strong><font style="color:red;"><abbr class="timeago" >::recentDeadline.deadline.created_time | date:'dd MMM HH:mm:ss'::</abbr></font></strong>
+                             </a></li>
+                        </ul>
+                    </div>
+                </div>
 
-<div class="panel panel-default" data-toggle="panel-collapse" data-open="false">
-    <div class="panel-heading panel-collapse-trigger">
-        <h4 class="panel-title">Price</h4>
-    </div>
-    <div class="panel-body">
-        <div class="form-group input-group margin-none">
-            <div class="row margin-none">
-                <div class="col-xs-6 padding-none">
-                    <input class="form-control" type="text" placeholder="Min .." />
-                </div>
-                <div class="col-xs-6 padding-none">
-                    <input class="form-control" type="text" placeholder="Max .." />
-                </div>
+                 <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
+                    <div class="panel-heading panel-collapse-trigger">
+                        <h4 class="panel-title">Recent Annoucements</h4>
+                    </div>
+                    <div class="panel-body list-group">
+                        <ul class="list-group list-group-menu">
+                            <li class="list-group-item" ng-repeat="recentAnnouncement in recentAnnouncements"><a href ng-click="goToAnnouncement('::recentAnnouncement.course.id::')"><strong>::recentAnnouncement.announcement.announcement_title:: - ::recentAnnouncement.course.name:: </strong><br/>
+                             <font style="color:black;">::recentAnnouncement.announcement.created_time | date:'dd MMM HH:mm:ss'::</font>
+                            </li>
+                            </a>
+                               
+                        </ul>
+                    </div>
+                </div>  
             </div>
-            <div class="input-group-btn">
-                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<h4>Featured</h4>
-<div class="slick-basic slick-slider" data-items="1" data-items-lg="1" data-items-md="1" data-items-sm="1" data-items-xs="1">
-    <div class="item">
-        <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-    <div class="panel-body">
-        <div class="media media-clearfix-xs">
-            <div class="media-left">
-                <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
-                    <span class="img icon-block s90 bg-default"></span>
-                    <span class="overlay overlay-full padding-none icon-block s90 bg-default">
-                        <span class="v-center">
-                            <i class="fa fa-github"></i>
-                        </span>
-                    </span>
-                    <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white">
-                        <span class="v-center">
-                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading margin-v-5-3"><a ui-sref="website-courses.single">Github Webhooks for Beginners</a></h4>
-                <p class="small margin-none">
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-    </div>
-    <div class="item">
-        <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-    <div class="panel-body">
-        <div class="media media-clearfix-xs">
-            <div class="media-left">
-                <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
-                    <span class="img icon-block s90 bg-primary"></span>
-                    <span class="overlay overlay-full padding-none icon-block s90 bg-primary">
-                        <span class="v-center">
-                            <i class="fa fa-css3"></i>
-                        </span>
-                    </span>
-                    <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white">
-                        <span class="v-center">
-                            <span class="btn btn-circle btn-primary btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading margin-v-5-3"><a ui-sref="website-courses.single">Awesome CSS with LESS Processing</a></h4>
-                <p class="small margin-none">
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-    </div>
-    <div class="item">
-        <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-    <div class="panel-body">
-        <div class="media media-clearfix-xs">
-            <div class="media-left">
-                <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
-                    <span class="img icon-block s90 bg-lightred"></span>
-                    <span class="overlay overlay-full padding-none icon-block s90 bg-lightred">
-                        <span class="v-center">
-                            <i class="fa fa-windows"></i>
-                        </span>
-                    </span>
-                    <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white">
-                        <span class="v-center">
-                            <span class="btn btn-circle btn-red-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading margin-v-5-3"><a ui-sref="website-courses.single">Portable Environments with Vagrant</a></h4>
-                <p class="small margin-none">
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-    </div>
-    <div class="item">
-        <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-    <div class="panel-body">
-        <div class="media media-clearfix-xs">
-            <div class="media-left">
-                <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
-                    <span class="img icon-block s90 bg-brown"></span>
-                    <span class="overlay overlay-full padding-none icon-block s90 bg-brown">
-                        <span class="v-center">
-                            <i class="fa fa-wordpress"></i>
-                        </span>
-                    </span>
-                    <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white">
-                        <span class="v-center">
-                            <span class="btn btn-circle btn-orange-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading margin-v-5-3"><a ui-sref="website-courses.single">WordPress Theme Development</a></h4>
-                <p class="small margin-none">
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-    </div>
-    <div class="item">
-        <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-    <div class="panel-body">
-        <div class="media media-clearfix-xs">
-            <div class="media-left">
-                <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
-                    <span class="img icon-block s90 bg-purple"></span>
-                    <span class="overlay overlay-full padding-none icon-block s90 bg-purple">
-                        <span class="v-center">
-                            <i class="fa fa-jsfiddle"></i>
-                        </span>
-                    </span>
-                    <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white">
-                        <span class="v-center">
-                            <span class="btn btn-circle btn-purple-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading margin-v-5-3"><a ui-sref="website-courses.single">Modular JavaScript with Browserify</a></h4>
-                <p class="small margin-none">
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-    </div>
-    <div class="item">
-        <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
-    <div class="panel-body">
-        <div class="media media-clearfix-xs">
-            <div class="media-left">
-                <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
-                    <span class="img icon-block s90 bg-default"></span>
-                    <span class="overlay overlay-full padding-none icon-block s90 bg-default">
-                        <span class="v-center">
-                            <i class="fa fa-cc-visa"></i>
-                        </span>
-                    </span>
-                    <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white">
-                        <span class="v-center">
-                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading margin-v-5-3"><a ui-sref="website-courses.single">Easy Online Payments with Stripe</a></h4>
-                <p class="small margin-none">
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-    </div>
-</div>
-
-            </div>
-
         </div>
     </div>
 
