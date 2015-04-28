@@ -1,4 +1,4 @@
-angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService','localStorageService' ,'$upload', 'CONSTANTS', '$state', function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS, $state) {
+angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService','localStorageService' ,'$upload', 'CONSTANTS', '$state', 'StudentService' ,function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS, $state, StudentService) {
     
     $scope.user = localStorageService.get("user");
 
@@ -39,6 +39,13 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
             }
         }
     };
+
+    $scope.leaveCourse = function(){
+      StudentService.leaveCourse(localStorageService.get("courseId"), localStorageService.get("user").id).then(function(data){
+           $state.go('website-student.courses');
+      });
+    };
+
 
     // $scope.uploadSolutionForStudent = function(assessmentId){
     //     $scope.$watch('solution', function () {

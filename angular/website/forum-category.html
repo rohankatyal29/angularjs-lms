@@ -12,71 +12,10 @@
                 <a ui-sref="website-student.courses"><img style="height:50%; width:50%;"  src="images/emc-logo.png"></a>
             </div>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="main-nav">
-            <!-- <ul class="nav navbar-nav navbar-nav-margin-left">
-                <li class="dropdown" ng-class="{ 'active': $state.includes('website-pages') || $state.includes('website-forum') || $state.includes('website-blog') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="website-pages.home">Home page</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-pages.pricing">Pricing</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-pages.tutors">Tutors</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-pages.survey">Survey</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-forum.home">Forum Home</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-forum.category">Forum Category</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-forum.thread">Forum Thread</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-blog.listing">Blog Listing</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-blog.post">Blog Post</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-pages.contact">Contact</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" ng-class="{ 'active': $state.includes('website-courses') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="website-courses.grid">Grid Directory</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-courses.list">List Directory</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-courses.single">Single Course</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" ng-class="{ 'active': $state.includes('website-student') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="website-student.dashboard">Dashboard</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.courses" >My Courses</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.take-course">Take Course</a></li>
-                        <li ng-class="{ 'active' : $state.is('website-student.course-forums') || $state.is('website-student.course-forum-thread') }"><a ui-sref="website-student.course-forums">Course Forums</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.take-quiz">Take Quiz</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.messages">Messages</a></li>
-                        <li ng-class="{ 'active' : $state.is('website-student.private-profile') || $state.is('website-student.billing') }"><a ui-sref="website-student.private-profile">Private Profile</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" ng-class="{ 'active': $state.includes('website-instructor') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Instructor <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.dashboard">Dashboard</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.courses">My Courses</a></li>
-                        <li ng-class="{ 'active' : $state.is('website-instructor.edit-course') || $state.is('website-instructor.edit-course-meta') || $state.is('website-instructor.edit-course-lessons') }"><a ui-sref="website-instructor.edit-course">Edit Course</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.earnings">Earnings</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.statement">Statement</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.messages">Messages</a></li>
-                        <li ng-class="{ 'active' : $state.is('website-instructor.private-profile') || $state.is('website-instructor.billing') }"><a ui-sref="website-instructor.private-profile">Private Profile</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" ng-class="{ 'active': $state.includes('essential') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="essential.buttons">Buttons</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.icons">Icons</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.progress">Progress</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.grid">Grid</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.forms">Forms</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.tables">Tables</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.tabs">Tabs</a></li>
-                    </ul>
-                </li>
-            </ul> -->
             <div class="navbar-right">
+
                 <ul class="nav navbar-nav navbar-nav-bordered navbar-nav-margin-right">
                     <!-- user -->
                     <li class="dropdown user">
@@ -86,7 +25,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Timeline</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
-                            <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
+                            <li ng-show="user.role == 'student'"ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
                             <li ng-if="user.role == 'instructor' " ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
                             <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
@@ -153,7 +92,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 3</a>
+        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 15</a>
 	</div>
 </li>
 
@@ -174,49 +113,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 7</a>
-	</div>
-</li>
-
-        <li class="list-group-item media v-middle">
-	<div class="media-left">
-		<div class="icon-block half img-circle bg-grey-300">
-			<i class="fa fa-file-text text-white"></i>
-		</div>
-	</div>
-	<div class="media-body">
-		<h4 class="text-subhead margin-none">
-			<a ui-sref=website-forum.thread class="link-text-color">I think this is the right way?</a>
-		</h4>
-		<div class="text-light text-caption">
-            posted by
-            <a href="#"><img src="images/people/110/woman-4.jpg" alt="person" class="img-circle width-20" /> Michelle Gustav</a> &nbsp;
-            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
-		</div>
-	</div>
-	<div class="media-right">
-        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 16</a>
-	</div>
-</li>
-
-        <li class="list-group-item media v-middle">
-	<div class="media-left">
-		<div class="icon-block half img-circle bg-grey-300">
-			<i class="fa fa-file-text text-white"></i>
-		</div>
-	</div>
-	<div class="media-body">
-		<h4 class="text-subhead margin-none">
-			<a ui-sref=website-forum.thread class="link-text-color">Getting around AngularJS</a>
-		</h4>
-		<div class="text-light text-caption">
-            posted by
-            <a href="#"><img src="images/people/110/guy-4.jpg" alt="person" class="img-circle width-20" /> Jonny Francine</a> &nbsp;
-            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
-		</div>
-	</div>
-	<div class="media-right">
-        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 10</a>
+        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 11</a>
 	</div>
 </li>
 
@@ -249,16 +146,16 @@
 	</div>
 	<div class="media-body">
 		<h4 class="text-subhead margin-none">
-			<a ui-sref=website-forum.thread class="link-text-color">Responsive Bootstrap Question</a>
+			<a ui-sref=website-forum.thread class="link-text-color">Getting around AngularJS</a>
 		</h4>
 		<div class="text-light text-caption">
             posted by
-            <a href="#"><img src="images/people/110/woman-5.jpg" alt="person" class="img-circle width-20" /> Mary Deb</a> &nbsp;
+            <a href="#"><img src="images/people/110/guy-4.jpg" alt="person" class="img-circle width-20" /> Jonny Francine</a> &nbsp;
             | <i class="fa fa-clock-o fa-fw"></i> 5 mins
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 16</a>
+        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 6</a>
 	</div>
 </li>
 
@@ -270,11 +167,11 @@
 	</div>
 	<div class="media-body">
 		<h4 class="text-subhead margin-none">
-			<a ui-sref=website-forum.thread class="link-text-color">Am I learning the right way?</a>
+			<a ui-sref=website-forum.thread class="link-text-color">I think this is the right way?</a>
 		</h4>
 		<div class="text-light text-caption">
             posted by
-            <a href="#"><img src="images/people/110/guy-6.jpg" alt="person" class="img-circle width-20" /> Adrian Demian</a> &nbsp;
+            <a href="#"><img src="images/people/110/woman-4.jpg" alt="person" class="img-circle width-20" /> Michelle Gustav</a> &nbsp;
             | <i class="fa fa-clock-o fa-fw"></i> 5 mins
 		</div>
 	</div>
@@ -300,7 +197,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 13</a>
+        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 1</a>
 	</div>
 </li>
 
@@ -321,7 +218,49 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 14</a>
+        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 6</a>
+	</div>
+</li>
+
+        <li class="list-group-item media v-middle">
+	<div class="media-left">
+		<div class="icon-block half img-circle bg-grey-300">
+			<i class="fa fa-file-text text-white"></i>
+		</div>
+	</div>
+	<div class="media-body">
+		<h4 class="text-subhead margin-none">
+			<a ui-sref=website-forum.thread class="link-text-color">Responsive Bootstrap Question</a>
+		</h4>
+		<div class="text-light text-caption">
+            posted by
+            <a href="#"><img src="images/people/110/woman-5.jpg" alt="person" class="img-circle width-20" /> Mary Deb</a> &nbsp;
+            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
+		</div>
+	</div>
+	<div class="media-right">
+        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 12</a>
+	</div>
+</li>
+
+        <li class="list-group-item media v-middle">
+	<div class="media-left">
+		<div class="icon-block half img-circle bg-grey-300">
+			<i class="fa fa-file-text text-white"></i>
+		</div>
+	</div>
+	<div class="media-body">
+		<h4 class="text-subhead margin-none">
+			<a ui-sref=website-forum.thread class="link-text-color">Am I learning the right way?</a>
+		</h4>
+		<div class="text-light text-caption">
+            posted by
+            <a href="#"><img src="images/people/110/guy-6.jpg" alt="person" class="img-circle width-20" /> Adrian Demian</a> &nbsp;
+            | <i class="fa fa-clock-o fa-fw"></i> 5 mins
+		</div>
+	</div>
+	<div class="media-right">
+        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 2</a>
 	</div>
 </li>
 
@@ -342,7 +281,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 5</a>
+        <a ui-sref=website-forum.thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 16</a>
 	</div>
 </li>
 

@@ -14,9 +14,16 @@ angular.module('app').controller('StudentTakeCourseStudentsController', ['$scope
     };
 
 
+    $scope.leaveCourse = function(){
+      StudentService.leaveCourse(localStorageService.get("courseId"), localStorageService.get("user").id).then(function(data){
+           $state.go('website-student.courses');
+      });
+    };
+
+
     $scope.$on('$viewContentLoaded', function(){
       $scope.course = localStorageService.get('course');
- 	  getCourseStudents(localStorageService.get('courseId'));
+ 	    getCourseStudents($scope.course.id);
  	});     	 
 
 }]);

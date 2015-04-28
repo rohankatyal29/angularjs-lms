@@ -8,9 +8,13 @@ angular.module('app').service('LoginService',['$http', '$rootScope', 'HttpServic
             'email' : email
         }).then(function(data){
                 user = data;
-                deferred.resolve(user);   
+                deferred.resolve(user);     
+            }, function(data){
+                $rootScope.authMsg = true;
+                $rootScope.loggingInProgress = false;
             });
-        return deferred.promise;  
+        return deferred.promise;
+        
     };
   
     return {

@@ -1,4 +1,4 @@
-angular.module('app').controller('StudentTakeCourseResourcesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', 'localStorageService', '$upload', 'CONSTANTS', '$state',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS, $state) {
+angular.module('app').controller('StudentTakeCourseResourcesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', 'localStorageService', '$upload', 'CONSTANTS', '$state', 'StudentService' ,function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS, $state, StudentService) {
   
     $scope.user = localStorageService.get("user");
 
@@ -16,6 +16,14 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
     var reloadPage = function(){
         $state.go($state.$current, null, { reload: true });
     };
+
+
+    $scope.leaveCourse = function(){
+      StudentService.leaveCourse(localStorageService.get("courseId"), localStorageService.get("user").id).then(function(data){
+           $state.go('website-student.courses');
+      });
+    };
+
 
     $scope.upload = function (files) {
         if (files && files.length) {

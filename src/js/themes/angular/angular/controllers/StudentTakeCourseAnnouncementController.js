@@ -1,4 +1,4 @@
-angular.module('app').controller('StudentTakeCourseAnnouncementController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', '$cookies', 'localStorageService', 'InstructorService', '$state',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, $cookies, localStorageService, InstructorService, $state) {
+angular.module('app').controller('StudentTakeCourseAnnouncementController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', '$cookies', 'localStorageService', 'InstructorService', '$state', 'StudentService' ,function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, $cookies, localStorageService, InstructorService, $state, StudentService) {
   
 
     $scope.user = localStorageService.get("user");
@@ -15,6 +15,13 @@ angular.module('app').controller('StudentTakeCourseAnnouncementController', ['$s
       });
       
     };   
+
+
+    $scope.leaveCourse = function(){
+      StudentService.leaveCourse(localStorageService.get("courseId"), localStorageService.get("user").id).then(function(data){
+          $state.go('website-student.courses');
+      });
+    };
 
 
     $scope.$on('$viewContentLoaded', function(){  

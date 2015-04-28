@@ -60,7 +60,7 @@ angular.module('app').service('InstructorService', function ($http, $rootScope, 
 
     var createNewAnnouncement = function (params, courseId, instructorId) {
         var deferred = $q.defer();
-        HttpService.post('/instructors/' + instructorId + '/announcement/'+ courseId, params).then(function(response){
+        HttpService.post('/instructors/' + instructorId.replace(/"/g , "") + '/announcement/'+ courseId.replace(/"/g , ""), params).then(function(response){
             deferred.resolve(response);
         });
         return deferred.promise;

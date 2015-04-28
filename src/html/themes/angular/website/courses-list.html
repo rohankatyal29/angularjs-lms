@@ -2,4 +2,13 @@
 
 {% block content %}
     {% include "src/html/themes/html/pages/website/_courses-list.html" %}
+    
+    <div ng-show="fetchingUnregisteredCourses">
+	    <alert type="primary">
+	        <center><h1>
+	            <i class="fa fa-spinner fa-1x fa-pulse">  </i> Loading...
+	        </h1></center>
+	    </alert>
+	</div>   
+
 {% endblock %}

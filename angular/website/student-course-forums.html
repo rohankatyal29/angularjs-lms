@@ -45,7 +45,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Timeline</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
-                            <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
+                            <li ng-show="user.role == 'student' "ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
                                 <li ng-if="user.role == 'instructor' " ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
                             <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
@@ -100,13 +100,8 @@
             </div>
 
             <div class="col-xs-6 col-sm-3 add-info">
-                    <div id="follow">
-                        <form accept-charset="UTF-8" action="/usercourses" class="new_usercourse" id="quick_new_usercourse" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="XuvfvdBQw+eWvO/HwQnx2TNqf/gFa7gNx595jFau8uQ="></div>
-    <input id="quick_usercourse_course_id" name="course[164]" type="hidden" value="0">
-    <input id="quick_usercourse_user_id" name="usercourse[user_id]" type="hidden" value="781">
-    <input id="1" name="ajax" type="hidden" value="value">
-    <button class="btn btn-danger">LEAVE COURSE</button>
-</form>
+    <button ng-click="leaveCourse();" class="btn btn-danger">LEAVE COURSE</button>
+
                     </div>
             </div>
           </div>
@@ -157,7 +152,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 3</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 11</a>
 	</div>
 </li>
 
@@ -178,7 +173,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 9</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 7</a>
 	</div>
 </li>
 
@@ -199,7 +194,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 5</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 17</a>
 	</div>
 </li>
 
@@ -220,7 +215,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 10</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 16</a>
 	</div>
 </li>
 
@@ -262,7 +257,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 11</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 9</a>
 	</div>
 </li>
 
@@ -283,7 +278,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 16</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 14</a>
 	</div>
 </li>
 
@@ -304,7 +299,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 5</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 4</a>
 	</div>
 </li>
 
@@ -325,7 +320,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 14</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 12</a>
 	</div>
 </li>
 
@@ -346,7 +341,7 @@
 		</div>
 	</div>
 	<div class="media-right">
-        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 14</a>
+        <a ui-sref=website-student.course-forum-thread class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> 5</a>
 	</div>
 </li>
 

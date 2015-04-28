@@ -12,71 +12,10 @@
                 <a ui-sref="website-student.courses"><img style="height:50%; width:50%;"  src="images/emc-logo.png"></a>
             </div>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="main-nav">
-            <!-- <ul class="nav navbar-nav navbar-nav-margin-left">
-                <li class="dropdown" ng-class="{ 'active': $state.includes('website-pages') || $state.includes('website-forum') || $state.includes('website-blog') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="website-pages.home">Home page</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-pages.pricing">Pricing</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-pages.tutors">Tutors</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-pages.survey">Survey</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-forum.home">Forum Home</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-forum.category">Forum Category</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-forum.thread">Forum Thread</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-blog.listing">Blog Listing</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-blog.post">Blog Post</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-pages.contact">Contact</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" ng-class="{ 'active': $state.includes('website-courses') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="website-courses.grid">Grid Directory</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-courses.list">List Directory</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-courses.single">Single Course</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" ng-class="{ 'active': $state.includes('website-student') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="website-student.dashboard">Dashboard</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.courses" >My Courses</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.take-course">Take Course</a></li>
-                        <li ng-class="{ 'active' : $state.is('website-student.course-forums') || $state.is('website-student.course-forum-thread') }"><a ui-sref="website-student.course-forums">Course Forums</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.take-quiz">Take Quiz</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.messages">Messages</a></li>
-                        <li ng-class="{ 'active' : $state.is('website-student.private-profile') || $state.is('website-student.billing') }"><a ui-sref="website-student.private-profile">Private Profile</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" ng-class="{ 'active': $state.includes('website-instructor') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Instructor <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.dashboard">Dashboard</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.courses">My Courses</a></li>
-                        <li ng-class="{ 'active' : $state.is('website-instructor.edit-course') || $state.is('website-instructor.edit-course-meta') || $state.is('website-instructor.edit-course-lessons') }"><a ui-sref="website-instructor.edit-course">Edit Course</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.earnings">Earnings</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.statement">Statement</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.messages">Messages</a></li>
-                        <li ng-class="{ 'active' : $state.is('website-instructor.private-profile') || $state.is('website-instructor.billing') }"><a ui-sref="website-instructor.private-profile">Private Profile</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" ng-class="{ 'active': $state.includes('essential') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="essential.buttons">Buttons</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.icons">Icons</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.progress">Progress</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.grid">Grid</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.forms">Forms</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.tables">Tables</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.tabs">Tabs</a></li>
-                    </ul>
-                </li>
-            </ul> -->
             <div class="navbar-right">
+
                 <ul class="nav navbar-nav navbar-nav-bordered navbar-nav-margin-right">
                     <!-- user -->
                     <li class="dropdown user">
@@ -86,7 +25,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Timeline</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
-                            <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
+                            <li ng-show="user.role == 'student'"ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
                             <li ng-if="user.role == 'instructor' " ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
                             <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
@@ -132,50 +71,50 @@
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#7155</a></td>
-                <td class="text-center">&dollar;31</td>
+                <td class="text-center"><a href="#">#5323</a></td>
+                <td class="text-center">&dollar;51</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#7793</a></td>
-                <td class="width-50 text-center">&dollar;93</td>
+                <td class="text-center"><a href="#">#902</a></td>
+                <td class="width-50 text-center">&dollar;71</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#2713</a></td>
-                <td class="text-center">&dollar;88</td>
+                <td class="text-center"><a href="#">#13200</a></td>
+                <td class="text-center">&dollar;14</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#700</a></td>
-                <td class="text-center">&dollar;61</td>
+                <td class="text-center"><a href="#">#6705</a></td>
+                <td class="text-center">&dollar;35</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#830</a></td>
-                <td class="text-center">&dollar;91</td>
+                <td class="text-center"><a href="#">#13344</a></td>
+                <td class="text-center">&dollar;25</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#4737</a></td>
-                <td class="width-50 text-center">&dollar;52</td>
+                <td class="text-center"><a href="#">#6218</a></td>
+                <td class="width-50 text-center">&dollar;49</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#13166</a></td>
-                <td class="text-center">&dollar;65</td>
+                <td class="text-center"><a href="#">#528</a></td>
+                <td class="text-center">&dollar;11</td>
             </tr>
             <tr>
                 <td><div class="label label-grey-200">12 Jan 2015</div></td>
                 <td>Adrian Demian</td>
-                <td class="text-center"><a href="#">#14695</a></td>
-                <td class="text-center">&dollar;96</td>
+                <td class="text-center"><a href="#">#9586</a></td>
+                <td class="text-center">&dollar;18</td>
             </tr>
             </tbody>
         </table>

@@ -1,5 +1,49 @@
 {% extends "src/html/themes/angular/website/_layout-student.html" %}
 
 {% block content %}
-	{% include "src/html/themes/html/account/_tabs.html" { tab: "profile", slug: "website" } %}
+    
+  <div ng-show="fetchingProfileData">
+          <alert type="primary">
+            <center><h1>
+              <i class="fa fa-spinner fa-1x fa-pulse">  </i> Loading...
+            </h1></center>
+          </alert>
+    </div>	
+
+<div ng-hide="fetchingProfileData">
+     <div class="parallax overflow-hidden bg-blue-400 page-section third ng-scope">
+    <div class="container parallax-layer" data-opacity="true" style="opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px); transform: translate3d(0px, 0px, 0px);">
+        <div class="media v-middle">
+            <div class="media-left text-center">
+                <a href="#">
+                    <img ng-src="::user.personImage::" alt="" class="img-circle width-80">
+                </a>
+            </div>
+            <div class="media-body">
+                <h1 class="text-white text-display-1 margin-v-0">::user.name::</h1>
+            </div>
+            </div>
+        </div>
+    </div>
+
+ <div class="box" style="position: relative; min-height: 100px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;">
+   
+
+    <p style="font-weight: normal;"> <label> Roll No:  </label> ::user.rollnumber:: </p>
+    <p style="font-weight: normal;"> <label> Email:  </label> ::user.email:: </p>
+    <p style="font-weight: normal;"> <label> Role:  </label> ::user.role:: </p>
+    <p style="font-weight: normal;"> <label> Department:  </label> ::user.department::</p>
+    <p style="font-weight: normal;"> <label style="font-color: red"> Course enrolled:</label> 
+        <ul>
+            <li ng-repeat = "course in user.courses">   
+                ::course.name::
+            </li>
+        </ul>
+    </p>   
+</div>
+</div>
+
+
+
+
 {% endblock %}

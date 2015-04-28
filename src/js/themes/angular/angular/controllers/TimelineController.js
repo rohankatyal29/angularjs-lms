@@ -10,17 +10,21 @@ angular.module('app').controller('TimelineController', ['$scope', '$rootScope', 
 
 
     var getTimelineData = function(){ 
+
+      $scope.fetchingTimeline = true;
       
       if($scope.user.role === "student"){
         StudentService.getStudentForId($scope.user.id).then(function(data){
           studentData = RandomDataGeneratorService.timelineUIGenerator(data);
           $scope.timelineUpdates = studentData.updates;   
+          $scope.fetchingTimeline = false;
         });
       }
       else {
         InstructorService.getInstructorForId($scope.user.id).then(function(data){
           instructorData = RandomDataGeneratorService.timelineUIGenerator(data);
           $scope.timelineUpdates = instructorData.updates;
+          $scope.fetchingTimeline = false;
         });
       }
     };

@@ -14,7 +14,12 @@
             <a data-ng-click="login()" class="btn btn-primary">Login <i class="fa fa-fw fa-unlock-alt"></i></a>
         </div>
     </div>
+    <div ng-show="authMsg">
+        <alert type="danger">
+           <center>  Incorrect credentials</center>
+        </alert>
+    </div>
+
 </div>
 
-<center><h3>::authMsg::</h3></center>
 

@@ -1,7 +1,21 @@
 {% extends "src/html/themes/angular/website/_layout-login.html" %}
 
-{% block content %}     
-    {% include "src/html/themes/html/pages/website/_login.html" %}
+{% block content %} 
+
+
+	<div ng-hide="loggingInProgress"> 
+ 	   {% include "src/html/themes/html/pages/website/_login.html" %}
+ 	</div>
+
+	<div ng-show="loggingInProgress">
+	    <alert type="primary">
+	        <center><h1>
+	            <i class="fa fa-spinner fa-1x fa-pulse">  </i> Logging in...
+	        </h1></center>
+	    </alert>
+	</div>
+
+
 {% endblock %}
  
 

@@ -33,7 +33,7 @@
                 };
 
                 $urlRouterProvider
-                    .otherwise('/website-pages/home');
+                    .otherwise('/login');
 
                 $stateProvider
                     .state('login', {
@@ -270,10 +270,7 @@
                     .state('website-student.private-profile', {
                         url: '/private-profile',
                         templateUrl: 'website/student-private-profile.html',
-                        controller: ['$scope', function($scope){
-                            $scope.app.settings.htmlClass = htmlClass.website;
-                            $scope.app.settings.bodyClass = '';
-                        }]
+                        controller: 'PrivateProfileController'
                     })
                     .state('website-student.billing', {
                         url: '/billing',

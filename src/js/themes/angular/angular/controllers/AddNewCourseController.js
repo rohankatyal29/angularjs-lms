@@ -4,6 +4,7 @@ angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScop
 
       $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
       $scope.app.settings.bodyClass = '';
+
       
       // create new course called by instructor
       $scope.createNewCourse = function(){
@@ -26,10 +27,9 @@ angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScop
         CourseDataService.createNewCourse(data, localStorageService.get("user").id).then(function(response){
           $scope.courseUploadIsSuccess = true;
           $state.go($state.$current, null, { reload: true });
-        }).error(function(){
-          $state.go($state.current, null, {reload: true});
-        });  
-        
+        }).catch(function(){
+          $state.go($state.$current, null, { reload: true });
+        });
       };   
 
 }]); 

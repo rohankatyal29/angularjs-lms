@@ -33,6 +33,7 @@ angular.module('app').service('StudentService', function ($http, $rootScope, Htt
         }, false, false, false).then(function(data){
                 student = data;
                 if (student){
+                    student.personImage = RandomDataGeneratorService.personImagePicker();
                     student.courses.forEach(function(e){  
                         //TODO: set TA's, cover photo and instructors image
                         e.image = RandomDataGeneratorService.personImagePicker();
@@ -47,26 +48,20 @@ angular.module('app').service('StudentService', function ($http, $rootScope, Htt
         return deferred.promise;  
     };
 
-    // var getAllStudents = function(){
-    //     return [{name:'rohan', rollno: 2012086, emailid: 'rohan12086@iiitd.ac.in'},
-    //             {name:'rohan', rollno: 2012086, emailid: 'rohan12086@iiitd.ac.in'},
-    //             {name:'rohan', rollno: 2012086, emailid: 'rohan12086@iiitd.ac.in'},
-    //             {name:'rohan', rollno: 2012086, emailid: 'rohan12086@iiitd.ac.in'}];
-    // };
-    // var getHistoricalData = function(contestid){
-    //     return HttpService.cleanService(HttpService.get('historical-queries/tapp_noofentriesperweek', {
-    //         inline: true,
-    //         input_s1gro_contestid: contestid,
-    //         "items-per-page": 1000,
-    //         "time-dimension":"weekly",
-    //         "appNamespace":"tapp",
-    //         "relative-last-time":12
-    //     }));
-
+    var leaveCourse = function(courseId, studentId){
+        var deferred = $q.defer();
+        HttpService.get('/students/' + studentId.replace(/"/g , "") + '/removeCourse/' + courseId.replace(/"/g, ""), {  
+            "data": null
+        }, false, false, false).then(function(data){
+                deferred.resolve(data);   
+            });
+        return deferred.promise;  
+    };
 
     return {
         getAllStudents : getAllStudents, 
-        getStudentForId: getStudentForId
+        getStudentForId: getStudentForId, 
+        leaveCourse: leaveCourse
     };
 
 });

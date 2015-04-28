@@ -12,71 +12,10 @@
                 <a ui-sref="website-student.courses"><img style="height:50%; width:50%;"  src="images/emc-logo.png"></a>
             </div>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="main-nav">
-            <!-- <ul class="nav navbar-nav navbar-nav-margin-left">
-                <li class="dropdown" ng-class="{ 'active': $state.includes('website-pages') || $state.includes('website-forum') || $state.includes('website-blog') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="website-pages.home">Home page</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-pages.pricing">Pricing</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-pages.tutors">Tutors</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-pages.survey">Survey</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-forum.home">Forum Home</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-forum.category">Forum Category</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-forum.thread">Forum Thread</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-blog.listing">Blog Listing</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-blog.post">Blog Post</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-pages.contact">Contact</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" ng-class="{ 'active': $state.includes('website-courses') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="website-courses.grid">Grid Directory</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-courses.list">List Directory</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-courses.single">Single Course</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" ng-class="{ 'active': $state.includes('website-student') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="website-student.dashboard">Dashboard</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.courses" >My Courses</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.take-course">Take Course</a></li>
-                        <li ng-class="{ 'active' : $state.is('website-student.course-forums') || $state.is('website-student.course-forum-thread') }"><a ui-sref="website-student.course-forums">Course Forums</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.take-quiz">Take Quiz</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-student.messages">Messages</a></li>
-                        <li ng-class="{ 'active' : $state.is('website-student.private-profile') || $state.is('website-student.billing') }"><a ui-sref="website-student.private-profile">Private Profile</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" ng-class="{ 'active': $state.includes('website-instructor') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Instructor <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.dashboard">Dashboard</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.courses">My Courses</a></li>
-                        <li ng-class="{ 'active' : $state.is('website-instructor.edit-course') || $state.is('website-instructor.edit-course-meta') || $state.is('website-instructor.edit-course-lessons') }"><a ui-sref="website-instructor.edit-course">Edit Course</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.earnings">Earnings</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.statement">Statement</a></li>
-                        <li ui-sref-active="active"><a ui-sref="website-instructor.messages">Messages</a></li>
-                        <li ng-class="{ 'active' : $state.is('website-instructor.private-profile') || $state.is('website-instructor.billing') }"><a ui-sref="website-instructor.private-profile">Private Profile</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" ng-class="{ 'active': $state.includes('essential') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="essential.buttons">Buttons</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.icons">Icons</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.progress">Progress</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.grid">Grid</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.forms">Forms</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.tables">Tables</a></li>
-                        <li ui-sref-active="active"><a ui-sref="essential.tabs">Tabs</a></li>
-                    </ul>
-                </li>
-            </ul> -->
             <div class="navbar-right">
+
                 <ul class="nav navbar-nav navbar-nav-bordered navbar-nav-margin-right">
                     <!-- user -->
                     <li class="dropdown user">
@@ -86,7 +25,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li ui-sref-active="active"><a ui-sref="website-student.dashboard"><i class="fa fa-bar-chart-o"></i> Timeline</a></li>
                             <li ui-sref-active="active"><a ui-sref="website-student.courses"><i class="fa fa-mortar-board"></i> My Courses</a></li>
-                            <li ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
+                            <li ng-show="user.role == 'student'"ui-sref-active="active"><a ui-sref="website-student.private-profile"><i class="fa fa-user"></i> Profile</a></li>
                             <li ng-if="user.role == 'instructor' " ui-sref-active="active"><a ui-sref="website-instructor.edit-course"><i class="fa fa-user"></i>Add New Course</a></li>
                             <li><a ui-sref="login"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
@@ -147,63 +86,63 @@
                 <tbody>
                 <tr>
                     <td><a href="#">January 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;39422</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;100651</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;28742</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;36959</td>
                 </tr>
                 <tr>
                     <td><a href="#">February 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;26646</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;48034</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;85025</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;10335</td>
                 </tr>
                 <tr>
                     <td><a href="#">March 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;54794</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;79723</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;80979</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;58825</td>
                 </tr>
                 <tr>
                     <td><a href="#">April 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;24017</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;28731</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;54171</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;6719</td>
                 </tr>
                 <tr>
                     <td><a href="#">May 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;41887</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;45127</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;19006</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;14741</td>
                 </tr>
                 <tr>
                     <td><a href="#">June 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;43099</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;88313</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;86900</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;43709</td>
                 </tr>
                 <tr>
                     <td><a href="#">July 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;70703</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;20585</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;25031</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;32594</td>
                 </tr>
                 <tr>
                     <td><a href="#">August 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;90849</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;32833</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;12487</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;8406</td>
                 </tr>
                 <tr>
                     <td><a href="#">September 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;8373</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;37563</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;17419</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;17530</td>
                 </tr>
                 <tr>
                     <td><a href="#">October 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;92889</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;88433</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;55457</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;100055</td>
                 </tr>
                 <tr>
                     <td><a href="#">November 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;87295</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;85794</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;56986</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;61217</td>
                 </tr>
                 <tr>
                     <td><a href="#">December 2015</a></td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;49209</td>
-                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;40721</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-orange-200"></i> &dollar;39180</td>
+                    <td class="width-100"><i class="fa fa-circle-o fa-fw text-caption text-green-200"></i> &dollar;62950</td>
                 </tr>
                 </tbody>
             </table>

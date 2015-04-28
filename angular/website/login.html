@@ -1,7 +1,10 @@
 <div id="content">
     <div class="container-fluid">
-             
-    <div class="lock-container">
+         
+
+
+	<div ng-hide="loggingInProgress"> 
+ 	   <div class="lock-container">
     <div class="panel panel-default text-center paper-shadow" data-z="0.5">
         <h1 class="text-display-1 text-center margin-bottom-none">Sign In</h1>
         <img src="images/people/110/guy-5.jpg" class="img-circle width-80">
@@ -17,9 +20,25 @@
             <a data-ng-click="login()" class="btn btn-primary">Login <i class="fa fa-fw fa-unlock-alt"></i></a>
         </div>
     </div>
+    <div ng-show="authMsg">
+        <alert type="danger">
+           <center>  Incorrect credentials</center>
+        </alert>
+    </div>
+
 </div>
 
-<center><h3>::authMsg::</h3></center>
+
+
+ 	</div>
+
+	<div ng-show="loggingInProgress">
+	    <alert type="primary">
+	        <center><h1>
+	            <i class="fa fa-spinner fa-1x fa-pulse">  </i> Logging in...
+	        </h1></center>
+	    </alert>
+	</div>
 
 
 

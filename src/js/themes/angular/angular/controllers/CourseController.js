@@ -68,16 +68,18 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
             }
 
           });
+          
         });
       };
 
 
+      $scope.fetchingCourses = false;
 
-      var getInstructorCourses = function(){  
+      var getInstructorCourses = function(){
+        $scope.fetchingCourses = true;
         InstructorService.getInstructorCourses($scope.user.id).then(function(data){
-          console.log("look here");
-          console.log(data);
           $scope.courses = data;
+          $scope.fetchingCourses = false;
           getRecentUpdatesForInstructor();
         });
       };
@@ -85,8 +87,10 @@ angular.module('app').controller('CourseController', ['$scope', '$rootScope',  '
 
       //fetches registered courses for current user
       var getStudentRegisteredCourses = function(){  
+        $scope.fetchingCourses = true;
         StudentService.getStudentForId($scope.user.id).then(function(data){
           $scope.courses = data.courses;
+          $scope.fetchingCourses = false;
           getRecentUpdatesForStudent();
         });
       };

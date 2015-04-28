@@ -4,6 +4,7 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
     var dataFetched = false;
     var fetchedCourseId ='';
     var course = new Object({});
+    var courseStudents = new Object({});
 
     var getAllCourses = function () {  
         var deferred = $q.defer();
@@ -49,7 +50,7 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
 
                 course.tas = TA;
                 
-                course.coverImage = "images/course-cover/computer-1.jpg";
+                course.coverImage = "images/course-cover/computer-3.jpg";
                 deferred.resolve(course);   
             });
         return deferred.promise;  
@@ -57,7 +58,7 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
 
     var createNewCourse = function (data, instructorId) {
         var deferred = $q.defer();
-        HttpService.post('/instructors/' + instructorId + '/addCourse', data).then(function(response){
+        HttpService.post('/instructors/' + instructorId.replace(/"/g , "") + '/addCourse', data).then(function(response){
             deferred.resolve(response);
         });
         return deferred.promise;
@@ -82,8 +83,8 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
             HttpService.get('/courses/' + courseId + '/students', {
                     "data": null
             }).then(function(data){
-
-                    deferred.resolve(data);
+                    courseStudents = data;
+                    deferred.resolve(courseStudents);
                 });
 
             dataFetched = true;

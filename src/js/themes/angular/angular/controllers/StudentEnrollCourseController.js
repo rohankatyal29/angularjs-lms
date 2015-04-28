@@ -1,6 +1,7 @@
 angular.module('app').controller('StudentEnrollCourseController', ['$scope', '$rootScope',  'CourseDataService','$http' ,'localStorageService','$state','StudentService',function ($scope, $rootScope, CourseDataService, $http, localStorageService, $state, StudentService) {
 			 
 	$scope.user = localStorageService.get("user");
+	$scope.fetchingUnregisteredCourses = true;   
 
 	$scope.app.settings.htmlClass = $rootScope.htmlClass.website;
 	$scope.app.settings.bodyClass = '';
@@ -11,15 +12,28 @@ angular.module('app').controller('StudentEnrollCourseController', ['$scope', '$r
 		});
 	};
 
+	  $scope.goToAnnouncement = function(courseId){
+	    localStorageService.set('courseId', courseId);
+	    $state.go('website-student.take-course-announcement');
+	  };
+
+	  $scope.goToDeadline = function(courseId){
+	    localStorageService.set('courseId', courseId);
+	    $state.go('website-student.take-course-deadlines');
+	  };   
+
+
 	// fetches all the courses not enrolled by the current user 
 	$scope.unregisteredCourses = [];
 	var getAllUnregisteredCourses = function(){
+		$scope.fetchingUnregisteredCourses = true;  
 		CourseDataService.getAllCourses().then(function(data){
 			courses = data;
 			StudentService.getStudentForId($scope.user.id).then(function(data){
 				registeredCourses = data.courses;
 
 				if(!registeredCourses){
+					$scope.fetchingUnregisteredCourses = false;
 					$scope.unregisteredCourses = courses;
 					return;
 				}
@@ -40,11 +54,14 @@ angular.module('app').controller('StudentEnrollCourseController', ['$scope', '$r
 
 				});
 
-		});
-	
+				$scope.fetchingUnregisteredCourses = false;
 
+			
+		});
+		 
 		});
 
+		
 	};
 
 
@@ -97,7 +114,7 @@ angular.module('app').controller('StudentEnrollCourseController', ['$scope', '$r
 
 
 
-	$scope.$on('$viewContentLoaded', function(){
+	$scope.$on('$viewContentLoaded', function(){   
 		getAllUnregisteredCourses(); 
 		if(($scope.user.role).localeCompare("student") === 0){
           getRecentUpdatesForStudent();
