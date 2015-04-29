@@ -48,7 +48,7 @@
 
                 
     
-<div class="panel panel-default">
+<div ng-hide="addingNewCourse" class="panel panel-default">
                     <div class="panel-body">
                        <form class="form-horizontal ng-pristine ng-valid" role="form" >
                             <div class="form-group form-control-material static">
@@ -84,6 +84,15 @@
                         </form>
                     </div>
                 </div>
+
+    <div ng-show="addingNewCourse">
+        <alert type="primary">
+            <center><h1>
+                <i class="fa fa-spinner fa-1x fa-pulse">  </i> Adding...
+            </h1></center>
+        </alert>
+    </div>
+
 
 
                 <br/>

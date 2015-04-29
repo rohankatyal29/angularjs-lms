@@ -8,7 +8,7 @@ angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScop
       
       // create new course called by instructor
       $scope.createNewCourse = function(){
-        
+        $rootScope.addingNewCourse = true;
         var data = new Object({});
         
         data = { "name" : $scope.courseName,
@@ -26,9 +26,6 @@ angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScop
       
         CourseDataService.createNewCourse(data, localStorageService.get("user").id).then(function(response){
           $scope.courseUploadIsSuccess = true;
-          $state.go($state.$current, null, { reload: true });
-        }).catch(function(){
-          $state.go($state.$current, null, { reload: true });
         });
       };   
 

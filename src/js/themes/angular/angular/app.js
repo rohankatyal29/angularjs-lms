@@ -39,7 +39,8 @@
         ]);
 
 
-    //TODO: Put the correct URL and proxy details here 
+    // TODO: Put the correct URL and proxy details here 
+    // rest_url_cors_proxy needs to be changed
     app.constant("CONSTANTS", {
         "rest_url": "http://10.31.169.169:8080/lms/api",
         "rest_url_cors_proxy": "http://localhost:8040/lms/api"       

@@ -920,7 +920,8 @@ require('./_sidebar-toggle-bar');
         ]);
 
 
-    //TODO: Put the correct URL and proxy details here 
+    // TODO: Put the correct URL and proxy details here 
+    // rest_url_cors_proxy needs to be changed
     app.constant("CONSTANTS", {
         "rest_url": "http://10.31.169.169:8080/lms/api",
         "rest_url_cors_proxy": "http://localhost:8040/lms/api"       
@@ -1609,7 +1610,7 @@ angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScop
       
       // create new course called by instructor
       $scope.createNewCourse = function(){
-        
+        $rootScope.addingNewCourse = true;
         var data = new Object({});
         
         data = { "name" : $scope.courseName,
@@ -1627,9 +1628,6 @@ angular.module('app').controller('AddNewCourseController', ['$scope', '$rootScop
       
         CourseDataService.createNewCourse(data, localStorageService.get("user").id).then(function(response){
           $scope.courseUploadIsSuccess = true;
-          $state.go($state.$current, null, { reload: true });
-        }).catch(function(){
-          $state.go($state.$current, null, { reload: true });
         });
       };   
 
@@ -2074,6 +2072,8 @@ angular.module('app').controller('StudentTakeCourseController', ['$scope', '$roo
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentTakeCourseDeadlinesController.js":[function(require,module,exports){
 angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService','localStorageService' ,'$upload', 'CONSTANTS', '$state', 'StudentService' ,function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS, $state, StudentService) {
     
+    var assessmentId = "";
+
     $scope.user = localStorageService.get("user");
 
     $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
@@ -2086,17 +2086,20 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
     });
 
     $scope.$watch('solution.file', function () {
-        $scope.uploadSolution($scope.solution);    
+        $scope.uploadSolution($scope.solution.file);    
     });
 
+    $scope.setAssessmentId = function(id){
+        assessmentId = id;
+    };
 
     $scope.uploadSolution = function (files) {
-        if (files && files.length) {
+     if (files && files.length) {
             /*jshint loopfunc: true */
-            for (var i = 0; i < files.length; i++) {
+            for (var i = 0; i < files.length; i++) {   
                 var file = files[i];
                 $upload.upload({
-                    url: CONSTANTS.rest_url_cors_proxy + '/students/' + localStorageService.get("user").id.replace(/"/g , "") + '/deadline/' + $scope.assessmentId,
+                    url: CONSTANTS.rest_url_cors_proxy + '/students/' + localStorageService.get("user").id.replace(/"/g , "") + '/deadline/' + assessmentId ,
                     headers:{
                         'Content-Type': 'multipart/mixed'
                     },
@@ -2119,18 +2122,6 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
            $state.go('website-student.courses');
       });
     };
-
-
-    // $scope.uploadSolutionForStudent = function(assessmentId){
-    //     $scope.$watch('solution', function () {
-    //         uploadSolution(assessmentId, $scope.solution);
-    //     });
-    // };
-
-    // $scope.$watch('solution', function () {
-    //     $scope.uploadSolution($scope.solution);
-    // });
-
 
     $scope.uploadDeadline= function (files) {
         if (files && files.length) {
@@ -2253,13 +2244,6 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
         $scope.upload($scope.resource.files);  
     });
 
-
-
-    var reloadPage = function(){
-        $state.go($state.$current, null, { reload: true });
-    };
-
-
     $scope.leaveCourse = function(){
       StudentService.leaveCourse(localStorageService.get("courseId"), localStorageService.get("user").id).then(function(data){
            $state.go('website-student.courses');
@@ -2279,9 +2263,9 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                     console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
                 }).success(function (data, status, headers, config) {
-                    reloadPage();
+                     $state.go($state.$current, null, { reload: true });
                 }).error(function(){
-                    reloadPage();
+                     $state.go($state.$current, null, { reload: true });
                 });
             }
         }
@@ -2302,6 +2286,8 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentTakeCourseStudentsController.js":[function(require,module,exports){
 angular.module('app').controller('StudentTakeCourseStudentsController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService', 'localStorageService', 'StudentService',function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, StudentService) {
   
+  $scope.students = {};
+
 	$scope.user = localStorageService.get("user");
 
     $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
@@ -2309,12 +2295,12 @@ angular.module('app').controller('StudentTakeCourseStudentsController', ['$scope
   
     var getCourseStudents = function(courseId){
     	CourseDataService.getCourseStudents(courseId).then(function(data){
- 			console.log("dataaatatata");
+ 			      console.log("dataaatatata");
+            console.log(courseId);
             console.log(data);
             $scope.students = data;
    		});
     };
-
 
     $scope.leaveCourse = function(){
       StudentService.leaveCourse(localStorageService.get("courseId"), localStorageService.get("user").id).then(function(data){
@@ -2322,12 +2308,9 @@ angular.module('app').controller('StudentTakeCourseStudentsController', ['$scope
       });
     };
 
-
-    $scope.$on('$viewContentLoaded', function(){
       $scope.course = localStorageService.get('course');
- 	    getCourseStudents($scope.course.id);
- 	});     	 
-
+ 	    getCourseStudents(localStorageService.get('course').id);
+   
 }]);
     
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/controllers/StudentsController.js":[function(require,module,exports){
@@ -2544,7 +2527,7 @@ angular.module('app').factory("LocalStorageFactory", function($window, $rootScop
 })();
 
 },{}],"/Users/MacbookPro/Desktop/dev/emc/learning-v1.0.0/src/js/themes/angular/angular/services/CourseService.js":[function(require,module,exports){
-angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpService', '$q', 'RandomDataGeneratorService' ,function ($http, $rootScope, HttpService, $q, RandomDataGeneratorService) {
+angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpService', '$q', 'RandomDataGeneratorService' , '$state',function ($http, $rootScope, HttpService, $q, RandomDataGeneratorService, $state) {
 
     var courses = new Object({});
     var dataFetched = false;
@@ -2605,7 +2588,12 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
     var createNewCourse = function (data, instructorId) {
         var deferred = $q.defer();
         HttpService.post('/instructors/' + instructorId.replace(/"/g , "") + '/addCourse', data).then(function(response){
+            $rootScope.addingNewCourse = false;
+            $state.go('website-student.courses');
             deferred.resolve(response);
+        }, function(err){
+            $rootScope.addingNewCourse = false;
+            $state.go('website-student.courses');
         });
         return deferred.promise;
     };
@@ -2623,20 +2611,14 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
 
     var getCourseStudents = function (courseId) {  
         var deferred = $q.defer();
-        if(dataFetched){
-            deferred.resolve(courses);
-        } else{
-            HttpService.get('/courses/' + courseId + '/students', {
-                    "data": null
-            }).then(function(data){
-                    courseStudents = data;
-                    deferred.resolve(courseStudents);
-                });
-
-            dataFetched = true;
-        }
+        HttpService.get('/courses/' + courseId + '/students', {
+                "data": null
+        }).then(function(data){
+            courseStudents = data;
+            deferred.resolve(courseStudents);
+           
+        });
         return deferred.promise;
-
     };
 
   

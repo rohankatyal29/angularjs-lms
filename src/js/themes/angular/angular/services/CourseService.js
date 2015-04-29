@@ -1,4 +1,4 @@
-angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpService', '$q', 'RandomDataGeneratorService' ,function ($http, $rootScope, HttpService, $q, RandomDataGeneratorService) {
+angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpService', '$q', 'RandomDataGeneratorService' , '$state',function ($http, $rootScope, HttpService, $q, RandomDataGeneratorService, $state) {
 
     var courses = new Object({});
     var dataFetched = false;
@@ -59,7 +59,12 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
     var createNewCourse = function (data, instructorId) {
         var deferred = $q.defer();
         HttpService.post('/instructors/' + instructorId.replace(/"/g , "") + '/addCourse', data).then(function(response){
+            $rootScope.addingNewCourse = false;
+            $state.go('website-student.courses');
             deferred.resolve(response);
+        }, function(err){
+            $rootScope.addingNewCourse = false;
+            $state.go('website-student.courses');
         });
         return deferred.promise;
     };
@@ -77,20 +82,14 @@ angular.module('app').service('CourseDataService',['$http', '$rootScope', 'HttpS
 
     var getCourseStudents = function (courseId) {  
         var deferred = $q.defer();
-        if(dataFetched){
-            deferred.resolve(courses);
-        } else{
-            HttpService.get('/courses/' + courseId + '/students', {
-                    "data": null
-            }).then(function(data){
-                    courseStudents = data;
-                    deferred.resolve(courseStudents);
-                });
-
-            dataFetched = true;
-        }
+        HttpService.get('/courses/' + courseId + '/students', {
+                "data": null
+        }).then(function(data){
+            courseStudents = data;
+            deferred.resolve(courseStudents);
+           
+        });
         return deferred.promise;
-
     };
 
   

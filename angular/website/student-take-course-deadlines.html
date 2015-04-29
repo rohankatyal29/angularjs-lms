@@ -29,9 +29,6 @@
                     <a ui-sref="website-student.take-course-resources"> Resources </a>
                 </li>
                 <li>
-                    <a ui-sref="website-student.take-course-discussions"> Discussions </a>
-                </li>
-                <li>
                     <a ui-sref="website-student.take-course-students"> Students </a>
                 </li>
             </ul>
@@ -99,10 +96,8 @@
               </div>
             </div>
 
-            <div class="col-xs-6 col-sm-3 add-info">
-    <button ng-click="leaveCourse();" class="btn btn-danger">LEAVE COURSE</button>
-
-                    </div>
+       
+       
             </div>
           </div>
         </div>
@@ -141,14 +136,14 @@
 	</div>
 </div>
 
-
  <div class="box" style="position: relative; min-height: 100px; padding-right: 15px; padding-left: 15px; margin-bottom: 20px; background-color: #ffffff; border: 1px solid #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;" ng-repeat="deadline in deadlines">
     
+     <a href="::base_download_url::/courses/::course.id::/deadline/::deadline.id::" target="_blank"><button class="btn btn-primary btn-stroke pull-right" style="margin-top:15px;margin-right:15px;">Download Deadline</button></a>
 
+     <button ng-click="setAssessmentId('::deadline.id::');" ng-file-select ng-model="solution.file" style="margin-top:15px;margin-right:15px;" class="btn btn-success btn-stroke pull-right"><i class="icon-upload-alt"></i> Upload Solution</button>
 
-    <button data-ng-show="user.role == 'student'" ng-file-select ng-model="solution.file" ng-click="assessmentId = '::deadline.id::'; "  style="margin-top:15px;margin-right:15px;" class="btn btn-success btn-stroke pull-right"><i class="icon-upload-alt"></i> Upload</button>
-
-     <a href="::base_download_url::/courses/::course.id::/deadline/::deadline.id::" target="_blank"><button class="btn btn-primary btn-stroke pull-right" style="margin-top:15px;margin-right:15px;">Download</button></a>
+     <a href="::base_download_url::/students/::user.id::/deadline/::deadline.id::" target="_blank">
+     <button class="btn btn-primary btn-stroke pull-right" style="margin-top:15px;margin-right:15px;">Download Solution</button></a>
 
     <h4>
         ::deadline.deadline_title::

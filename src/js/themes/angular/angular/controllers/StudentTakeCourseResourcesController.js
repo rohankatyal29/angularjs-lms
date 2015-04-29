@@ -11,13 +11,6 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
         $scope.upload($scope.resource.files);  
     });
 
-
-
-    var reloadPage = function(){
-        $state.go($state.$current, null, { reload: true });
-    };
-
-
     $scope.leaveCourse = function(){
       StudentService.leaveCourse(localStorageService.get("courseId"), localStorageService.get("user").id).then(function(data){
            $state.go('website-student.courses');
@@ -37,9 +30,9 @@ angular.module('app').controller('StudentTakeCourseResourcesController', ['$scop
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                     console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
                 }).success(function (data, status, headers, config) {
-                    reloadPage();
+                     $state.go($state.$current, null, { reload: true });
                 }).error(function(){
-                    reloadPage();
+                     $state.go($state.$current, null, { reload: true });
                 });
             }
         }

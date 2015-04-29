@@ -1,5 +1,7 @@
 angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scope', '$rootScope', 'RandomDataGeneratorService', 'CourseDataService','localStorageService' ,'$upload', 'CONSTANTS', '$state', 'StudentService' ,function ($scope, $rootScope, RandomDataGeneratorService, CourseDataService, localStorageService, $upload, CONSTANTS, $state, StudentService) {
     
+    var assessmentId = "";
+
     $scope.user = localStorageService.get("user");
 
     $scope.app.settings.htmlClass = $rootScope.htmlClass.website;
@@ -12,17 +14,20 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
     });
 
     $scope.$watch('solution.file', function () {
-        $scope.uploadSolution($scope.solution);    
+        $scope.uploadSolution($scope.solution.file);    
     });
 
+    $scope.setAssessmentId = function(id){
+        assessmentId = id;
+    };
 
     $scope.uploadSolution = function (files) {
-        if (files && files.length) {
+     if (files && files.length) {
             /*jshint loopfunc: true */
-            for (var i = 0; i < files.length; i++) {
+            for (var i = 0; i < files.length; i++) {   
                 var file = files[i];
                 $upload.upload({
-                    url: CONSTANTS.rest_url_cors_proxy + '/students/' + localStorageService.get("user").id.replace(/"/g , "") + '/deadline/' + $scope.assessmentId,
+                    url: CONSTANTS.rest_url_cors_proxy + '/students/' + localStorageService.get("user").id.replace(/"/g , "") + '/deadline/' + assessmentId ,
                     headers:{
                         'Content-Type': 'multipart/mixed'
                     },
@@ -45,18 +50,6 @@ angular.module('app').controller('StudentTakeCourseDeadlinesController', ['$scop
            $state.go('website-student.courses');
       });
     };
-
-
-    // $scope.uploadSolutionForStudent = function(assessmentId){
-    //     $scope.$watch('solution', function () {
-    //         uploadSolution(assessmentId, $scope.solution);
-    //     });
-    // };
-
-    // $scope.$watch('solution', function () {
-    //     $scope.uploadSolution($scope.solution);
-    // });
-
 
     $scope.uploadDeadline= function (files) {
         if (files && files.length) {
